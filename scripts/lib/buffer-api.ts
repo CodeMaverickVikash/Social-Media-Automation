@@ -69,10 +69,17 @@ function readManifest(slug: string, kind: Kind): Record<string, unknown> | null 
   return existsSync(m) ? JSON.parse(readFileSync(m, 'utf8')) : null;
 }
 
+const aiNoticeShown = new Set<string>();
+
 /** Blocks publishing of anything not rendered by the pipeline, or rendered as a draft. */
 export function assertPublishable(slug: string, kind: Kind, dryRun = false): void {
   const m = readManifest(slug, kind);
   if (!m) throw new Error(`No render manifest for ${slug} (${kind}). Render it with the skills before publishing.`);
+  // Informational only — the AI label stays opt-in (aiDisclosure / --ai-disclosure).
+  if (m.aiGenerated && !aiNoticeShown.has(`${slug}:${kind}`)) {
+    aiNoticeShown.add(`${slug}:${kind}`);
+    console.warn(`ℹ ${slug} ${kind} uses AI-generated imagery. Meta asks creators to label photorealistic AI content (and may label it itself); set "aiDisclosure": true on the plan item (or --ai-disclosure) to send the label. Copy must stay mood/campaign-level.`);
+  }
   if (m.draftOnly) {
     const msg = `${slug} ${kind} was rendered as a DRAFT (--allow-lowres or --draft). Re-render at full quality before publishing.`;
     if (!dryRun) throw new Error(msg);

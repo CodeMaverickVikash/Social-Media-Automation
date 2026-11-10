@@ -1,0 +1,7 @@
+{
+  "aiGenerated": true,
+  "generator": "claude-illustration",
+  "prompt": "{\"product\":\"sherwani\",\"occasion\":\"wedding\",\"stage\":\"wide\",\"palette\":{\"backdrop\":[\"#5E1A2B\",\"#2A0A12\"],\"line\":\"#D6AE6B\",\"garment\":\"#EADCC2\",\"accent\":\"#B98B3E\",\"bottoms\":\"#F3EBDC\",\"shoes\":\"#C9A15A\",\"mannequin\":\"#D8D0C4\",\"stole\":\"#7A1F35\"}}",
+  "createdAt": "2026-11-10T08:05:11.306Z",
+  "usage": "mood/campaign only"
+}

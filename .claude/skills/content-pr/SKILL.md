@@ -21,7 +21,8 @@ content/schedule/<slug>.json┘                                                 
 ### 1. Pre-flight
 - The content was made through `social-content` (renders + captions exist and QA passes).
 - No `--allow-lowres` or `--draft` renders. The PR check rejects them anyway.
-- `config/buffer-channels.json` exists. If not, ask the user to run GitHub → Actions → **List Buffer channels**, then save the JSON from the run summary to that file and include it in the PR. Channel ids are not secret.
+- The **`monavi-brand-guardian`** agent returned `VERDICT: PASS` for this slug, and nothing changed since that review. If it hasn't run, or the content changed after it ran, run it now and don't open the PR until it passes.
+- `config/buffer-channels.json` exists. If not, still open the PR (the Content check will fail on this one item), and tell the user to run GitHub → Actions → **List Buffer channels**, save the JSON from the run summary to that file on `main`, then re-run the check. Channel ids are not secret.
 
 ### 2. Write the schedule plan: `content/schedule/<slug>.json`
 
@@ -36,8 +37,9 @@ content/schedule/<slug>.json┘                                                 
 }
 ```
 - `kind`: `post` (uses `ig-feed.jpg`), `story` (`story.jpg`), `reel` (`reel.mp4`). Override with `"file": "square.jpg"`.
-- `at`: ISO time **with offset** (IST = `+05:30`). Omit it to use the next free Buffer queue slot. If the user gives no times, suggest the defaults in the `buffer-publish` skill and confirm them.
+- `at`: ISO time **with offset** (IST = `+05:30`). Omit it to use the next free Buffer queue slot. If the user gives no times, use the defaults from `social-content` §3.7 without asking. The user can edit them in the PR.
 - `"draft": true` creates a Buffer draft instead of scheduling it.
+- `"aiDisclosure": true` sends Instagram's AI label. It's off by default. If the render uses AI imagery (its manifest has `aiGenerated: true`), mention Meta's disclosure rule to the user once, then follow their decision.
 - `whatsapp` items are not sent to Buffer. They appear in the Action summary as a manual-share list.
 
 Validate locally:
@@ -48,7 +50,9 @@ npm run plan -- run --files content/schedule/<slug>.json --dry-run
 
 ### 3. Branch, commit, PR
 
-**Confirm with the user before pushing or opening the PR** (both are outward-facing), unless they already asked for it.
+**When called from `social-content`, don't ask. Push and open the PR.** The user's `social-content` request is the go-ahead, and the PR is their review step (merging is the approval). Called on its own, confirm before pushing unless the user already asked for a PR.
+
+If the branch `content/<slug>` already has an open PR (`gh pr list --head content/<slug>`), don't create a new one. Switch to the branch, commit the changes and push, which updates the existing PR (see `social-content` §4).
 
 ```bash
 git switch main && git pull --ff-only
@@ -77,6 +81,8 @@ PR body template (write it to a temp file):
 **Instagram:** …
 **Facebook:** …
 **WhatsApp (manual):** …
+
+**Brand review:** monavi-brand-guardian PASS (<date>)
 
 Merging this PR schedules the Instagram and Facebook items in Buffer via GitHub Actions.
 ```

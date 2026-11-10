@@ -34,8 +34,17 @@ Claude uses the **`social-content`** skill, which:
 3. Shows you a per-platform plan
 4. Renders everything, checks it visually and with automated QA
 5. Writes a separate caption for each platform
-6. Shows you the result for approval
-7. Opens a **PR** with a schedule (after you confirm)
+6. Gets a **monavi-brand-guardian** review (required pass before any PR)
+7. Shows you the result for approval
+8. Opens a **PR** with a schedule, without stopping to ask (default posting times unless you gave dates)
+
+**One command, then merge**, the same as `/new-blog` in the automation repo:
+
+```
+/social-content D:\shoot\kurta-01.jpg D:\shoot\kurta-02.jpg kurta pajama for men, festive, post on 20 Nov
+```
+
+Review the PR's **Files changed** tab. Edit captions (`caption.txt`) or times (`content/schedule/<slug>.json`) right on GitHub. For image changes such as headline, layout or photo, ask Claude (*"change the headline on <slug> to …"*). It re-renders and pushes to the same PR. **Merging schedules it in Buffer.**
 
 **Rule:** posts and reels are always made through the skills, never by hand.
 
@@ -70,6 +79,14 @@ output/
 | `content-pr` | Schedule plan + branch + PR (merge = schedule in Buffer) |
 | `buffer-publish` | Local Buffer CLI: channel setup, urgent one-off posts |
 
+### Agents (`.claude/agents/`)
+
+| Agent | What it does |
+|---|---|
+| `monavi-content-strategist` | Plans a week, month or season: occasions (festival dates verified), product/audience mix, slugs, deliverables, posting times. Plans only. Ask *"plan December's posts"* |
+| `caption-writer` | Writes `caption.txt` per platform by following `social-caption`. Useful for captioning several slugs in parallel |
+| `monavi-brand-guardian` | Reviews a slug's renders, captions and facts, and runs `check:media`. Returns PASS / CHANGES-REQUIRED / ESCALATE. **A PASS is required before `content-pr`** |
+
 ## 3. Supported products
 
 Defined in [`brand/brand.json → products`](brand/brand.json). Add more any time.
@@ -91,6 +108,8 @@ Output is never upscaled. If a photo is too small, the render **stops** rather t
 
 Tips: send **original camera files** (not WhatsApp-forwarded or screenshot copies), and shoot portrait for stories and reels.
 `npm run import:photo -- "<photo>" --slug <slug>` tells you exactly what each photo can be used for.
+
+**No photo?** Claude draws the garment locally as a vector fashion illustration: `npm run draw:product -- --slug <slug> --product sherwani --occasion wedding`. There's no external service or API key. It suits the `arch` layout. It's an illustration, not a photo, so it's for **mood/campaign posts only**, with collection-level copy. For the photo-led look of the reference posters, use a real photo. Each drawn or AI image has a `.ai.json` sidecar.
 
 ---
 
@@ -162,7 +181,8 @@ Important:
 ## 7. Commands reference
 
 ```bash
-npm run import:photo -- "<photo>" [...] --slug <slug>     # import + resolution report
+npm run import:photo -- "<photo>" [...] --slug <slug>     # import + resolution report (--ai-generated for AI images)
+npm run draw:product -- --slug <slug> --product <id>         # Claude-drawn illustration when there is no photo
 npm run render:post  -- content/posts/<slug>.json          # render images (all formats in the brief)
 npm run render:reel  -- content/reels/<slug>.json [--draft] # render reel (--draft = fast preview, not publishable)
 npm run check:media  -- output/instagram/<slug>             # QA delivered files
@@ -182,6 +202,7 @@ assets/           photos/<slug>/ (imported photos) · audio/ (licensed music onl
 output/           instagram/ facebook/ whatsapp/ (delivery files + captions) · _masters/
 scripts/          TypeScript tooling (run directly by Node, no build)
 .claude/skills/   Claude Code skills
+.claude/agents/   Claude Code agents (monavi-content-strategist, caption-writer, monavi-brand-guardian)
 .github/workflows content-check.yml · schedule-on-merge.yml
 config/           buffer-channels.json (Buffer channel ids)
 ```

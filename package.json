@@ -13,6 +13,7 @@
     "buffer": "node scripts/buffer.ts",
     "typecheck": "tsc --noEmit",
     "import:photo": "node scripts/import-photo.ts",
+    "draw:product": "node scripts/draw-product.ts",
     "plan": "node scripts/publish-plan.ts"
   },
   "dependencies": {

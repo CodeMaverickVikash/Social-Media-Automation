@@ -18,6 +18,7 @@ import { FFMPEG as ffmpegPath } from './lib/ffmpeg.ts';
 import { BRAND, fileUrl, parseArgs, resolvePath } from './lib/brand.ts';
 import { checkPhotoResolution, waitForAssets } from './lib/quality.ts';
 import { assertSlug, buildDir, cleanBuild, distribute, masterDir, rel, writeManifest } from './lib/output.ts';
+import { aiPhotosIn } from './lib/ai-photo.ts';
 import { MAX_ZOOM, reelHtml } from './templates/reel.ts';
 import type { ReelBrief } from './templates/reel.ts';
 
@@ -134,10 +135,13 @@ const platforms = brief.platforms ?? ['instagram', 'facebook', 'whatsapp'];
 if (platforms.includes('whatsapp') && duration > 60) console.warn('[platform:warn] WhatsApp Status clips are limited to 60s — this reel will be split or trimmed by WhatsApp.');
 const files = [...distribute(mp4, slug, platforms), ...distribute(cover, slug, platforms)];
 const size = statSync(mp4).size;
+const aiPhotos = aiPhotosIn(brief.scenes.map(s => s.photo));
+if (aiPhotos.length) console.log(`ℹ Uses AI-generated imagery (${aiPhotos.join(', ')}) — mood/campaign copy only.`);
 writeManifest(slug, 'reel', {
   brief: rel(path.resolve(briefPath)), renderedAt: new Date().toISOString(),
   // Draft-only output (low-res override or 1x frames) — buffer.ts refuses to publish it.
   draftOnly: !strict || SS < 2,
+  aiGenerated: aiPhotos.length > 0, aiPhotos,
   duration, fps, frames: totalFrames, supersample: SS, bytes: size,
   coverThumbnailOffsetMs: Math.round(coverAt * 1000),
   audio: audio ? rel(audio) : 'silent', files: files.map(rel),

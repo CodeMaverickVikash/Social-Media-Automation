@@ -25,6 +25,8 @@ interface PlanItem {
   at?: string;
   draft?: boolean;
   firstComment?: string;
+  /** Opt-in AI label (Instagram isAiGenerated). Never sent unless true. */
+  aiDisclosure?: boolean;
 }
 interface Plan { slug: string; items: PlanItem[] }
 
@@ -150,7 +152,7 @@ async function run(): Promise<void> {
           // Media is served from this public repo (jsDelivr, pinned to the merge commit).
           const url = publicMediaUrl(media);
           if (!dryRun) await checkMediaUrl(url, it.kind);
-          const input = buildPostInput({ platform, slug: plan.slug, kind: it.kind, mediaUrls: [url], at: it.at, draft: it.draft, firstComment: it.firstComment },
+          const input = buildPostInput({ platform, slug: plan.slug, kind: it.kind, mediaUrls: [url], at: it.at, draft: it.draft, firstComment: it.firstComment, aiDisclosure: it.aiDisclosure === true },
             channelMap[platform]?.id ?? `<${platform}-channel-id>`);
           if (dryRun) { rows.push(`| ${plan.slug} | ${platform} | ${it.kind} | ${it.at ?? 'queue'} | dry run · [media](${url}) |`); continue; }
           const res = await createPost(input);

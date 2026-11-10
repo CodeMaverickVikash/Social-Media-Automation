@@ -1,0 +1,13 @@
+{
+  "slug": "sherwani-wedding-2026-11",
+  "template": "arch",
+  "theme": "festive",
+  "formats": ["ig-feed", "story", "square"],
+  "photo": "assets/photos/sherwani-wedding-2026-11/drawn-sherwani-1.png",
+  "focus": "50% 50%",
+  "eyebrow": "Groom Collection",
+  "headline": "Made for\nyour big day.",
+  "attrs": ["Regal", "Tailored", "Wedding-ready"],
+  "cta": "Explore Collection",
+  "badge": { "icon": "shirt", "label": "Groom Wear" }
+}

@@ -2,7 +2,7 @@
 
 **Skills are the only interface.** You type a skill command in Claude Code, Claude does the rest: the terminal commands, the rendering, the Git work and the PR. You never run `npm` or `git` yourself. Everything under `scripts/` is a tool the skills use.
 
-You can also just describe what you want in your own words, and Claude picks the right skill. The commands below are the shortcuts.
+You can also just describe what you want in your own words, and Claude picks the right skill. The same commands work in Google Antigravity: see [ANTIGRAVITY.md](ANTIGRAVITY.md). The commands below are the shortcuts.
 
 ## At a glance
 

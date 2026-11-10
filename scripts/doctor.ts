@@ -74,6 +74,11 @@ const dirty = run('git', ['status', '--porcelain', '--', 'scripts', '.claude', '
 check('Tooling changes are committed', dirty.ok && dirty.out === '',
   'Uncommitted changes in scripts/, .claude/, .github/, brand/ or package.json. Merge them to main first, because content PRs are checked with main\'s scripts.', false);
 
+// 6. Antigravity copies match their Claude Code sources (warning only)
+const sync = run(process.execPath, ['scripts/sync-antigravity.ts', '--check']);
+check('Antigravity files match .claude/ and CLAUDE.md', sync.ok,
+  'Run: npm run sync:antigravity, then commit AGENTS.md and .agents/. CI fails on a content PR while they are out of date.', false);
+
 // Report
 let blocking = 0;
 for (const r of results) {
@@ -81,5 +86,5 @@ for (const r of results) {
   console.log(`${mark} ${r.label}`);
   if (!r.ok) { console.log(`    → ${r.fix}`); if (r.blocking) blocking++; }
 }
-console.log(blocking ? `\n${blocking} blocking issue(s). Fix them before making content.` : '\nReady. Run /create-social-content in Claude Code.');
+console.log(blocking ? `\n${blocking} blocking issue(s). Fix them before making content.` : '\nReady. Run /create-social-content in Claude Code or Antigravity.');
 process.exit(blocking ? 1 : 0);

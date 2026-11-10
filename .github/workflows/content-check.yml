@@ -27,6 +27,9 @@ jobs:
       - name: Type check
         run: npm run typecheck
 
+      - name: Antigravity files are in sync with .claude/ and CLAUDE.md
+        run: node scripts/sync-antigravity.ts --check
+
       - name: Validate schedule plans added in this PR
         env:
           BASE_REF: origin/${{ github.base_ref }}

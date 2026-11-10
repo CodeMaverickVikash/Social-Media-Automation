@@ -13,6 +13,7 @@ Creates on-brand posts, stories and reels for **Monavi Collection** (family fash
 - `output/<platform>/<slug>/`: delivery files + caption.txt (**committed** in content PRs) · `output/_masters/<slug>/`: manifests (committed), 2× PNG masters (ignored)
 - `.github/workflows/`: `content-check.yml` (PR validation + dry run) · `schedule-on-merge.yml` (Buffer scheduling)
 - `.claude/skills/`: **user commands** `setup-social-automation` · `plan-social-content` · `create-social-content` (main) · `create-social-poster` · `create-social-banner` · `edit-social-content` · `check-social-status` · `clean-social-output` · `publish-social-now`. **Internal steps** (hidden from `/`): `monavi-brand-rules`, `render-social-post`, `render-social-reel`, `write-social-captions`, `open-content-pr`. Use cases for each: `docs/SKILLS.md`
+- `AGENTS.md` + `.agents/skills|agents/`: **generated** copies of `CLAUDE.md`, `.claude/skills/` and `.claude/agents/` for Google Antigravity (it does not read `.claude/`). Never edit them by hand
 - `.claude/agents/`: `monavi-content-strategist` (plans slugs and dates, writes nothing) · `caption-writer` (runs `write-social-captions`) · `monavi-brand-guardian` (review only, **required PASS before `open-content-pr`**)
 
 ## Commands
@@ -25,6 +26,7 @@ npm run render:reel -- content/reels/<slug>.json [--draft]
 npm run check:media -- output/instagram/<slug>
 npm run plan -- validate content/schedule/<slug>.json
 npm run plan -- run --files content/schedule/<slug>.json --dry-run
+npm run sync:antigravity -- [--check]            # regenerate AGENTS.md and .agents/ from CLAUDE.md and .claude/ (CI runs --check)
 npm run doctor                                   # readiness check (create-social-content runs it first)
 npm run clean:output -- [--slug <slug>] [--dry-run]   # safe file cleanup: never touches committed files or captions
 npm run clean:content -- [--drafts] [--slug <slug>] [--dry-run]   # finished plans; --drafts only after the user agrees; never content/schedule or committed files
@@ -36,6 +38,7 @@ Buffer channel ids: GitHub → Actions → "List Buffer channels" → commit the
 
 ## Rules
 
+- **Antigravity support is generated, not hand-written.** After you change `CLAUDE.md`, a skill or an agent, run `npm run sync:antigravity` and commit `AGENTS.md` and `.agents/`. CI (`--check`) fails a content PR when they are stale. Skill and agent files need a `name` that matches their folder or file, and a one-line `description`.
 - **Skills are the user's only interface; Claude Code AI does everything.** The user types a skill command (or plain words) and never runs `npm` or `git` themselves. Do all terminal, Git and `gh` work yourself, and use `scripts/` as your own tools. Never answer with "run this command". Do it, or say what only the user can do (repo write access, the `BUFFER_API_KEY` secret, Buffer account connections, store contact details). When you add or change a user-facing capability, add or update its skill **and** its use cases in `docs/SKILLS.md`.
 - **All posts and reels are made through the skills only.** Start every content request with the matching create skill (`create-social-content` for posts, stories and reels, `create-social-poster`, `create-social-banner`): product photo + product + audience → per-platform deliverables → captions → QA → `monavi-brand-guardian` PASS → `open-content-pr`. Agents never render or edit creatives; fixes go back through the skills. No ad-hoc HTML, image edits or video encodes outside `scripts/render-*.ts`.
 - **Quality bar:** never upscale photos and never ship below platform size. The quality gate failing is a blocker. `--allow-lowres`/`--draft` renders are marked `draftOnly` and cannot be published (both the CLI and the CI refuse them).

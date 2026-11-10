@@ -8,6 +8,7 @@
   },
   "scripts": {
     "doctor": "node scripts/doctor.ts",
+    "sync:antigravity": "node scripts/sync-antigravity.ts",
     "render:post": "node scripts/render-post.ts",
     "render:reel": "node scripts/render-reel.ts",
     "check:media": "node scripts/check-media.ts",

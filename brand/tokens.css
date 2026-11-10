@@ -1,0 +1,70 @@
+/* Monavi Collection — design tokens for HTML templates.
+   Mirrors brand/brand.json. Fonts are local so renders are offline and repeatable. */
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("./fonts/PlayfairDisplay-Variable.ttf") format("truetype");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url("./fonts/PlayfairDisplay-Italic-Variable.ttf") format("truetype");
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: block;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./fonts/Montserrat-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./fonts/Montserrat-Italic-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: block;
+}
+
+:root {
+  /* Core palette */
+  --ivory: #faf9f6;
+  --charcoal: #1f1f1f;
+  --rose: #d9a5a8;
+  --sage: #8a987a;
+  --beige: #dcc8b1;
+
+  /* Campaign palette — photo-led festive/bridal/men's creatives only */
+  --maroon: #560e24;
+  --deep-wine: #330c0d;
+  --champagne: #f5cdb4;
+  --antique-gold: #8e5e38;
+  --midnight: #06111a;
+
+  /* Type */
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Montserrat", Arial, sans-serif;
+
+  /* Scale at 1080px width */
+  --fs-display: 112px;
+  --fs-headline: 84px;
+  --fs-subhead: 40px;
+  --fs-body: 30px;
+  --fs-attrs: 26px;
+  --fs-label: 22px;
+  --fs-cta: 30px;
+
+  --margin: 72px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  font-kerning: normal;
+}

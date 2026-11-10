@@ -1,0 +1,12 @@
+{
+  "slug": "example-festive-overlay",
+  "template": "overlay",
+  "theme": "festive",
+  "formats": ["ig-feed", "story"],
+  "photo": "brand/reference-posts/festive-collection-single.png",
+  "focus": "62% 40%",
+  "headline": "Festive\nCollection",
+  "subline": "New Styles | New Stories",
+  "cta": "Explore Now",
+  "badge": { "icon": "dress", "label": "Ladies Wear" }
+}

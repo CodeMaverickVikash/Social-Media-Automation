@@ -1,0 +1,12 @@
+{
+  "slug": "example-store-hours-card",
+  "template": "card",
+  "theme": "light",
+  "formats": ["ig-feed", "square", "story"],
+  "eyebrow": "Now Open",
+  "headline": "Visit Our\nNew Boutique.",
+  "subline": "Traditional Roots, Modern Grace",
+  "attrs": ["Bridal", "Festive", "Everyday"],
+  "cta": "Visit the Store",
+  "footnote": "Store address & timings go here"
+}

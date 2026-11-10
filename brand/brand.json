@@ -1,0 +1,117 @@
+{
+  "$comment": "Single source of truth for Monavi Collection brand tokens. Scripts and skills read this file. Edit here, not in templates.",
+  "name": "Monavi Collection",
+  "wordmark": "MONAVI",
+  "descriptor": "COLLECTION",
+  "tagline": "Wear Your Story",
+  "category": "Fashion boutique — bridal, festive, ladies, men's and kids wear",
+  "market": "India",
+
+  "contact": {
+    "$comment": "TODO: fill in before publishing. Never invent these.",
+    "instagram": "",
+    "facebook": "",
+    "whatsapp": "",
+    "phone": "",
+    "website": "",
+    "address": "",
+    "storeHours": ""
+  },
+
+  "collections": [
+    { "id": "bridal",  "name": "Bridal Collection", "items": ["Lehengas", "Sarees", "Gowns", "Custom Fits"], "mood": "timeless, regal, emotional" },
+    { "id": "festive", "name": "Festive Collection", "items": ["Lehengas", "Sarees", "Anarkalis", "Suits"], "mood": "warm, celebratory, rich" },
+    { "id": "ladies",  "name": "Ladies Wear", "items": ["Kurtis", "Anarkalis", "Suits", "Dresses"], "mood": "elegant, comfortable, timeless" },
+    { "id": "mens",    "name": "Men's Wear", "items": ["Shirts", "Kurtas", "Trousers", "Ethnic Sets"], "mood": "classic, modern, versatile" },
+    { "id": "kids",    "name": "Kids Wear", "items": ["Dresses", "Polos", "Shorts", "Ethnic Sets"], "mood": "playful, comfortable, everyday" }
+  ],
+
+  "colors": {
+    "core": {
+      "ivory":    { "hex": "#FAF9F6", "role": "Primary — main background, light logo colour on dark" },
+      "charcoal": { "hex": "#1F1F1F", "role": "Text — headlines, body, dark logo colour on light" },
+      "rose":     { "hex": "#D9A5A8", "role": "Accent — highlights, icons, soft fills, ladies/bridal" },
+      "sage":     { "hex": "#8A987A", "role": "Accent — highlights, icons, botanical motifs, men's/kids" },
+      "beige":    { "hex": "#DCC8B1", "role": "Background — secondary panels, borders, avatar ring" }
+    },
+    "campaign": {
+      "$comment": "Seen in approved campaign posters. Use only on photo-led festive/bridal creatives, never as the main UI colour.",
+      "maroon":     { "hex": "#560E24", "role": "Festive/bridal CTA pill on light imagery" },
+      "deepWine":   { "hex": "#330C0D", "role": "Festive gradient shadow behind text" },
+      "champagne":  { "hex": "#F5CDB4", "role": "Logo and headline on festive maroon imagery" },
+      "antiqueGold":{ "hex": "#8E5E38", "role": "Logo/ornament on warm light imagery" },
+      "midnight":   { "hex": "#06111A", "role": "Men's wear text panel" }
+    },
+    "notes": "The palette board PNG prints Sage as #8A9B7A; the official vector (brand/logo/svg/11_brand_color_palette_4K.svg) uses #8A987A. The vector is treated as authoritative."
+  },
+
+  "typography": {
+    "heading": { "family": "Playfair Display", "fallback": "Georgia, serif", "weights": [400, 500, 600, 700], "file": "fonts/PlayfairDisplay-Variable.ttf", "use": "Headlines, collection names, wordmark" },
+    "body":    { "family": "Montserrat", "fallback": "Arial, sans-serif", "weights": [400, 500, 600], "file": "fonts/Montserrat-Variable.ttf", "use": "Sub-lines, attribute rows, CTAs, small caps labels" },
+    "scale_at_1080w": {
+      "display":  { "size": 112, "lineHeight": 1.02, "weight": 400, "font": "heading" },
+      "headline": { "size": 84,  "lineHeight": 1.05, "weight": 400, "font": "heading" },
+      "subhead":  { "size": 40,  "lineHeight": 1.2,  "weight": 400, "font": "heading" },
+      "body":     { "size": 30,  "lineHeight": 1.4,  "weight": 400, "font": "body" },
+      "attrs":    { "size": 26,  "lineHeight": 1.3,  "weight": 500, "font": "body", "note": "Separated with ' | ', e.g. 'Elegant | Comfortable | Timeless'" },
+      "label":    { "size": 22,  "lineHeight": 1.2,  "weight": 500, "font": "body", "tracking": "0.32em", "case": "upper" },
+      "cta":      { "size": 30,  "lineHeight": 1,    "weight": 500, "font": "body" }
+    }
+  },
+
+  "logo": {
+    "construction": "4-point star above a Playfair Display Bold 'M' with a rising swoosh; wordmark MONAVI (Playfair 500, wide tracking), COLLECTION (Montserrat 500, very wide tracking), hairline rule, WEAR YOUR STORY (Montserrat 500).",
+    "variants": {
+      "stacked":    { "svg": "logo/svg/01_primary_logo_4K.svg", "png": "logo/png/01_primary_logo_4K.png", "use": "Default on posts, top-left or top-centre" },
+      "darkSquare": { "svg": "logo/svg/02_logo_dark_square_4K.svg", "png": "logo/png/02_logo_dark_square_4K.png", "use": "Reel end card on charcoal" },
+      "lightSquare":{ "svg": "logo/svg/03_logo_light_square_4K.svg", "png": "logo/png/03_logo_light_square_4K.png", "use": "Reel end card on ivory" },
+      "monogram":   { "svg": "logo/svg/04_logo_monogram_rectangle_4K.svg", "png": "logo/png/04_logo_monogram_rectangle_4K.png", "use": "Watermark, small corners, story stickers" },
+      "horizontal": { "svg": "logo/svg/05_logo_horizontal_banner_4K.svg", "png": "logo/png/05_logo_horizontal_banner_4K.png", "use": "Facebook cover, wide banners" },
+      "circleLight":{ "svg": "logo/svg/06_logo_circle_light_4K.svg", "png": "logo/png/06_logo_circle_light_4K.png", "use": "Stamps, highlight covers" },
+      "circleDark": { "svg": "logo/svg/07_logo_circle_dark_stamp_4K.svg", "png": "logo/png/07_logo_circle_dark_stamp_4K.png", "use": "Stamps, packaging-style seals" },
+      "appRose":    { "svg": "logo/svg/08_app_icon_rose_4K.svg", "png": "logo/png/08_app_icon_rose_4K.png", "use": "App icon" },
+      "appDark":    { "svg": "logo/svg/09_app_icon_dark_4K.svg", "png": "logo/png/09_app_icon_dark_4K.png", "use": "App icon" },
+      "avatar":     { "svg": "logo/svg/10_social_avatar_circle_4K.svg", "png": "logo/png/10_social_avatar_circle_4K.png", "use": "Profile picture on Instagram, Facebook, WhatsApp Business" }
+    },
+    "colors": "Charcoal on light, Ivory on dark, Champagne/Antique Gold on warm festive photography only.",
+    "clearSpace": "At least the height of the 4-point star on every side; never crowd with text or crop.",
+    "minSize": { "web": "20px wide", "print": "8mm wide" },
+    "dont": [
+      "Recolour outside the listed logo colours",
+      "Stretch, skew, rotate, outline, or add drop shadows",
+      "Place on busy photo areas without a gradient scrim",
+      "Re-type the wordmark in another font",
+      "Use the PNG with its baked ivory background over a photo — use the inline SVG lockup or the transparent renderer logo"
+    ]
+  },
+
+  "imagery": {
+    "style": "Warm, softly lit editorial fashion photography. Indian heritage settings — arches, jharokhas, lanterns, marigolds, palms. Models in natural, confident poses.",
+    "palette": "Warm ivory/peach light; festive uses deep maroon and gold; men's uses cool navy/stone; kids uses bright daylight greens and yellows.",
+    "patterns": ["elements/04_pattern_rose.png", "elements/05_pattern_sage.png", "elements/06_texture_beige.png", "elements/09_brand_pattern_wide_digital.png"],
+    "icons": "Thin line icons, rounded caps, ~2px at 48px, charcoal or ivory (see elements/03_icons_ui_elements.png)."
+  },
+
+  "layout": {
+    "margin_px_at_1080w": 72,
+    "ctaPill": { "radius": 999, "paddingX": 44, "paddingY": 22, "arrow": "→" },
+    "attrSeparator": " | ",
+    "categoryBadge": "Line icon + vertical hairline + category name, bottom-left"
+  },
+
+  "formats": {
+    "$comment": "Delivery sizes in px. Renders are supersampled at 2x and downscaled to these exact sizes.",
+    "ig-feed":     { "w": 1080, "h": 1350, "ratio": "4:5",  "platforms": ["instagram", "facebook"], "use": "Default feed post" },
+    "ig-feed-3x4": { "w": 1080, "h": 1440, "ratio": "3:4",  "platforms": ["instagram"], "use": "Matches the current Instagram profile grid" },
+    "square":      { "w": 1080, "h": 1080, "ratio": "1:1",  "platforms": ["instagram", "facebook", "whatsapp"], "use": "Carousels, WhatsApp catalogue/broadcast" },
+    "story":       { "w": 1080, "h": 1920, "ratio": "9:16", "platforms": ["instagram", "facebook", "whatsapp"], "use": "Stories, WhatsApp Status, reel covers", "safe": { "top": 250, "bottom": 340, "side": 72 } },
+    "fb-landscape":{ "w": 1200, "h": 630,  "ratio": "1.91:1", "platforms": ["facebook"], "use": "Link-style posts, events" }
+  },
+
+  "video": {
+    "w": 1080, "h": 1920, "fps": 30,
+    "codec": "H.264 High, yuv420p, CRF 16, maxrate 20 Mbps, AAC 192 kbps 48 kHz, +faststart",
+    "durations": { "reel": "7–30s (sweet spot 9–15s)", "story": "≤15s per card", "whatsappStatus": "≤60s" },
+    "safe": { "top": 250, "bottom": 400, "side": 72, "note": "Bottom zone is covered by caption, audio and action buttons on Reels" }
+  }
+}

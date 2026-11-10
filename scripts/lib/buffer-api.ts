@@ -16,7 +16,7 @@ export const isBufferPlatform = (p: string): boolean => (BUFFER_PLATFORMS as rea
 
 export async function gql<T>(query: string, variables: Record<string, unknown> = {}, retry = true): Promise<T> {
   const key = process.env.BUFFER_API_KEY;
-  if (!key) throw new Error('BUFFER_API_KEY is not set. Create one at https://publish.buffer.com/settings/api (locally: .env, CI: repository secret)');
+  if (!key) throw new Error('BUFFER_API_KEY is not set. It lives only as a GitHub repository secret (Settings → Secrets and variables → Actions). For a rare local run, set it in the shell for that session only: PowerShell  $env:BUFFER_API_KEY="..."');
   const res = await fetch(API, {
     method: 'POST',
     headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },

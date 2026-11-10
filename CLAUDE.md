@@ -9,7 +9,7 @@ Creates on-brand posts, stories and reels for **Monavi Collection** (family fash
 - `assets/photos/<slug>/`: imported product photos · `assets/audio/`: licensed music
 - `scripts/`: TypeScript run directly by Node ≥ 22.18 (type stripping, no build step)
   - `import-photo.ts`, `render-post.ts`, `render-reel.ts`, `check-media.ts`, `publish-plan.ts`, `buffer.ts`
-  - `lib/` (brand, quality, output, ffmpeg, buffer-api, media-host) · `templates/` (post.ts: overlay/arch/split/card · reel.ts)
+  - `lib/` (brand, quality, output, ffmpeg, buffer-api, media-url: jsDelivr links to committed files, since the repo is public) · `templates/` (post.ts: overlay/arch/split/card · reel.ts)
 - `output/<platform>/<slug>/`: delivery files + caption.txt (**committed** in content PRs) · `output/_masters/<slug>/`: manifests (committed), 2× PNG masters (ignored)
 - `.github/workflows/`: `content-check.yml` (PR validation + dry run) · `schedule-on-merge.yml` (Buffer scheduling)
 - `.claude/skills/`: `social-content` (entry point) → `monavi-brand`, `social-post`, `social-reel`, `social-caption`, `content-pr`, `buffer-publish`
@@ -23,9 +23,9 @@ npm run render:reel -- content/reels/<slug>.json [--draft]
 npm run check:media -- output/instagram/<slug>
 npm run plan -- validate content/schedule/<slug>.json
 npm run plan -- run --files content/schedule/<slug>.json --dry-run
-npm run buffer -- channels --save
 npm run typecheck
 ```
+Buffer channel ids: GitHub → Actions → "List Buffer channels" → commit the JSON to `config/buffer-channels.json`.
 
 ## Rules
 
@@ -33,5 +33,6 @@ npm run typecheck
 - **Quality bar:** never upscale photos and never ship below platform size. The quality gate failing is a blocker. `--allow-lowres`/`--draft` renders are marked `draftOnly` and cannot be published (both the CLI and the CI refuse them).
 - Scheduling happens on merge via GitHub Actions. Push and open PRs only after the user confirms. Never publish directly to Buffer without a dry run and the user's go-ahead.
 - Buffer `isAiGenerated` is never sent unless `--ai-disclosure` is passed.
+- No `.env` file. `BUFFER_API_KEY` lives only as a GitHub repository secret. Never write it to any file (the repo is public).
 - Never invent prices, offers, addresses or store hours (`brand.json → contact` is the only source).
 - TypeScript must stay erasable-only (no `enum`, `namespace` or parameter properties), and imports use `.ts` extensions. Run `npm run typecheck` after edits.

@@ -2,16 +2,17 @@
 //
 //   npm run buffer -- channels [--save]
 //   npm run buffer -- post --slug <slug> --kind post|reel|story --platforms instagram,facebook \
-//        (--media-url <https url> ... | --host) [--queue | --at <ISO> | --now | --draft] [--first-comment "..."] [--dry-run]
+//        [--media-url <https url> ...] [--queue | --at <ISO> | --now | --draft] [--first-comment "..."] [--dry-run]
 //
-// --host uploads the matching file from output/<platform>/<slug>/ to R2 and uses its public URL.
+// Without --media-url, the committed file output/<platform>/<slug>/<file> is used via its public
+// jsDelivr URL (this repo is public). Commit + push the files first.
 import { writeFileSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { parseArgs } from './lib/brand.ts';
 import { OUTPUT, assertSlug } from './lib/output.ts';
 import { CHANNELS_FILE, KINDS, assertPublishable, buildPostInput, checkMediaUrl, createPost, isBufferPlatform, listChannels, loadChannelMap, logPublish } from './lib/buffer-api.ts';
 import type { Kind } from './lib/buffer-api.ts';
-import { hostMedia } from './lib/media-host.ts';
+import { assertCommitPushed, publicMediaUrl } from './lib/media-url.ts';
 
 const args = parseArgs(process.argv.slice(2));
 const cmd = args._[0];
@@ -49,11 +50,11 @@ async function post(): Promise<void> {
     if (!channelId) throw new Error(`No Buffer channel saved for ${platform}. Run: npm run buffer -- channels --save`);
 
     let mediaUrls = ([] as string[]).concat((args['media-url'] as string | string[] | undefined) ?? []);
-    if (args.host) {
-      const file = path.join(OUTPUT, platform, slug, DEFAULT_FILE[kind]);
-      mediaUrls = dryRun ? [`<public url of ${path.relative(OUTPUT, file)}>`] : [await hostMedia(file, slug)];
+    if (!mediaUrls.length) {
+      // Default: the committed file in this public repo, served by jsDelivr.
+      if (!dryRun) assertCommitPushed();
+      mediaUrls = [publicMediaUrl(path.join(OUTPUT, platform, slug, DEFAULT_FILE[kind]))];
     }
-    if (!mediaUrls.length) throw new Error('Provide --media-url <https url> or --host');
     if (!dryRun) for (const u of mediaUrls) await checkMediaUrl(u, kind);
 
     const input = buildPostInput({
@@ -75,6 +76,6 @@ async function post(): Promise<void> {
 if (cmd === 'channels') await channels();
 else if (cmd === 'post') await post();
 else {
-  console.error('Commands: channels [--save] | post --slug <slug> --kind post|reel|story --platforms instagram,facebook (--media-url <url> | --host) [...]');
+  console.error('Commands: channels [--save] | post --slug <slug> --kind post|reel|story --platforms instagram,facebook [--media-url <url>] [...]');
   process.exit(1);
 }

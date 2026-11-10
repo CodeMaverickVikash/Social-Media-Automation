@@ -81,7 +81,7 @@ Read each PNG. Check: text inside the safe zones (not in the top 250px, the bott
 ```bash
 npm run check:media -- output/instagram/<slug>
 ```
-Must pass: 1080×1920, h264, yuv420p, 30fps, AAC, faststart, 3–90s. Then use the `social-caption` skill (reel captions are short) and `buffer-publish` with `--kind reel`.
+Must pass: 1080×1920, h264, yuv420p, 30fps, AAC, faststart, 3–90s, **≤ 20 MB** (media is served from the public repo via jsDelivr, which caps files at 20 MB; a 30s reel is about 18 MB, so keep reels ≤ 30s). Then use the `social-caption` skill (reel captions are short) and `buffer-publish` with `--kind reel`.
 
 WhatsApp Status accepts clips up to 60s. Longer reels get split by WhatsApp.
 

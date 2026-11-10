@@ -7,13 +7,13 @@ description: Schedule or publish finished Monavi posts, stories and reels to Ins
 
 **The normal route is a PR.** Use the `content-pr` skill: when the PR merges to main, GitHub Actions schedules everything in Buffer. This skill covers the **local CLI**, used for one-time setup (`channels --save`), for urgent one-off posts the user explicitly wants without a PR, and for debugging.
 
-Script: `scripts/buffer.ts` (run it with `npm run buffer -- …`, which loads `.env`). Shared logic is in `scripts/lib/buffer-api.ts`. `--host` uploads the file from `output/<platform>/<slug>/` to Cloudflare R2 (`scripts/lib/media-host.ts`) instead of needing `--media-url`.
+Script: `scripts/buffer.ts` (run it with `npm run buffer -- …`). There is **no `.env` file**: the key lives only as the GitHub secret `BUFFER_API_KEY`. For a rare local run, the user sets it for that terminal session only (PowerShell `$env:BUFFER_API_KEY="..."`). Never write the key to any file. Shared logic is in `scripts/lib/buffer-api.ts`. Without `--media-url`, the CLI uses the committed file from `output/<platform>/<slug>/` through its public jsDelivr URL (`scripts/lib/media-url.ts`). That file must be committed **and pushed** first; the CLI checks this.
 
 ## Facts that shape this workflow
 
 - **API:** `https://api.buffer.com` (GraphQL, public beta). Auth: `Authorization: Bearer $BUFFER_API_KEY`. Create the key at https://publish.buffer.com/settings/api.
 - **Supported here:** Instagram and Facebook, as feed post, reel or story. **Buffer does not support WhatsApp.** WhatsApp files stay in `output/whatsapp/<slug>/` for the user to share by hand (Status, Business catalogue or broadcast list).
-- **Media must be a public, permanent https URL.** Buffer has no upload endpoint and fetches the file when it publishes. Signed or expiring links (S3 presigned, Google Drive or Dropbox share pages) fail silently. Use `--host` (uploads to the R2 public bucket configured in `.env`) or pass your own `--media-url`.
+- **Media must be a public, permanent https URL.** Buffer has no upload endpoint and fetches the file when it publishes. Signed or expiring links (S3 presigned, Google Drive or Dropbox share pages) fail silently. This repo is public, so committed files are served by jsDelivr pinned to a commit (permanent, correct content types, ≤ 20 MB per file). You can also pass your own `--media-url`.
 - **Draft renders are blocked:** anything rendered with `--allow-lowres` or `--draft` is refused for real publishing (`draftOnly` in its manifest).
 - **Rate limits (free plan):** 150 requests per 15 min. The script retries once on HTTP 429.
 - **Known Buffer bugs:** Instagram `firstComment` may not save through the API, so check it in Buffer after scheduling. API-created reels can show the type "reel" instead of "reels" when edited in Buffer's UI.
@@ -25,11 +25,10 @@ The script **never** sends Buffer's `isAiGenerated` flag. It is only added if `-
 ## Steps
 
 ### 0. One-time setup
-```bash
-cp .env.example .env        # then paste BUFFER_API_KEY
-npm run buffer -- channels --save   # writes config/buffer-channels.json (instagram/facebook channel ids)
-```
-If `channels` shows `[QUEUE PAUSED]`, tell the user. Posts will sit in the queue until they unpause it in Buffer.
+1. Add the GitHub secret `BUFFER_API_KEY` (repo → Settings → Secrets and variables → Actions).
+2. GitHub → Actions → **List Buffer channels** → Run workflow. Copy the JSON from the run summary into `config/buffer-channels.json` and commit it via a PR (channel ids are not secret).
+
+If the channel list shows `[QUEUE PAUSED]`, tell the user. Posts will sit in the queue until they unpause it in Buffer.
 
 ### 1. Pre-flight (all must pass)
 - `npm run check:media -- output/instagram/<slug> output/facebook/<slug>` passes.

@@ -12,7 +12,7 @@ Make on-brand **posts, stories and reels** for Instagram, Facebook and WhatsApp 
  └──────────────────────────────────────────────────────────────┘
           │  review creatives + captions + times in the PR
           ▼  merge to main
- GitHub Action → upload media (Cloudflare R2) → Buffer → Instagram + Facebook
+ GitHub Action → Buffer (media served from this public repo via jsDelivr) → Instagram + Facebook
                                        └─ WhatsApp files listed for manual sharing
 ```
 
@@ -101,30 +101,33 @@ Tips: send **original camera files** (not WhatsApp-forwarded or screenshot copie
 # Node.js ≥ 22.18 (24 recommended)
 npm install                       # also downloads ffmpeg
 npx playwright install chromium   # renderer
-cp .env.example .env              # add BUFFER_API_KEY (and R2 keys for local --host publishing)
-npm run buffer -- channels --save # writes config/buffer-channels.json; commit it
 ```
+No `.env` file is used. The Buffer API key lives **only** in GitHub (see below).
 
 ### Buffer
 1. Connect your Instagram (Business/Creator) and Facebook Page in Buffer.
 2. Create an API key: https://publish.buffer.com/settings/api
+3. Save it as the GitHub secret `BUFFER_API_KEY` (next section). Don't put it in any file.
+4. GitHub → **Actions → List Buffer channels → Run workflow**. Copy the JSON from the run summary into `config/buffer-channels.json` and commit it (channel ids are not secret). Re-run this whenever you connect a new account in Buffer.
 
-### Cloudflare R2 (public media hosting for Buffer)
-Buffer can only publish media from a **public URL**, so the Action uploads files to R2 first.
-1. Cloudflare dashboard → R2 → create a bucket (e.g. `monavi-social-media`).
-2. Bucket → Settings → enable **Public access** (r2.dev URL) or connect a custom domain.
-3. R2 → Manage API tokens → create a token with **Object Read & Write** on that bucket.
+### Media hosting: none needed (public repo)
+Buffer can only publish media from a **public URL**. Because this repository is public, the committed files are served through the **jsDelivr CDN**, pinned to the merge commit:
+```
+https://cdn.jsdelivr.net/gh/<owner>/<repo>@<commit>/output/instagram/<slug>/reel.mp4
+```
+These links are permanent, cached, and served with the correct `image/*` / `video/mp4` types.
+- The repo **must stay public**. If it goes private, Buffer can't fetch the media.
+- jsDelivr serves files up to **20 MB**. `check:media` enforces this; keep reels ≤ ~30s (typically 5–10 MB).
+- Don't delete or rewrite (force-push) commits that scheduled posts point to before those posts are published.
 
-### GitHub repository secrets
+### GitHub repository secret
 Settings → Secrets and variables → Actions → **New repository secret**:
 
 | Secret | Value |
 |---|---|
 | `BUFFER_API_KEY` | Buffer API key |
-| `R2_ACCOUNT_ID` | Cloudflare account id |
-| `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` | R2 API token keys |
-| `R2_BUCKET` | Bucket name |
-| `MEDIA_PUBLIC_BASE_URL` | e.g. `https://pub-xxxx.r2.dev` or `https://media.yourdomain.com` |
+
+Secrets stay private in a public repo: values are encrypted, never shown, masked as `***` in logs, and not given to PRs from forks. Only give write access to people you trust, and protect `main`.
 
 Recommended: protect `main` (require a PR and a passing **Content check**).
 
@@ -146,7 +149,7 @@ Recommended: protect `main` (require a PR and a passing **Content check**).
    Leave out `at` to use the next free Buffer queue slot. Add `"draft": true` to create a Buffer draft instead.
 2. **PR opened** → the **Content check** action validates the plan: files, captions, media QA, future times, no draft renders, channels configured. It then shows a dry run of what will be scheduled.
 3. **Review** the images and video in the PR's *Files changed* tab.
-4. **Merge** → the **Schedule content in Buffer** action uploads the media, creates the Buffer posts, and lists the WhatsApp files to share by hand in the run summary.
+4. **Merge** → the **Schedule content in Buffer** action creates the Buffer posts (media links point to the merged commit) and lists the WhatsApp files to share by hand in the run summary.
 
 Important:
 - **Plans are immutable once merged.** Only *new* plan files are scheduled, so edits never create duplicate posts. To change a scheduled post, edit it in Buffer.
@@ -166,7 +169,7 @@ npm run check:media  -- output/instagram/<slug>             # QA delivered files
 npm run plan -- validate content/schedule/<slug>.json       # validate a schedule plan
 npm run plan -- run --files content/schedule/<slug>.json --dry-run
 npm run buffer -- channels [--save]                         # list / save Buffer channels
-npm run buffer -- post --slug <slug> --kind post --platforms instagram --host --dry-run   # one-off
+npm run buffer -- post --slug <slug> --kind post --platforms instagram --dry-run   # one-off (files must be pushed)
 npm run typecheck
 ```
 

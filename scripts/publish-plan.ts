@@ -14,7 +14,7 @@ import { ROOT, parseArgs } from './lib/brand.ts';
 import { OUTPUT, PLATFORMS, assertSlug } from './lib/output.ts';
 import { KINDS, assertPublishable, buildPostInput, checkMediaUrl, createPost, isBufferPlatform, loadChannelMap, logPublish, readCaption } from './lib/buffer-api.ts';
 import type { Kind } from './lib/buffer-api.ts';
-import { hostMedia } from './lib/media-host.ts';
+import { publicMediaUrl } from './lib/media-url.ts';
 
 interface PlanItem {
   kind: Kind;
@@ -63,7 +63,7 @@ function validatePlan(file: string): string[] {
       if (!existsSync(media)) errors.push(`${where}: missing ${relPath(media)}`);
       else mediaFiles.add(media);
       try { readCaption(p, slug); } catch (e) { errors.push(`${where}: ${(e as Error).message}`); }
-      if (isBufferPlatform(p) && !channelMap[p]?.id) errors.push(`${where}: no Buffer channel for ${p} in config/buffer-channels.json (run: npm run buffer -- channels --save, then commit)`);
+      if (isBufferPlatform(p) && !channelMap[p]?.id) errors.push(`${where}: no Buffer channel for ${p} in config/buffer-channels.json (run GitHub → Actions → "List Buffer channels", then commit the JSON)`);
     }
     if (it.at !== undefined) {
       if (!/([+-]\d{2}:\d{2}|Z)$/.test(it.at)) errors.push(`${where}: "at" must include a timezone offset, e.g. 2026-11-20T19:00:00+05:30`);
@@ -147,11 +147,12 @@ async function run(): Promise<void> {
         if (!isBufferPlatform(platform)) { manual.push(`\`${relPath(media)}\` + caption.txt (${it.kind}${it.at ? ` · ${it.at}` : ''})`); continue; }
         if (skip.has(key)) { rows.push(`| ${plan.slug} | ${platform} | ${it.kind} | ${it.at ?? 'queue'} | ⏭ skipped |`); continue; }
         try {
-          const url = dryRun ? `https://<media-host>/${plan.slug}/${path.basename(media)}` : await hostMedia(media, plan.slug);
+          // Media is served from this public repo (jsDelivr, pinned to the merge commit).
+          const url = publicMediaUrl(media);
           if (!dryRun) await checkMediaUrl(url, it.kind);
           const input = buildPostInput({ platform, slug: plan.slug, kind: it.kind, mediaUrls: [url], at: it.at, draft: it.draft, firstComment: it.firstComment },
             channelMap[platform]?.id ?? `<${platform}-channel-id>`);
-          if (dryRun) { rows.push(`| ${plan.slug} | ${platform} | ${it.kind} | ${it.at ?? 'queue'} | dry run |`); continue; }
+          if (dryRun) { rows.push(`| ${plan.slug} | ${platform} | ${it.kind} | ${it.at ?? 'queue'} | dry run · [media](${url}) |`); continue; }
           const res = await createPost(input);
           logPublish(plan.slug, { platform, kind: it.kind, source: 'github-action', bufferPostId: res.id, dueAt: res.dueAt, url });
           rows.push(`| ${plan.slug} | ${platform} | ${it.kind} | ${res.dueAt ?? 'queue'} | ✅ ${res.id}${it.draft ? ' (draft)' : ''} |`);

@@ -4,13 +4,14 @@
 //   node scripts/check-media.ts output/instagram/<slug>/reel.mp4 (a file)
 //
 // Images: exact platform size, sRGB, ≤ 8 MB, JPEG/PNG.
-// Video:  1080×1920, H.264 + yuv420p, 30fps, AAC, 3–90s, ≤ 300 MB, faststart.
+// Video:  1080×1920, H.264 + yuv420p, 30fps, AAC, 3–90s, ≤ 20 MB (jsDelivr serving limit), faststart.
 import { readdirSync, statSync, readFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
 import sharp from 'sharp';
 import { FFMPEG as ffmpegPath } from './lib/ffmpeg.ts';
 import { BRAND, formatKeys } from './lib/brand.ts';
+import { MAX_MEDIA_BYTES } from './lib/media-url.ts';
 
 const targets = process.argv.slice(2);
 if (!targets.length) { console.error('Usage: node scripts/check-media.ts <file-or-folder> [...]'); process.exit(1); }
@@ -51,7 +52,7 @@ for (const f of files) {
     if (!a) issues.push('no audio track (add licensed music or a silent track)');
     else if (a[1] !== 'aac') issues.push(`audio ${a[1]}, expected aac`);
     if (secs < 3 || secs > 90) issues.push(`duration ${secs.toFixed(1)}s outside 3–90s`);
-    if (bytes > 300 * 1024 * 1024) issues.push(`${(bytes / 1e6).toFixed(0)} MB > 300 MB`);
+    if (bytes > MAX_MEDIA_BYTES) issues.push(`${(bytes / 1e6).toFixed(1)} MB > 20 MB (jsDelivr limit for serving from GitHub) — shorten the reel`);
     const head = readFileSync(f).subarray(0, 64 * 1024).toString('latin1');
     if (head.indexOf('moov') === -1 || head.indexOf('moov') > head.indexOf('mdat')) issues.push('moov atom not at start (needs +faststart)');
     issues.length ? fail(f, issues.join('; ')) : ok(f, `1080x1920 h264 ${secs.toFixed(1)}s ${(bytes / 1e6).toFixed(1)} MB`);

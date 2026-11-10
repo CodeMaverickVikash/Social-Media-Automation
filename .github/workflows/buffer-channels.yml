@@ -1,0 +1,46 @@
+name: List Buffer channels
+
+# One-time setup (and whenever you connect a new account in Buffer):
+# reads your Buffer channels with the BUFFER_API_KEY secret and produces the content for
+# config/buffer-channels.json. Channel ids are not secret — commit the file via a PR.
+# The API key itself is never printed (GitHub masks secrets in logs).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  channels:
+    runs-on: ubuntu-latest
+    env:
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Read channels from Buffer
+        run: node scripts/buffer.ts channels --save
+
+      - name: Show config/buffer-channels.json
+        run: |
+          {
+            echo "## config/buffer-channels.json"
+            echo ""
+            echo "Copy this into \`config/buffer-channels.json\` and commit it (or download the artifact below)."
+            echo ""
+            echo '```json'
+            cat config/buffer-channels.json
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: buffer-channels
+          path: config/buffer-channels.json

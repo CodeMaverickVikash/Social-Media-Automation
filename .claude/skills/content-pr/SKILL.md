@@ -8,7 +8,7 @@ description: Package finished Monavi content (briefs, photos, rendered posts/ree
 ```
 content/<kind>/<slug>.json ─┐
 assets/photos/<slug>/       ├─ PR (review creatives + captions + times) ─ merge to main ─▶ GitHub Action
-output/<platform>/<slug>/   │                                                           ├─ upload media to R2 (public URLs)
+output/<platform>/<slug>/   │                                                           ├─ media URLs = jsDelivr links to the merge commit (public repo)
 content/schedule/<slug>.json┘                                                           ├─ create Buffer posts (IG + FB)
                                                                                         └─ list WhatsApp files to share manually
 ```
@@ -21,7 +21,7 @@ content/schedule/<slug>.json┘                                                 
 ### 1. Pre-flight
 - The content was made through `social-content` (renders + captions exist and QA passes).
 - No `--allow-lowres` or `--draft` renders. The PR check rejects them anyway.
-- `config/buffer-channels.json` exists. If not, run `npm run buffer -- channels --save` once and include it in the PR. Channel ids are not secret.
+- `config/buffer-channels.json` exists. If not, ask the user to run GitHub → Actions → **List Buffer channels**, then save the JSON from the run summary to that file and include it in the PR. Channel ids are not secret.
 
 ### 2. Write the schedule plan: `content/schedule/<slug>.json`
 
@@ -88,8 +88,10 @@ Give the user the PR URL. Tell them: review the images in the PR's "Files change
 ## One-time repository setup (tell the user if missing)
 
 GitHub → Settings → Secrets and variables → Actions → **New repository secret**:
-`BUFFER_API_KEY`, `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_BUCKET`, `MEDIA_PUBLIC_BASE_URL`.
+`BUFFER_API_KEY` (the only secret needed).
 Recommended: protect `main` (require a PR and a passing **Content check**).
+
+Media hosting: the repo is **public**, so Buffer fetches the committed files through jsDelivr (`https://cdn.jsdelivr.net/gh/<owner>/<repo>@<merge-sha>/output/...`). The repo must stay public, each file must be ≤ 20 MB (enforced by `check:media`), and merged commits must not be force-pushed away before their posts go out.
 
 ## If a scheduled run partly fails
 The summary marks ❌ items. Fix the cause (e.g. a secret), then go to Actions → *Schedule content in Buffer* → **Run workflow**. Set `plans` to the plan path, `skip` to the items that already succeeded (e.g. `post:instagram,post:facebook`), and untick dry run.

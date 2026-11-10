@@ -1,0 +1,13 @@
+{
+  "slug": "festive-collection-launch-2026-11",
+  "theme": "festive",
+  "scenes": [
+    { "photo": "brand/reference-posts/festive-collection-duo.png", "duration": 3, "focus": "60% 40%", "motion": "zoom-in",
+      "eyebrow": "New Arrivals", "headline": "Festive\nCollection", "subline": "New Styles | New Stories" },
+    { "photo": "brand/reference-posts/festive-collection-single.png", "duration": 3, "focus": "62% 40%", "motion": "pan-left",
+      "headline": "Made for\nmoments that\nbecome memories.", "attrs": ["Lehengas", "Sarees", "Anarkalis"] }
+  ],
+  "endCard": { "duration": 2.6, "headline": "Wear Your Story", "cta": "Visit the Store", "line": "DM us to book a styling session", "dark": true },
+  "coverAt": 1.4,
+  "platforms": ["instagram", "facebook", "whatsapp"]
+}

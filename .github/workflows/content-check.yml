@@ -1,0 +1,44 @@
+name: Content check
+
+# Runs on every PR into main: type-checks the tooling, validates new schedule plans
+# (files, captions, media QA, timing, no draft renders) and shows a Buffer dry run.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Validate schedule plans added in this PR
+        env:
+          BASE_REF: origin/${{ github.base_ref }}
+        run: node scripts/publish-plan.ts validate --base "$BASE_REF"
+
+      - name: Buffer dry run (what will be scheduled on merge)
+        env:
+          BASE_REF: origin/${{ github.base_ref }}
+        run: |
+          files=$(git diff --diff-filter=A --name-only "$BASE_REF"...HEAD -- content/schedule/ | paste -sd, -)
+          if [ -n "$files" ]; then
+            node scripts/publish-plan.ts run --files "$files" --dry-run
+          else
+            echo "No new schedule plans in this PR."
+          fi

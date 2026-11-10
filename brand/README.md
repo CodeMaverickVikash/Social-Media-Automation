@@ -56,7 +56,7 @@ At most two fonts. No script, display or system fonts. Never bold Playfair headl
 - Default placement on posts: **top-left** at ~300px wide (on a 1080 canvas), or top-centre on symmetric layouts.
 - Colour: Charcoal on light, Ivory on dark, Champagne on festive maroon photography.
 - Clear space: at least the star's height on every side. Minimum size: 20px web, 8mm print.
-- On photos, use the **transparent inline lockup** the renderer generates (`scripts/lib/logo.mjs`). Do not use the PNGs, which have an ivory background baked in.
+- On photos, use the **transparent inline lockup** the renderer generates (`logoSvg()` in `scripts/lib/brand.ts`). Do not use the PNGs, which have an ivory background baked in.
 - Never stretch, rotate, outline, shadow, recolour, or re-type the logo.
 
 ## 5. Layout DNA (from `reference-posts/`)
@@ -79,7 +79,8 @@ Three proven compositions:
 
 - Warm, soft, editorial light. Heritage settings: arches, jharokhas, lanterns, marigolds, palms.
 - Real garments are the hero. Never distort embroidery or colour of the product.
-- **Resolution:** source photos must be at least as large as the area they fill at **2×** (e.g. ≥1300×2700 px for a full-bleed 4:5 post). The renderer warns at 1×–2× and fails below 1×. See `scripts/check-media.mjs`.
+- **Resolution:** source photos must cover the area they fill at **1× minimum, 2× ideal**. For a full-bleed 4:5 post that means ≥1080×1350 px, ideally 2160×2700. Reels add 1.08× for the zoom. The renderer fails below 1× and warns between 1× and 2× (`scripts/lib/quality.ts`). Finished files are checked by `scripts/check-media.ts`.
+- The pattern PNGs in `elements/` are only 748px wide. Use them as reference only. Templates draw botanicals as vectors (`sprigSvg()`) so they stay crisp.
 
 ## 7. Platform formats
 

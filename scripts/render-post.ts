@@ -63,7 +63,9 @@ try {
       .jpeg({ quality: 95, chromaSubsampling: '4:4:4', mozjpeg: true })
       .toFile(deliveryFile);
 
-    const delivered = distribute(deliveryFile, slug, f.platforms);
+    const targets = f.platforms.filter(p => !brief.platforms || brief.platforms.includes(p));
+    if (!targets.length) console.warn(`[platform:warn] ${f.key} suits ${f.platforms.join('/')} but brief.platforms is ${brief.platforms?.join('/')} — nothing delivered for this format.`);
+    const delivered = distribute(deliveryFile, slug, targets);
     results.push({ format: f.key, size: `${f.w}x${f.h}`, master: rel(masterFile), files: delivered.map(rel), photos: quality.items, warnings: quality.problems });
     console.log(`✓ ${f.key} ${f.w}×${f.h} → ${delivered.map(rel).join(', ')}`);
   }
@@ -72,4 +74,5 @@ try {
   cleanBuild(slug);
 }
 
-writeManifest(slug, 'post', { brief: rel(path.resolve(briefPath)), renderedAt: new Date().toISOString(), outputs: results });
+// draftOnly: rendered with the low-res override — buffer.ts refuses to publish it.
+writeManifest(slug, 'post', { brief: rel(path.resolve(briefPath)), renderedAt: new Date().toISOString(), draftOnly: !strict, outputs: results });

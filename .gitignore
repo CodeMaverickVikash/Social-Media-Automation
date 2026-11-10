@@ -1,2 +1,11 @@
-node_modules
-output
+node_modules/
+.env
+*.log
+.DS_Store
+Thumbs.db
+
+# Rendered delivery files in output/<platform>/<slug>/ ARE committed (reviewed in the PR,
+# published on merge). Only scratch and heavy 2x masters stay local.
+output/_build/
+output/_masters/**/*.png
+output/_masters/**/publish-log.jsonl

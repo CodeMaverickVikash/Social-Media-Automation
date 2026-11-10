@@ -136,6 +136,8 @@ const files = [...distribute(mp4, slug, platforms), ...distribute(cover, slug, p
 const size = statSync(mp4).size;
 writeManifest(slug, 'reel', {
   brief: rel(path.resolve(briefPath)), renderedAt: new Date().toISOString(),
+  // Draft-only output (low-res override or 1x frames) — buffer.ts refuses to publish it.
+  draftOnly: !strict || SS < 2,
   duration, fps, frames: totalFrames, supersample: SS, bytes: size,
   coverThumbnailOffsetMs: Math.round(coverAt * 1000),
   audio: audio ? rel(audio) : 'silent', files: files.map(rel),

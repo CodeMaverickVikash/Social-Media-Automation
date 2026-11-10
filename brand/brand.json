@@ -26,6 +26,23 @@
     { "id": "kids",    "name": "Kids Wear", "items": ["Dresses", "Polos", "Shorts", "Ethnic Sets"], "mood": "playful, comfortable, everyday" }
   ],
 
+  "products": {
+    "$comment": "Product catalogue used by the skills: the user names a product + who it's for, the skill looks it up here. Add new products freely. template = default for a plain product shot; model photos use 'overlay'.",
+    "kurta-pajama":   { "name": "Kurta Pajama",    "for": "men",   "collection": "mens",    "theme": "mens",    "festiveTheme": "festive", "icon": "shirt", "template": "arch", "attrs": ["Classic", "Comfortable", "Festive-ready"], "hashtags": ["#KurtaPajama", "#MensEthnicWear", "#Kurta", "#MensFashion"] },
+    "sherwani":       { "name": "Sherwani",        "for": "men",   "collection": "bridal",  "theme": "festive", "icon": "shirt", "template": "arch", "attrs": ["Regal", "Tailored", "Wedding-ready"], "hashtags": ["#Sherwani", "#GroomWear", "#WeddingSeason", "#MensEthnicWear"] },
+    "nehru-jacket":   { "name": "Nehru Jacket",    "for": "men",   "collection": "mens",    "theme": "mens",    "icon": "shirt", "template": "arch", "attrs": ["Classic", "Sharp", "Versatile"], "hashtags": ["#NehruJacket", "#MensEthnicWear", "#MensFashion"] },
+    "mens-shirt":     { "name": "Shirt",           "for": "men",   "collection": "mens",    "theme": "mens",    "icon": "shirt", "template": "split", "attrs": ["Classic", "Modern", "Versatile"], "hashtags": ["#MensWear", "#MensFashion", "#SmartCasual"] },
+    "lehenga":        { "name": "Lehenga",         "for": "women", "collection": "bridal",  "theme": "festive", "icon": "lotus", "template": "arch", "attrs": ["Timeless", "Handcrafted look", "Celebration-ready"], "hashtags": ["#Lehenga", "#BridalLehenga", "#BridalWear", "#WeddingSeason"] },
+    "saree":          { "name": "Saree",           "for": "women", "collection": "festive", "theme": "festive", "icon": "dress", "template": "arch", "attrs": ["Graceful", "Timeless", "Elegant"], "hashtags": ["#Saree", "#SareeLove", "#EthnicWear", "#FestiveWear"] },
+    "anarkali":       { "name": "Anarkali",        "for": "women", "collection": "festive", "theme": "festive", "icon": "dress", "template": "arch", "attrs": ["Elegant", "Flowing", "Festive"], "hashtags": ["#Anarkali", "#FestiveWear", "#EthnicWear"] },
+    "kurti":          { "name": "Kurti",           "for": "women", "collection": "ladies",  "theme": "ladies",  "icon": "dress", "template": "arch", "attrs": ["Elegant", "Comfortable", "Timeless"], "hashtags": ["#Kurti", "#EthnicFashion", "#WomensFashion"] },
+    "salwar-suit":    { "name": "Salwar Suit",     "for": "women", "collection": "ladies",  "theme": "ladies",  "icon": "dress", "template": "arch", "attrs": ["Elegant", "Comfortable", "Everyday"], "hashtags": ["#SalwarSuit", "#EthnicWear", "#WomensFashion"] },
+    "gown":           { "name": "Gown",            "for": "women", "collection": "bridal",  "theme": "ladies",  "icon": "dress", "template": "arch", "attrs": ["Graceful", "Statement", "Evening-ready"], "hashtags": ["#Gown", "#PartyWear", "#EveningWear"] },
+    "kids-ethnic-set":{ "name": "Kids Ethnic Set", "for": "kids",  "collection": "kids",    "theme": "kids",    "icon": "kids",  "template": "arch", "attrs": ["Comfortable", "Festive", "Adorable"], "hashtags": ["#KidsWear", "#KidsEthnicWear", "#LittleStyles"] },
+    "kids-kurta-pajama":{ "name": "Kids Kurta Pajama", "for": "kids", "collection": "kids", "theme": "kids",    "icon": "kids",  "template": "arch", "attrs": ["Comfortable", "Festive", "Smart"], "hashtags": ["#KidsKurta", "#KidsWear", "#LittleStyles"] },
+    "kids-frock":     { "name": "Frock",           "for": "kids",  "collection": "kids",    "theme": "kids",    "icon": "kids",  "template": "arch", "attrs": ["Playful", "Comfortable", "Everyday"], "hashtags": ["#KidsFrock", "#KidsWear", "#LittleStyles"] }
+  },
+
   "colors": {
     "core": {
       "ivory":    { "hex": "#FAF9F6", "role": "Primary — main background, light logo colour on dark" },

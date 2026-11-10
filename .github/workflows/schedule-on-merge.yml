@@ -1,0 +1,71 @@
+name: Schedule content in Buffer
+
+# When a content PR is merged into main, every schedule plan ADDED by that push
+# (content/schedule/<slug>.json) is sent to Buffer for Instagram + Facebook.
+# Media is uploaded to Cloudflare R2 first (Buffer needs public URLs).
+# WhatsApp items are listed in the run summary for manual sharing.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/schedule/**'
+  workflow_dispatch:
+    inputs:
+      plans:
+        description: 'Plan files, comma-separated (e.g. content/schedule/<slug>.json)'
+        required: true
+      skip:
+        description: 'Items to skip, e.g. post:instagram,reel:facebook (use after a partial failure)'
+        required: false
+        default: ''
+      dry_run:
+        description: 'Dry run only'
+        type: boolean
+        default: true
+
+# Never run two schedulers at once (avoids duplicate posts).
+concurrency:
+  group: buffer-schedule
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  schedule:
+    runs-on: ubuntu-latest
+    env:
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET: ${{ secrets.R2_BUCKET }}
+      MEDIA_PUBLIC_BASE_URL: ${{ secrets.MEDIA_PUBLIC_BASE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Schedule plans added by this merge
+        if: github.event_name == 'push'
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+        run: node scripts/publish-plan.ts run --since "$BEFORE_SHA"
+
+      - name: Schedule selected plans (manual run)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          PLANS: ${{ inputs.plans }}
+          SKIP: ${{ inputs.skip }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          extra=""
+          if [ "$DRY_RUN" = "true" ]; then extra="--dry-run"; fi
+          node scripts/publish-plan.ts run --files "$PLANS" --skip "$SKIP" $extra

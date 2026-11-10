@@ -5,13 +5,15 @@ import { ROOT, esc, lines, fileUrl, iconSvg, logoSvg, sprigSvg, theme, resolvePa
 import type { Format, Theme } from '../lib/brand.ts';
 import path from 'node:path';
 
-export type PostTemplate = 'overlay' | 'split' | 'card';
+export type PostTemplate = 'overlay' | 'split' | 'card' | 'arch';
 
 export interface PostBrief {
   slug: string;
   template: PostTemplate;
   theme?: string;
   formats?: string[];
+  /** Limit which platform folders receive files (default: every platform the format suits) */
+  platforms?: string[];
   /** Local path (relative to repo root) to a high-resolution photo */
   photo?: string;
   /** CSS object-position for the photo, e.g. "70% 30%" */
@@ -200,4 +202,47 @@ function card(b: PostBrief, f: Format): string {
     </div>`);
 }
 
-export const POST_TEMPLATES: Record<PostTemplate, (b: PostBrief, f: Format) => string> = { overlay, split, card };
+// ---------------------------------------------------------------- arch (product showcase)
+// For product-only photos (hanger, mannequin, flat lay, plain backdrop): the photo sits in a
+// heritage arch window on a calm panel, copy centred underneath.
+function arch(b: PostBrief, f: Format): string {
+  const t = theme(b.theme ?? 'light');
+  const light = ['light', 'ladies', 'kids', 'sage'].includes(b.theme ?? 'light');
+  const bg = light ? '#FAF9F6' : t.panel;
+  const archW = f.h <= 1080 ? 560 : f.h >= 1920 ? 820 : 680;
+  const css = `
+    body { background: ${bg}; }
+    .sprig { position: absolute; }
+    .sprig.br { right: -50px; bottom: -70px; }
+    .sprig.tl { left: -70px; top: -50px; transform: rotate(180deg); }
+    .col { position: absolute; inset: var(--safe-top) var(--side) var(--safe-bottom); display: flex; flex-direction: column;
+           align-items: center; text-align: center; color: ${t.text}; }
+    .arch-wrap { flex: 1 1 auto; min-height: 0; width: ${archW}px; margin: 30px 0 34px; position: relative; }
+    .arch { position: absolute; inset: 0; border-radius: ${archW / 2}px ${archW / 2}px 6px 6px; overflow: hidden; background: ${t.accent}; }
+    .arch img[data-photo] { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .arch-line { position: absolute; inset: -14px; border: 1.5px solid ${t.accent}; border-radius: ${archW / 2 + 14}px ${archW / 2 + 14}px 12px 12px; opacity: .8; }
+    .text { display: flex; flex-direction: column; align-items: center; flex: 0 0 auto; }
+    .headline { font-size: ${f.h <= 1080 ? 64 : 80}px; line-height: 1.04; }
+    .subline { font-size: 34px; margin-top: 16px; }
+    .attrs { margin-top: 18px; }
+    .cta { margin-top: 26px; }
+    .badge { position: absolute; left: var(--side); bottom: calc(var(--safe-bottom) - 6px); font-size: 22px; gap: 16px; }
+    .badge .rule { height: 38px; }`;
+  return page(f, css, `
+    <div class="sprig br">${sprigSvg(t.accent, 340, 0.55)}</div>
+    <div class="sprig tl">${sprigSvg(t.accent, 280, 0.4)}</div>
+    <div class="col">
+      ${logoSvg('compact', t.logo, f.h <= 1080 ? 170 : 210)}
+      <div class="arch-wrap"><div class="arch-line"></div><div class="arch">${photoTag(b)}</div></div>
+      <div class="text">
+        ${b.eyebrow ? `<div class="eyebrow">${esc(b.eyebrow)}</div>` : ''}
+        <div class="headline">${lines(b.headline)}</div>
+        ${b.subline ? `<div class="subline">${lines(b.subline)}</div>` : ''}
+        ${attrsHtml(b.attrs)}
+        ${ctaHtml(t, b.cta)}
+      </div>
+    </div>
+    ${f.h >= 1920 ? badgeHtml(t, b.badge) : ''}`);
+}
+
+export const POST_TEMPLATES: Record<PostTemplate, (b: PostBrief, f: Format) => string> = { overlay, split, card, arch };

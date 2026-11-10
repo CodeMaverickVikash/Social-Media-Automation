@@ -90,7 +90,8 @@ Three proven compositions:
 | `ig-feed-3x4` | 1080×1440 (3:4) | IG grid-native portrait |
 | `square` | 1080×1080 | Carousels, WhatsApp broadcast |
 | `story` | 1080×1920 (9:16) | Stories, WhatsApp Status, reel cover |
-| `fb-landscape` | 1200×630 | FB link/event posts |
+| `fb-landscape` | 1200×630 | FB link/event posts and event banners |
+| `fb-cover` | 1640×624 (2.63:1) | Facebook Page cover banner. Keep text in the centre 1280px. Set by hand in Facebook, not scheduled |
 | Reel / Short | 1080×1920, 30fps, H.264 | 9–15s sweet spot |
 
 Story and reel safe zones: keep text out of the top 250px, the bottom 340px (stories) or 400px (reels), and 72px at each side.

@@ -1,0 +1,91 @@
+---
+name: render-social-reel
+description: Create on-brand Monavi Reels / Shorts / WhatsApp Status videos (1080x1920 MP4, H.264) from photos with Ken Burns motion, animated text, crossfades and a logo end card — full quality, no pixelation. Use when asked to make a reel, short, video, story video, status video, slideshow or motion version of a post for Instagram, Facebook or WhatsApp.
+user-invocable: false
+---
+
+# Create a reel / short video
+
+Pipeline: **storyboard → brief JSON → `npm run render:reel` → frame review → QA → caption**.
+
+Each frame is a pure function of time. Frames are captured losslessly at 2× and Lanczos-downscaled. Encoding is H.264 High, CRF 16, yuv420p, BT.709, 30fps, AAC 48kHz, `+faststart`. Output: `reel.mp4` + `reel-cover.jpg` in each platform folder.
+
+## 0. Load the brand
+
+Follow the `monavi-brand-rules` skill. Read `brand/voice.md` for on-screen copy.
+
+## 1. Storyboard first (show it to the user before rendering a long one)
+
+| Length | Structure |
+|---|---|
+| 7–10s (default) | 2 scenes × 3s + 2.6s end card |
+| 12–16s | 3–4 scenes × 3–3.5s + end card |
+| ≤ 30s | Max for a product reel. Keep it tight |
+
+- Scene 1 hooks in the first second: the strongest photo plus a short headline ("Festive Collection").
+- One idea per scene: headline ≤ 3 short lines, or attrs (≤ 3 words).
+- End card: `Wear Your Story` + CTA (`Visit the Store`, `DM to Order`) + an optional line.
+- Motion variety: alternate `zoom-in`, `pan-left`, `zoom-out`, `pan-right`.
+
+## 2. Photos: resolution is checked
+
+Each scene photo must cover **1080×1920 at 1.08× zoom**:
+- **Required:** the photo, scaled to fill 1166×2074 (with cropping), is still ≥ that size. In practice that means a portrait photo of at least 1166×2074.
+- **Ideal:** ≥ 2333×4147 (full 2× supersampling).
+- Landscape photos need to be very wide (≥ 3687 px for a 16:9 photo). Prefer portrait shots.
+
+The renderer refuses photos below the required size. Ask the user for original camera files rather than using `--allow-lowres`. That flag is for internal drafts only and the result must never be published.
+
+## 3. Write the brief: `content/reels/<slug>.json`
+
+```json
+{
+  "slug": "festive-anarkali-reel-2026-11",
+  "theme": "festive",
+  "scenes": [
+    { "photo": "assets/photos/anarkali-1.jpg", "duration": 3, "focus": "55% 30%", "motion": "zoom-in",
+      "eyebrow": "New Arrivals", "headline": "Festive\nCollection", "subline": "New Styles | New Stories" },
+    { "photo": "assets/photos/anarkali-2.jpg", "duration": 3, "motion": "pan-left",
+      "headline": "Made for\nmoments that\nbecome memories.", "attrs": ["Lehengas", "Sarees", "Anarkalis"] }
+  ],
+  "endCard": { "duration": 2.6, "headline": "Wear Your Story", "cta": "Visit the Store", "line": "DM us to book a styling session", "dark": true },
+  "audio": "assets/audio/licensed-track.mp3",
+  "coverAt": 1.4,
+  "platforms": ["instagram", "facebook", "whatsapp"]
+}
+```
+
+- `theme`: same names as posts (`festive`, `ladies`, `light`, `dark`, `mens`, `kids`, `sage`).
+- `transition`: crossfade seconds (default 0.6).
+- `audio`: **only licensed music** that the user supplies (royalty-free or purchased). Without it, a silent AAC track is added. Instagram's in-app trending audio cannot be added through Buffer, so if the user wants that, tell them to add it in the app after publishing as a draft.
+- `coverAt`: the second used for `reel-cover.jpg` and Buffer's `thumbnailOffset`. Pick a moment when the headline is fully visible (≈1.2–1.6s in scene 1).
+- `endCard.dark`: `true` gives a charcoal card, `false` gives ivory.
+
+## 4. Render
+
+```bash
+npm run render:reel -- content/reels/<slug>.json            # final quality (2x frames)
+npm run render:reel -- content/reels/<slug>.json --draft    # 1x frames, faster preview
+```
+Expect about 4 seconds of rendering per second of video at final quality. Run longer reels in the background.
+
+## 5. Review frames (always)
+
+Pull frames from the hook, each scene, and the end card, then view them:
+```bash
+for t in 0.8 2.5 4.5 7.5; do node_modules/ffmpeg-static/ffmpeg.exe -v error -y -ss $t -i output/instagram/<slug>/reel.mp4 -frames:v 1 output/_build/frame-$t.png; done
+```
+Read each PNG. Check: text inside the safe zones (not in the top 250px, the bottom 400px, or the 72px sides), faces not covered, crisp embroidery, a readable scrim, and a clean end card. Delete `output/_build/` afterwards.
+
+## 6. QA and caption
+
+```bash
+npm run check:media -- output/instagram/<slug>
+```
+Must pass: 1080×1920, h264, yuv420p, 30fps, AAC, faststart, 3–90s, **≤ 20 MB** (media is served from the public repo via jsDelivr, which caps files at 20 MB; a 30s reel is about 18 MB, so keep reels ≤ 30s). Then use the `write-social-captions` skill (reel captions are short) and `publish-social-now` with `--kind reel`.
+
+WhatsApp Status accepts clips up to 60s. Longer reels get split by WhatsApp.
+
+## Changing the motion template
+
+The template lives in `scripts/templates/reel.ts`. `window.__seek(t)` must stay deterministic: no CSS transitions, `setTimeout` or `Date.now`. Every photo needs `<img data-photo>`. If you raise `MAX_ZOOM`, the resolution requirements above go up with it, so update this file too.

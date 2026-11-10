@@ -12,6 +12,7 @@ import { parseArgs, resolveFormat } from './lib/brand.ts';
 import { checkPhotoResolution, waitForAssets } from './lib/quality.ts';
 import { assertSlug, buildDir, cleanBuild, distribute, masterDir, rel, writeManifest } from './lib/output.ts';
 import { POST_TEMPLATES } from './templates/post.ts';
+import { aiPhotosIn } from './lib/ai-photo.ts';
 import type { PostBrief } from './templates/post.ts';
 
 const SUPERSAMPLE = 2;
@@ -39,6 +40,9 @@ const results: Record<string, unknown>[] = [];
 try {
   for (const key of formatKeys) {
     const f = resolveFormat(key.trim());
+    if (brief.template !== 'banner' && f.w / f.h >= 2.2) {
+      throw new Error(`Format ${f.key} (${f.ratio}) is a wide banner size. Use template "banner" for it, or pick a portrait/square format.`);
+    }
     const page = await browser.newPage({ viewport: { width: f.w, height: f.h }, deviceScaleFactor: SUPERSAMPLE });
     const htmlFile = path.join(build, `${f.key}.html`);
     writeFileSync(htmlFile, tpl(brief, f));
@@ -75,4 +79,7 @@ try {
 }
 
 // draftOnly: rendered with the low-res override — buffer.ts refuses to publish it.
-writeManifest(slug, 'post', { brief: rel(path.resolve(briefPath)), renderedAt: new Date().toISOString(), draftOnly: !strict, outputs: results });
+// aiPhotos: AI-generated source images (see lib/ai-photo.ts) — the publish step flags them.
+const aiPhotos = aiPhotosIn([brief.photo]);
+if (aiPhotos.length) console.log(`ℹ Uses AI-generated imagery (${aiPhotos.join(', ')}) — mood/campaign copy only.`);
+writeManifest(slug, 'post', { brief: rel(path.resolve(briefPath)), renderedAt: new Date().toISOString(), draftOnly: !strict, aiGenerated: aiPhotos.length > 0, aiPhotos, outputs: results });

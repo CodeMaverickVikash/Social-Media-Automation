@@ -56,7 +56,7 @@ export function loadChannelMap(): Record<string, { id: string; name?: string }> 
 
 export function readCaption(platform: string, slug: string): string {
   const f = path.join(OUTPUT, platform, slug, 'caption.txt');
-  if (!existsSync(f)) throw new Error(`Missing caption: output/${platform}/${slug}/caption.txt — write it with the social-caption skill.`);
+  if (!existsSync(f)) throw new Error(`Missing caption: output/${platform}/${slug}/caption.txt — write it with the write-social-captions skill.`);
   const text = readFileSync(f, 'utf8').trim();
   if (!text) throw new Error(`Empty caption: output/${platform}/${slug}/caption.txt`);
   if (platform === 'instagram' && text.length > 2200) throw new Error('Instagram caption exceeds 2,200 characters');
@@ -69,10 +69,17 @@ function readManifest(slug: string, kind: Kind): Record<string, unknown> | null 
   return existsSync(m) ? JSON.parse(readFileSync(m, 'utf8')) : null;
 }
 
+const aiNoticeShown = new Set<string>();
+
 /** Blocks publishing of anything not rendered by the pipeline, or rendered as a draft. */
 export function assertPublishable(slug: string, kind: Kind, dryRun = false): void {
   const m = readManifest(slug, kind);
   if (!m) throw new Error(`No render manifest for ${slug} (${kind}). Render it with the skills before publishing.`);
+  // Informational only — the AI label stays opt-in (aiDisclosure / --ai-disclosure).
+  if (m.aiGenerated && !aiNoticeShown.has(`${slug}:${kind}`)) {
+    aiNoticeShown.add(`${slug}:${kind}`);
+    console.warn(`ℹ ${slug} ${kind} uses AI-generated imagery. Meta asks creators to label photorealistic AI content (and may label it itself); set "aiDisclosure": true on the plan item (or --ai-disclosure) to send the label. Copy must stay mood/campaign-level.`);
+  }
   if (m.draftOnly) {
     const msg = `${slug} ${kind} was rendered as a DRAFT (--allow-lowres or --draft). Re-render at full quality before publishing.`;
     if (!dryRun) throw new Error(msg);

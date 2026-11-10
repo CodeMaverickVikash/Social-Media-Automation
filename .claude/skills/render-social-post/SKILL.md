@@ -1,0 +1,120 @@
+---
+name: render-social-post
+description: Create on-brand Monavi static images at full resolution from a JSON brief: posts, stories, squares, posters (overlay, arch, split or text-card layouts) and wide banners (Facebook cover and landscape). Use when asked to make, design or render a post, poster, creative, banner, cover, story, announcement, offer, festival greeting or store-update image for Instagram, Facebook or WhatsApp.
+user-invocable: false
+---
+
+# Create a static post
+
+Pipeline: **brief JSON → `npm run render:post` → visual review → QA → caption**. Everything renders at 2× and is Lanczos-downscaled to the exact platform size. The output never needs resizing by hand.
+
+## 0. Load the brand
+
+Read `brand/brand.json` and `brand/voice.md`, and follow the `monavi-brand-rules` skill rules. Look at the reference poster closest to the category in `brand/reference-posts/`.
+
+## 1. Gather inputs (ask only for what's missing)
+
+- **Product + who it's for:** e.g. "kurta pajama for men". Look it up in `brand/brand.json → products` for theme, icon, attrs and hashtags. Add a new entry if it's missing.
+- **Goal / occasion:** new arrivals, festive, bridal, offer, store info, greeting
+- **Photo:** the user's product photo, imported with `npm run import:photo -- "<path>" --slug <slug>` (it lands in `assets/photos/<slug>/` and the import reports which layouts it can fill). Never use a remote URL, and never take a low-res screenshot of Instagram.
+- **No photo? Claude draws it locally (mood / campaign posts only).** `npm run draw:product -- --slug <slug> --product <sherwani|kurta-pajama> [--occasion wedding|festive|everyday] [--garment "#hex"] [--accent "#hex"]`. This renders a vector fashion illustration (`scripts/templates/illustration.ts`) on a wide 3:2 stage for the `arch` template. There's no external service or API key; everything is made and edited locally. It is an illustration, not a photo: say so to the user and recommend a real photo for the photo-led reference look (`overlay`/`split`). AI garments are **not real stock**: keep the copy collection-level, with no claims about a specific piece, fabric, colour or price. Images the user made in another AI tool: `npm run import:photo -- "<path>" --slug <slug> --ai-generated`. The `.ai.json` sidecar marks the render as AI. Never delete it.
+- **Facts:** prices, dates, offer terms, address. Only use facts the user gives you or that appear in `brand.json → contact`.
+
+## 2. Pick a template and theme
+
+| Template | When | Default theme |
+|---|---|---|
+| `overlay` | A model wearing the outfit, full-bleed photo | `festive` |
+| `arch` | **Product-only photo** (hanger, mannequin, flat lay, plain backdrop): the photo sits in a heritage arch window, copy centred below | product's `theme` (`light`/`ladies`/`kids` give ivory; `mens`/`festive` give dark) |
+| `split` | Clean product or men's shot; text on a solid side panel | `mens` |
+| `card` | No photo: announcements, store hours, greetings, offers, quotes (**posters**) | `light` |
+| `banner` | **Wide formats only** (`fb-cover`, `fb-landscape`): text left, photo right (or sprigs with no photo) | `light` |
+
+Themes: `light`, `ladies` (maroon CTA), `dark`, `festive` (champagne on deep wine), `mens` (midnight panel, outline CTA), `kids`, `sage`.
+For festive/bridal photos with dark backgrounds use `festive`. For light, airy photos use `ladies`, `light` or `kids`.
+
+## 3. Check photo resolution before writing the brief
+
+```bash
+node -e "require('sharp')('assets/photos/x.jpg').metadata().then(m=>console.log(m.width+'x'+m.height))"
+```
+Minimum source size so nothing is upscaled (the 2× column gives the crispest result):
+
+| Placement | ≥ 1× (required) | 2× (ideal) |
+|---|---|---|
+| overlay, `ig-feed` 1080×1350 | covers 1080×1350 | 2160×2700 |
+| overlay, `story` 1080×1920 | covers 1080×1920 | 2160×3840 |
+| overlay, `square` | covers 1080×1080 | 2160×2160 |
+| split photo box (605 wide) | covers 605×1350 | 1210×2700 |
+| arch window, `ig-feed` | covers ~680×760 | ~1360×1520 |
+| arch window, `story` | covers ~820×1150 | ~1640×2300 |
+
+`npm run import:photo` prints this table for each photo with ✓/✗, so use its output.
+
+"Covers" means the photo, scaled to fill the box with cropping, is still ≥ the box. A landscape photo needs much more width for portrait boxes. If the photo is too small, tell the user and ask for the original camera file. Do not lower the quality bar.
+
+## 4. Write the brief: `content/posts/<slug>.json`
+
+Slug: kebab-case, `<category>-<topic>-<yyyy-mm>`, e.g. `festive-anarkali-launch-2026-11`.
+
+```json
+{
+  "slug": "festive-anarkali-launch-2026-11",
+  "template": "overlay",
+  "theme": "festive",
+  "formats": ["ig-feed", "story"],
+  "photo": "assets/photos/anarkali-maroon.jpg",
+  "focus": "60% 35%",
+  "eyebrow": "New Arrivals",
+  "headline": "Festive\nCollection",
+  "subline": "New Styles | New Stories",
+  "attrs": ["Elegant", "Comfortable", "Timeless"],
+  "cta": "Explore Now",
+  "badge": { "icon": "dress", "label": "Ladies Wear" }
+}
+```
+
+Field rules:
+- `headline`: 2–4 short lines, set explicitly with `\n`. Sentence case, and a full stop is fine. Never put emoji on the image.
+- Use `subline` **or** `attrs`, rarely both. `attrs` takes ≤ 4 single words.
+- `focus`: CSS object-position. Move it so the face and garment stay clear of the text side (text is on the left for `overlay`).
+- `formats`: `ig-feed` (default 4:5), `ig-feed-3x4`, `square`, `story`, `fb-landscape` (1200×630), `fb-cover` (1640×624, banner template only). Add `story` when it should also go to Stories or WhatsApp Status.
+- `badge.icon`: `dress` · `shirt` · `kids` · `lotus` (bridal) · `bag` · `sparkle` · `store`.
+- `card` only: `footnote` for address, timings or terms (`\n` allowed).
+- `banner` only: no `badge`. `fb-cover` is not scheduled by Buffer; the Page cover is set by hand in Facebook. Use `create-social-banner` for the whole flow.
+- `overlay` only: `"side": "bottom"` puts the text at the bottom instead of the left, for photos whose subject is centred.
+
+## 5. Render
+
+```bash
+npm run render:post -- content/posts/<slug>.json
+# override formats: npm run render:post -- content/posts/<slug>.json --formats ig-feed,square
+```
+
+- `[quality:error]` means the photo is too small. Stop and get a bigger photo. Only use `--allow-lowres` for an internal draft the user asked for, and say so.
+- `[layout:warn]` means the copy is too long. Shorten the headline or attrs and re-render.
+
+## 6. Review visually (always)
+
+Read every delivered JPG with the Read tool and run the `monavi-brand-rules` review checklist. Check faces and products aren't hidden behind text, the scrim keeps text readable, and nothing is cropped awkwardly. Adjust `focus`, `theme` or copy and re-render until it passes.
+
+## 7. QA and caption
+
+```bash
+npm run check:media -- output/instagram/<slug> output/facebook/<slug> output/whatsapp/<slug>
+```
+Then use the `write-social-captions` skill to write `caption.txt` into each platform folder. Schedule with `open-content-pr` (PR → merge → Buffer via GitHub Actions).
+
+## Output layout
+
+```
+output/instagram/<slug>/ig-feed.jpg, story.jpg, caption.txt
+output/facebook/<slug>/  ig-feed.jpg, story.jpg, caption.txt
+output/whatsapp/<slug>/  story.jpg, square.jpg, caption.txt
+output/_masters/<slug>/  *@2x.png masters, manifest-post.json
+```
+Which platform folder a format lands in comes from `brand.json → formats[].platforms`.
+
+## Adding or changing a template
+
+Templates are TypeScript functions in `scripts/templates/post.ts` that return HTML. Use only `tokens.css` variables and `brand.ts` helpers (`logoSvg`, `iconSvg`, `sprigSvg`, `theme`). Mark every photo `<img data-photo>` so the quality gate inspects it. Put text inside `.col > .text` so auto-fit works. Run `npm run typecheck`, then render all three examples in `content/posts/example-*.json` to check nothing regressed.

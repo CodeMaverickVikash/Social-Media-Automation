@@ -1,0 +1,88 @@
+{
+  "brief": "content/posts/kurta-pajama-festive-2026-11.json",
+  "renderedAt": "2026-11-10T08:05:42.377Z",
+  "draftOnly": false,
+  "aiGenerated": true,
+  "aiPhotos": [
+    "assets/photos/kurta-pajama-festive-2026-11/drawn-kurta-pajama-1.png"
+  ],
+  "outputs": [
+    {
+      "format": "ig-feed",
+      "size": "1080x1350",
+      "master": "output/_masters/kurta-pajama-festive-2026-11/ig-feed@2x.png",
+      "files": [
+        "output/instagram/kurta-pajama-festive-2026-11/ig-feed.jpg",
+        "output/facebook/kurta-pajama-festive-2026-11/ig-feed.jpg"
+      ],
+      "photos": [
+        {
+          "src": "drawn-kurta-pajama-1.png",
+          "natural": [
+            3240,
+            2160
+          ],
+          "box": [
+            680,
+            578
+          ],
+          "scale": 0.2677951388888889,
+          "sourcePxPerOutputPx": 3.73
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "format": "story",
+      "size": "1080x1920",
+      "master": "output/_masters/kurta-pajama-festive-2026-11/story@2x.png",
+      "files": [
+        "output/instagram/kurta-pajama-festive-2026-11/story.jpg",
+        "output/facebook/kurta-pajama-festive-2026-11/story.jpg",
+        "output/whatsapp/kurta-pajama-festive-2026-11/story.jpg"
+      ],
+      "photos": [
+        {
+          "src": "drawn-kurta-pajama-1.png",
+          "natural": [
+            3240,
+            2160
+          ],
+          "box": [
+            820,
+            702
+          ],
+          "scale": 0.3252025462962963,
+          "sourcePxPerOutputPx": 3.08
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "format": "square",
+      "size": "1080x1080",
+      "master": "output/_masters/kurta-pajama-festive-2026-11/square@2x.png",
+      "files": [
+        "output/instagram/kurta-pajama-festive-2026-11/square.jpg",
+        "output/facebook/kurta-pajama-festive-2026-11/square.jpg",
+        "output/whatsapp/kurta-pajama-festive-2026-11/square.jpg"
+      ],
+      "photos": [
+        {
+          "src": "drawn-kurta-pajama-1.png",
+          "natural": [
+            3240,
+            2160
+          ],
+          "box": [
+            560,
+            378
+          ],
+          "scale": 0.17486979166666666,
+          "sourcePxPerOutputPx": 5.72
+        }
+      ],
+      "warnings": []
+    }
+  ]
+}

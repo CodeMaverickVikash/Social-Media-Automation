@@ -1,0 +1,86 @@
+---
+name: clean-social-output
+description: Tidy up after making social content. Deletes rendered files that can be regenerated, removes content that is already merged and fully posted (through a cleanup PR, after the user agrees), deletes finished monthly plans and abandoned drafts, removes finished local branches, prunes stale GitHub refs, and reports leftovers (unused photos, broken briefs, PRs left open too long). Never deletes merged schedule plans, unmerged work or any caption in a live slug. Use when asked to clean, clear, tidy, reset or free up space, to remove old, merged, posted or finished content, branches, drafts or plans, or to check the content folder for problems.
+argument-hint: "(nothing needed) or: <slug>   e.g. kurta-pajama-festive-2026-11"
+---
+
+# Clean up
+
+Four kinds of leftovers build up: **files** in `output/`, **drafts and plans** in `content/`, **branches** in Git (one per piece), and **finished content**: pieces that were merged and have already gone out. All are safe to clean once the work is really finished. Preview first, then clean.
+
+## 1. Preview
+
+```bash
+npm run clean:output -- --dry-run            # add: --slug <slug> if the user named one
+npm run clean:content -- --dry-run           # add: --slug <slug> if the user named one
+npm run clean:branches -- --dry-run          # skip when the user named a slug
+npm run clean:merged                         # lists finished content (changes nothing); add: --slug <slug>
+```
+
+Tell the user in a few lines what will go (file count and MB, plan files, branch names, finished slugs) and what only needs their attention. Say that only finished work is removed.
+
+## 2. Confirm only when it matters
+
+- **Masters, `output/_build/`, finished monthly plans, finished local branches:** no confirmation needed.
+- **An uncommitted delivery file** (a `.jpg` or `.mp4` in `output/instagram|facebook|whatsapp/` that isn't in any PR yet): that render isn't saved anywhere else. Confirm first.
+- **Abandoned draft briefs** (reported as `draft`): list each with its age and ask. Only if the user agrees, run `npm run clean:content -- --drafts`.
+- **Finished content** (from `clean:merged`): always ask, because it changes `main`. See step 4.
+- Branches reported as **kept** (they have work that isn't in main): never delete them, even if asked to "delete everything". Explain, and offer `/edit-social-content` (to finish it) or cancelling that PR.
+
+## 3. Clean (local)
+
+Run the output, content and branch commands without `--dry-run` (with `--drafts` only after the user said yes).
+
+## 4. Remove finished content (merged and already posted)
+
+`clean:merged` only picks a slug when **all** of this is true: its content PR is merged and no new PR is open for it; its schedule plan has a fixed time on **every** item, none is a Buffer draft, and the last post was more than 7 days ago (a cover with no plan waits 30 days after the merge); and no other brief still uses its photos. Queue-slot items, drafts and anything recent are kept.
+
+What it removes: the slug's briefs, `assets/photos/<slug>/`, `output/<platform>/<slug>/` and `output/_masters/<slug>/`. **`content/schedule/<slug>.json` stays**: merged plans are immutable records that CI checks.
+
+Tell the user, before asking:
+- Git history keeps everything. Reverting the cleanup PR brings it all back.
+- Links Buffer already holds point at the old commit, so they keep working.
+- It can't be edited afterwards, and re-running its schedule from Actions would find no files. For a similar post, make a new one.
+- Cloning the repo still downloads the old files (history keeps them), so this tidies the project, it doesn't shrink the download.
+
+If the user agrees, make a cleanup PR **in a separate worktree**, so their current branch and unsaved work stay untouched. The scripts must already be on `main` (if not, `/setup-social-automation` can put them there first):
+
+```bash
+git fetch origin
+git worktree add <scratch dir>/cleanup-<yyyy-mm-dd> -b cleanup/<yyyy-mm-dd> origin/main
+cd <that worktree>
+node scripts/clean-merged.ts --apply            # stages the deletions; refuses unless on a cleanup/* branch with a clean tree
+git commit -m "cleanup: remove finished content (<slugs>)"
+git push -u origin cleanup/<yyyy-mm-dd>
+gh pr create --base main --title "Cleanup: remove finished content" --body-file <tmp body file>
+cd - && git worktree remove <that worktree>
+```
+
+This push and PR are not content, so **confirm with the user before pushing** (step 2). The PR body is a table of slugs removed (merged date, last post, MB) and slugs kept (with the reason), plus "Revert this PR to bring everything back". End the commit and the PR body with the attribution lines. Never merge it: the user does. After it is merged, `npm run clean:branches` removes the local `cleanup/` branch.
+
+## 5. Report
+
+One short summary: files deleted and MB freed, plans and drafts deleted, branches deleted, the cleanup PR link if one was opened, and what was kept and why. Then the **leftovers** the scripts reported, each with a suggestion and no action taken:
+
+| Reported as | What it means | Suggest |
+|---|---|---|
+| `problem … photo not found` | A brief points to a photo that isn't there, so a render would fail | Re-import the photo with `/create-social-content`, or fix the path |
+| `problem … not valid JSON` | A brief can't be read | Offer to fix it |
+| `kept … piece(s) not made yet` | An old monthly plan still has unmade pieces | Make them with `/create-social-content`, or drop them |
+| `note … no brief for this slug` | A schedule plan has no brief. Expected after finished content is removed | Nothing |
+| Photos with no brief | An import that was never finished. The folder may be the only copy | Finish it, or remove only if the user says so (and it isn't committed) |
+| Content PR open for 14+ days | It's stuck | Merge it, or cancel with `/edit-social-content` |
+| `kept … has a Buffer draft` / `queue-slot item` | Not finished, because no send time is known | Finish the draft in Buffer, or give the items fixed times |
+
+## What is deleted, and what never is
+
+| Deleted (regenerable, or finished) | Never deleted |
+|---|---|
+| `output/_build/` render scratch | Anything not merged or not yet posted |
+| 2× master PNGs in `output/_masters/` | `content/schedule/**`: merged plans are records that CI checks |
+| Renders and manifests not committed yet | Queue-slot and draft items, anything inside the 7-day grace |
+| `content/plans/<yyyy-mm>.md` not committed, month over, every piece marked made | `example-*` briefs (reference examples) |
+| Draft briefs: not committed, no output, 7+ days idle (**only after the user agrees**) | Photos another live brief uses |
+| **Merged and fully posted slugs: briefs, photos, outputs (via a cleanup PR, only after the user agrees)** | A branch with work that isn't in main; `main`, `test`, the current branch |
+| Local `content/*`, `tooling/*` and `cleanup/*` branches whose PR is merged | Remote branches on GitHub, Playwright's browser cache, git history |
+| Stale refs to branches GitHub already deleted | |

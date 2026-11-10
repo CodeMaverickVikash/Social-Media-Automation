@@ -7,13 +7,20 @@
     "node": ">=22.18"
   },
   "scripts": {
+    "doctor": "node scripts/doctor.ts",
+    "sync:antigravity": "node scripts/sync-antigravity.ts",
     "render:post": "node scripts/render-post.ts",
     "render:reel": "node scripts/render-reel.ts",
     "check:media": "node scripts/check-media.ts",
     "buffer": "node scripts/buffer.ts",
     "typecheck": "tsc --noEmit",
     "import:photo": "node scripts/import-photo.ts",
-    "plan": "node scripts/publish-plan.ts"
+    "draw:product": "node scripts/draw-product.ts",
+    "plan": "node scripts/publish-plan.ts",
+    "clean:output": "node scripts/clean-output.ts",
+    "clean:branches": "node scripts/clean-branches.ts",
+    "clean:content": "node scripts/clean-content.ts",
+    "clean:merged": "node scripts/clean-merged.ts"
   },
   "dependencies": {
     "ffmpeg-static": "^5.3.0",

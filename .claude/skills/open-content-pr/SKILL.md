@@ -1,5 +1,5 @@
 ---
-name: content-pr
+name: open-content-pr
 description: Package finished Monavi content (briefs, photos, rendered posts/reels, captions) with a schedule plan into a GitHub pull request; when the PR is merged to main, a GitHub Action schedules everything in Buffer for Instagram and Facebook. Use when content is ready to go live, or when asked to schedule, raise/open a PR, send for approval or queue posts/reels for the week.
 user-invocable: false
 ---
@@ -20,12 +20,14 @@ content/schedule/<slug>.json┘                                                 
 ## Steps
 
 ### 1. Pre-flight
-- The content was made through `social-content` (renders + captions exist and QA passes).
+- The content was made through `create-social-content` (renders + captions exist and QA passes).
 - No `--allow-lowres` or `--draft` renders. The PR check rejects them anyway.
 - The **`monavi-brand-guardian`** agent returned `VERDICT: PASS` for this slug, and nothing changed since that review. If it hasn't run, or the content changed after it ran, run it now and don't open the PR until it passes.
 - `config/buffer-channels.json` exists. If not, still open the PR (the Content check will fail on this one item), and tell the user to run GitHub → Actions → **List Buffer channels**, save the JSON from the run summary to that file on `main`, then re-run the check. Channel ids are not secret.
 
 ### 2. Write the schedule plan: `content/schedule/<slug>.json`
+
+**Nothing to schedule?** A Facebook cover (`fb-cover.jpg`) is set by hand in Facebook and is never scheduled. If the slug has nothing schedulable, skip the plan: the PR carries the files for review only, merging schedules nothing, and the Content check reports "No new schedule plans". Say so in the PR body and in the final report.
 
 ```json
 {
@@ -38,7 +40,7 @@ content/schedule/<slug>.json┘                                                 
 }
 ```
 - `kind`: `post` (uses `ig-feed.jpg`), `story` (`story.jpg`), `reel` (`reel.mp4`). Override with `"file": "square.jpg"`.
-- `at`: ISO time **with offset** (IST = `+05:30`). Omit it to use the next free Buffer queue slot. If the user gives no times, use the defaults from `social-content` §3.7 without asking. The user can edit them in the PR.
+- `at`: ISO time **with offset** (IST = `+05:30`). Omit it to use the next free Buffer queue slot. If the user gives no times, use the defaults from `create-social-content` §3.7 without asking. The user can edit them in the PR.
 - `"draft": true` creates a Buffer draft instead of scheduling it.
 - `"aiDisclosure": true` sends Instagram's AI label. It's off by default. If the render uses AI imagery (its manifest has `aiGenerated: true`), mention Meta's disclosure rule to the user once, then follow their decision.
 - `whatsapp` items are not sent to Buffer. They appear in the Action summary as a manual-share list.
@@ -51,9 +53,9 @@ npm run plan -- run --files content/schedule/<slug>.json --dry-run
 
 ### 3. Branch, commit, PR
 
-**When called from `social-content`, don't ask. Push and open the PR.** The user's `social-content` request is the go-ahead, and the PR is their review step (merging is the approval). Called on its own, confirm before pushing unless the user already asked for a PR.
+**When called from `create-social-content`, don't ask. Push and open the PR.** The user's `create-social-content` request is the go-ahead, and the PR is their review step (merging is the approval). Called on its own, confirm before pushing unless the user already asked for a PR.
 
-If the branch `content/<slug>` already has an open PR (`gh pr list --head content/<slug>`), don't create a new one. Switch to the branch, commit the changes and push, which updates the existing PR (see `social-content` §4).
+If the branch `content/<slug>` already has an open PR (`gh pr list --head content/<slug>`), don't create a new one. Switch to the branch, commit the changes and push, which updates the existing PR (see `edit-social-content`).
 
 ```bash
 git switch main && git pull --ff-only

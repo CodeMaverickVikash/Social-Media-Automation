@@ -1,0 +1,9 @@
+{
+  "slug": "example-festive-poster",
+  "template": "card",
+  "theme": "festive",
+  "formats": ["ig-feed", "story", "square"],
+  "eyebrow": "Festive Greetings",
+  "headline": "Light up\nyour story.",
+  "subline": "From our family to yours."
+}

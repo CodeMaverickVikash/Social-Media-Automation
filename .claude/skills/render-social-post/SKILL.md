@@ -1,6 +1,6 @@
 ---
-name: social-post
-description: Create on-brand Monavi static image posts (Instagram/Facebook feed, square, stories, WhatsApp Status) at full resolution from a JSON brief — overlay, split or text-card layouts. Use when asked to make, design or render a post, poster, creative, banner, story, announcement, offer, festival greeting or store-update image for Instagram, Facebook or WhatsApp.
+name: render-social-post
+description: Create on-brand Monavi static images at full resolution from a JSON brief: posts, stories, squares, posters (overlay, arch, split or text-card layouts) and wide banners (Facebook cover and landscape). Use when asked to make, design or render a post, poster, creative, banner, cover, story, announcement, offer, festival greeting or store-update image for Instagram, Facebook or WhatsApp.
 user-invocable: false
 ---
 
@@ -10,7 +10,7 @@ Pipeline: **brief JSON → `npm run render:post` → visual review → QA → ca
 
 ## 0. Load the brand
 
-Read `brand/brand.json` and `brand/voice.md`, and follow the `monavi-brand` skill rules. Look at the reference poster closest to the category in `brand/reference-posts/`.
+Read `brand/brand.json` and `brand/voice.md`, and follow the `monavi-brand-rules` skill rules. Look at the reference poster closest to the category in `brand/reference-posts/`.
 
 ## 1. Gather inputs (ask only for what's missing)
 
@@ -27,7 +27,8 @@ Read `brand/brand.json` and `brand/voice.md`, and follow the `monavi-brand` skil
 | `overlay` | A model wearing the outfit, full-bleed photo | `festive` |
 | `arch` | **Product-only photo** (hanger, mannequin, flat lay, plain backdrop): the photo sits in a heritage arch window, copy centred below | product's `theme` (`light`/`ladies`/`kids` give ivory; `mens`/`festive` give dark) |
 | `split` | Clean product or men's shot; text on a solid side panel | `mens` |
-| `card` | No photo: announcements, store hours, greetings, offers, quotes | `light` |
+| `card` | No photo: announcements, store hours, greetings, offers, quotes (**posters**) | `light` |
+| `banner` | **Wide formats only** (`fb-cover`, `fb-landscape`): text left, photo right (or sprigs with no photo) | `light` |
 
 Themes: `light`, `ladies` (maroon CTA), `dark`, `festive` (champagne on deep wine), `mens` (midnight panel, outline CTA), `kids`, `sage`.
 For festive/bridal photos with dark backgrounds use `festive`. For light, airy photos use `ladies`, `light` or `kids`.
@@ -77,9 +78,10 @@ Field rules:
 - `headline`: 2–4 short lines, set explicitly with `\n`. Sentence case, and a full stop is fine. Never put emoji on the image.
 - Use `subline` **or** `attrs`, rarely both. `attrs` takes ≤ 4 single words.
 - `focus`: CSS object-position. Move it so the face and garment stay clear of the text side (text is on the left for `overlay`).
-- `formats`: `ig-feed` (default 4:5), `ig-feed-3x4`, `square`, `story`, `fb-landscape`. Add `story` when it should also go to Stories or WhatsApp Status.
+- `formats`: `ig-feed` (default 4:5), `ig-feed-3x4`, `square`, `story`, `fb-landscape` (1200×630), `fb-cover` (1640×624, banner template only). Add `story` when it should also go to Stories or WhatsApp Status.
 - `badge.icon`: `dress` · `shirt` · `kids` · `lotus` (bridal) · `bag` · `sparkle` · `store`.
 - `card` only: `footnote` for address, timings or terms (`\n` allowed).
+- `banner` only: no `badge`. `fb-cover` is not scheduled by Buffer; the Page cover is set by hand in Facebook. Use `create-social-banner` for the whole flow.
 - `overlay` only: `"side": "bottom"` puts the text at the bottom instead of the left, for photos whose subject is centred.
 
 ## 5. Render
@@ -94,14 +96,14 @@ npm run render:post -- content/posts/<slug>.json
 
 ## 6. Review visually (always)
 
-Read every delivered JPG with the Read tool and run the `monavi-brand` review checklist. Check faces and products aren't hidden behind text, the scrim keeps text readable, and nothing is cropped awkwardly. Adjust `focus`, `theme` or copy and re-render until it passes.
+Read every delivered JPG with the Read tool and run the `monavi-brand-rules` review checklist. Check faces and products aren't hidden behind text, the scrim keeps text readable, and nothing is cropped awkwardly. Adjust `focus`, `theme` or copy and re-render until it passes.
 
 ## 7. QA and caption
 
 ```bash
 npm run check:media -- output/instagram/<slug> output/facebook/<slug> output/whatsapp/<slug>
 ```
-Then use the `social-caption` skill to write `caption.txt` into each platform folder. Schedule with `content-pr` (PR → merge → Buffer via GitHub Actions).
+Then use the `write-social-captions` skill to write `caption.txt` into each platform folder. Schedule with `open-content-pr` (PR → merge → Buffer via GitHub Actions).
 
 ## Output layout
 

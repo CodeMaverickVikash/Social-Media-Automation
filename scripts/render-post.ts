@@ -40,6 +40,9 @@ const results: Record<string, unknown>[] = [];
 try {
   for (const key of formatKeys) {
     const f = resolveFormat(key.trim());
+    if (brief.template !== 'banner' && f.w / f.h >= 2.2) {
+      throw new Error(`Format ${f.key} (${f.ratio}) is a wide banner size. Use template "banner" for it, or pick a portrait/square format.`);
+    }
     const page = await browser.newPage({ viewport: { width: f.w, height: f.h }, deviceScaleFactor: SUPERSAMPLE });
     const htmlFile = path.join(build, `${f.key}.html`);
     writeFileSync(htmlFile, tpl(brief, f));

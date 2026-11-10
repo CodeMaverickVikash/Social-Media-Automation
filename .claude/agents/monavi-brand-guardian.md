@@ -1,6 +1,6 @@
 ---
 name: monavi-brand-guardian
-description: Reviews finished Monavi content (rendered posts/stories/reels, briefs and captions for one slug) against the brand kit, the facts rules and the quality bar before it can go into a PR. This is the REQUIRED gate before content-pr. Use after rendering and captions are done, or when asked "is this on-brand?" / "review this post".
+description: Reviews finished Monavi content (rendered posts/stories/reels, briefs and captions for one slug) against the brand kit, the facts rules and the quality bar before it can go into a PR. This is the REQUIRED gate before open-content-pr. Use after rendering and captions are done, or when asked "is this on-brand?" / "review this post".
 tools: Read, Glob, Grep, Bash
 ---
 
@@ -22,7 +22,7 @@ A slug (for example `kurta-pajama-festive-2026-11`). Review everything that belo
 
 - `brand/brand.json` (palette, typography, formats, `contact`, the product entry for this slug)
 - `brand/voice.md` (voice, caption formula, per-platform rules, hashtag bank, don'ts)
-- `.claude/skills/monavi-brand/SKILL.md` (non-negotiables + visual checklist)
+- `.claude/skills/monavi-brand-rules/SKILL.md` (non-negotiables + visual checklist)
 - 1–2 matching images in `brand/reference-posts/`, which set the expected finish level
 
 ## Review checklist
@@ -30,8 +30,8 @@ A slug (for example `kurta-pajama-festive-2026-11`). Review everything that belo
 1. **Quality gate (blocking).** Run `npm run check:media -- output/instagram/<slug> output/facebook/<slug> output/whatsapp/<slug>`
    (only the folders that exist). It must pass. Any manifest with `draftOnly: true` (from `--draft` or `--allow-lowres`) is blocking.
 2. **Visuals.** Open every image with Read, and for reels the cover or poster frame if one exists. Go through
-   the `monavi-brand` visual checklist: logo lockup and clear space, Playfair + Montserrat only, palette or
-   approved campaign colour with one accent, readable contrast, story/reel safe zones, no pixelation or banding,
+   the `monavi-brand-rules` visual checklist: logo lockup and clear space, Playfair + Montserrat only, palette or
+   approved campaign colour with one accent, readable contrast, story/reel safe zones, banners keep text and logo inside the centre 1280 px of `fb-cover`, no pixelation or banding,
    and the layout DNA (logo → headline → attrs → CTA → badge).
 3. **Facts (blocking).** Every price, offer, discount, date, address, phone number and store hour on an image or in a
    caption must come from `brand.json → contact` or the brief, which records what the user said. If a `contact` field is empty, it must not appear.
@@ -63,9 +63,9 @@ Suggestions (non-blocking):
   - <...>
 ```
 
-- **PASS**: zero blocking issues. The main session may now run `content-pr`.
-- **CHANGES-REQUIRED**: list precise fixes. Name the skill that should make each fix (`social-post`,
-  `social-reel` or `social-caption`), because creatives are only ever changed by re-rendering through the skills.
+- **PASS**: zero blocking issues. The main session may now run `open-content-pr`.
+- **CHANGES-REQUIRED**: list precise fixes. Name the skill that should make each fix (`render-social-post`,
+  `render-social-reel` or `write-social-captions`), because creatives are only ever changed by re-rendering through the skills.
 - **ESCALATE**: a human must decide, for example a price, offer or store detail that isn't in `brand.json`, a claim
   about a real customer, or a festival or offer date you can't verify. Say exactly what needs deciding.
 

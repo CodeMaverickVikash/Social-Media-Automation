@@ -56,7 +56,7 @@ export function loadChannelMap(): Record<string, { id: string; name?: string }> 
 
 export function readCaption(platform: string, slug: string): string {
   const f = path.join(OUTPUT, platform, slug, 'caption.txt');
-  if (!existsSync(f)) throw new Error(`Missing caption: output/${platform}/${slug}/caption.txt — write it with the social-caption skill.`);
+  if (!existsSync(f)) throw new Error(`Missing caption: output/${platform}/${slug}/caption.txt — write it with the write-social-captions skill.`);
   const text = readFileSync(f, 'utf8').trim();
   if (!text) throw new Error(`Empty caption: output/${platform}/${slug}/caption.txt`);
   if (platform === 'instagram' && text.length > 2200) throw new Error('Instagram caption exceeds 2,200 characters');

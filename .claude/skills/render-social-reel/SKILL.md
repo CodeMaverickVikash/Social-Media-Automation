@@ -1,5 +1,5 @@
 ---
-name: social-reel
+name: render-social-reel
 description: Create on-brand Monavi Reels / Shorts / WhatsApp Status videos (1080x1920 MP4, H.264) from photos with Ken Burns motion, animated text, crossfades and a logo end card — full quality, no pixelation. Use when asked to make a reel, short, video, story video, status video, slideshow or motion version of a post for Instagram, Facebook or WhatsApp.
 user-invocable: false
 ---
@@ -12,7 +12,7 @@ Each frame is a pure function of time. Frames are captured losslessly at 2× and
 
 ## 0. Load the brand
 
-Follow the `monavi-brand` skill. Read `brand/voice.md` for on-screen copy.
+Follow the `monavi-brand-rules` skill. Read `brand/voice.md` for on-screen copy.
 
 ## 1. Storyboard first (show it to the user before rendering a long one)
 
@@ -82,7 +82,7 @@ Read each PNG. Check: text inside the safe zones (not in the top 250px, the bott
 ```bash
 npm run check:media -- output/instagram/<slug>
 ```
-Must pass: 1080×1920, h264, yuv420p, 30fps, AAC, faststart, 3–90s, **≤ 20 MB** (media is served from the public repo via jsDelivr, which caps files at 20 MB; a 30s reel is about 18 MB, so keep reels ≤ 30s). Then use the `social-caption` skill (reel captions are short) and `buffer-publish` with `--kind reel`.
+Must pass: 1080×1920, h264, yuv420p, 30fps, AAC, faststart, 3–90s, **≤ 20 MB** (media is served from the public repo via jsDelivr, which caps files at 20 MB; a 30s reel is about 18 MB, so keep reels ≤ 30s). Then use the `write-social-captions` skill (reel captions are short) and `publish-social-now` with `--kind reel`.
 
 WhatsApp Status accepts clips up to 60s. Longer reels get split by WhatsApp.
 

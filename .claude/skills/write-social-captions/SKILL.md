@@ -1,5 +1,5 @@
 ---
-name: social-caption
+name: write-social-captions
 description: Write on-brand Monavi captions, hashtags and first comments tailored per platform (Instagram, Facebook, WhatsApp) and save them as caption.txt in each output/<platform>/<slug>/ folder. Use when asked for captions, copy, hashtags, post text, WhatsApp broadcast/status text, or after rendering a post or reel.
 user-invocable: false
 ---
@@ -31,7 +31,7 @@ Hard limits: Instagram ≤ 2,200 characters and ≤ 30 hashtags (the publish scr
 
 ## 3. Save and show
 
-Write each file as UTF-8 plain text (no Markdown) with the Write tool. Then show the user all captions together for approval before publishing. Offer an optional `firstComment` (extra hashtags or store details) for `buffer-publish --first-comment`.
+Write each file as UTF-8 plain text (no Markdown) with the Write tool. Then show the user all captions together for approval before publishing. Offer an optional `firstComment` (extra hashtags or store details) for `publish-social-now --first-comment`.
 
 ## Examples
 

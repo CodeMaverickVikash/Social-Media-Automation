@@ -1,11 +1,11 @@
 ---
-name: buffer-publish
+name: publish-social-now
 description: Schedule or publish finished Monavi posts, stories and reels to Instagram and Facebook through the Buffer GraphQL API (queue, exact time, now, or draft), and prepare WhatsApp files for manual sharing. Use when asked to post, publish, schedule, queue, upload or send content to Buffer, Instagram, Facebook or WhatsApp, or to list/connect Buffer channels.
 ---
 
 # Publish via Buffer
 
-**The normal route is a PR.** Use the `content-pr` skill: when the PR merges to main, GitHub Actions schedules everything in Buffer. This skill covers the **local CLI**, used for one-time setup (`channels --save`), for urgent one-off posts the user explicitly wants without a PR, and for debugging.
+**The normal route is a PR.** Use the `open-content-pr` skill: when the PR merges to main, GitHub Actions schedules everything in Buffer. This skill covers the **local CLI**, used for one-time setup (`channels --save`), for urgent one-off posts the user explicitly wants without a PR, and for debugging.
 
 Script: `scripts/buffer.ts` (run it with `npm run buffer -- …`). There is **no `.env` file**: the key lives only as the GitHub secret `BUFFER_API_KEY`. For a rare local run, the user sets it for that terminal session only (PowerShell `$env:BUFFER_API_KEY="..."`). Never write the key to any file. Shared logic is in `scripts/lib/buffer-api.ts`. Without `--media-url`, the CLI uses the committed file from `output/<platform>/<slug>/` through its public jsDelivr URL (`scripts/lib/media-url.ts`). That file must be committed **and pushed** first; the CLI checks this.
 

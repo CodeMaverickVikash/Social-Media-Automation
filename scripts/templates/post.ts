@@ -5,7 +5,7 @@ import { ROOT, esc, lines, fileUrl, iconSvg, logoSvg, sprigSvg, theme, resolvePa
 import type { Format, Theme } from '../lib/brand.ts';
 import path from 'node:path';
 
-export type PostTemplate = 'overlay' | 'split' | 'card' | 'arch';
+export type PostTemplate = 'overlay' | 'split' | 'card' | 'arch' | 'banner';
 
 export interface PostBrief {
   slug: string;
@@ -245,4 +245,52 @@ function arch(b: PostBrief, f: Format): string {
     ${f.h >= 1920 ? badgeHtml(t, b.badge) : ''}`);
 }
 
-export const POST_TEMPLATES: Record<PostTemplate, (b: PostBrief, f: Format) => string> = { overlay, split, card, arch };
+// ---------------------------------------------------------------- banner (wide: Facebook cover / landscape)
+// Text on the left, photo on the right fading into the panel. With no photo, botanical sprigs fill
+// the right side. Sizes scale with the canvas height, so one layout serves fb-cover and fb-landscape.
+// The badge is left out on purpose: a banner is too short for it.
+function banner(b: PostBrief, f: Format): string {
+  if (f.w / f.h < 1.5) {
+    throw new Error(`The banner template is for wide formats (fb-cover, fb-landscape), not ${f.key} (${f.w}×${f.h}). Use overlay, split, card or arch for this format.`);
+  }
+  const t = theme(b.theme ?? 'light');
+  const light = ['light', 'ladies', 'kids', 'sage'].includes(b.theme ?? 'light');
+  const bg = light ? '#FAF9F6' : t.panel;
+  const k = f.h / 624;
+  const px = (n: number) => Math.round(n * k);
+  const photoW = Math.round(f.w * 0.42);
+  const colW = f.w - photoW - f.safe.side - px(40);
+  const hasPhoto = Boolean(b.photo);
+  const css = `
+    body { background: ${bg}; }
+    .photo { position: absolute; top: 0; right: 0; bottom: 0; width: ${photoW}px; overflow: hidden;
+             -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 ${px(110)}px); mask-image: linear-gradient(90deg, transparent 0, #000 ${px(110)}px); }
+    .photo img[data-photo] { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .frame { position: absolute; inset: ${px(22)}px; border: 1.5px solid ${t.accent}; opacity: .7; }
+    .sprig { position: absolute; }
+    .sprig.r { right: ${px(40)}px; bottom: ${px(-70)}px; }
+    .sprig.t { right: ${px(260)}px; top: ${px(-90)}px; transform: rotate(180deg); }
+    .col { position: absolute; left: var(--side); top: var(--safe-top); bottom: var(--safe-bottom); width: ${colW}px;
+           display: flex; flex-direction: column; justify-content: center; color: ${t.text}; }
+    .col .logo { align-self: flex-start; margin-bottom: ${px(24)}px; }
+    .eyebrow { font-size: ${px(17)}px; margin-bottom: ${px(14)}px; }
+    .headline { font-size: ${px(66)}px; line-height: 1.04; }
+    .subline { font-size: ${px(28)}px; margin-top: ${px(12)}px; }
+    .attrs { font-size: ${px(20)}px; margin-top: ${px(14)}px; }
+    .cta { font-size: ${px(22)}px; padding: ${px(14)}px ${px(30)}px; margin-top: ${px(22)}px; gap: ${px(12)}px; align-self: flex-start; }`;
+  const decor = hasPhoto
+    ? `<div class="photo">${photoTag(b)}</div>`
+    : `<div class="frame"></div><div class="sprig r">${sprigSvg(t.accent, px(330), 0.75)}</div><div class="sprig t">${sprigSvg(t.accent, px(260), 0.45)}</div>`;
+  return page(f, css, `
+    ${decor}
+    <div class="col">
+      ${logoSvg('compact', t.logo, px(150))}
+      ${b.eyebrow ? `<div class="eyebrow">${esc(b.eyebrow)}</div>` : ''}
+      <div class="headline">${lines(b.headline)}</div>
+      ${b.subline ? `<div class="subline">${lines(b.subline)}</div>` : ''}
+      ${attrsHtml(b.attrs)}
+      ${ctaHtml(t, b.cta)}
+    </div>`);
+}
+
+export const POST_TEMPLATES: Record<PostTemplate, (b: PostBrief, f: Format) => string> = { overlay, split, card, arch, banner };

@@ -105,7 +105,18 @@ function pruneEmpty(dir: string): void {
 }
 if (!dryRun) pruneEmpty(OUTPUT);
 
+// Report only, never deleted: photo folders whose slug has no brief (an import that was never finished,
+// or a brief that was removed). The photos here may be the only copy, so the user decides.
+const PHOTOS = path.join(ROOT, 'assets', 'photos');
+const orphanPhotos = existsSync(PHOTOS)
+  ? readdirSync(PHOTOS, { withFileTypes: true })
+      .filter(e => e.isDirectory() && (!slug || e.name === slug))
+      .map(e => e.name)
+      .filter(s => !existsSync(path.join(ROOT, 'content', 'posts', `${s}.json`)) && !existsSync(path.join(ROOT, 'content', 'reels', `${s}.json`)))
+  : [];
+
 const mb = (bytes / 1024 / 1024).toFixed(1);
 console.log(`\n${dryRun ? 'Would delete' : 'Deleted'} ${by.delete.length} file(s), ${mb} MB${slug ? ` for ${slug}` : ''}.`);
 console.log(`Kept ${by['keep-committed'].length} committed file(s) and ${by['keep-protected'].length} caption/publish-log file(s).`);
 for (const f of by['keep-unknown']) console.log(`Kept unknown file (not a render): ${rel(f)}`);
+for (const s of orphanPhotos) console.log(`Photos with no brief (not deleted): assets/photos/${s}/. Finish the content or tell Claude to remove them.`);

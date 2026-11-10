@@ -1,4 +1,4 @@
-// Readiness check: is this machine and repo ready for `/social-content` to go from photo to PR?
+// Readiness check: is this machine and repo ready for `/create-social-content` to go from photo to PR?
 // It runs before any rendering so setup problems show up in seconds, not after a failed PR check.
 //
 //   node scripts/doctor.ts          exit 1 if anything blocking is missing
@@ -81,5 +81,5 @@ for (const r of results) {
   console.log(`${mark} ${r.label}`);
   if (!r.ok) { console.log(`    → ${r.fix}`); if (r.blocking) blocking++; }
 }
-console.log(blocking ? `\n${blocking} blocking issue(s). Fix them before making content.` : '\nReady. Run /social-content in Claude Code.');
+console.log(blocking ? `\n${blocking} blocking issue(s). Fix them before making content.` : '\nReady. Run /create-social-content in Claude Code.');
 process.exit(blocking ? 1 : 0);

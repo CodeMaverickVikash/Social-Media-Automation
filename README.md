@@ -1,6 +1,8 @@
 # Monavi Collection — Social Media Automation
 
-Make on-brand **posts, stories and reels** for Instagram, Facebook and WhatsApp from a product photo. Review them in a **pull request**, and when the PR is **merged**, GitHub Actions **schedules them in Buffer** automatically.
+**Social media run by Claude Code AI.** You give a skill command and a few words. Claude Code, the AI, does the whole job: plans the content, renders on-brand **posts, stories and reels** for Instagram, Facebook and WhatsApp from your product photos, writes the captions, checks quality and brand rules, schedules it and opens a **pull request**. You review the PR. When it is **merged**, GitHub Actions **schedules it in Buffer** automatically. The only manual step is sharing the WhatsApp files, because Buffer has no WhatsApp support.
+
+**You decide, the AI does the work.** Nothing reaches Buffer until you merge. It never invents prices, offers, addresses or hours.
 
 ```
  Product photo + "kurta pajama for men, festive"
@@ -18,70 +20,48 @@ Make on-brand **posts, stories and reels** for Instagram, Facebook and WhatsApp 
 
 ---
 
-## 1. How to use it: 3 steps
+## 1. How to use it
 
-**① Make.** In Claude Code, run one command with your photos and a few words:
-```
-/social-content D:\shoot\kurta-01.jpg D:\shoot\kurta-02.jpg kurta pajama for men, festive, post on 20 Nov
-```
-Everything else is automatic: readiness check → photo import → post, story, square and reel → captions per platform → quality check → brand review → schedule → **PR**. Claude replies with the PR link and a preview.
-Anything you don't say gets a sensible default: all platforms, and evening posting times in India time.
+**Skills are the commands.** You type a skill in Claude Code and Claude does everything else: the terminal commands, the rendering, the Git work and the PR. You never run `npm` or `git` yourself. Full guide with use cases and examples: **[docs/SKILLS.md](docs/SKILLS.md)**.
 
-**② Review and edit in the PR** (GitHub → the PR → *Files changed*):
-
-| Want to change | Do this |
+| I want to… | Type |
 |---|---|
-| Caption or hashtags | Edit `output/<platform>/<slug>/caption.txt` on GitHub |
-| Date, time, platforms | Edit `content/schedule/<slug>.json` on GitHub |
-| Headline, layout, photo, reel | Ask Claude: *"change the headline on `<slug>` to …"*. It re-renders and updates the same PR |
+| Get ready for the first time, or fix a broken setup | `/setup-social-automation` |
+| Decide what to post this week or month | `/plan-social-content December` |
+| **Make posts, stories and a reel from a product photo** | **`/create-social-content <photos> <product> for <who>, <occasion>`** |
+| Make a poster (greeting, offer, announcement) | `/create-social-poster Diwali greeting for the whole family` |
+| Make a Facebook cover or event banner | `/create-social-banner Facebook cover for the wedding collection` |
+| Change something in an open PR | `/edit-social-content <slug> make the headline shorter` |
+| See what is pending, scheduled, or due on WhatsApp today | `/check-social-status` |
+| Free disk space | `/clean-social-output` |
+| Post something urgent right now | `/publish-social-now` |
 
-**③ Merge.** Instagram and Facebook are scheduled in Buffer automatically. The Action's run summary lists the **WhatsApp** files to share by hand (Status / broadcast).
+You can also describe what you want in your own words and Claude picks the skill.
 
-Other things you can ask:
-- *"Plan December's posts"*: a festival-aware plan with dates, products and photo needs (it plans only and makes nothing).
-- *"Store timing update card for WhatsApp: open 11am–9pm, closed Tuesday"*
-- `/buffer-publish`: an urgent one-off post outside the PR flow.
+### A normal week: 3 steps
 
-**Rule:** posts and reels are always made through the skills, never by hand.
+**① Make.** One command per piece:
+```
+/create-social-content D:\shoot\kurta-01.jpg D:\shoot\kurta-02.jpg kurta pajama for men, festive, post on 20 Nov
+```
+Everything else is automatic: readiness check → photo import → post, story, square and reel → captions per platform → quality check → brand review → schedule → **PR**. Claude replies with the PR link and a preview. Anything you don't say gets a default: all platforms, and evening posting times in India time.
+
+**② Review in the PR** (GitHub → the PR → *Files changed*). Fix small things right there: caption text in `output/<platform>/<slug>/caption.txt`, times in `content/schedule/<slug>.json`. For anything about the images (headline, layout, photo, reel), type `/edit-social-content <slug> <what to change>`. Claude re-renders and updates the same PR.
+
+**③ Merge.** Instagram and Facebook are scheduled in Buffer automatically. Each day, `/check-social-status today` lists the **WhatsApp** files and captions to share by hand (Status, broadcast).
 
 ### Set up once
 
-Run `npm run doctor`. It checks everything below and tells you exactly what to fix:
+Type `/setup-social-automation`. Claude checks the machine, GitHub access and Buffer channels, fixes what it can and tells you what only you can do:
 
-- [ ] Node.js ≥ 22.18, `npm install`, `npx playwright install chromium`
-- [ ] GitHub CLI signed in (`gh auth login`) with an account that has **write** access to this repo
-- [ ] Repo secret `BUFFER_API_KEY` (§5)
-- [ ] `config/buffer-channels.json`: GitHub → Actions → **List Buffer channels** → save the JSON from the summary and commit it
+- [ ] Write access to this repo for the GitHub account Claude uses
+- [ ] Repo secret `BUFFER_API_KEY` (§5). Never paste it into the chat
+- [ ] Instagram and the Facebook Page connected in Buffer
+- [ ] Store contact details in `brand/brand.json → contact` (phone, address, hours). Claude fills them from what you tell it
 
-`/social-content` runs the same check first and stops before rendering if anything blocking is missing.
+`/create-social-content` runs the same check first and stops before rendering if anything blocking is missing.
 
-### Housekeeping
-
-`npm run clean:output` frees disk space. After each PR, Claude cleans that slug automatically, so you rarely need it.
-
-```bash
-npm run clean:output                                          # clean every slug
-npm run clean:output -- --dry-run                             # preview only, deletes nothing
-npm run clean:output -- --slug kurta-pajama-festive-2026-11   # one slug only
-npm run clean:output -- --slug kurta-pajama-festive-2026-11 --dry-run
-npm run clean:output -- --help                                # list the flags
-```
-
-| Flag | What it does |
-|---|---|
-| *(none)* | Clean every slug |
-| `--slug <slug>` | Clean only that slug |
-| `--dry-run` | List what would be deleted and delete nothing |
-| `--help` | Show the flags |
-
-Flags go **after `--`**. Without it, npm takes `--dry-run` as its own option and the script never sees it.
-
-| Deleted (can be regenerated) | Never deleted |
-|---|---|
-| `output/_build/` render scratch | Anything committed to git (PR content, merged posts) |
-| 2× master PNGs in `output/_masters/` | `caption.txt` (written copy) |
-| Renders and manifests not committed yet | `publish-log.jsonl` (Buffer publish record) |
-| | Any other file (listed, left alone) |
+**Rule:** posts and reels are always made through the skills, never by hand.
 
 ### What you get
 
@@ -102,27 +82,31 @@ output/
 
 ---
 
-## 2. Skills
+## 2. Skills and agents
 
-You only ever type `/social-content` (and `/buffer-publish` for urgent posts). The others are steps it runs for you, so they're hidden from the `/` menu.
+Every command, with its use cases, examples and what it does and never does, is in **[docs/SKILLS.md](docs/SKILLS.md)**. In short:
 
-| Skill | What it does |
+| Command | Use it to |
 |---|---|
-| **`social-content`** | **Start here.** Photo + product + audience → full per-platform set → PR |
-| `monavi-brand` | Brand rules (colours, fonts, logo, voice) and review checklist |
-| `social-post` | Image posts: `overlay` (model photo), `arch` (product-only photo), `split`, `card` (text-only) |
-| `social-reel` | 7–30s reels with motion, text animation and a logo end card |
-| `social-caption` | Captions + hashtags per platform → `caption.txt` |
-| `content-pr` | Schedule plan + branch + PR (merge = schedule in Buffer) |
-| `buffer-publish` | Local Buffer CLI: channel setup, urgent one-off posts |
+| `/setup-social-automation` | Check and repair the setup (tools, GitHub access, Buffer channels) |
+| `/plan-social-content` | Plan a week, month or festival and get a shoot list for the store |
+| **`/create-social-content`** | **Make the full per-platform set from a product photo and open the PR** |
+| `/create-social-poster` | Greeting, offer or announcement poster (with or without a photo) |
+| `/create-social-banner` | Facebook Page cover or event banner |
+| `/edit-social-content` | Change, reschedule or cancel content in an open PR |
+| `/check-social-status` | See what is pending, scheduled, and due on WhatsApp today |
+| `/clean-social-output` | Free disk space (only regenerable files) |
+| `/publish-social-now` | Urgent one-off post outside the PR flow |
+
+Steps these run for you (hidden from the `/` menu, but you can still ask for them in words): `monavi-brand-rules`, `render-social-post`, `render-social-reel`, `write-social-captions`, `open-content-pr`.
 
 ### Agents (`.claude/agents/`)
 
 | Agent | What it does |
 |---|---|
-| `monavi-content-strategist` | Plans a week, month or season: occasions (festival dates verified), product/audience mix, slugs, deliverables, posting times. Plans only. Ask *"plan December's posts"* |
-| `caption-writer` | Writes `caption.txt` per platform by following `social-caption`. Useful for captioning several slugs in parallel |
-| `monavi-brand-guardian` | Reviews a slug's renders, captions and facts, and runs `check:media`. Returns PASS / CHANGES-REQUIRED / ESCALATE. **A PASS is required before `content-pr`** |
+| `monavi-content-strategist` | Plans a week, month or season: occasions (festival dates verified), product/audience mix, slugs, deliverables, posting times. Plans only |
+| `caption-writer` | Writes `caption.txt` per platform by following `write-social-captions`. Useful for captioning several slugs in parallel |
+| `monavi-brand-guardian` | Reviews a slug's renders, captions and facts, and runs `check:media`. Returns PASS / CHANGES-REQUIRED / ESCALATE. **A PASS is required before `open-content-pr`** |
 
 ## 3. Supported products
 
@@ -191,7 +175,7 @@ Recommended: protect `main` (require a PR and a passing **Content check**).
 
 ## 6. Publishing flow (PR → merge → Buffer)
 
-1. The `content-pr` skill adds a schedule plan, `content/schedule/<slug>.json`:
+1. The `open-content-pr` skill adds a schedule plan, `content/schedule/<slug>.json`:
    ```json
    {
      "slug": "kurta-pajama-festive-2026-11",
@@ -215,7 +199,9 @@ Important:
 
 ---
 
-## 7. Commands reference
+## 7. Internal tools (Claude runs these for you)
+
+You don't type these. The skills call them, and this list is for debugging and for working on the tooling itself.
 
 ```bash
 npm run import:photo -- "<photo>" [...] --slug <slug>     # import + resolution report (--ai-generated for AI images)
@@ -227,8 +213,11 @@ npm run plan -- validate content/schedule/<slug>.json       # validate a schedul
 npm run plan -- run --files content/schedule/<slug>.json --dry-run
 npm run buffer -- channels [--save]                         # list / save Buffer channels
 npm run buffer -- post --slug <slug> --kind post --platforms instagram --dry-run   # one-off (files must be pushed)
-npm run doctor                                              # readiness check: tools, Buffer channels, GitHub access
-npm run clean:output -- [--slug <slug>] [--dry-run]       # delete regenerable files only (committed files, captions, logs kept); --help for flags
+npm run doctor                                              # readiness check (used by /setup-social-automation and /create-social-content)
+npm run clean:output -- [--slug <slug>] [--dry-run]       # delete regenerable files only (used by /clean-social-output); --help for flags
+npm run clean:content -- [--drafts] [--slug <slug>] [--dry-run]   # finished plans, abandoned drafts, broken briefs (used by /clean-social-output)
+npm run clean:merged -- [--apply] [--grace <days>] [--slug <slug>]   # finished (merged + posted) content (used by /clean-social-output)
+npm run clean:branches -- [--dry-run]                       # delete local content/tooling/cleanup branches whose PR is merged (used by /clean-social-output)
 npm run typecheck
 ```
 

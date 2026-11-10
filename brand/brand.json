@@ -122,7 +122,8 @@
     "ig-feed-3x4": { "w": 1080, "h": 1440, "ratio": "3:4",  "platforms": ["instagram"], "use": "Matches the current Instagram profile grid" },
     "square":      { "w": 1080, "h": 1080, "ratio": "1:1",  "platforms": ["instagram", "facebook", "whatsapp"], "use": "Carousels, WhatsApp catalogue/broadcast" },
     "story":       { "w": 1080, "h": 1920, "ratio": "9:16", "platforms": ["instagram", "facebook", "whatsapp"], "use": "Stories, WhatsApp Status, reel covers", "safe": { "top": 250, "bottom": 340, "side": 72 } },
-    "fb-landscape":{ "w": 1200, "h": 630,  "ratio": "1.91:1", "platforms": ["facebook"], "use": "Link-style posts, events" }
+    "fb-landscape":{ "w": 1200, "h": 630,  "ratio": "1.91:1", "platforms": ["facebook"], "use": "Link-style posts, events" },
+    "fb-cover":    { "w": 1640, "h": 624,  "ratio": "2.63:1", "platforms": ["facebook"], "use": "Facebook Page cover banner. Not scheduled by Buffer: set it in the Page settings. Keep text inside the centre 1280px (mobile crops the sides)", "safe": { "top": 56, "bottom": 56, "side": 180 } }
   },
 
   "video": {

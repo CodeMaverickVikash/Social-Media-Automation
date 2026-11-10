@@ -1,6 +1,7 @@
 ---
 name: social-caption
 description: Write on-brand Monavi captions, hashtags and first comments tailored per platform (Instagram, Facebook, WhatsApp) and save them as caption.txt in each output/<platform>/<slug>/ folder. Use when asked for captions, copy, hashtags, post text, WhatsApp broadcast/status text, or after rendering a post or reel.
+user-invocable: false
 ---
 
 # Write captions

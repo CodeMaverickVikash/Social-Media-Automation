@@ -1,6 +1,7 @@
 ---
 name: social-post
 description: Create on-brand Monavi static image posts (Instagram/Facebook feed, square, stories, WhatsApp Status) at full resolution from a JSON brief — overlay, split or text-card layouts. Use when asked to make, design or render a post, poster, creative, banner, story, announcement, offer, festival greeting or store-update image for Instagram, Facebook or WhatsApp.
+user-invocable: false
 ---
 
 # Create a static post

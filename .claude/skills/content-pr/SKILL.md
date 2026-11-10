@@ -1,6 +1,7 @@
 ---
 name: content-pr
 description: Package finished Monavi content (briefs, photos, rendered posts/reels, captions) with a schedule plan into a GitHub pull request; when the PR is merged to main, a GitHub Action schedules everything in Buffer for Instagram and Facebook. Use when content is ready to go live, or when asked to schedule, raise/open a PR, send for approval or queue posts/reels for the week.
+user-invocable: false
 ---
 
 # Content PR → merge → Buffer
@@ -63,6 +64,7 @@ git add content/posts/<slug>.json content/reels/<slug>.json content/schedule/<sl
 git commit -m "content: <slug>"
 git push -u origin content/<slug>
 gh pr create --base main --title "Content: <human title>" --body-file <tmp body file>
+npm run clean:output -- --slug <slug>   # frees the 2x masters/scratch; committed files and captions are kept
 ```
 Only add files that exist (e.g. skip `content/reels/...` when there's no reel). Don't add unrelated changes.
 

@@ -18,35 +18,70 @@ Make on-brand **posts, stories and reels** for Instagram, Facebook and WhatsApp 
 
 ---
 
-## 1. Quick start: make content (the normal way)
+## 1. How to use it: 3 steps
 
-Open this repo in **Claude Code** and just ask, attaching or pointing to the photo:
-
-> *"Make a festive post and reel for this kurta pajama for men: `D:\photos\kurta-01.jpg`, `D:\photos\kurta-02.jpg`"*
-
-> *"Lehenga for bride, wedding season, Instagram and WhatsApp only: `C:\shoot\lehenga.jpg`"*
-
-> *"Store timing update card for WhatsApp: open 11am–9pm, closed Tuesday"*
-
-Claude uses the **`social-content`** skill, which:
-1. Imports your photos and tells you which layouts they are big enough for
-2. Looks up the product in the catalogue (theme, icon, words, hashtags)
-3. Shows you a per-platform plan
-4. Renders everything, checks it visually and with automated QA
-5. Writes a separate caption for each platform
-6. Gets a **monavi-brand-guardian** review (required pass before any PR)
-7. Shows you the result for approval
-8. Opens a **PR** with a schedule, without stopping to ask (default posting times unless you gave dates)
-
-**One command, then merge**, the same as `/new-blog` in the automation repo:
-
+**① Make.** In Claude Code, run one command with your photos and a few words:
 ```
 /social-content D:\shoot\kurta-01.jpg D:\shoot\kurta-02.jpg kurta pajama for men, festive, post on 20 Nov
 ```
+Everything else is automatic: readiness check → photo import → post, story, square and reel → captions per platform → quality check → brand review → schedule → **PR**. Claude replies with the PR link and a preview.
+Anything you don't say gets a sensible default: all platforms, and evening posting times in India time.
 
-Review the PR's **Files changed** tab. Edit captions (`caption.txt`) or times (`content/schedule/<slug>.json`) right on GitHub. For image changes such as headline, layout or photo, ask Claude (*"change the headline on <slug> to …"*). It re-renders and pushes to the same PR. **Merging schedules it in Buffer.**
+**② Review and edit in the PR** (GitHub → the PR → *Files changed*):
+
+| Want to change | Do this |
+|---|---|
+| Caption or hashtags | Edit `output/<platform>/<slug>/caption.txt` on GitHub |
+| Date, time, platforms | Edit `content/schedule/<slug>.json` on GitHub |
+| Headline, layout, photo, reel | Ask Claude: *"change the headline on `<slug>` to …"*. It re-renders and updates the same PR |
+
+**③ Merge.** Instagram and Facebook are scheduled in Buffer automatically. The Action's run summary lists the **WhatsApp** files to share by hand (Status / broadcast).
+
+Other things you can ask:
+- *"Plan December's posts"*: a festival-aware plan with dates, products and photo needs (it plans only and makes nothing).
+- *"Store timing update card for WhatsApp: open 11am–9pm, closed Tuesday"*
+- `/buffer-publish`: an urgent one-off post outside the PR flow.
 
 **Rule:** posts and reels are always made through the skills, never by hand.
+
+### Set up once
+
+Run `npm run doctor`. It checks everything below and tells you exactly what to fix:
+
+- [ ] Node.js ≥ 22.18, `npm install`, `npx playwright install chromium`
+- [ ] GitHub CLI signed in (`gh auth login`) with an account that has **write** access to this repo
+- [ ] Repo secret `BUFFER_API_KEY` (§5)
+- [ ] `config/buffer-channels.json`: GitHub → Actions → **List Buffer channels** → save the JSON from the summary and commit it
+
+`/social-content` runs the same check first and stops before rendering if anything blocking is missing.
+
+### Housekeeping
+
+`npm run clean:output` frees disk space. After each PR, Claude cleans that slug automatically, so you rarely need it.
+
+```bash
+npm run clean:output                                          # clean every slug
+npm run clean:output -- --dry-run                             # preview only, deletes nothing
+npm run clean:output -- --slug kurta-pajama-festive-2026-11   # one slug only
+npm run clean:output -- --slug kurta-pajama-festive-2026-11 --dry-run
+npm run clean:output -- --help                                # list the flags
+```
+
+| Flag | What it does |
+|---|---|
+| *(none)* | Clean every slug |
+| `--slug <slug>` | Clean only that slug |
+| `--dry-run` | List what would be deleted and delete nothing |
+| `--help` | Show the flags |
+
+Flags go **after `--`**. Without it, npm takes `--dry-run` as its own option and the script never sees it.
+
+| Deleted (can be regenerated) | Never deleted |
+|---|---|
+| `output/_build/` render scratch | Anything committed to git (PR content, merged posts) |
+| 2× master PNGs in `output/_masters/` | `caption.txt` (written copy) |
+| Renders and manifests not committed yet | `publish-log.jsonl` (Buffer publish record) |
+| | Any other file (listed, left alone) |
 
 ### What you get
 
@@ -68,6 +103,8 @@ output/
 ---
 
 ## 2. Skills
+
+You only ever type `/social-content` (and `/buffer-publish` for urgent posts). The others are steps it runs for you, so they're hidden from the `/` menu.
 
 | Skill | What it does |
 |---|---|
@@ -190,6 +227,8 @@ npm run plan -- validate content/schedule/<slug>.json       # validate a schedul
 npm run plan -- run --files content/schedule/<slug>.json --dry-run
 npm run buffer -- channels [--save]                         # list / save Buffer channels
 npm run buffer -- post --slug <slug> --kind post --platforms instagram --dry-run   # one-off (files must be pushed)
+npm run doctor                                              # readiness check: tools, Buffer channels, GitHub access
+npm run clean:output -- [--slug <slug>] [--dry-run]       # delete regenerable files only (committed files, captions, logs kept); --help for flags
 npm run typecheck
 ```
 

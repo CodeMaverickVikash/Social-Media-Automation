@@ -8,7 +8,7 @@ Creates on-brand posts, stories and reels for **Monavi Collection** (family fash
 - `content/posts|reels/<slug>.json`: creative briefs · `content/schedule/<slug>.json`: Buffer schedule plans (immutable after merge)
 - `assets/photos/<slug>/`: imported product photos · `assets/audio/`: licensed music
 - `scripts/`: TypeScript run directly by Node ≥ 22.18 (type stripping, no build step)
-  - `import-photo.ts`, `draw-product.ts` (Claude-drawn vector illustration when there's no photo), `render-post.ts`, `render-reel.ts`, `check-media.ts`, `publish-plan.ts`, `buffer.ts`
+  - `import-photo.ts`, `draw-product.ts` (Claude-drawn vector illustration when there's no photo), `render-post.ts`, `render-reel.ts`, `check-media.ts`, `publish-plan.ts`, `buffer.ts`, `doctor.ts` (readiness), `clean-output.ts` (safe cleanup)
   - `lib/` (brand, quality, output, ffmpeg, buffer-api, media-url: jsDelivr links to committed files, since the repo is public) · `templates/` (post.ts: overlay/arch/split/card · reel.ts · illustration.ts)
 - `output/<platform>/<slug>/`: delivery files + caption.txt (**committed** in content PRs) · `output/_masters/<slug>/`: manifests (committed), 2× PNG masters (ignored)
 - `.github/workflows/`: `content-check.yml` (PR validation + dry run) · `schedule-on-merge.yml` (Buffer scheduling)
@@ -25,6 +25,8 @@ npm run render:reel -- content/reels/<slug>.json [--draft]
 npm run check:media -- output/instagram/<slug>
 npm run plan -- validate content/schedule/<slug>.json
 npm run plan -- run --files content/schedule/<slug>.json --dry-run
+npm run doctor                                   # readiness check (social-content runs it first)
+npm run clean:output -- [--slug <slug>] [--dry-run]   # safe cleanup: never touches committed files or captions
 npm run typecheck
 ```
 Buffer channel ids: GitHub → Actions → "List Buffer channels" → commit the JSON to `config/buffer-channels.json`.

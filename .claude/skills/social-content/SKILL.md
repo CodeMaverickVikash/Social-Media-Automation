@@ -12,6 +12,12 @@ Example: `/social-content D:\shoot\kurta-01.jpg D:\shoot\kurta-02.jpg kurta paja
 
 **Rule: every Monavi post and reel is made through the skills.** Never hand-write HTML, edit images in an ad-hoc script, or encode video outside `scripts/render-*.ts`. If the templates can't do something, extend them inside the matching skill's workflow and keep the quality gate. Don't work around it.
 
+## 0. Readiness check (always first, takes seconds)
+
+Run `npm run doctor` before importing or rendering anything.
+- **✗ (blocking):** stop. Tell the user each item and its fix in plain words, and don't render. Rendering first would only end in a failed push or a failed PR check.
+- **! (warning):** mention it in one line and continue.
+
 ## 1. Intake: photo + product + who it's for
 
 The typical request is: *"[photo] kurta pajama for men, festive"*. Collect:

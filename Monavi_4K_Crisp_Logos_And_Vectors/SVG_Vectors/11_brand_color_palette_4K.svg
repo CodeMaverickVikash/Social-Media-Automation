@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 1200" width="3000" height="1200">
+          <rect width="100%" height="100%" fill="#FAF9F6"/>
+          <text x="150" y="160" fill="#1F1F1F" font-family="'Montserrat', sans-serif" font-size="48" font-weight="600" letter-spacing="6">BRAND COLOR PALETTE</text>
+          
+            <circle cx="350" cy="520" r="210" fill="#FAF9F6" stroke="#dcd9d0" stroke-width="6"/>
+            <text x="350" y="840" text-anchor="middle" fill="#1F1F1F" font-family="'Montserrat', sans-serif" font-size="46" font-weight="600">Ivory</text>
+            <text x="350" y="915" text-anchor="middle" fill="#555" font-family="'Montserrat', sans-serif" font-size="38">#FAF9F6</text>
+            <text x="350" y="985" text-anchor="middle" fill="#777" font-family="'Montserrat', sans-serif" font-size="34">(Primary)</text>
+          
+            <circle cx="920" cy="520" r="210" fill="#1F1F1F" stroke="#dcd9d0" stroke-width="6"/>
+            <text x="920" y="840" text-anchor="middle" fill="#1F1F1F" font-family="'Montserrat', sans-serif" font-size="46" font-weight="600">Charcoal</text>
+            <text x="920" y="915" text-anchor="middle" fill="#555" font-family="'Montserrat', sans-serif" font-size="38">#1F1F1F</text>
+            <text x="920" y="985" text-anchor="middle" fill="#777" font-family="'Montserrat', sans-serif" font-size="34">(Text)</text>
+          
+            <circle cx="1490" cy="520" r="210" fill="#D9A5A8" stroke="#dcd9d0" stroke-width="6"/>
+            <text x="1490" y="840" text-anchor="middle" fill="#1F1F1F" font-family="'Montserrat', sans-serif" font-size="46" font-weight="600">Rose</text>
+            <text x="1490" y="915" text-anchor="middle" fill="#555" font-family="'Montserrat', sans-serif" font-size="38">#D9A5A8</text>
+            <text x="1490" y="985" text-anchor="middle" fill="#777" font-family="'Montserrat', sans-serif" font-size="34">(Accent)</text>
+          
+            <circle cx="2060" cy="520" r="210" fill="#8A987A" stroke="#dcd9d0" stroke-width="6"/>
+            <text x="2060" y="840" text-anchor="middle" fill="#1F1F1F" font-family="'Montserrat', sans-serif" font-size="46" font-weight="600">Sage</text>
+            <text x="2060" y="915" text-anchor="middle" fill="#555" font-family="'Montserrat', sans-serif" font-size="38">#8A987A</text>
+            <text x="2060" y="985" text-anchor="middle" fill="#777" font-family="'Montserrat', sans-serif" font-size="34">(Accent)</text>
+          
+            <circle cx="2630" cy="520" r="210" fill="#DCC8B1" stroke="#dcd9d0" stroke-width="6"/>
+            <text x="2630" y="840" text-anchor="middle" fill="#1F1F1F" font-family="'Montserrat', sans-serif" font-size="46" font-weight="600">Beige</text>
+            <text x="2630" y="915" text-anchor="middle" fill="#555" font-family="'Montserrat', sans-serif" font-size="38">#DCC8B1</text>
+            <text x="2630" y="985" text-anchor="middle" fill="#777" font-family="'Montserrat', sans-serif" font-size="34">(Background)</text>
+          
+        </svg>

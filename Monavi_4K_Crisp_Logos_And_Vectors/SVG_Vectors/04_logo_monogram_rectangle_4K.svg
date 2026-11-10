@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1500" width="2000" height="1500">
+          <rect width="100%" height="100%" fill="#FAF9F6"/>
+          <g transform="translate(1000, 780) scale(3.6)">
+      <g fill="#1F1F1F">
+        <!-- 4-Point Star -->
+        <path d="M0 -135 C4 -115 10 -109 30 -105 C10 -101 4 -95 0 -75 C-4 -95 -10 -101 -30 -105 C-10 -109 -4 -115 0 -135 Z"/>
+        <!-- Stylized M with Swoosh -->
+        <text x="0" y="95" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="250" font-weight="700">M</text>
+        <path d="M -12 98 Q 45 -30 125 -80 Q 55 5 18 98 Z"/>
+      </g>
+    </g>
+        </svg>

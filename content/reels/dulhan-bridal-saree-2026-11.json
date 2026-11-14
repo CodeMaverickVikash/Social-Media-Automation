@@ -1,0 +1,41 @@
+{
+  "slug": "dulhan-bridal-saree-2026-11",
+  "theme": "bridal",
+  "transition": 0.6,
+  "scenes": [
+    {
+      "photo": "assets/photos/dulhan-bridal-saree-2026-11/model-bridal-saree.png",
+      "duration": 2.8,
+      "motion": "zoom-in",
+      "eyebrow": "BRIDAL COUTURE",
+      "headline": "Dulhan\nBridal Saree.",
+      "focus": "center 40%"
+    },
+    {
+      "photo": "assets/photos/dulhan-bridal-saree-2026-11/model-bridal-saree-detail.png",
+      "duration": 3.0,
+      "motion": "pan-right",
+      "eyebrow": "HERITAGE WEAVES",
+      "headline": "Timeless\nGrace.",
+      "attrs": [
+        "Bridal Sarees",
+        "Heritage Weaves",
+        "Custom Fits"
+      ],
+      "focus": "center 35%"
+    }
+  ],
+  "endCard": {
+    "duration": 2.5,
+    "headline": "MONAVI COLLECTION",
+    "line": "WEAR YOUR STORY",
+    "cta": "Explore Bridal Edit",
+    "dark": true
+  },
+  "coverAt": 1.4,
+  "platforms": [
+    "instagram",
+    "facebook",
+    "whatsapp"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "brief": "content/reels/dulhan-bridal-saree-2026-11.json",
+  "renderedAt": "2026-11-14T08:07:50.735Z",
+  "draftOnly": false,
+  "aiGenerated": true,
+  "aiPhotos": [
+    "assets/photos/dulhan-bridal-saree-2026-11/model-bridal-saree.png",
+    "assets/photos/dulhan-bridal-saree-2026-11/model-bridal-saree-detail.png"
+  ],
+  "duration": 8.3,
+  "fps": 30,
+  "frames": 249,
+  "supersample": 2,
+  "bytes": 4212875,
+  "coverThumbnailOffsetMs": 1400,
+  "audio": "silent",
+  "files": [
+    "output/instagram/dulhan-bridal-saree-2026-11/reel.mp4",
+    "output/facebook/dulhan-bridal-saree-2026-11/reel.mp4",
+    "output/whatsapp/dulhan-bridal-saree-2026-11/reel.mp4",
+    "output/instagram/dulhan-bridal-saree-2026-11/reel-cover.jpg",
+    "output/facebook/dulhan-bridal-saree-2026-11/reel-cover.jpg",
+    "output/whatsapp/dulhan-bridal-saree-2026-11/reel-cover.jpg"
+  ]
+}

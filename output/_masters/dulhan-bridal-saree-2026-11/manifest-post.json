@@ -1,0 +1,103 @@
+{
+  "brief": "content/posts/dulhan-bridal-saree-2026-11.json",
+  "renderedAt": "2026-11-14T07:51:10.519Z",
+  "draftOnly": false,
+  "aiGenerated": true,
+  "aiPhotos": [
+    "assets/photos/dulhan-bridal-saree-2026-11/model-bridal-saree.png"
+  ],
+  "outputs": [
+    {
+      "format": "ig-feed",
+      "size": "1080x1350",
+      "master": "output/_masters/dulhan-bridal-saree-2026-11/ig-feed@2x.png",
+      "files": [
+        "output/instagram/dulhan-bridal-saree-2026-11/ig-feed.jpg",
+        "output/facebook/dulhan-bridal-saree-2026-11/ig-feed.jpg"
+      ],
+      "photos": [
+        {
+          "src": "model-bridal-saree.png",
+          "natural": [
+            2016,
+            2700
+          ],
+          "box": [
+            1080,
+            1350
+          ],
+          "scale": 0.5357142857142857,
+          "sourcePxPerOutputPx": 1.87
+        }
+      ],
+      "warnings": [
+        {
+          "level": "warn",
+          "msg": "model-bridal-saree.png is sharp at delivery size but below 2× supersampling (1.87 source px per output px). A larger original will look crisper."
+        }
+      ]
+    },
+    {
+      "format": "story",
+      "size": "1080x1920",
+      "master": "output/_masters/dulhan-bridal-saree-2026-11/story@2x.png",
+      "files": [
+        "output/instagram/dulhan-bridal-saree-2026-11/story.jpg",
+        "output/facebook/dulhan-bridal-saree-2026-11/story.jpg",
+        "output/whatsapp/dulhan-bridal-saree-2026-11/story.jpg"
+      ],
+      "photos": [
+        {
+          "src": "model-bridal-saree.png",
+          "natural": [
+            2016,
+            2700
+          ],
+          "box": [
+            1080,
+            1920
+          ],
+          "scale": 0.7111111111111111,
+          "sourcePxPerOutputPx": 1.41
+        }
+      ],
+      "warnings": [
+        {
+          "level": "warn",
+          "msg": "model-bridal-saree.png is sharp at delivery size but below 2× supersampling (1.41 source px per output px). A larger original will look crisper."
+        }
+      ]
+    },
+    {
+      "format": "square",
+      "size": "1080x1080",
+      "master": "output/_masters/dulhan-bridal-saree-2026-11/square@2x.png",
+      "files": [
+        "output/instagram/dulhan-bridal-saree-2026-11/square.jpg",
+        "output/facebook/dulhan-bridal-saree-2026-11/square.jpg",
+        "output/whatsapp/dulhan-bridal-saree-2026-11/square.jpg"
+      ],
+      "photos": [
+        {
+          "src": "model-bridal-saree.png",
+          "natural": [
+            2016,
+            2700
+          ],
+          "box": [
+            1080,
+            1080
+          ],
+          "scale": 0.5357142857142857,
+          "sourcePxPerOutputPx": 1.87
+        }
+      ],
+      "warnings": [
+        {
+          "level": "warn",
+          "msg": "model-bridal-saree.png is sharp at delivery size but below 2× supersampling (1.87 source px per output px). A larger original will look crisper."
+        }
+      ]
+    }
+  ]
+}

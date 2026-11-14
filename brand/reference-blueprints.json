@@ -1,0 +1,179 @@
+{
+  "$comment": "Extracted blueprints directly derived from approved reference posts in brand/reference-posts/. Used by skills and agents to ensure all future creatives match the approved finish.",
+  "blueprints": {
+    "mens-everyday": {
+      "referenceImage": "brand/reference-posts/mens-everyday-style.png",
+      "category": "mens",
+      "targetAudience": "Men / Young Men",
+      "garments": ["kurta-pajama", "mens-shirt", "nehru-jacket", "pathani", "ethnic-set"],
+      "recommendedTemplate": "split",
+      "alternativeTemplate": "overlay",
+      "theme": "mens",
+      "colors": {
+        "panel": "#06111A",
+        "scrim": "6, 17, 26",
+        "text": "#FAF9F6",
+        "accent": "#FAF9F6",
+        "ctaBg": "transparent",
+        "ctaFg": "#FAF9F6",
+        "ctaBorder": "#FAF9F6"
+      },
+      "typography": {
+        "eyebrow": "MEN'S COLLECTION",
+        "headline": "Everyday\nStyle.\nLasting\nConfidence.",
+        "attrs": ["Classic", "Modern", "Versatile"],
+        "cta": "Explore Collection"
+      },
+      "badge": {
+        "icon": "shirt",
+        "label": "Men's Wear"
+      },
+      "photoStyle": "Sharp, confident male model wearing tailored outfit, studio or heritage setting with deep moody shadows."
+    },
+    "festive-duo": {
+      "referenceImage": "brand/reference-posts/festive-collection-duo.png",
+      "category": "festive",
+      "targetAudience": "Men & Women / Festive Family",
+      "garments": ["kurta-pajama", "sherwani", "lehenga", "saree", "anarkali"],
+      "recommendedTemplate": "overlay",
+      "alternativeTemplate": "split",
+      "theme": "festive",
+      "colors": {
+        "panel": "#330C0D",
+        "scrim": "51, 12, 13",
+        "text": "#F5CDB4",
+        "accent": "#8E5E38",
+        "ctaBg": "#560E24",
+        "ctaFg": "#F5CDB4",
+        "ctaBorder": null
+      },
+      "typography": {
+        "eyebrow": "FESTIVE COLLECTION",
+        "headline": "Traditional roots,\nmodern grace.",
+        "attrs": ["Classic", "Comfortable", "Festive-ready"],
+        "cta": "Explore Collection"
+      },
+      "badge": {
+        "icon": "shirt",
+        "label": "Men's Wear"
+      },
+      "photoStyle": "Rich festive model photography with royal Indian ethnic garments, warm amber palace or courtyard backdrop, dramatic lighting."
+    },
+    "festive-ladies": {
+      "referenceImage": "brand/reference-posts/festive-collection-single.png",
+      "category": "festive",
+      "targetAudience": "Women / Festive Wear",
+      "garments": ["saree", "anarkali", "festive-suit", "lehenga"],
+      "recommendedTemplate": "overlay",
+      "alternativeTemplate": "arch",
+      "theme": "festive",
+      "colors": {
+        "panel": "#330C0D",
+        "scrim": "51, 12, 13",
+        "text": "#F5CDB4",
+        "accent": "#8E5E38",
+        "ctaBg": "#560E24",
+        "ctaFg": "#F5CDB4",
+        "ctaBorder": null
+      },
+      "typography": {
+        "eyebrow": "NEW ARRIVALS",
+        "headline": "Festive\nCollection",
+        "subline": "New Styles | New Stories",
+        "cta": "Explore Now"
+      },
+      "badge": {
+        "icon": "dress",
+        "label": "Ladies Wear"
+      },
+      "photoStyle": "Elegant female model in silk saree or flowing anarkali with intricate embroidery and warm golden scrim."
+    },
+    "bridal": {
+      "referenceImage": "brand/reference-posts/bridal-collection.png",
+      "category": "bridal",
+      "targetAudience": "Brides / Wedding Family",
+      "garments": ["lehenga", "sherwani", "gown", "bridal-saree"],
+      "recommendedTemplate": "overlay",
+      "alternativeTemplate": "split",
+      "theme": "festive",
+      "colors": {
+        "panel": "#330C0D",
+        "scrim": "51, 12, 13",
+        "text": "#F5CDB4",
+        "accent": "#8E5E38",
+        "ctaBg": "#8E5E38",
+        "ctaFg": "#FAF9F6",
+        "ctaBorder": null
+      },
+      "typography": {
+        "eyebrow": "BRIDAL COUTURE",
+        "headline": "Timeless Elegance\nfor Your Special Day.",
+        "attrs": ["Lehengas", "Sarees", "Gowns", "Custom Fits"],
+        "cta": "Book a Styling Session"
+      },
+      "badge": {
+        "icon": "lotus",
+        "label": "Bridal"
+      },
+      "photoStyle": "Opulent bridal portrait in handcrafted red/wine lehenga, royal gold jewellery, cinematic soft lighting."
+    },
+    "ladies-contemporary": {
+      "referenceImage": "brand/reference-posts/ladies-wear-style-that-feels-like-you.png",
+      "category": "ladies",
+      "targetAudience": "Women / Contemporary & Everyday",
+      "garments": ["kurti", "salwar-suit", "everyday-dress"],
+      "recommendedTemplate": "overlay",
+      "alternativeTemplate": "split",
+      "theme": "ladies",
+      "colors": {
+        "panel": "#FAF9F6",
+        "scrim": "217, 165, 168",
+        "text": "#1F1F1F",
+        "accent": "#D9A5A8",
+        "ctaBg": "#560E24",
+        "ctaFg": "#FAF9F6",
+        "ctaBorder": null
+      },
+      "typography": {
+        "eyebrow": "SUMMER / EVERYDAY",
+        "headline": "Style That Feels\nLike You.",
+        "attrs": ["Elegant", "Comfortable", "Timeless"],
+        "cta": "Explore Collection"
+      },
+      "badge": {
+        "icon": "dress",
+        "label": "Ladies Wear"
+      },
+      "photoStyle": "Natural, modern female model in breezy ethnic wear, natural daylight, soft beige/rose ambient tones."
+    },
+    "kids-wear": {
+      "referenceImage": "brand/reference-posts/kids-wear-little-styles.jpeg",
+      "category": "kids",
+      "targetAudience": "Kids / Boys & Girls",
+      "garments": ["kids-ethnic-set", "kids-kurta-pajama", "kids-frock"],
+      "recommendedTemplate": "arch",
+      "alternativeTemplate": "overlay",
+      "theme": "kids",
+      "colors": {
+        "panel": "#FAF9F6",
+        "scrim": "138, 152, 122",
+        "text": "#1F1F1F",
+        "accent": "#8A987A",
+        "ctaBg": "#8A987A",
+        "ctaFg": "#FAF9F6",
+        "ctaBorder": null
+      },
+      "typography": {
+        "eyebrow": "LITTLE ONES",
+        "headline": "Little Styles,\nBig Smiles.",
+        "attrs": ["Comfortable", "Playful", "Everyday"],
+        "cta": "Explore Collection"
+      },
+      "badge": {
+        "icon": "kids",
+        "label": "Kids Wear"
+      },
+      "photoStyle": "Joyful children in comfortable festive or play wear, soft natural light, warm ivory and botanical sage tones."
+    }
+  }
+}

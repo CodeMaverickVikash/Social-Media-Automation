@@ -8,9 +8,15 @@ user-invocable: false
 
 Pipeline: **brief JSON → `npm run render:post` → visual review → QA → caption**. Everything renders at 2× and is Lanczos-downscaled to the exact platform size. The output never needs resizing by hand.
 
-## 0. Load the brand
+## 0. Load the brand & reference blueprints
 
-Read `brand/brand.json` and `brand/voice.md`, and follow the `monavi-brand-rules` skill rules. Look at the reference poster closest to the category in `brand/reference-posts/`.
+Read `brand/brand.json`, `brand/voice.md`, and **`brand/reference-blueprints.json`**. Every new creative must be built from the corresponding blueprint derived directly from `brand/reference-posts/`:
+
+- **Men's Ethnic / Kurta Pajama / Shirts:** Use `mens-everyday` blueprint (`split` on dark panel or `overlay` with deep midnight scrim) or `festive-duo` (for royal festive wear).
+- **Bridal / Wedding Season:** Use `bridal` blueprint (`overlay` with regal wine scrim, lotus badge).
+- **Festive Ladies:** Use `festive-ladies` blueprint (`overlay` with champagne on deep wine).
+- **Ladies Contemporary:** Use `ladies-contemporary` blueprint (`overlay` on soft rose/beige).
+- **Kids Wear:** Use `kids-wear` blueprint (`arch` or `overlay` on ivory with sage accent).
 
 ### Reference-Post Blueprint Library (`brand/reference-posts/`)
 

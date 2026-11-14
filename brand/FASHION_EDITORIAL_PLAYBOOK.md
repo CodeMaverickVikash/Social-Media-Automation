@@ -114,3 +114,25 @@ Each format must be accompanied by its tailored `caption.txt` incorporating:
 * Authentic garment details (fabric, craftsmanship, fit).
 * Actionable store visit / DM / WhatsApp inquiry CTA.
 * High-intent, categorized hashtag banks.
+
+---
+
+## 5. Autonomous Character, Model & Background Decision Protocol
+
+When creating fashion campaign content without an uploaded photo, the AI agent has full creative autonomy to make character, model, and background decisions for the best user experience while keeping brand theming strictly intact:
+
+1. **Autonomous Model & Demographic Casting:**
+   * **Bridal (`bride`):** Regal 24–27 year old Indian bride model, delicate traditional kohl eyeliner, radiant dewy skin, graceful poise, authentic bridal jewelry (maang tikka, jhumkas, chooda).
+   * **Groom (`groom`):** Regal 28–30 year old Indian groom model, manicured royal stubble/beard, dignified serene expression.
+   * **Festive / Ladies (`women`):** Sophisticated 25–28 year old Indian female model, natural grace, contemporary elegance.
+   * **Men's Ethnic (`men`):** Handsome 27–29 year old Indian male model, athletic poised posture.
+   * **Kids (`kids`):** Cheerful, candid 6–8 year old child models in natural celebratory expressions.
+
+2. **Autonomous Background & Lighting Direction:**
+   * Curate authentic Indian architectural environments (sunlit Rajasthani sandstone haveli, Jaipur palace courtyards, carved marble jharokha arches, warm amber lantern glow).
+   * Directional physical ground contact shadows matching natural golden-hour / 10:00 AM sunlight.
+   * Ensure ample calibrated negative space (minimum 400px on text side) with smooth cinematic falloff so brand typography remains pristine.
+
+3. **Invariable Brand Theming & Layout Integrity:**
+   * In all cases, core brand rules remain non-negotiable: vector Monavi star mark + wordmark lockup, Playfair Display headlines, Montserrat attribute triplets (` | ` separated), rounded pill CTA buttons, exact platform delivery dimensions (1080×1350, 1080×1920, 1080×1080), and strict `check:media` quality standards.
+

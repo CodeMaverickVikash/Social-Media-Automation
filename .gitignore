@@ -1,5 +1,7 @@
+# Dependencies & Environment
 node_modules/
 .env
+.env.*
 *.log
 .DS_Store
 Thumbs.db
@@ -9,6 +11,23 @@ Thumbs.db
 output/_build/
 output/_masters/**/*.png
 output/_masters/**/publish-log.jsonl
+output/_*_scratch/
+output/_test_*/
+output/preview_*.html
+output/**/temp_*
+output/**/*.tmp
 
+# Audio & Video Scratch Directories
+assets/photos/**/_audio_scratch/
+assets/photos/**/_voice_scratch/
+assets/photos/**/_scratch/
+assets/audio/*_scratch/
+*.tmp
+*.temp
 
-.playwright-mcp
+# Playwright Testing Artifacts & Reports
+.playwright-mcp/
+playwright-report/
+test-results/
+.playwright-artifacts/
+playwright-recordings/

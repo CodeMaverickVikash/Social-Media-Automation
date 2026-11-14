@@ -1,7 +1,7 @@
 // Multi-Platform Social Media Content & Copywriting Engine
 // Generates tailored captions, hooks, hashtags, and metadata for Instagram, Facebook, WhatsApp, and Pinterest.
 
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { ROOT } from './brand.ts';
 import type { FashionAnalysis } from './fashion-intelligence.ts';
@@ -113,7 +113,7 @@ export function generateMultiPlatformContent(analysis: FashionAnalysis, slug: st
 /**
  * Writes caption.txt for all supported platform folders in output/<platform>/<slug>/
  */
-export function writeAllPlatformCaptions(outputBaseDir: string, slug: string, analysis: FashionAnalysis): void {
+export function writeAllPlatformCaptions(outputBaseDir: string, slug: string, analysis: FashionAnalysis, overwrite: boolean = false): void {
   const copy = generateMultiPlatformContent(analysis, slug);
 
   const targets: [string, PlatformCopy][] = [
@@ -125,6 +125,9 @@ export function writeAllPlatformCaptions(outputBaseDir: string, slug: string, an
   for (const [platform, data] of targets) {
     const dir = path.join(outputBaseDir, platform, slug);
     mkdirSync(dir, { recursive: true });
-    writeFileSync(path.join(dir, 'caption.txt'), data.text.trim() + '\n', 'utf8');
+    const capFile = path.join(dir, 'caption.txt');
+    if (!existsSync(capFile) || overwrite) {
+      writeFileSync(capFile, data.text.trim() + '\n', 'utf8');
+    }
   }
 }

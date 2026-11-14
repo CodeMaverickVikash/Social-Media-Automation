@@ -32,6 +32,12 @@ Crafts evocative, platform-optimized promotional copy, hooks, and hashtags for M
    - Attribute triplets (`attrs`) must specify the garment's authentic `[Fabric, Embellishment/Detail, Silhouette/Cut]` (e.g. `Raw Silk | Antique Zari | Tailored Fit`). Generic placeholders like `Classic | Modern | Versatile` or `Everyday Style` are strictly banned.
    - Platform captions must highlight the real fabric textures, colors, and cuts visible in the image.
 
+5. **Simple English Mandate ("Simple, Clear & Natural English")**:
+   - All text on the image canvas (headlines, eyebrows, `attrs`, CTAs) AND all social captions MUST be in **simple, clear, natural English**.
+   - Strictly ban complex, archaic, or pretentious vocabulary (`opulent`, `ineffable`, `ethereal`, `magnificence`, `splendorous`, `transcendental`, `connoisseur`).
+   - Use direct, accessible terms: *"Royal Wedding Collection"*, *"Pure Silk Saree"*, *"Silk Kurta Pajama"*, *"Comfortable Fit"*, *"Shop Now"*, *"Visit Store"*.
+   - Captions must use short sentences (under 15 words) with conversational boutique tone.
+
 ---
 
 ## Platform Standards

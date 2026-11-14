@@ -33,11 +33,11 @@ export function generateMultiPlatformContent(analysis: FashionAnalysis, slug: st
   const occasion = analysis.occasion;
 
   // ----------------------------------------------------
-  // 1. INSTAGRAM FEED / REEL
+  // 1. INSTAGRAM FEED / REEL (Simple English)
   // ----------------------------------------------------
   const igHook = analysis.social.suggestedHook;
-  const igBody = `Tailored in ${fabrics} with shades of ${colors}, this ${gName.toLowerCase()} is designed for moments that become memories. Effortless silhouette, refined details, and lasting comfort.`;
-  const igCta = `Visit our store or send a DM to explore the collection. Tap the link in bio to discover more.`;
+  const igBody = `Made with premium ${fabrics} in shades of ${colors}. Designed for a clean look, easy comfort, and memorable family celebrations.`;
+  const igCta = `Send us a DM or visit our boutique to explore the collection.`;
   const igTags = Array.from(new Set([
     '#MonaviCollection',
     '#WearYourStory',
@@ -54,31 +54,31 @@ export function generateMultiPlatformContent(analysis: FashionAnalysis, slug: st
   };
 
   // ----------------------------------------------------
-  // 2. FACEBOOK FEED
+  // 2. FACEBOOK FEED (Simple English)
   // ----------------------------------------------------
-  const fbP1 = `Looking for the perfect ${occasion} outfit? Our new ${gName.toLowerCase()} brings together timeless Indian craftsmanship with comfortable contemporary cuts.`;
-  const fbP2 = `Handpicked ${fabrics} fabrics, tailored for an impeccable fit whether you are attending a family celebration or dressing with confidence for the weekend.`;
-  const fbP3 = `Experience the collection in person at Monavi Collection. Send us a message here on Facebook or drop by our boutique to find your size.`;
+  const fbP1 = `Looking for the perfect ${occasion} outfit? Our new ${gName.toLowerCase()} brings together classic style with a comfortable, easy fit.`;
+  const fbP2 = `Made with quality ${fabrics} in shades of ${colors}. Perfect for weddings, festive gatherings, or family functions.`;
+  const fbP3 = `Visit Monavi Collection to try it on, or message us here to check available sizes.`;
   const fbTags = ['#MonaviCollection', '#WearYourStory', `#${gName.replace(/[^a-zA-Z0-9]/g, '')}`];
 
   const facebookCopy: PlatformCopy = {
     platform: 'facebook',
-    cta: 'Send us a message or visit the store to try your fit.',
+    cta: 'Send us a message or visit our store to try your size.',
     hashtags: fbTags,
     text: `${fbP1}\n\n${fbP2}\n\n${fbP3}\n\n${fbTags.join(' ')}`
   };
 
   // ----------------------------------------------------
-  // 3. WHATSAPP BROADCAST / STATUS
+  // 3. WHATSAPP BROADCAST / STATUS (Simple English)
   // ----------------------------------------------------
   // Rule: 1-3 lines, personal tone, direct CTA, ZERO hashtags, max 2 tasteful emojis
-  const waLine1 = `New in at Monavi Collection: ${gName} in ${colors}. ✨`;
-  const waLine2 = `Crafted in breathable ${fabrics} for effortless style and all-day comfort.`;
-  const waLine3 = `Reply directly to this message to see available sizes or book a visit!`;
+  const waLine1 = `New arrival at Monavi: ${gName} in ${colors}. ✨`;
+  const waLine2 = `Made with soft, comfortable ${fabrics} — perfect for ${occasion} wear.`;
+  const waLine3 = `Reply to this message to check sizes, prices, or book a store trial!`;
 
   const whatsappCopy: PlatformCopy = {
     platform: 'whatsapp',
-    cta: 'Reply to this message to order or reserve your piece.',
+    cta: 'Reply to this message to check sizes or book a trial.',
     text: `${waLine1}\n${waLine2}\n\n${waLine3}`
   };
 

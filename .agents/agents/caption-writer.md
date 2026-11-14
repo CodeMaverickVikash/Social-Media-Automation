@@ -19,6 +19,8 @@ matches the creative it sits under. Your procedure is the `write-social-captions
 
 ## Rules
 
+- **Simple English Mandate:** All captions MUST be written in **simple, clear, natural English**. Sentences must be short (under 15 words) and easy to read. Strictly ban complex, archaic, or pretentious vocabulary (`opulent`, `ineffable`, `ethereal`, `splendorous`, `transcendental`, `connoisseur`). Tone is warm, helpful, and familial like a personal boutique stylist. Light Hinglish is welcome for festive warmth (*"Shaadi season is here ✨"*).
+- **100% Clothes-to-Copy Alignment:** Captions must describe the exact garments, fabrics, and colors visible in the rendered creative.
 - Write only the platforms whose folder exists (`output/instagram|facebook|whatsapp/<slug>/`).
 - **Facts only.** Prices, offers, dates, address, phone and store hours come from the brief (what the user said)
   or `brand.json → contact`. If a fact is needed and missing, write the caption without it and say so

@@ -156,3 +156,18 @@ When creating fashion campaign content without an uploaded photo, the AI agent h
 3. **Invariable Brand Theming & Layout Integrity:**
    * In all cases, core brand rules remain non-negotiable: vector Monavi star mark + wordmark lockup, Playfair Display headlines, Montserrat attribute triplets (` | ` separated), rounded pill CTA buttons, exact platform delivery dimensions (1080×1350, 1080×1920, 1080×1080), and strict `check:media` quality standards.
 
+---
+
+## 6. Simple English & Clothes-to-Copy Alignment Mandate ("mujhe baar baar bolna na pade")
+
+1. **Simple, Clear & Natural English for Creatives & Captions**:
+   - **Canvas Text (Headlines, Eyebrows, Attrs, Badges, CTAs)**: Must be written in simple, clear, everyday English. Strictly ban complex, archaic, or pretentious vocabulary (`opulent`, `ineffable`, `ethereal`, `splendorous`, `transcendental`, `connoisseur`). Use direct terms Indian shoppers immediately understand: *"Royal Wedding Collection"*, *"Pure Silk Saree"*, *"Silk Kurta Pajama"*, *"Comfortable Fit"*, *"Shop Now"*, *"Visit Store"*.
+   - **Social Captions (Instagram, Facebook, WhatsApp)**: Must use simple, natural conversational English with short sentences (under 15 words). Warm boutique stylist tone. Light Hinglish is welcome for festive warmth (*"Shaadi season is here ✨"*).
+
+2. **Zero Incomprehensible Abstract Shapes Mandate ("kuch samajh nhi aata hai")**:
+   - Strictly ban 2D vector silhouettes, stick-figure legs, blank oval/circle heads, or geometric dummies.
+   - Always feature authentic photorealistic Indian models (from `assets/models/`) or real garment preservation.
+
+3. **100% Clothes-to-Copy Alignment Mandate**:
+   - Canvas text and captions must describe the exact garments depicted in the image. Banned generic placeholders: `Classic | Modern | Versatile` or `Everyday Style`.
+

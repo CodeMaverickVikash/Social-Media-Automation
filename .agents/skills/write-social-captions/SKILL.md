@@ -6,9 +6,15 @@ description: "Internal step, normally run by the other skills (not by the user).
 
 # Write captions
 
-## 0. Load voice
+## 0. Load voice & Simple English Mandate
 
 Read `brand/voice.md` (tone, formula, hashtag bank, per-platform rules) and `brand/brand.json → contact`, `collections`.
+
+**Simple English Mandate ("Simple, Clear & Natural English"):**
+- All captions MUST be written in **simple, natural, conversational English** with short, clear sentences (under 15 words).
+- Strictly ban overly complex, archaic, or pretentious vocabulary (e.g. `opulent`, `ineffable`, `ethereal`, `splendorous`, `transcendental`, `connoisseur`).
+- Tone: warm, friendly boutique stylist talking directly to a customer.
+- 100% Clothes-to-Copy Alignment: captions must describe the exact garments, fabrics, and colors visible in the creative.
 
 ## 1. Inputs
 

@@ -48,7 +48,8 @@ A slug (for example `kurta-pajama-festive-2026-11`). Review everything that belo
    - WhatsApp: 1–3 lines, personal, clear action, **no hashtags**
    - ≤ 2 emoji per caption and never stacked. No shouting, no "!!!", no vague hype, no competitor or celebrity names
 6. **Consistency & 100% Clothes-to-Copy Alignment (blocking).** Headline wording matches across post, story and reel. Canvas headline, eyebrow, attribute triplet (`attrs`), and badge must directly describe and match the exact clothes shown in the image ("mujhe baar baar bolna na pade" mandate). Reject generic placeholders like `['Classic', 'Modern', 'Versatile']` or `['Everyday Style']` when specific garments are depicted. Captions describe what the creative actually shows. The slug and folders line up.
-7. **CTA.** One clear, gracious CTA per creative and caption (from the `voice.md` CTA list or close to it).
+7. **Simple English Mandate (blocking).** All text on the creative canvas (headline, eyebrow, attribute triplet `attrs`, badge, CTA) AND all platform captions must be in **simple, natural, everyday English**. Strictly reject complex, archaic, or pretentious vocabulary (`opulent`, `ineffable`, `ethereal`, `splendorous`, `transcendental`, `connoisseur`). Confirm caption sentences are short (under 15 words) with conversational boutique stylist tone.
+8. **CTA.** One clear, gracious CTA per creative and caption (from the `voice.md` CTA list or close to it).
 
 ## Output
 

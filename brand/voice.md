@@ -11,26 +11,29 @@
 | Celebratory around festivals and weddings | Discount-first, bargain-bin |
 | Inclusive of the whole family | Exclusive or snobbish |
 
-## Language
+## Language & Simple English Mandate ("Simple, Clear & Natural English")
 
-- Default: **English**, simple and warm. Light Hinglish works on festive and WhatsApp copy ("Shaadi season is here ✨").
-- Write regional-language variants only when asked, and have a native speaker review them.
-- Use sentence case. Headlines can end with a full stop for poise: *"Style That Feels Like You."*
+- **Mandatory Simple English Rule:** All text on creatives (headlines, eyebrows, attribute triplets `attrs`, CTAs) AND all social captions (Instagram, Facebook, WhatsApp) MUST be in **simple, clear, everyday English**.
+- **No Complex Jargon or Pretentious Words:** Strictly ban overly complex, archaic, or stiff vocabulary (e.g. `opulent`, `ineffable`, `ethereal`, `magnificence`, `splendorous`, `transcendental`, `quintessential`, `connoisseur`).
+- **Direct & Accessible:** Use words that everyday customers and Indian families immediately understand: *"Royal Wedding Collection"*, *"Pure Silk Saree"*, *"Silk Kurta Pajama"*, *"Comfortable Fit"*, *"Tailored Cut"*, *"Shop Now"*, *"Visit Store"*.
+- **Short, Scannable Sentences in Captions:** Keep sentences short (under 15 words). Warm, friendly, stylist-to-client tone. Light Hinglish touches are welcome for festive warmth (*"Shaadi season is here ✨"*, *"Perfect for your family celebration ✨"*).
+- Use sentence case. Headlines can end with a full stop for poise: *"Royal Wedding Collection."*
 
 ## Signature phrases (from approved posters)
 
 - Wear Your Story
-- Timeless Elegance for Your Special Day.
-- Traditional Roots, Modern Grace
+- Royal Wedding Collection
+- Silk Kurta Pajama
+- Pure Silk Saree
+- Bridal Silk Lehenga
+- Festive Family Special
 - New Styles | New Stories
-- Style That Feels Like You.
-- Everyday Style. Lasting Confidence.
 - Little Styles, Big Smiles.
 
-Attribute triplets (Montserrat, ` | ` separated):
-`Elegant | Comfortable | Timeless` · `Classic | Modern | Versatile` · `Comfortable | Playful | Everyday` · `Lehengas | Sarees | Gowns | Custom Fits`
+Attribute triplets (Montserrat, ` | ` separated — authentic fabrics & cuts in simple English):
+`Raw Silk | Antique Zari | Tailored Fit` · `Banarasi Silk | Zari Border | Heritage Weave` · `Pure Cotton | Floral Print | Comfort Fit` · `Velvet Silk | Antique Zari | Flared Fit`
 
-CTAs: `Explore Collection →` · `Explore Now →` · `Visit the Store →` · `DM to Order →` · `Book a Styling Session →`
+CTAs in simple English: `Explore Collection →` · `Shop Now →` · `Visit Store →` · `DM to Order →` · `Book a Free Trial →`
 
 ## Caption formula
 

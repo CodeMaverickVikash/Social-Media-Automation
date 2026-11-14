@@ -22,3 +22,7 @@ description: Writes high-converting Indian fashion hooks, product manager grade 
    - Headlines and attribute triplets on creatives, and all social captions, must strictly describe the exact clothes, fabrics, and cuts visible in the image.
    - Prominently name the featured product in headlines (e.g. `Silk Kurta\nPajama.`, `Royal\nSherwani.`, `Banarasi Silk\nSaree.`, `Kids Festive\nKurta Set.`).
    - Attribute triplets must state authentic textile and tailoring specifications (`Raw Silk | Antique Zari | Tailored Fit`). Generic placeholders (`Classic | Modern | Versatile`) are strictly banned.
+4. **Simple English Mandate ("Simple, Clear & Natural English"):**
+   - All text on the image canvas (headlines, eyebrows, `attrs`, CTAs) AND all social captions MUST be in **simple, natural, everyday English**.
+   - Strictly ban complex, archaic, or pretentious vocabulary (`opulent`, `ineffable`, `ethereal`, `splendorous`, `transcendental`, `connoisseur`).
+   - Short sentences (under 15 words) and direct, friendly boutique stylist tone.

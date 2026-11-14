@@ -1,6 +1,6 @@
 ---
 name: platform-duration-validation
-description: Dynamically calculate and validate the maximum publishable video duration across Instagram, Facebook, and WhatsApp based on official platform limits, API restrictions, and processing capabilities.
+description: "Dynamically calculate and validate the maximum publishable video duration across Instagram, Facebook, and WhatsApp based on official platform limits, API restrictions, and processing capabilities."
 ---
 
 # Platform Duration Validation — Monavi Collection

@@ -1,6 +1,6 @@
 ---
 name: render-social-reel
-description: Create on-brand Monavi Reels / Shorts / WhatsApp Status videos (1080x1920 MP4, H.264) from photos with Ken Burns motion, animated text, crossfades and a logo end card — full quality, no pixelation. Use when asked to make a reel, short, video, story video, status video, slideshow or motion version of a post for Instagram, Facebook or WhatsApp.
+description: "Create on-brand Monavi Reels / Shorts / WhatsApp Status videos (1080x1920 MP4, H.264) from photos with Ken Burns motion, animated text, crossfades and a logo end card — full quality, no pixelation. Use when asked to make a reel, short, video, story video, status video, slideshow or motion version of a post for Instagram, Facebook or WhatsApp."
 user-invocable: false
 ---
 

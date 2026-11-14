@@ -28,6 +28,7 @@
     "test:playwright": "node scripts/test-media-playwright.ts",
     "voice:cli": "node scripts/voice-engine-cli.ts",
     "plan": "node scripts/publish-plan.ts",
+    "clean:tests": "node scripts/clean-test-artifacts.ts",
     "clean:output": "node scripts/clean-output.ts",
     "clean:branches": "node scripts/clean-branches.ts",
     "clean:content": "node scripts/clean-content.ts",

@@ -1,6 +1,6 @@
 ---
 name: clean-social-output
-description: Tidy up after making social content. Deletes rendered files that can be regenerated, removes content that is already merged and fully posted (through a cleanup PR, after the user agrees), deletes finished monthly plans and abandoned drafts, removes finished local branches, prunes stale GitHub refs, and reports leftovers (unused photos, broken briefs, PRs left open too long). Never deletes merged schedule plans, unmerged work or any caption in a live slug. Use when asked to clean, clear, tidy, reset or free up space, to remove old, merged, posted or finished content, branches, drafts or plans, or to check the content folder for problems.
+description: "Tidy up after making social content. Deletes rendered files that can be regenerated, removes content that is already merged and fully posted (through a cleanup PR, after the user agrees), deletes finished monthly plans and abandoned drafts, removes finished local branches, prunes stale GitHub refs, and reports leftovers (unused photos, broken briefs, PRs left open too long). Never deletes merged schedule plans, unmerged work or any caption in a live slug. Use when asked to clean, clear, tidy, reset or free up space, to remove old, merged, posted or finished content, branches, drafts or plans, or to check the content folder for problems."
 argument-hint: "(nothing needed) or: <slug>   e.g. kurta-pajama-festive-2026-11"
 ---
 

@@ -35,31 +35,61 @@ export interface GeneratedPhotoResult {
 /**
  * Builds photorealistic prompts tuned for Indian fashion editorial photography.
  */
-export function buildFashionPhotoPrompt(analysis: FashionAnalysis, aspectRatio: '4:5' | '9:16' | '1:1' = '4:5'): PromptBundle {
+export function buildFashionPhotoPrompt(
+  analysis: FashionAnalysis,
+  aspectRatio: '4:5' | '9:16' | '1:1' = '4:5',
+  options?: {
+    modelPresentation?: 'single_male' | 'single_female' | 'single_bride' | 'single_groom' | 'single_child_girl' | 'single_child_boy' | 'duo_couple' | 'family' | 'mannequin_showroom' | 'ghost_mannequin';
+    poseMovement?: 'standing_poised' | 'walking_towards_camera' | 'runway_walk_turn' | 'seated_royal_armchair' | 'back_view_embroidery' | 'twirling_flare' | 'macro_fabric_closeup';
+  }
+): PromptBundle {
   const is916 = aspectRatio === '9:16';
   const targetWidth = 2160;
   const targetHeight = is916 ? 3840 : aspectRatio === '4:5' ? 2700 : 2160;
 
   // 1. Model & Demographic Direction
   let modelDesc = '';
-  if (analysis.modelComposition === 'duo_couple') {
+  const presentation = options?.modelPresentation;
+
+  if (presentation === 'mannequin_showroom') {
+    modelDesc = 'Tailored bespoke headless showroom mannequin poised on an antique brushed brass pedestal in a minimalist luxury boutique';
+  } else if (presentation === 'ghost_mannequin') {
+    modelDesc = 'Invisible 3D ghost mannequin presentation showcasing pure garment structure, authentic interior collar label, pristine tailoring, and natural 3D drapery volume';
+  } else if (presentation === 'duo_couple' || analysis.modelComposition === 'duo_couple') {
     modelDesc = 'Stunning royal Indian wedding couple (Duo) standing poised together: a handsome 29-year-old groom with well-groomed beard in a tailored antique ivory and gold sherwani, and a gorgeous 25-year-old Indian bride with radiant smile, delicate kohl eyeliner, and graceful poise in a lavish deep wine and crimson bridal lehenga with royal flair and flowing dupatta. Harmonious styling, romantic dignified presence, natural eye contact';
-  } else if (analysis.modelComposition === 'family') {
+  } else if (presentation === 'family' || analysis.modelComposition === 'family') {
     modelDesc = 'Joyful royal Indian family standing together celebrating: handsome father in tailored kurta, elegant mother in festive saree, and happy young child in miniature ethnic wear. Warm authentic smiles';
-  } else if (analysis.targetAudience === 'men' || analysis.genderPresentation === 'male') {
-    modelDesc = 'Handsome 28-year-old Indian male fashion model with well-groomed stubble, sharp jawline, dignified confident expression, athletic poised stance';
-  } else if (analysis.targetAudience === 'groom') {
+  } else if (presentation === 'single_groom' || analysis.targetAudience === 'groom') {
     modelDesc = 'Regal 29-year-old Indian groom model with groomed royal beard, dignified serene smile, opulent presence';
-  } else if (analysis.targetAudience === 'bride') {
+  } else if (presentation === 'single_bride' || analysis.targetAudience === 'bride') {
     modelDesc = 'Stunning 25-year-old Indian bride model with classic South Asian features, delicate kohl eyeliner, radiant dewy skin, gentle graceful smile, elegant regal poise';
-  } else if (analysis.targetAudience === 'kids_girls' || analysis.genderPresentation === 'child_girl') {
+  } else if (presentation === 'single_child_girl' || analysis.targetAudience === 'kids_girls' || analysis.genderPresentation === 'child_girl') {
     modelDesc = 'Adorable 6-year-old Indian girl child model with joyful twinkling eyes, natural sweet smile, glossy soft curls, playful candid expression';
-  } else if (analysis.targetAudience === 'kids_boys' || analysis.genderPresentation === 'child_boy') {
+  } else if (presentation === 'single_child_boy' || analysis.targetAudience === 'kids_boys' || analysis.genderPresentation === 'child_boy') {
     modelDesc = 'Charming 7-year-old Indian boy child model with cheerful spirited grin, natural relaxed posture, joyful celebration expression';
+  } else if (presentation === 'single_male' || analysis.targetAudience === 'men' || analysis.genderPresentation === 'male') {
+    modelDesc = 'Handsome 28-year-old Indian male fashion model with well-groomed stubble, sharp jawline, dignified confident expression, athletic poised stance';
   } else if (analysis.category === 'kids') {
     modelDesc = 'Happy 6-year-old Indian child model with radiant smile, energetic playful posture';
   } else {
     modelDesc = 'Sophisticated 26-year-old Indian female fashion model with natural South Asian elegance, understated dewy makeup, confident calm gaze, graceful posture';
+  }
+
+  // Pose & Dynamic Movement Augmentation
+  let poseDesc = '';
+  const pose = options?.poseMovement;
+  if (pose === 'walking_towards_camera') {
+    poseDesc = 'Captured mid-stride walking smoothly towards the camera with natural fabric motion and effortless grace.';
+  } else if (pose === 'runway_walk_turn') {
+    poseDesc = 'Executing a deliberate 3/4 fashion runway turn, highlighting both the front silhouette and the back drape.';
+  } else if (pose === 'seated_royal_armchair') {
+    poseDesc = 'Seated poised on a carved antique velvet armchair in a sunlit palace verandah, radiating stately dignity.';
+  } else if (pose === 'back_view_embroidery') {
+    poseDesc = 'Facing away from the camera in a graceful 3/4 profile, prominently showcasing intricate back neck embroidery, tassels, and pallu drape.';
+  } else if (pose === 'twirling_flare') {
+    poseDesc = 'Captured in a graceful rotational twirl, showcasing the majestic circular ghera flare and flowing lightweight border.';
+  } else if (pose === 'macro_fabric_closeup') {
+    poseDesc = 'Cinematic macro close-up highlighting tactile hand-woven zari embroidery, authentic fabric slub, and artisanal buttons.';
   }
 
   // 2. Garment & Styling Details
@@ -92,13 +122,14 @@ export function buildFashionPhotoPrompt(analysis: FashionAnalysis, aspectRatio: 
   const positivePrompt = [
     `Award-winning luxury fashion campaign photography for Monavi Collection ("Wear Your Story").`,
     `${modelDesc},`,
+    poseDesc,
     `${garmentDetail}.`,
     `Setting: ${env}.`,
     `Lighting: ${lighting}.`,
     `Camera: Shot on Hasselblad H6D-100c medium format, 85mm f/1.4 lens, shallow depth of field, authentic filmic color rendition.`,
     `Skin & Anatomy: Natural human skin pores, fine skin texture, anatomically perfect hands and fingers, realistic fabric texture, ultra-high resolution 8k.`,
     negSpace
-  ].join(' ');
+  ].filter(Boolean).join(' ');
 
   const negativePrompt = [
     'waist-cut passport crop, cropped legs, missing pajama, missing trousers, deformed hands, extra fingers, missing fingers, fused fingers, distorted facial features, plastic fake skin, CGI rendering, cartoon, 3D illustration, anime, blurry, low resolution, oversaturated neon colors, western street background, text overlays on body, watermark, logo on cloth, crowd in background, bad drapery'
@@ -125,10 +156,12 @@ export async function generateFashionCampaignImage(options: {
   query: string;
   inputPhotoPath?: string;
   aspectRatio?: '4:5' | '9:16' | '1:1';
+  modelPresentation?: 'single_male' | 'single_female' | 'single_bride' | 'single_groom' | 'single_child_girl' | 'single_child_boy' | 'duo_couple' | 'family' | 'mannequin_showroom' | 'ghost_mannequin';
+  poseMovement?: 'standing_poised' | 'walking_towards_camera' | 'runway_walk_turn' | 'seated_royal_armchair' | 'back_view_embroidery' | 'twirling_flare' | 'macro_fabric_closeup';
 }): Promise<GeneratedPhotoResult> {
-  const { slug, query, inputPhotoPath, aspectRatio = '4:5' } = options;
+  const { slug, query, inputPhotoPath, aspectRatio = '4:5', modelPresentation, poseMovement } = options;
   const analysis = analyzeFashionRequest(query, { hasProductImage: Boolean(inputPhotoPath) });
-  const promptBundle = buildFashionPhotoPrompt(analysis, aspectRatio);
+  const promptBundle = buildFashionPhotoPrompt(analysis, aspectRatio, { modelPresentation, poseMovement });
 
   const destDir = path.join(ROOT, 'assets', 'photos', slug);
   mkdirSync(destDir, { recursive: true });

@@ -1,6 +1,6 @@
 ---
 name: autonomous-film-direction
-description: Direct and produce complete cinematic multi-clip fashion promotional films for Monavi Collection from concept to final master render.
+description: "Direct and produce complete cinematic multi-clip fashion promotional films for Monavi Collection from concept to final master render."
 ---
 
 # Autonomous Film Direction Skill

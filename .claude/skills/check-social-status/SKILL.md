@@ -1,6 +1,6 @@
 ---
 name: check-social-status
-description: Show where all Monavi content stands: planned, waiting for review in a PR, scheduled in Buffer, and what to share manually on WhatsApp today. Use when asked for status, what's pending, what's going out, what to post on WhatsApp today, or "what's next".
+description: "Show where all Monavi content stands: planned, waiting for review in a PR, scheduled in Buffer, and what to share manually on WhatsApp today. Use when asked for status, what's pending, what's going out, what to post on WhatsApp today, or \"what's next\"."
 argument-hint: "(nothing needed) or: today | this week"
 ---
 

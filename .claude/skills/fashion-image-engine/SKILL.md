@@ -1,6 +1,6 @@
 ---
 name: fashion-image-engine
-description: Formulate photorealistic fashion campaign photography prompts (Workflow A) or preserve and composite uploaded garment photos into luxury editorial settings (Workflow B).
+description: "Formulate photorealistic fashion campaign photography prompts (Workflow A) or preserve and composite uploaded garment photos into luxury editorial settings (Workflow B)."
 user-invocable: true
 argument-hint: "--slug <slug> --query '<description>' [--input-photo <path>]"
 ---

@@ -1,6 +1,6 @@
 ---
 name: open-content-pr
-description: Package finished Monavi content (briefs, photos, rendered posts/reels, captions) with a schedule plan into a GitHub pull request; when the PR is merged to main, a GitHub Action schedules everything in Buffer for Instagram and Facebook. Use when content is ready to go live, or when asked to schedule, raise/open a PR, send for approval or queue posts/reels for the week.
+description: "Package finished Monavi content (briefs, photos, rendered posts/reels, captions) with a schedule plan into a GitHub pull request; when the PR is merged to main, a GitHub Action schedules everything in Buffer for Instagram and Facebook. Use when content is ready to go live, or when asked to schedule, raise/open a PR, send for approval or queue posts/reels for the week."
 user-invocable: false
 ---
 

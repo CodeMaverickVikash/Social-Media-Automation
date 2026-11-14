@@ -1,6 +1,6 @@
 ---
 name: create-social-poster
-description: Create a Monavi poster for Instagram, Facebook and WhatsApp (festival greeting, offer, announcement, new-arrival or store-update poster), as feed, story and square images, then open a PR that schedules it in Buffer on merge. Use when asked for a poster, festival greeting, offer or sale poster, announcement, "new arrivals" creative, quote card or store-update image. With or without a photo.
+description: "Create a Monavi poster for Instagram, Facebook and WhatsApp (festival greeting, offer, announcement, new-arrival or store-update poster), as feed, story and square images, then open a PR that schedules it in Buffer on merge. Use when asked for a poster, festival greeting, offer or sale poster, announcement, \"new arrivals\" creative, quote card or store-update image. With or without a photo."
 argument-hint: "<occasion or message> [photo path] [platforms] [date] e.g. Diwali greeting for the whole family, post on 28 Oct"
 ---
 

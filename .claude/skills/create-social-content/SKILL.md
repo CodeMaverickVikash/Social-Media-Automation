@@ -1,6 +1,6 @@
 ---
 name: create-social-content
-description: Create the full Monavi social media set from a product photo: feed post, story, square and reel for Instagram, Facebook and WhatsApp, with captions, then open a PR that schedules it in Buffer on merge. The user gives a photo and says what it is and who it is for (e.g. "kurta pajama for men", "lehenga for bride", "kids frock"). Use for product posts, stories, reels and campaigns. For a poster (greeting, offer, announcement) use create-social-poster, for a Facebook cover or wide banner use create-social-banner.
+description: "Create the full Monavi social media set from a product photo: feed post, story, square and reel for Instagram, Facebook and WhatsApp, with captions, then open a PR that schedules it in Buffer on merge. The user gives a photo and says what it is and who it is for (e.g. \"kurta pajama for men\", \"lehenga for bride\", \"kids frock\"). Use for product posts, stories, reels and campaigns. For a poster (greeting, offer, announcement) use create-social-poster, for a Facebook cover or wide banner use create-social-banner."
 argument-hint: "<photo paths…> <product> for <men|women|bride|groom|kids> [occasion] [platforms] [dates/times] [facts: price, offer…]"
 ---
 

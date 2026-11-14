@@ -1,6 +1,6 @@
 ---
 name: setup-social-automation
-description: One-time (and repair) setup for the Monavi social automation. Checks the machine, GitHub access and Buffer channels, fixes everything Claude can fix itself, and tells the user exactly what only they can do. Use when asked to set up, get ready, check or fix the automation, when a first run fails, or when a new Buffer account is connected.
+description: "One-time (and repair) setup for the Monavi social automation. Checks the machine, GitHub access and Buffer channels, fixes everything Claude can fix itself, and tells the user exactly what only they can do. Use when asked to set up, get ready, check or fix the automation, when a first run fails, or when a new Buffer account is connected."
 argument-hint: "(nothing needed) or: refresh channels"
 ---
 

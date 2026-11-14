@@ -129,7 +129,7 @@
       },
       "authLimitationNoted": true,
       "limitationAdvice": "Platform note: Live Instagram/Facebook engagement metrics require authenticated sessions or API tokens. Strategic audit is synthesized from public profile benchmarks, URL metadata, and Indian fashion retail positioning.",
-      "auditedAt": "2026-11-14T10:38:39.863Z"
+      "auditedAt": "2026-11-14T11:18:25.009Z"
     },
     "manyavar": {
       "url": "https://instagram.com/manyavar",
@@ -196,6 +196,82 @@
     }
   },
   "campaignHistory": [
+    {
+      "slug": "item-1794655105015-kndg",
+      "title": "Fashion Collection EVERYDAY Campaign",
+      "date": "2026-11-14",
+      "category": "ethnic-wear",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "whatsapp"
+      ],
+      "status": "draft",
+      "notes": "AI Review: APPROVED BY AI (Score: 100/100)"
+    },
+    {
+      "slug": "lehenga-105014",
+      "title": "Royal Shaadi Collection WEDDING Campaign",
+      "date": "2026-11-14",
+      "category": "lehenga",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "status": "published",
+      "notes": "Authorized by Owner for publishing to: instagram, facebook."
+    },
+    {
+      "slug": "kurta-pajama-105000",
+      "title": "Kurta Pajama EVERYDAY Campaign",
+      "date": "2026-11-14",
+      "category": "kurta-pajama",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "whatsapp"
+      ],
+      "status": "draft",
+      "notes": "AI Review: APPROVED BY AI (Score: 100/100)"
+    },
+    {
+      "slug": "item-1794654183761-vlb2",
+      "title": "Fashion Collection EVERYDAY Campaign",
+      "date": "2026-11-14",
+      "category": "ethnic-wear",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "whatsapp"
+      ],
+      "status": "draft",
+      "notes": "AI Review: APPROVED BY AI (Score: 100/100)"
+    },
+    {
+      "slug": "lehenga-183758",
+      "title": "Royal Shaadi Collection WEDDING Campaign",
+      "date": "2026-11-14",
+      "category": "lehenga",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "status": "published",
+      "notes": "Authorized by Owner for publishing to: instagram, facebook."
+    },
+    {
+      "slug": "kurta-pajama-183743",
+      "title": "Kurta Pajama EVERYDAY Campaign",
+      "date": "2026-11-14",
+      "category": "kurta-pajama",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "whatsapp"
+      ],
+      "status": "draft",
+      "notes": "AI Review: APPROVED BY AI (Score: 100/100)"
+    },
     {
       "slug": "item-1794652719867-iv3e",
       "title": "Fashion Collection EVERYDAY Campaign",

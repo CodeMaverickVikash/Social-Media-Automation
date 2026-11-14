@@ -1,6 +1,6 @@
 ---
 name: publish-social-now
-description: Schedule or publish finished Monavi posts, stories and reels to Instagram and Facebook through the Buffer GraphQL API (queue, exact time, now, or draft), and prepare WhatsApp files for manual sharing. Use when asked to post, publish, schedule, queue, upload or send content to Buffer, Instagram, Facebook or WhatsApp, or to list/connect Buffer channels.
+description: "Schedule or publish finished Monavi posts, stories and reels to Instagram and Facebook through the Buffer GraphQL API (queue, exact time, now, or draft), and prepare WhatsApp files for manual sharing. Use when asked to post, publish, schedule, queue, upload or send content to Buffer, Instagram, Facebook or WhatsApp, or to list/connect Buffer channels."
 ---
 
 # Publish via Buffer

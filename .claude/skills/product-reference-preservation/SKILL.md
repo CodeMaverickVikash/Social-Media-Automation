@@ -1,6 +1,6 @@
 ---
 name: product-reference-preservation
-description: Analyze uploaded product photos, extract physical garment attributes, and enforce 100% preservation of authentic colors, embroidery, fabrics, and tailoring during video and image generation.
+description: "Analyze uploaded product photos, extract physical garment attributes, and enforce 100% preservation of authentic colors, embroidery, fabrics, and tailoring during video and image generation."
 ---
 
 # Product Reference Preservation — Monavi Collection

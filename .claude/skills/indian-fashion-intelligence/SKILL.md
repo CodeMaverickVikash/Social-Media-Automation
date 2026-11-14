@@ -1,6 +1,6 @@
 ---
 name: indian-fashion-intelligence
-description: Understand natural-language fashion requests, categorize garments across Men's, Women's, Kids, Bridal and Festive wear, and assign styling and audience parameters.
+description: "Understand natural-language fashion requests, categorize garments across Men's, Women's, Kids, Bridal and Festive wear, and assign styling and audience parameters."
 user-invocable: true
 argument-hint: "<fashion query, garment, or campaign request>"
 ---

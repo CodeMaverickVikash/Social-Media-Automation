@@ -1,0 +1,27 @@
+{
+  "slug": "womens-red-saree-2026-11",
+  "template": "overlay",
+  "theme": "festive",
+  "photo": "assets/photos/womens-red-saree-2026-11/campaign-saree-editorial.png",
+  "eyebrow": "FESTIVE COLLECTION",
+  "headline": "Graceful Drapes,\nTimeless Stories.",
+  "attrs": [
+    "Pure Silk Look",
+    "Hand-finished Zari",
+    "Festive-ready"
+  ],
+  "cta": "Explore Now",
+  "badge": {
+    "icon": "dress",
+    "label": "Ladies Wear"
+  },
+  "formats": [
+    "ig-feed",
+    "story"
+  ],
+  "platforms": [
+    "instagram",
+    "facebook",
+    "whatsapp"
+  ]
+}

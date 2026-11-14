@@ -1,6 +1,6 @@
 ---
 name: autonomous-video-editing
-description: Assemble multiple clips, manage transitions, color grade, mix audio, and render master films and platform versions.
+description: "Assemble multiple clips, manage transitions, color grade, mix audio, and render master films and platform versions."
 ---
 
 # Autonomous Video Editing Skill

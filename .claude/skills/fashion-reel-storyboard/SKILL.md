@@ -1,6 +1,6 @@
 ---
 name: fashion-reel-storyboard
-description: Generate cinematic 5-scene vertical Reel storyboards, motion transitions, text overlays, voiceover scripts, and scene-by-scene prompts for fashion reels.
+description: "Generate cinematic 5-scene vertical Reel storyboards, motion transitions, text overlays, voiceover scripts, and scene-by-scene prompts for fashion reels."
 user-invocable: true
 argument-hint: "<slug> <garment or collection concept>"
 ---

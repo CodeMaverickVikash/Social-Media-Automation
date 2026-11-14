@@ -1,6 +1,6 @@
 ---
 name: create-social-banner
-description: Create a Monavi banner for Facebook: the Page cover banner (1640×624) or a wide event or link banner (1200×630), with or without a photo. Use when asked for a banner, Facebook cover, page cover, cover photo, event banner or wide header image. Opens a PR; the cover itself is set in Facebook by hand.
+description: "Create a Monavi banner for Facebook: the Page cover banner (1640×624) or a wide event or link banner (1200×630), with or without a photo. Use when asked for a banner, Facebook cover, page cover, cover photo, event banner or wide header image. Opens a PR; the cover itself is set in Facebook by hand."
 argument-hint: "<what it says> [photo path] [cover | event] e.g. Facebook cover for the wedding collection"
 ---
 

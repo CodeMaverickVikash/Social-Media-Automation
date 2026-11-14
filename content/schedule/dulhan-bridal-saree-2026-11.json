@@ -1,0 +1,32 @@
+{
+  "slug": "dulhan-bridal-saree-2026-11",
+  "items": [
+    {
+      "kind": "post",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "at": "2026-11-15T19:00:00+05:30"
+    },
+    {
+      "kind": "story",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "whatsapp"
+      ],
+      "at": "2026-11-15T19:05:00+05:30"
+    },
+    {
+      "kind": "reel",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "whatsapp"
+      ],
+      "at": "2026-11-16T19:30:00+05:30",
+      "firstComment": "#BridalSaree #DulhanSaree #MonaviCollection #WearYourStory"
+    }
+  ]
+}

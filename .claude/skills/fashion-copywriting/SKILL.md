@@ -1,6 +1,6 @@
 ---
 name: fashion-copywriting
-description: Write tailored, high-converting fashion captions, hooks, and hashtags for Instagram, Facebook, and WhatsApp matching Monavi Collection's brand voice.
+description: "Write tailored, high-converting fashion captions, hooks, and hashtags for Instagram, Facebook, and WhatsApp matching Monavi Collection's brand voice."
 user-invocable: true
 argument-hint: "<slug> <garment or collection description>"
 ---

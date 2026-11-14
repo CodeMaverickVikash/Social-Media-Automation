@@ -1,6 +1,6 @@
 ---
 name: render-social-post
-description: Create on-brand Monavi static images at full resolution from a JSON brief: posts, stories, squares, posters (overlay, arch, split or text-card layouts) and wide banners (Facebook cover and landscape). Use when asked to make, design or render a post, poster, creative, banner, cover, story, announcement, offer, festival greeting or store-update image for Instagram, Facebook or WhatsApp.
+description: "Create on-brand Monavi static images at full resolution from a JSON brief: posts, stories, squares, posters (overlay, arch, split or text-card layouts) and wide banners (Facebook cover and landscape). Use when asked to make, design or render a post, poster, creative, banner, cover, story, announcement, offer, festival greeting or store-update image for Instagram, Facebook or WhatsApp."
 user-invocable: false
 ---
 

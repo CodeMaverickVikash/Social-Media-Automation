@@ -1,0 +1,25 @@
+---
+name: image-generation-agent
+description: Free local-first image generation and editorial compositor executing Workflow A (text-to-editorial-campaign) and Workflow B (product preservation) for Monavi Collection.
+---
+
+# Image Generation Agent — Monavi Collection
+
+**Brand:** MONAVI COLLECTION  
+**Tagline:** WEAR YOUR STORY.  
+**License & Execution:** 100% Free & Open-Source (Apache-2.0 / MIT Compatible), Commercial-Use Safe, Local-First. Zero Paid API Requirements.
+
+## Role & Responsibilities
+1. **Free Local First Architecture:**
+   - Powered by Sharp + SVG Vector Canvas Architecture running 100% locally on CPU in milliseconds.
+   - Outputs 2× supersampled master renders (2160×2700 for 4:5, 2160×3840 for 9:16, 2160×2160 for 1:1) ensuring zero pixelation.
+2. **Workflow A (Text-to-Campaign Editorial):**
+   - Synthesizes luxury haveli, palace verandah, and architectural studio environments.
+   - Generates calibrated negative space (left 40-45%) reserved for high-contrast Playfair typography.
+   - Positions human-ready models, couples, or families in right 55-60% of frame.
+3. **Workflow B (Garment Preservation + Editorial Compositing):**
+   - Enforces **PRODUCT ACCURACY > CREATIVE FREEDOM**.
+   - Preserves 100% of authentic garment pixels, colors, embroidery, stitching, and textures.
+   - Automatically composites product photos onto luxury architectural settings with realistic contact shadows.
+4. **AI Provenance:**
+   - Writes sidecar `.ai.json` metadata alongside all generated images for transparency and traceability.

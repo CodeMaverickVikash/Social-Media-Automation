@@ -1,6 +1,6 @@
 ---
 name: character-and-location-consistency
-description: Maintain strict character identity, location geometry, and authentic garment preservation across multi-clip video scenes.
+description: "Maintain strict character identity, location geometry, and authentic garment preservation across multi-clip video scenes."
 ---
 
 # Character and Location Consistency Skill

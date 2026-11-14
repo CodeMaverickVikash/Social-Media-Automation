@@ -1,6 +1,6 @@
 ---
 name: fashion-video-generation
-description: Generate cinematic AI-powered promotional fashion videos for Instagram Reels/Stories, Facebook Reels/Feed, and WhatsApp Status for Monavi Collection. Supports Workflow A (text-to-video) and Workflow B (image-to-video with product preservation) with dynamic duration calculation.
+description: "Generate cinematic AI-powered promotional fashion videos for Instagram Reels/Stories, Facebook Reels/Feed, and WhatsApp Status for Monavi Collection. Supports Workflow A (text-to-video) and Workflow B (image-to-video with product preservation) with dynamic duration calculation."
 ---
 
 # Fashion Video Generation — Monavi Collection

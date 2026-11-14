@@ -1,6 +1,6 @@
 ---
 name: edit-social-content
-description: Change content that is already in an open pull request (headline, layout, photo, caption, hashtags, date or time, platforms), withdraw it, or handle a post that has already been merged. Re-renders through the skills and pushes to the same PR. Use when asked to edit, change, fix, redo, reschedule, replace or cancel a post, reel or caption.
+description: "Change content that is already in an open pull request (headline, layout, photo, caption, hashtags, date or time, platforms), withdraw it, or handle a post that has already been merged. Re-renders through the skills and pushes to the same PR. Use when asked to edit, change, fix, redo, reschedule, replace or cancel a post, reel or caption."
 argument-hint: "<slug or PR number> <what to change> e.g. kurta-pajama-festive-2026-11 make the headline shorter"
 ---
 

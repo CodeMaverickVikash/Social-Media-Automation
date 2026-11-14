@@ -1,0 +1,26 @@
+{
+  "slug": "girls-yellow-floral-dress-2026-11",
+  "template": "arch",
+  "theme": "kidsYellow",
+  "photo": "assets/photos/girls-yellow-floral-dress-2026-11/campaign-kids-floral-dress-editorial.png",
+  "eyebrow": "LITTLE ONES",
+  "headline": "Little Styles,\nBig Smiles.",
+  "attrs": [
+    "Comfortable",
+    "Playful",
+    "Everyday"
+  ],
+  "cta": "Explore Collection",
+  "badge": {
+    "icon": "kids",
+    "label": "Kids Wear"
+  },
+  "formats": [
+    "ig-feed",
+    "square"
+  ],
+  "platforms": [
+    "instagram",
+    "whatsapp"
+  ]
+}

@@ -1,6 +1,6 @@
 ---
 name: plan-social-content
-description: Plan a week, month or season of Monavi social content around Indian festivals and the wedding season. Produces a shoot list (which products, which audience, how many photos, which date) that the user can hand to the store, then makes each piece when the photos arrive. Use when asked what to post, to plan posts for a month, week or festival, or to make a content calendar or shoot list.
+description: "Plan a week, month or season of Monavi social content around Indian festivals and the wedding season. Produces a shoot list (which products, which audience, how many photos, which date) that the user can hand to the store, then makes each piece when the photos arrive. Use when asked what to post, to plan posts for a month, week or festival, or to make a content calendar or shoot list."
 argument-hint: "<period or occasion> e.g. December, Diwali week, wedding season"
 ---
 

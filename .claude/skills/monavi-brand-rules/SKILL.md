@@ -1,6 +1,6 @@
 ---
 name: monavi-brand-rules
-description: Monavi Collection brand guardian — colours, typography, logo rules, layout DNA, voice and the no-pixelation quality bar. Use before creating, reviewing or editing ANY Monavi creative (post, reel, story, caption, banner, WhatsApp message), when asked "is this on-brand?", or when changing brand tokens, logos or fonts.
+description: "Monavi Collection brand guardian — colours, typography, logo rules, layout DNA, voice and the no-pixelation quality bar. Use before creating, reviewing or editing ANY Monavi creative (post, reel, story, caption, banner, WhatsApp message), when asked \"is this on-brand?\", or when changing brand tokens, logos or fonts."
 user-invocable: false
 ---
 

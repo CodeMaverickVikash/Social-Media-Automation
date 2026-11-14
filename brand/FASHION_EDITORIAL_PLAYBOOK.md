@@ -103,12 +103,11 @@ waist-cut passport crop, cropped legs, missing pajama, missing trousers, floatin
 
 ## 4. Multi-Platform Delivery Specifications
 
-Every content creative must deliver high-resolution assets for 4 platforms:
+Every content creative must deliver high-resolution assets for the 3 active brand channels (Instagram, Facebook, and WhatsApp):
 
-1. **Instagram Feed (4:5, 1080×1350):** The primary flagship format. Optimized for vertical mobile viewport.
+1. **Feed Creative (4:5, 1080×1350):** Flagship vertical post format for Instagram and Facebook feeds.
 2. **Story / WhatsApp Status (9:16, 1080×1920):** Full-bleed vertical immersion with safe zones (top 160px / bottom 200px reserved for platform UI).
-3. **Square Feed (1:1, 1080×1080):** Classic grid format for Instagram and Facebook feeds.
-4. **Pinterest Pin (2:3, 1000×1500):** Tall editorial format for visual search and bookmarking.
+3. **Square Feed (1:1, 1080×1080):** Classic balanced grid format for Instagram, Facebook, and WhatsApp catalog/broadcasts.
 
 Each format must be accompanied by its tailored `caption.txt` incorporating:
 * Platform-specific hook and narrative tone.

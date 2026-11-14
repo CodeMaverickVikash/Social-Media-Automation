@@ -314,9 +314,6 @@ export function analyzeFashionRequest(query: string, options?: { hasProductImage
     : ['instagram', 'facebook', 'whatsapp'];
 
   const formats = ['ig-feed', 'story', 'square'];
-  if (requestedPlatforms.includes('pinterest')) {
-    formats.push('pin');
-  }
 
   // Suggested Hook
   let suggestedHook = `Experience the timeless grace of our new ${garmentDisplayName.toLowerCase()} collection. ✨`;

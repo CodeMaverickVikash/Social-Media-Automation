@@ -3,7 +3,7 @@
   "template": "overlay",
   "theme": "haveli",
   "side": "left",
-  "photo": "assets/photos/kurta-pajama-everyday-2026-11/model-kurta-pajama-photo.png",
+  "photo": "references/editorial-improvements/model-photo.png",
   "focus": "center center",
   "eyebrow": "MEN'S ETHNIC COLLECTION",
   "headline": "Silk Kurta\nPajama.",
@@ -16,13 +16,11 @@
   "formats": [
     "ig-feed",
     "story",
-    "square",
-    "pin"
+    "square"
   ],
   "platforms": [
     "instagram",
     "facebook",
-    "whatsapp",
-    "pinterest"
+    "whatsapp"
   ]
 }

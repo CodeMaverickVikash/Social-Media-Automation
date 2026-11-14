@@ -54,9 +54,8 @@ All guidelines, rules, and technical solutions derived from this session have be
 - [`brief.json`](file:///home/vikash/Documents/development/Social-Media-Automation/references/editorial-improvements/brief.json): Complete creative brief configuration.
 - [`master-prompt.txt`](file:///home/vikash/Documents/development/Social-Media-Automation/references/editorial-improvements/master-prompt.txt): Optical photography prompt and negative prompt specifications.
 - [`model-photo.png`](file:///home/vikash/Documents/development/Social-Media-Automation/references/editorial-improvements/model-photo.png): High-resolution photorealistic master model photography.
-- [`ig-feed.jpg`](file:///home/vikash/Documents/development/Social-Media-Automation/references/editorial-improvements/ig-feed.jpg): Final approved 1080×1350 Instagram feed creative.
-- [`story.jpg`](file:///home/vikash/Documents/development/Social-Media-Automation/references/editorial-improvements/story.jpg): Final approved 1080×1920 vertical story/reel creative.
-- [`square.jpg`](file:///home/vikash/Documents/development/Social-Media-Automation/references/editorial-improvements/square.jpg): Final approved 1080×1080 square format creative.
-- [`pin.jpg`](file:///home/vikash/Documents/development/Social-Media-Automation/references/editorial-improvements/pin.jpg): Final approved 1000×1500 Pinterest pin creative.
-- [`captions.txt`](file:///home/vikash/Documents/development/Social-Media-Automation/references/editorial-improvements/captions.txt): Platform-tailored captions and hashtag sets.
+- [`ig-feed.jpg`](file:///home/vikash/Documents/development/Social-Media-Automation/references/editorial-improvements/ig-feed.jpg): Final approved 1080×1350 feed creative (Instagram & Facebook).
+- [`story.jpg`](file:///home/vikash/Documents/development/Social-Media-Automation/references/editorial-improvements/story.jpg): Final approved 1080×1920 vertical story creative (Instagram, Facebook & WhatsApp Status).
+- [`square.jpg`](file:///home/vikash/Documents/development/Social-Media-Automation/references/editorial-improvements/square.jpg): Final approved 1080×1080 square format creative (Instagram, Facebook & WhatsApp).
+- [`captions.txt`](file:///home/vikash/Documents/development/Social-Media-Automation/references/editorial-improvements/captions.txt): Platform-tailored captions and hashtag sets for Instagram, Facebook, and WhatsApp.
 - [`schedule.json`](file:///home/vikash/Documents/development/Social-Media-Automation/references/editorial-improvements/schedule.json): Buffer multi-platform release schedule plan.

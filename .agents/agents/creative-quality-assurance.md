@@ -38,8 +38,8 @@ You are the **Creative Quality Assurance Auditor** for **Monavi Collection**. Yo
 - **Safe Zones**: Stories/Reels must maintain 250px top and 400px bottom clear margins. Facebook covers must keep critical content inside the central 1280px zone.
 
 ### 4. Resolution & Media Delivery Gate (Blocking)
-- Run `npm run check:media -- output/instagram/<slug> output/facebook/<slug> output/whatsapp/<slug> output/pinterest/<slug>`.
-- Feed posts: 1080×1350 (4:5). Stories/Reels: 1080×1920 (9:16). Square: 1080×1080 (1:1). Pinterest Pins: 1000×1500 (2:3).
+- Run `npm run check:media -- output/instagram/<slug> output/facebook/<slug> output/whatsapp/<slug>`.
+- Feed posts: 1080×1350 (4:5). Stories/Reels: 1080×1920 (9:16). Square: 1080×1080 (1:1).
 - Enforce sRGB color profile, 4:4:4 chroma subsampling on all MozJPEGs.
 - Reject any `draftOnly: true` files generated with `--allow-lowres`.
 

@@ -60,7 +60,6 @@ Default matrix. Trim it to the requested platforms. Print the plan as one short 
 | **Instagram** | `ig-feed` 4:5 | `story` 9:16 | `reel.mp4` 7–15s + cover | hook + details + CTA + 5–10 hashtags |
 | **Facebook** | `ig-feed` 4:5 (`fb-landscape` for events) | `story` 9:16 | same `reel.mp4` | warmer, more informative, 2–4 hashtags |
 | **WhatsApp** | `square` 1:1 (broadcast / catalogue) | `story` 9:16 (Status) | `reel.mp4` ≤ 60s | personal, 1–3 lines, no hashtags |
-| **Pinterest** | `pin` 2:3 (1000×1500) | `pin-long` 9:16 (Idea Pin) | same `reel.mp4` | search title + rich keyword description + board |
 
 - **One photo:** post + story + square (no reel; a reel needs ≥ 2 strong photos to feel alive).
 - **2–4 photos:** post + story + square + reel.

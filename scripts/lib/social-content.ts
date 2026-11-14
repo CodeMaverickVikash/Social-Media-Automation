@@ -119,8 +119,7 @@ export function writeAllPlatformCaptions(outputBaseDir: string, slug: string, an
   const targets: [string, PlatformCopy][] = [
     ['instagram', copy.instagram],
     ['facebook', copy.facebook],
-    ['whatsapp', copy.whatsapp],
-    ['pinterest', copy.pinterest]
+    ['whatsapp', copy.whatsapp]
   ];
 
   for (const [platform, data] of targets) {

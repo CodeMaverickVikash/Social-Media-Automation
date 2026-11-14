@@ -1,6 +1,6 @@
 ---
 name: fashion-copywriting
-description: Write tailored, high-converting fashion captions, hooks, and hashtags for Instagram, Facebook, WhatsApp, and Pinterest matching Monavi Collection's brand voice.
+description: Write tailored, high-converting fashion captions, hooks, and hashtags for Instagram, Facebook, and WhatsApp matching Monavi Collection's brand voice.
 user-invocable: true
 argument-hint: "<slug> <garment or collection description>"
 ---
@@ -8,7 +8,7 @@ argument-hint: "<slug> <garment or collection description>"
 # Fashion Copywriting Skill — Monavi Collection
 
 ## Purpose
-Crafts evocative, platform-optimized promotional copy, hooks, and hashtags for Monavi Collection across Instagram, Facebook, WhatsApp, and Pinterest, enforcing the standards in `brand/FASHION_EDITORIAL_PLAYBOOK.md`.
+Crafts evocative, platform-optimized promotional copy, hooks, and hashtags for Monavi Collection across Instagram, Facebook, and WhatsApp, enforcing the standards in `brand/FASHION_EDITORIAL_PLAYBOOK.md`.
 
 ## Core Editorial Copywriting Mandates
 
@@ -36,7 +36,6 @@ Crafts evocative, platform-optimized promotional copy, hooks, and hashtags for M
 | **Instagram** | Hook (<= 125 chars) -> Craft/Drape specifics -> Gracious CTA | Poised, editorial, sensual appreciation of fabric | 5–10 targeted tags; includes `#MonaviCollection #WearYourStory` | Headline ends with full stop; 1–2 tasteful emojis |
 | **Facebook** | 1–3 short paragraphs with welcoming community storytelling | Warm, inviting, customer-focused | 2–4 hashtags | Can include boutique visit / consultation info |
 | **WhatsApp** | 1–3 conversational lines for Status or Broadcast | Stylist-to-client, personal, direct | **Strictly ZERO hashtags** | Max 2 emojis; clear reply action ("Reply to order") |
-| **Pinterest** | Pin Title (<= 100 chars) -> Search Description (<= 500 chars) -> Board | Informative, search-intent optimized | 3–5 high-volume search tags | Include fabric, color, silhouette, and occasion keywords |
 
 ---
 

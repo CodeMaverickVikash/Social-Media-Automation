@@ -431,13 +431,13 @@ async function runAllScenarios() {
   }
 
   // ----------------------------------------------------
-  // Scenario 11: One campaign for Instagram, Facebook and Pinterest
+  // Scenario 11: Multi-platform campaign for Instagram, Facebook and WhatsApp
   // ----------------------------------------------------
   try {
-    console.log('[Scenario 11] Multi-platform campaign (Instagram, Facebook, Pinterest, WhatsApp)...');
+    console.log('[Scenario 11] Multi-platform campaign (Instagram, Facebook, WhatsApp)...');
     const slug = 'anarkali-multiplatform-2026-11';
     const analysis = analyzeFashionRequest("Create a campaign for women's festive anarkali", {
-      explicitPlatforms: ['instagram', 'facebook', 'pinterest', 'whatsapp']
+      explicitPlatforms: ['instagram', 'facebook', 'whatsapp']
     });
 
     const photoRes = await generateFashionCampaignImage({ slug, query: "Women's festive anarkali", aspectRatio: '4:5' });
@@ -451,24 +451,24 @@ async function runAllScenarios() {
       attrs: ["Flowing", "Regal", "Festive"],
       cta: "Explore Collection",
       badge: { icon: "dress", label: "Ladies Wear" },
-      formats: ['ig-feed', 'story', 'square', 'pin'],
-      platforms: ['instagram', 'facebook', 'pinterest', 'whatsapp']
+      formats: ['ig-feed', 'story', 'square'],
+      platforms: ['instagram', 'facebook', 'whatsapp']
     };
     writeFileSync(path.join(ROOT, 'content', 'posts', `${slug}.json`), JSON.stringify(brief, null, 2));
     await renderTestPost(brief, brief.formats);
     writeAllPlatformCaptions(OUTPUT_BASE, slug, analysis);
 
-    // Verify Pinterest file exists
-    const pinFile = path.join(OUTPUT_BASE, 'pinterest', slug, 'pin.jpg');
-    const pinCaption = path.join(OUTPUT_BASE, 'pinterest', slug, 'caption.txt');
-    if (!existsSync(pinFile) || !existsSync(pinCaption)) {
-      throw new Error('Pinterest delivery files or caption missing');
+    // Verify WhatsApp file exists
+    const waSquare = path.join(OUTPUT_BASE, 'whatsapp', slug, 'square.jpg');
+    const waCaption = path.join(OUTPUT_BASE, 'whatsapp', slug, 'caption.txt');
+    if (!existsSync(waSquare) || !existsSync(waCaption)) {
+      throw new Error('WhatsApp delivery files or caption missing');
     }
 
-    testReport.push({ scenario: 11, title: "Multi-platform (IG, FB, Pinterest, WA)", status: 'PASS', details: 'Verified delivery in instagram/, facebook/, pinterest/, and whatsapp/' });
+    testReport.push({ scenario: 11, title: "Multi-platform (IG, FB, WA)", status: 'PASS', details: 'Verified delivery in instagram/, facebook/, and whatsapp/' });
     console.log('✓ Scenario 11 passed\n');
   } catch (err: any) {
-    testReport.push({ scenario: 11, title: "Multi-platform (IG, FB, Pinterest, WA)", status: 'FAIL', details: err.message });
+    testReport.push({ scenario: 11, title: "Multi-platform (IG, FB, WA)", status: 'FAIL', details: err.message });
     console.error('✗ Scenario 11 failed:', err);
   }
 

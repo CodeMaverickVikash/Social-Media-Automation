@@ -26,7 +26,6 @@ Follow the formula in `voice.md`: hook → specifics → CTA → hashtags.
 | Instagram reel | same file | 1–2 lines + CTA + 3–6 hashtags. The video carries the message |
 | Facebook | `output/facebook/<slug>/caption.txt` | 1–3 short paragraphs, warmer and more informative (address/hours if known), 2–4 hashtags |
 | WhatsApp | `output/whatsapp/<slug>/caption.txt` | 1–3 lines, personal ("Hi! ✨ Our festive anarkalis are here…"), clear action ("Reply to book a trial"), **no hashtags** |
-| Pinterest | `output/pinterest/<slug>/caption.txt` | Search title (≤ 100 chars), keyword-rich description (≤ 500 chars), Board name, 3–5 search tags |
 
 Hard limits: Instagram ≤ 2,200 characters and ≤ 30 hashtags (the publish script enforces both). ≤ 2 emoji per caption, and never stack them.
 

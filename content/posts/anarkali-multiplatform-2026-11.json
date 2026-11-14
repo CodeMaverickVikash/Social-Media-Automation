@@ -18,13 +18,11 @@
   "formats": [
     "ig-feed",
     "story",
-    "square",
-    "pin"
+    "square"
   ],
   "platforms": [
     "instagram",
     "facebook",
-    "pinterest",
     "whatsapp"
   ]
 }

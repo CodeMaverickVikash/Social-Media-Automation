@@ -57,8 +57,10 @@ function sceneHtml(s: ReelScene, i: number, photoUrl: string, t: Theme): string 
 export function reelHtml(b: ReelBrief, photoUrls: string[], W: number, H: number, safe: { top: number; bottom: number; side: number }): string {
   const t = theme(b.theme ?? 'festive');
   const end = { duration: 2.6, dark: true, ...(b.endCard ?? {}) };
-  const endBg = end.dark ? '#1F1F1F' : '#FAF9F6';
-  const endFg = end.dark ? '#FAF9F6' : '#1F1F1F';
+  const endBg = end.dark ? (t.panel || '#1F1F1F') : '#FAF9F6';
+  const endFg = end.dark ? (t.text || '#FAF9F6') : '#1F1F1F';
+  const endCtaBg = t.ctaBg || '#D4AF37';
+  const endCtaFg = t.ctaFg || '#FAF9F6';
   const timeline = {
     tr: b.transition ?? 0.6,
     scenes: b.scenes.map(s => ({ d: s.duration, motion: s.motion ?? 'zoom-in' })),
@@ -73,8 +75,8 @@ export function reelHtml(b: ReelBrief, photoUrls: string[], W: number, H: number
   .scene, .end { position: absolute; inset: 0; overflow: hidden; opacity: 0; }
   .scene img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 40%; will-change: transform; }
   .scrim { position: absolute; inset: 0; background:
-      linear-gradient(0deg, rgba(${t.scrim},.92) 0%, rgba(${t.scrim},.7) 30%, rgba(${t.scrim},0) 55%),
-      linear-gradient(180deg, rgba(${t.scrim},.55) 0%, rgba(${t.scrim},0) 22%); }
+      linear-gradient(0deg, rgba(${t.scrim},.94) 0%, rgba(${t.scrim},.72) 32%, rgba(${t.scrim},0) 58%),
+      linear-gradient(180deg, rgba(${t.scrim},.82) 0%, rgba(${t.scrim},.52) 18%, rgba(${t.scrim},0) 32%); }
   .copy { position: absolute; left: ${safe.side}px; right: ${safe.side}px; bottom: ${safe.bottom + 40}px; }
   .r { opacity: 0; will-change: transform, opacity; }
   .eyebrow { font: 500 24px/1.2 var(--font-body); letter-spacing: .32em; text-transform: uppercase; margin-bottom: 26px; }
@@ -82,17 +84,17 @@ export function reelHtml(b: ReelBrief, photoUrls: string[], W: number, H: number
   .subline { font: 400 44px/1.2 var(--font-heading); margin-top: 28px; }
   .attrs { font: 500 30px/1.3 var(--font-body); margin-top: 30px; }
   .attrs .sep { font-style: normal; opacity: .7; margin: 0 .55em; }
-  .brand { position: absolute; left: ${safe.side}px; top: ${safe.top - 40}px; z-index: 900; }
-  .end { z-index: 1000; background: ${endBg}; color: ${endFg}; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 ${safe.side}px ${safe.bottom - safe.top}px; }
+  .brand { position: absolute; left: ${safe.side}px; top: ${safe.top - 60}px; z-index: 900; filter: drop-shadow(0 4px 18px rgba(0,0,0,0.85)); }
+  .end { z-index: 1000; background: radial-gradient(circle at 50% 42%, rgba(${t.scrim},0.98) 0%, ${endBg} 70%, #0A0203 100%); color: ${endFg}; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 ${safe.side}px ${safe.bottom - safe.top}px; }
   .end .headline { font-size: 72px; margin-top: 70px; }
   .end .cta { margin-top: 56px; display: inline-flex; align-items: center; gap: 18px; padding: 26px 52px; border-radius: 999px;
-              font: 500 34px/1 var(--font-body); background: ${endFg}; color: ${endBg}; }
+              font: 500 34px/1 var(--font-body); background: ${endCtaBg}; color: ${endCtaFg}; box-shadow: 0 8px 32px rgba(0,0,0,0.45); }
   .end .line { margin-top: 36px; font: 500 26px/1.4 var(--font-body); letter-spacing: .06em; opacity: .85; }
 </style></head><body>
   ${b.scenes.map((s, i) => sceneHtml(s, i, photoUrls[i]!, t)).join('\n')}
-  <div class="brand" id="brand">${logoSvg('compact', t.logo, 230)}</div>
+  <div class="brand" id="brand">${logoSvg('compact', t.logo || '#FAF9F6', 240)}</div>
   <section class="end" id="end">
-    <div class="r" id="endLogo">${logoSvg('stacked', endFg, 520)}</div>
+    <div class="r" id="endLogo">${logoSvg('stacked', endFg, 480)}</div>
     ${end.headline ? `<div class="headline r">${lines(end.headline)}</div>` : ''}
     ${end.cta ? `<div class="cta r">${esc(end.cta)}<svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h17M14 6l6 6-6 6"/></svg></div>` : ''}
     ${end.line ? `<div class="line r">${esc(end.line)}</div>` : ''}

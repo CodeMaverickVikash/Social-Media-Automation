@@ -13,6 +13,7 @@ You can also just describe what you want in your own words, and Claude picks the
 | **Make posts, stories and a reel from a product photo** | **`/create-social-content`** | Opens a PR. Nothing is scheduled until you merge |
 | Make a **poster**: festival greeting, offer, announcement | `/create-social-poster` | Opens a PR. Nothing is scheduled until you merge |
 | Make a **banner**: Facebook cover or event banner | `/create-social-banner` | Opens a PR. The cover is set by hand in Facebook |
+| Generate **AI human voices** with emotion & multilingual Hinglish/Hindi | `/ai-human-voice-engine` | Generates speech/samples with neural voices |
 | Change something that is in an open PR | `/edit-social-content` | Updates the same PR |
 | See what is pending, scheduled, or due on WhatsApp today | `/check-social-status` | Read only |
 | Free disk space | `/clean-social-output` | Deletes regenerable local files only |

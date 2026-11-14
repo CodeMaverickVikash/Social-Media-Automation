@@ -39,11 +39,11 @@
       "photo": "assets/photos/dulhan-bridal-saree-2026-11/model-bridal-saree-detail.png",
       "duration": 3.5,
       "motion": "zoom-out",
-      "eyebrow": "ARTISANAL EMBROIDERY",
-      "headline": "Antique\nGold Zari.",
+      "eyebrow": "TIMELESS DETAIL",
+      "headline": "Intricate\nArtistry.",
       "attrs": [
-        "Hand-Woven Border",
-        "Pure Zari Weave",
+        "Heritage Weaves",
+        "Bespoke Drapes",
         "Royal Heritage"
       ],
       "focus": "center 35%"
@@ -60,8 +60,8 @@
   ],
   "endCard": {
     "duration": 2.6,
-    "headline": "MONAVI COLLECTION",
-    "line": "WEAR YOUR STORY",
+    "headline": "Bridal Edit 2026",
+    "line": "Visit Our Boutique",
     "cta": "Explore Bridal Edit",
     "dark": true
   },

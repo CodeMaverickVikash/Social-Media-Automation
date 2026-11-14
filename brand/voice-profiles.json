@@ -1,0 +1,103 @@
+{
+  "$schema": "https://monavicollection.in/schemas/voice-profiles.json",
+  "version": "1.0.0",
+  "brand": "MONAVI COLLECTION",
+  "tagline": "WEAR YOUR STORY",
+  "defaultMastering": {
+    "sampleRate": 48000,
+    "channels": 2,
+    "format": "aac",
+    "bitrate": "192k",
+    "musicDuckDb": -14,
+    "peakHeadroomDbfs": -0.5
+  },
+  "lexicon": {
+    "Monavi": "MOH-nah-vee",
+    "Zari": "ZUH-ree",
+    "Dulhan": "DOOL-hun",
+    "Lehenga": "LEH-hen-gah",
+    "Sherwani": "SHER-wah-nee",
+    "Kurta": "KOOR-tah",
+    "Banarasi": "BUH-nah-ruh-see",
+    "Kanjeevaram": "KAHN-jee-vah-rum",
+    "Chanderi": "CHUN-day-ree",
+    "Bandhani": "BAHND-hah-nee"
+  },
+  "profiles": {
+    "female_premium": {
+      "name": "Royal Monavi Sovereign",
+      "gender": "female",
+      "age": "mature",
+      "persona": "Velvety, aristocratic, royal poise",
+      "defaultLanguage": "en-IN",
+      "defaultEmotion": "luxury",
+      "providerVoiceId": "en-IN-NeerjaExpressiveNeural",
+      "rate": 0.94,
+      "pitch": "-2Hz",
+      "style": "expressive",
+      "recommendedCategories": ["bridal", "lehenga", "banarasi", "kanjeevaram"]
+    },
+    "female_young": {
+      "name": "Modern Festive Chic",
+      "gender": "female",
+      "age": "young",
+      "persona": "Friendly, youthful, expressive, and sparkling",
+      "defaultLanguage": "en-IN",
+      "defaultEmotion": "excitement",
+      "providerVoiceId": "en-IN-NeerjaExpressiveNeural",
+      "rate": 1.04,
+      "pitch": "+2Hz",
+      "style": "cheerful",
+      "recommendedCategories": ["festive", "sharara", "kurtis", "contemporary_ethnic"]
+    },
+    "male_premium": {
+      "name": "Heritage Royalty",
+      "gender": "male",
+      "age": "mature",
+      "persona": "Deep, resonant, aristocratic baritone with royal poise",
+      "defaultLanguage": "en-IN",
+      "defaultEmotion": "luxury",
+      "providerVoiceId": "en-IN-PrabhatNeural",
+      "rate": 0.93,
+      "pitch": "-4Hz",
+      "recommendedCategories": ["sherwani", "bandhgala", "groomswear", "silk_kurta"]
+    },
+    "male_young": {
+      "name": "Modern Dapper",
+      "gender": "male",
+      "age": "young",
+      "persona": "Energetic, charismatic, and stylishly conversational",
+      "defaultLanguage": "en-IN",
+      "defaultEmotion": "excitement",
+      "providerVoiceId": "en-IN-PrabhatNeural",
+      "rate": 1.03,
+      "pitch": "+1Hz",
+      "recommendedCategories": ["kurta_pajama", "indo_western", "shirts", "casual"]
+    },
+    "kid_playful": {
+      "name": "Joyful Childhood",
+      "gender": "child",
+      "age": "child",
+      "persona": "Cheerful, playful, bright synthetic child voice",
+      "defaultLanguage": "en-IN",
+      "defaultEmotion": "happiness",
+      "providerVoiceId": "en-IN-NeerjaNeural",
+      "rate": 1.10,
+      "pitch": "+12Hz",
+      "recommendedCategories": ["kids_frock", "kids_kurta", "kids_festive"]
+    },
+    "narrator_brand": {
+      "name": "Wear Your Story Voice",
+      "gender": "female",
+      "age": "mature",
+      "persona": "Poetic, proud, warm signature brand voice",
+      "defaultLanguage": "en-IN",
+      "defaultEmotion": "storytelling",
+      "providerVoiceId": "en-IN-NeerjaExpressiveNeural",
+      "rate": 0.94,
+      "pitch": "-1Hz",
+      "style": "expressive",
+      "recommendedCategories": ["all", "brand_manifesto", "festive_launch"]
+    }
+  }
+}

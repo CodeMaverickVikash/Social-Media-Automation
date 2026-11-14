@@ -1,11 +1,12 @@
 {
   "slug": "dulhan-bridal-saree-2026-11",
   "theme": "bridal",
+  "audio": "assets/audio/dulhan-bridal-saree-20s.aac",
   "transition": 0.6,
   "scenes": [
     {
       "photo": "assets/photos/dulhan-bridal-saree-2026-11/model-bridal-saree.png",
-      "duration": 3.2,
+      "duration": 3.5,
       "motion": "zoom-in",
       "eyebrow": "BRIDAL COUTURE",
       "headline": "Dulhan\nBridal Saree.",
@@ -14,7 +15,7 @@
     },
     {
       "photo": "assets/photos/dulhan-bridal-saree-2026-11/model-bridal-saree-detail.png",
-      "duration": 3.2,
+      "duration": 3.5,
       "motion": "pan-right",
       "eyebrow": "HERITAGE WEAVES",
       "headline": "Intricate\nArtistry.",
@@ -27,7 +28,7 @@
     },
     {
       "photo": "assets/photos/dulhan-bridal-saree-2026-11/model-bridal-saree.png",
-      "duration": 3.4,
+      "duration": 3.5,
       "motion": "pan-left",
       "eyebrow": "TIMELESS GRACE",
       "headline": "Bespoke\nElegance.",
@@ -36,10 +37,24 @@
     },
     {
       "photo": "assets/photos/dulhan-bridal-saree-2026-11/model-bridal-saree-detail.png",
-      "duration": 3.2,
+      "duration": 3.5,
       "motion": "zoom-out",
+      "eyebrow": "ARTISANAL EMBROIDERY",
+      "headline": "Antique\nGold Zari.",
+      "attrs": [
+        "Hand-Woven Border",
+        "Pure Zari Weave",
+        "Royal Heritage"
+      ],
+      "focus": "center 35%"
+    },
+    {
+      "photo": "assets/photos/dulhan-bridal-saree-2026-11/model-bridal-saree.png",
+      "duration": 3.4,
+      "motion": "zoom-in",
       "eyebrow": "MONAVI BRIDAL EDIT",
       "headline": "Made for\nForever.",
+      "subline": "Your Royal Journey Begins Here",
       "focus": "center 35%"
     }
   ],

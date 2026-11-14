@@ -112,22 +112,25 @@ function overlay(b: PostBrief, f: Format): string {
   const t = theme(b.theme ?? 'festive');
   const side = b.side ?? 'left';
   const scrim = side === 'left'
-    ? `linear-gradient(90deg, rgba(${t.scrim},.94) 0%, rgba(${t.scrim},.82) 30%, rgba(${t.scrim},.35) 52%, rgba(${t.scrim},0) 68%),
+    ? `linear-gradient(90deg, rgba(${t.scrim},.92) 0%, rgba(${t.scrim},.82) 28%, rgba(${t.scrim},.40) 48%, rgba(${t.scrim},0) 65%),
        linear-gradient(0deg, rgba(${t.scrim},.35) 0%, rgba(${t.scrim},0) 25%)`
     : `linear-gradient(0deg, rgba(${t.scrim},.95) 0%, rgba(${t.scrim},.8) 38%, rgba(${t.scrim},0) 66%),
        linear-gradient(180deg, rgba(${t.scrim},.55) 0%, rgba(${t.scrim},0) 24%)`;
-  const colW = side === 'left' ? 600 : f.w - 2 * f.safe.side;
+  const colW = side === 'left' ? Math.min(560, Math.round(f.w * 0.50)) : f.w - 2 * f.safe.side;
   const css = `
     img[data-photo] { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     .scrim { position: absolute; inset: 0; background: ${scrim}; }
     .col { position: absolute; left: var(--side); top: var(--safe-top); bottom: var(--safe-bottom); width: ${colW}px;
-           display: flex; flex-direction: column; color: ${t.text}; }
-    .text { margin-top: auto; padding-bottom: 56px; }
-    .headline { font-size: ${headlineSize(f)}px; line-height: 1.02; }`;
+           display: flex; flex-direction: column; justify-content: space-between; color: ${t.text}; }
+    .col .logo { align-self: flex-start; }
+    .text { margin-top: auto; padding-bottom: ${b.badge ? '28px' : '48px'}; }
+    .headline { font-size: ${Math.round(headlineSize(f, 98) * 0.95)}px; line-height: 1.04; letter-spacing: -0.01em; }
+    .attrs { font-size: 20px; letter-spacing: .22em; text-transform: uppercase; margin-top: 28px; }
+    .cta { font-size: 24px; padding: 18px 36px; margin-top: 36px; border-radius: 999px; }`;
   return page(f, css, `
     ${photoTag(b)}<div class="scrim"></div>
     <div class="col">
-      ${logoSvg('stacked', t.logo, logoWidth(f))}
+      ${logoSvg('stacked', t.logo, Math.min(logoWidth(f), colW - 120))}
       <div class="text">
         ${b.eyebrow ? `<div class="eyebrow">${esc(b.eyebrow)}</div>` : ''}
         <div class="headline">${lines(b.headline)}</div>
@@ -143,17 +146,20 @@ function overlay(b: PostBrief, f: Format): string {
 function split(b: PostBrief, f: Format): string {
   const t = theme(b.theme ?? 'mens');
   const panelW = Math.round(f.w * 0.44);
+  const panelBg = t.panel === '#06111A'
+    ? 'linear-gradient(180deg, #0A1C2C 0%, #06111A 45%, #040D15 100%)'
+    : t.panel;
   const css = `
-    .panel { position: absolute; left: 0; top: 0; bottom: 0; width: ${panelW}px; background: ${t.panel}; }
+    .panel { position: absolute; left: 0; top: 0; bottom: 0; width: ${panelW}px; background: ${panelBg}; }
     .photo { position: absolute; left: ${panelW}px; right: 0; top: 0; bottom: 0; overflow: hidden; }
     img[data-photo] { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .col { position: absolute; left: 56px; top: var(--safe-top); bottom: var(--safe-bottom); width: ${panelW - 100}px;
-           display: flex; flex-direction: column; color: ${t.text}; }
-    .col .logo { align-self: center; }
-    .text { margin-top: auto; padding-bottom: 52px; }
-    .headline { font-size: ${Math.round(headlineSize(f, 92) * 0.92)}px; line-height: 1.04; }
-    .attrs { font-size: 21px; letter-spacing: .18em; text-transform: uppercase; }
-    .cta { font-size: 27px; padding: 20px 36px; }`;
+    .col { position: absolute; left: 56px; top: var(--safe-top); bottom: var(--safe-bottom); width: ${panelW - 84}px;
+           display: flex; flex-direction: column; justify-content: space-between; color: ${t.text}; }
+    .col .logo { align-self: flex-start; }
+    .text { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; margin: 24px 0; }
+    .headline { font-size: ${Math.round(headlineSize(f, 96) * 0.94)}px; line-height: 1.04; letter-spacing: -0.01em; }
+    .attrs { font-size: 20px; letter-spacing: .22em; text-transform: uppercase; margin-top: 32px; }
+    .cta { font-size: 24px; padding: 18px 36px; margin-top: 38px; border-radius: 999px; }`;
   return page(f, css, `
     <div class="panel"></div>
     <div class="photo">${photoTag(b)}</div>

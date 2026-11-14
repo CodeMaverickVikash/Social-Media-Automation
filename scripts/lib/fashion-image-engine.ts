@@ -67,10 +67,15 @@ export function buildFashionPhotoPrompt(analysis: FashionAnalysis, aspectRatio: 
   const env = analysis.photography.environment;
   const lighting = analysis.photography.lighting;
 
-  // 4. Composition & Negative Space
+  // 4. Composition, Framing & Negative Space
+  const isEthnicEnsemble = ['kurta-pajama', 'sherwani', 'lehenga', 'anarkali', 'salwar-suit', 'saree', 'sharara', 'gharara', 'co-ord'].includes(analysis.garmentType);
+  const framingRule = isEthnicEnsemble
+    ? 'Framing rule: Full-length or three-quarter standing portrait showing the complete ensemble from head to knees and ankles, ensuring BOTH the upper kurta/tunic and lower pajama/churidar/skirt are fully and visibly showcased. Never crop at waist.'
+    : 'Framing rule: Sophisticated three-quarter portrait showcasing authentic garment silhouette and drape.';
+
   const negSpace = analysis.creative.template === 'split'
-    ? 'Composition rule: Model is positioned strictly in the right 55% of the frame. The left 45% has clean, unobtrusive architectural backdrop tones for typography overlay.'
-    : 'Composition rule: Model is positioned towards the center-right. The left 40% has smooth cinematic falloff and clean negative space reserved for brand typography.';
+    ? `Composition rule: Model is positioned strictly in the right 55% of the frame. The left 45% has clean, unobtrusive architectural backdrop tones for typography overlay. ${framingRule}`
+    : `Composition rule: Model is positioned towards the center-right. The left 40% has smooth cinematic falloff and clean negative space reserved for brand typography. ${framingRule}`;
 
   const positivePrompt = [
     `Award-winning luxury fashion campaign photography for Monavi Collection ("Wear Your Story").`,
@@ -84,7 +89,7 @@ export function buildFashionPhotoPrompt(analysis: FashionAnalysis, aspectRatio: 
   ].join(' ');
 
   const negativePrompt = [
-    'deformed hands, extra fingers, missing fingers, fused fingers, distorted facial features, plastic fake skin, CGI rendering, cartoon, 3D illustration, anime, blurry, low resolution, oversaturated neon colors, western street background, text overlays on body, watermark, logo on cloth, crowd in background, bad drapery'
+    'waist-cut passport crop, cropped legs, missing pajama, missing trousers, deformed hands, extra fingers, missing fingers, fused fingers, distorted facial features, plastic fake skin, CGI rendering, cartoon, 3D illustration, anime, blurry, low resolution, oversaturated neon colors, western street background, text overlays on body, watermark, logo on cloth, crowd in background, bad drapery'
   ].join(', ');
 
   return {
@@ -203,6 +208,22 @@ export async function generateFashionCampaignImage(options: {
   // ----------------------------------------------------
   // WORKFLOW A: Text Only -> High-End Campaign Editorial Generation
   // ----------------------------------------------------
+  // If a photorealistic model photo already exists in the slug directory, preserve and use it
+  const modelExisting = path.join(destDir, 'model-kurta-pajama-photo.png');
+  if (existsSync(modelExisting)) {
+    const meta = await sharp(modelExisting).metadata();
+    reportPlacements(path.relative(ROOT, modelExisting), meta.width!, meta.height!, '  [Workflow A: Photorealistic Model Campaign]');
+    return {
+      filePath: modelExisting,
+      relativeFilePath: path.relative(ROOT, modelExisting),
+      width: meta.width!,
+      height: meta.height!,
+      aiGenerated: true,
+      promptBundle,
+      workflow: 'workflowA_textOnly'
+    };
+  }
+
   const destFileName = `campaign-${analysis.garmentType}-editorial.png`;
   const destFilePath = path.join(destDir, destFileName);
 

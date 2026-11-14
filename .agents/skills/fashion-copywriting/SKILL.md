@@ -7,7 +7,26 @@ description: "Write tailored, high-converting fashion captions, hooks, and hasht
 # Fashion Copywriting Skill — Monavi Collection
 
 ## Purpose
-Crafts evocative, platform-optimized promotional copy, hooks, and hashtags for Monavi Collection across Instagram, Facebook, WhatsApp, and Pinterest.
+Crafts evocative, platform-optimized promotional copy, hooks, and hashtags for Monavi Collection across Instagram, Facebook, WhatsApp, and Pinterest, enforcing the standards in `brand/FASHION_EDITORIAL_PLAYBOOK.md`.
+
+## Core Editorial Copywriting Mandates
+
+1. **Product Clarity & Specificity**:
+   - The opening line or hook must immediately identify the featured product (e.g., *"Step into timeless royal heritage with our Midnight Black Raw Silk Kurta Pajama"*).
+   - Customers should never wonder what garment is being featured.
+
+2. **Rich Garment & Craft Storytelling**:
+   - Weave specific fabric, cut, and embroidery details into the copy:
+     - Fabric weave: Raw silk, combed cotton, tissue chanderi, pure georgette.
+     - Embellishments: Antique gold zari, delicate gota patti, zardozi handwork, tonal threadwork.
+     - Cut & Fit: Tailored knee-length cut, tapered churidar, flared silhouette, mandarin collar with concealed placket.
+
+3. **Minimalist Luxury & Poised Voice**:
+   - Channel the poised, sophisticated editorial voice of a premier Indian fashion house.
+   - Avoid generic e-commerce clichés, spammy sales hooks, or discount shouts.
+   - Keep prose elegant, rhythmic, and sensorially evocative.
+
+---
 
 ## Platform Standards
 
@@ -18,9 +37,11 @@ Crafts evocative, platform-optimized promotional copy, hooks, and hashtags for M
 | **WhatsApp** | 1–3 conversational lines for Status or Broadcast | Stylist-to-client, personal, direct | **Strictly ZERO hashtags** | Max 2 emojis; clear reply action ("Reply to order") |
 | **Pinterest** | Pin Title (<= 100 chars) -> Search Description (<= 500 chars) -> Board | Informative, search-intent optimized | 3–5 high-volume search tags | Include fabric, color, silhouette, and occasion keywords |
 
+---
+
 ## Step-by-Step Workflow
 
-1. **Brand Voice Check**:
+1. **Brand Voice & Signature Phrases**:
    - Reference `brand/voice.md` for signature phrases:
      - *"Wear Your Story"*
      - *"Timeless Elegance for Your Special Day."*

@@ -409,20 +409,37 @@
 
   "photographyPromptTemplates": {
     "workflowA_textToPhotorealism": {
-      "camera": "Shot on Hasselblad H6D-100c, 85mm f/1.4 lens, shutter speed 1/250s, ISO 64",
-      "lighting": "Commercial editorial fashion lighting with massive softbox octabank and gentle bounce fill, natural micro-shadows, soft rim light highlighting fabric texture",
-      "modelPreservation": "Professional Indian fashion model with elegant poised posture, natural skin pores, realistic human anatomy, hands and fingers perfectly formed, graceful expression",
-      "fabricRendering": "True-to-life textile weave, tangible drape, metallic embroidery catchlights without blown-out highlights",
-      "composition": "Cinematic framing leaving generous negative space in the left 40% or lower 30% for editorial typography and brand logo lockup"
+      "camera": "Shot on 50mm lens at f/2.8, shallow optical depth of field, authentic subtle 35mm film grain, Leica M11 / Hasselblad color rendition, clean raw editorial unretouched look",
+      "lighting": "Natural 10:00 AM morning sunlight creating realistic directional shadows across the scene, gentle bounce fill, natural specular highlights on fabric",
+      "modelRealism": "Real 28-year-old Indian model with natural South Asian skin tone, genuine visible skin pores, authentic natural stubble with individual hair strands, matte skin texture without waxy airbrushing or digital smoothing, real human eye catchlights, relaxed royal masculine posture",
+      "fabricRendering": "True-to-life textile weave with physical raw silk slubs, natural fabric creasing at elbows and shins, authentic hand-stitched antique gold metallic zari thread embroidery, physical gravitational drape",
+      "groundShadows": "Firm, physical ground contact shadows under footwear matching the directional sunlight angle, ensuring the model is realistically anchored to the ground",
+      "framingRules": {
+        "twoPieceEnsembles": "Full-length or three-quarter standing shot showing the complete silhouette from head down to ankles/shoes, ensuring both upper garment and lower pajama/churidar/trousers are prominently visible. Never crop at waist.",
+        "singlePieceGarments": "Three-quarter standing or seated editorial framing showcasing natural drapery."
+      },
+      "composition": "Cinematic framing with model positioned in right 45-50%, leaving left 50-55% as continuous open architectural negative space for minimal branding typography",
+      "bannedAITriggers": [
+        "8k", "photorealistic", "ultra-realistic", "hyper-realistic", "masterpiece", "flawless",
+        "plastic skin", "waxy face", "airbrushed smoothing", "oversaturated neon glow", "3D CGI", "digital illustration", "floating unanchored feet"
+      ]
     },
     "workflowB_garmentPreservation": {
       "integrityRules": [
         "Maintain identical garment silhouette, seam lines, collar cut, and hemline length",
         "Preserve exact fabric texture (slub, sheen, opacity, fall)",
         "Lock motif placement, zari embroidery scale, and button details without inventing new decorations",
-        "Retain garment color balance while calibrating environmental color temperature to match the scene background"
+        "Retain garment color balance while calibrating environmental color temperature to match the scene background",
+        "Ensure full garment visibility from head to shins without waist cutoffs for two-piece sets"
       ]
     }
+  },
+
+  "editorialDesignRules": {
+    "continuousBackground": "The background across the creative must be continuous with the photograph. Never place an arbitrary clashing solid block (e.g. navy) next to a warm sandstone haveli. Use overlay with soft architectural shadow scrim, or match panel tones directly to the photo.",
+    "productClarity": "The exact product name (e.g., 'Silk Kurta Pajama.') must be front and center in the headline so the viewer instantly understands what is being sold within 0.1 seconds.",
+    "littleDetails": "Feature concise garment attributes ('Raw Silk | Antique Zari | Tailored Fit') covering fabric, craftsmanship, and silhouette.",
+    "minimalContent": "Preserve high-end luxury advertising restraint. Avoid crowding the image with 6 layers of text. Keep at least 400px of open architectural negative space."
   },
 
   "reelStoryboardFramework": {

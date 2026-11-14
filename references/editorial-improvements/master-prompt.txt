@@ -1,0 +1,24 @@
+# Master Optical Prompt Reference — Commercial Indian Fashion Photography
+# Garment: Midnight Black Raw Silk Kurta Pajama with Ivory Churidar
+# Environment: Heritage Sandstone Haveli Courtyard
+
+--------------------------------------------------------------------------------
+POSITIVE PROMPT:
+--------------------------------------------------------------------------------
+Full-length commercial fashion photograph of a handsome 28-year-old Indian male model standing poised in an open sandstone haveli courtyard during golden hour. He is wearing a midnight black raw silk knee-length kurta with antique gold zari embroidery on the mandarin collar, paired with a fitted ivory churidar pajama and traditional black velvet juttis. Shot with a 50mm f/2.8 lens at eye level. Natural visible skin pores, subtle authentic facial stubble, sharp focus on raw silk fabric texture and gravity folds. Physical directional contact shadows cast naturally on the sandstone floor beneath his feet. Left 45% of frame features soft architectural colonnade in soft focus providing calm negative space.
+
+--------------------------------------------------------------------------------
+NEGATIVE PROMPT:
+--------------------------------------------------------------------------------
+plastic waxy skin, airbrushed, cartoon, CGI, 3D render, smooth porcelain skin, distorted hands, extra fingers, floating feet, no ground contact shadow, blurred embroidery, blown-out highlights, modern Western clothing, distorted architectural perspective, harsh split lighting, unnatural eyes.
+
+--------------------------------------------------------------------------------
+TECHNICAL OPTICAL PARAMETERS:
+--------------------------------------------------------------------------------
+- Focal Length: 50mm (or 85mm prime)
+- Aperture: f/2.8 (shallow depth of field on architectural background, razor sharp on subject)
+- ISO: 100
+- Aspect Ratio: 4:5 (2160x2700 master resolution, 2x supersampled)
+- Color Profile: sRGB
+- Framing: Full-length standing shot (head to toe showing kurta, churidar pajama, and juttis on ground)
+- Negative Space: 45% clean architectural colonnade on the left side

@@ -1,0 +1,28 @@
+{
+  "slug": "kurta-pajama-everyday-2026-11",
+  "template": "overlay",
+  "theme": "haveli",
+  "side": "left",
+  "photo": "assets/photos/kurta-pajama-everyday-2026-11/model-kurta-pajama-photo.png",
+  "focus": "center center",
+  "eyebrow": "MEN'S ETHNIC COLLECTION",
+  "headline": "Silk Kurta\nPajama.",
+  "attrs": [
+    "Raw Silk",
+    "Antique Zari",
+    "Tailored Fit"
+  ],
+  "cta": "Explore Collection",
+  "formats": [
+    "ig-feed",
+    "story",
+    "square",
+    "pin"
+  ],
+  "platforms": [
+    "instagram",
+    "facebook",
+    "whatsapp",
+    "pinterest"
+  ]
+}

@@ -27,6 +27,8 @@ Never hard-code a colour, font or size that isn't in `brand.json`/`tokens.css`. 
 4. **Layout DNA:** Follow the 8 reference blueprints (`brand/reference-blueprints.json`): prominent logo top-left → editorial Playfair headline → Montserrat attrs separated with ` | ` → rounded-full CTA pill with arrow → category badge with thin line icon bottom-left. Model visually dominant with calibrated negative space for copy.
 5. **Quality:** no pixelation, ever. Source photos must cover their box at ≥1× (the renderer refuses below 1×, and 2× is ideal). Never upscale a small photo. Never ship anything smaller than the platform size. `--allow-lowres` is for internal drafts only and must never be published.
 6. **Facts:** never invent prices, discounts, addresses, phone numbers, store hours, fabric claims or stock. Use `brand.json → contact` or ask the user. If a contact field is empty, leave it out and tell the user.
+7. **Photorealistic Imagery Mandate (Zero Abstract Silhouettes — "kuch samajh nhi aata hai" Rule):** Strictly ban 2D vector silhouettes, stick-figure limbs, blank white circular/oval heads, or abstract geometric placeholders. All campaign imagery must feature authentic photorealistic Indian models or genuine product preservation in luxury architectural environments. Any abstract dummy render is an automatic blocker.
+8. **100% Clothes-to-Copy Alignment ("mujhe baar baar bolna na pade" Rule):** Canvas text (headline, eyebrow, attribute triplet `attrs`, badge) and social captions must strictly describe the exact garments depicted in the image. No generic filler (`Classic | Modern | Versatile`) when specific clothes are shown. If a silk sherwani is depicted, the headline and attrs must state it (`Royal\nSherwani.`, `Raw Silk | Antique Zari | Bespoke Cut`). Captions must describe the same garments.
 
 ## Review checklist (use when asked to check a creative)
 
@@ -37,6 +39,8 @@ Open the image (Read tool) and check each item:
 - [ ] Text contrast is readable on the photo (scrim present)
 - [ ] Story/reel: no text in the top 250px, bottom 340px (story) / 400px (reel), or the 72px side margins
 - [ ] No pixelation, banding or blur on the product. Embroidery detail stays crisp
+- [ ] Photorealistic model realism: real human model with authentic anatomy and skin texture; zero abstract stick figures or blank white oval heads
+- [ ] 100% Clothes-to-Copy Alignment: headline, attribute triplet `attrs`, badge, and captions accurately describe the clothes shown in the image
 - [ ] Copy matches `voice.md` (no shouting, no invented facts, ≤2 emoji in captions)
 - [ ] Visual finish matches the reference post standard in `brand/reference-posts/` (proportional logo clear space, Playfair headline line-breaks, Montserrat ` | ` attribute triplet, rounded-full CTA pill with right arrow, bottom category badge)
 - [ ] Output files sit in `output/<platform>/<slug>/` and pass `npm run check:media -- output/<platform>/<slug>`

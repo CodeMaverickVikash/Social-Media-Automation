@@ -64,12 +64,13 @@ This playbook encodes the master design rules, photography guidelines, prompt en
 
 ---
 
-### Principle 6: Autonomous Single vs Multiple Human-Ready Model Mandate
+### Principle 6: Autonomous Single vs Multiple Human-Ready Model Mandate & Zero Abstract Silhouettes
 * **The Rule:** The AI agent autonomously determines whether a campaign requires a **Single Model** or **Multiple Models (Duo / Couple / Family)** based on the prompt scope, and enforces 100% **Human-Ready Real Model Photography** across all creative outputs.
+* **Zero Incomprehensible Abstract Shapes Mandate ("kuch samajh nhi aata hai"):** Flat 2D geometric vector silhouettes, solid white circular/oval heads, stick-figure limbs, or cartoon placeholders are strictly prohibited. In fashion retail, customers need immediate product clarity — authentic fabric weave, embroidery craft, neckline, silhouette cut, and human models with realistic facial anatomy, eyes, and expressions. Default campaign imagery must always resolve from curated high-resolution photographic model plates (`assets/models/`) or AI photography engines, composited onto continuous architectural environments with soft directional scrims.
 * **Autonomous Decision Protocol:**
   * **Single Model:** Selected when marketing an individual garment or gender-specific product (e.g., *"Men's Kurta Pajama"*, *"Dulhan Bridal Saree"*, *"Kids Frock"*).
   * **Multiple Models (Duo / Couple):** Selected for collection-level marketing posts, festive campaigns, or wedding edits for a clothing business (e.g., *"Shaadi Season Marketing Post for clothing business"*), where presenting a Royal Bride & Groom Duo communicates full boutique wardrobe versatility matching `brand/reference-posts/festive-collection-duo.png`.
-* **Human-Ready Photorealism Standard:** Abstract vector silhouettes, 2D geometry, cartoon graphics, or generic flat shapes are strictly banned on live marketing creatives. Output imagery must feature genuine, high-resolution photographic human models with authentic South Asian skin texture, natural facial anatomy, real eyes, and physical garment drapery.
+* **Human-Ready Photorealism Standard:** Output imagery must feature genuine, high-resolution photographic human models with authentic South Asian skin texture, natural facial anatomy, real eyes, and physical garment drapery on continuous haveli/palace backgrounds.
 
 ---
 

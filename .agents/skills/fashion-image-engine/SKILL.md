@@ -25,6 +25,16 @@ Directs both **Workflow A** (Text-to-Photorealism when no product image is suppl
    - **Physical Camera Mechanics**: Specify `50mm f/2.8 prime lens or 85mm f/1.4`, `natural visible skin pores`, `authentic facial stubble`, `tangible fabric slub weave and gravity creasing`, and `directional ground contact shadows under footwear`.
    - **Negative Prompt Directives**: `plastic waxy skin, airbrushed, cartoon, CGI, 3D render, smooth porcelain skin, distorted hands, extra fingers, floating feet, no ground contact shadow, blurred embroidery`.
 
+4. **Zero Incomprehensible Abstract Shapes Mandate ("kuch samajh nhi aata hai" Rule)**:
+   - **Strictly Banned Forever**: 2D vector silhouettes, stick-figure limbs, blank white oval/circle heads, and abstract geometric mannequins.
+   - All campaign imagery must feature **authentic, photorealistic Indian human models** (Duo Wedding Couples, Single Men's Models, Bridal Models, Ladies Festive Models, Kids Models) wearing real garments with natural skin texture, realistic human anatomy, rich drapery, and commercial editorial lighting.
+   - The default generation pipeline draws directly from the curated high-resolution repository in `assets/models/` or native camera-optical generation.
+
+5. **100% Clothes-to-Copy Alignment Mandate ("mujhe baar baar bolna na pade" Rule)**:
+   - Every text element on the rendered canvas (eyebrow, headline, 3-attribute triplet `attrs`, badge, CTA) and in social captions MUST strictly describe and match the exact clothes shown in the image.
+   - Product headline must prominently name the exact garment (`Silk Kurta\nPajama.`, `Banarasi Silk\nSaree.`, `Royal\nSherwani.`, `Kids Festive\nKurta Set.`, `Royal Sherwani &\nBridal Couture.`).
+   - Attribute triplet `attrs` must be the exact `[Fabric, Embellishment, Cut/Fit]` of the featured clothes, never generic disconnected placeholders like `Classic | Modern | Versatile` or `Everyday Style`.
+
 ---
 
 ## Workflows
@@ -75,4 +85,6 @@ When the user supplies a garment photograph:
 - **Skin Texture**: Natural skin pores and texture, zero plastic or airbrushed sheen.
 - **Resolution**: 2× supersampling (at least 2160×2700 for 4:5 feed, 2160×3840 for 9:16 story/reel).
 - **Profile**: sRGB color profile, no banding, no blown-out highlights.
+- **Model Realism**: Authentic photorealistic human model with natural proportions; ZERO abstract vector silhouettes or blank white oval heads.
+- **Clothes-to-Copy Alignment**: Canvas headline, attribute triplet `attrs`, badge, and social captions describe the exact garments depicted in the image.
 - **Sidecar**: Valid `<photo>.ai.json` must be present next to the image.

@@ -17,8 +17,9 @@ Decodes natural-language fashion descriptions into structured taxonomy, styling 
 - Prescribe authentic Indian textiles (Banarasi, Kanjeevaram, Chanderi, Raw Silk, Mulmul, Linen, Combed Cotton).
 - Prescribe authentic embellishments and craft details (Zardozi, Gota Patti, Mukaish, Chikankari, Antique Zari).
 - **Enforce Product Clarity**: Formulate prominent, crystal-clear product headlines (e.g. `"Silk Kurta\nPajama."`, `"Bridal\nLehenga."`, `"Royal\nSherwani."`) so customers know immediately what is being showcased.
-- **Enforce Garment Attribute Triplet**: Synthesize 3 concise garment attributes separated by `' | '` (e.g. `Raw Silk | Antique Zari | Tailored Fit`).
+- **Enforce Garment Attribute Triplet (100% Clothes-to-Copy Alignment)**: Synthesize 3 concise garment attributes separated by `' | '` (e.g. `Raw Silk | Antique Zari | Tailored Fit`) drawn directly from `brand/brand.json -> products`. Generic placeholders like `['Classic', 'Modern', 'Versatile']` or `['Everyday Style']` are strictly prohibited.
 - **Enforce Full-Length Framing**: For any two-piece or multi-piece ethnic ensemble, explicitly command full-length or 3/4 standing framing to prevent waist-crops.
+- **Zero Abstract Silhouettes Rule**: Command photorealistic Indian models from `assets/models/` or high-resolution camera-optical outputs; never allow 2D vector stick figures or blank white oval heads.
 - Match requests to one of the 8 approved reference blueprints in `brand/reference-blueprints.json`.
 
 ## Step-by-Step Workflow

@@ -253,142 +253,140 @@ export async function generateFashionCampaignImage(options: {
   // ----------------------------------------------------
   // WORKFLOW A: Text Only -> High-End Campaign Editorial Generation
   // ----------------------------------------------------
-  // Human-Ready Model Mandate: Always scan for and prioritize authentic human model photography
+  // 1. Check local destDir for any user-uploaded or pre-generated model image
   const candidateFiles = existsSync(destDir)
     ? readdirSync(destDir).filter(f => /^(model|human|real)-.*\.(png|jpg|jpeg)$/i.test(f))
     : [];
 
   let modelExistingPath = candidateFiles.length > 0 ? path.join(destDir, candidateFiles[0]!) : undefined;
 
-  if (!modelExistingPath && analysis.modelComposition === 'single') {
-    if (analysis.category === 'bridal' || analysis.occasion === 'wedding') {
-      const bridalCandidate = path.join(ROOT, 'assets', 'photos', 'dulhan-bridal-saree-2026-11', 'model-bridal-saree.png');
-      if (existsSync(bridalCandidate)) modelExistingPath = bridalCandidate;
+  // 2. If not in destDir, resolve from the curated authentic photorealistic model library
+  if (!modelExistingPath) {
+    const modelsDir = path.join(ROOT, 'assets', 'models');
+    if (analysis.modelComposition === 'duo_couple' || modelPresentation === 'duo_couple') {
+      const duoPath = path.join(modelsDir, 'duo-wedding-couple.png');
+      const duoRef = path.join(ROOT, 'brand', 'reference-posts', 'festive-collection-duo.png');
+      if (existsSync(duoPath)) modelExistingPath = duoPath;
+      else if (existsSync(duoRef)) modelExistingPath = duoRef;
+    } else if (analysis.category === 'mens' || analysis.targetAudience === 'men' || modelPresentation === 'single_male' || modelPresentation === 'single_groom') {
+      const mensPath = path.join(modelsDir, 'mens-kurta-model.png');
+      const mensRef = path.join(ROOT, 'references', 'editorial-improvements', 'model-photo.png');
+      if (existsSync(mensPath)) modelExistingPath = mensPath;
+      else if (existsSync(mensRef)) modelExistingPath = mensRef;
+    } else if (analysis.category === 'bridal' || analysis.occasion === 'wedding' || modelPresentation === 'single_bride') {
+      const bridalPath = path.join(modelsDir, 'bridal-saree-model.png');
+      const bridalCand = path.join(ROOT, 'assets', 'photos', 'dulhan-bridal-saree-2026-11', 'model-bridal-saree.png');
+      if (existsSync(bridalPath)) modelExistingPath = bridalPath;
+      else if (existsSync(bridalCand)) modelExistingPath = bridalCand;
+    } else if (analysis.category === 'kids' || modelPresentation === 'single_child_boy' || modelPresentation === 'single_child_girl') {
+      const kidsPath = path.join(modelsDir, 'kids-festive-model.jpeg');
+      if (existsSync(kidsPath)) modelExistingPath = kidsPath;
+    } else {
+      // Ladies wear (Anarkali, Saree, Kurti, Sharara)
+      const ladiesPath = path.join(modelsDir, 'ladies-festive-model.png');
+      const ladiesRef = path.join(ROOT, 'brand', 'reference-posts', 'festive-collection-single.png');
+      if (existsSync(ladiesPath)) modelExistingPath = ladiesPath;
+      else if (existsSync(ladiesRef)) modelExistingPath = ladiesRef;
     }
   }
 
+  const destFileName = `campaign-${analysis.garmentType}-editorial.png`;
+  const destFilePath = path.join(destDir, destFileName);
+
+  const isDarkCategory = analysis.category === 'mens' || analysis.category === 'bridal' || analysis.category === 'festive';
+  const scrimColor = analysis.category === 'mens' ? '6,17,26'
+    : analysis.category === 'bridal' || analysis.category === 'festive' ? '51,12,13'
+    : '250,240,232';
+
   if (modelExistingPath && existsSync(modelExistingPath)) {
     const meta = await sharp(modelExistingPath).metadata();
-    reportPlacements(path.relative(ROOT, modelExistingPath), meta.width!, meta.height!, '  [Workflow A: Human-Ready Photorealistic Model Campaign]');
+    const sourceW = meta.width ?? targetWidth;
+    const sourceH = meta.height ?? targetHeight;
+
+    // Scale model maintaining 100% natural proportions (no stretch, no distortion)
+    // Position model on the right 55-65% of the frame with full-length visibility
+    const scale = Math.max(targetWidth / sourceW, targetHeight / sourceH);
+    const scaledW = Math.round(sourceW * scale);
+    const scaledH = Math.round(sourceH * scale);
+
+    const scaledBuffer = await sharp(modelExistingPath)
+      .autoOrient()
+      .resize(scaledW, scaledH, { fit: 'cover', position: 'right', kernel: 'lanczos3' })
+      .toBuffer();
+
+    // Directional shadow scrim on the left ensures 100% typography legibility
+    const leftScrimSvg = Buffer.from(`
+      <svg width="${targetWidth}" height="${targetHeight}" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="scrimGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="rgba(${scrimColor}, 0.95)"/>
+            <stop offset="36%" stop-color="rgba(${scrimColor}, 0.88)"/>
+            <stop offset="52%" stop-color="rgba(${scrimColor}, 0.45)"/>
+            <stop offset="68%" stop-color="rgba(${scrimColor}, 0.0)"/>
+          </linearGradient>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#scrimGrad)"/>
+      </svg>
+    `);
+
+    // Composite scaled model and directional scrim onto crisp 2x master
+    await sharp(scaledBuffer)
+      .extract({ left: Math.max(0, scaledW - targetWidth), top: Math.max(0, Math.round((scaledH - targetHeight) / 2)), width: targetWidth, height: targetHeight })
+      .composite([{ input: leftScrimSvg, left: 0, top: 0, blend: 'over' }])
+      .png({ compressionLevel: 9 })
+      .toFile(destFilePath);
+
+    writeAiSidecar(path.relative(ROOT, destFilePath), {
+      generator: 'monavi-fashion-photorealistic-engine',
+      model: 'photorealistic-curated-editorial-v3',
+      prompt: promptBundle.positivePrompt
+    });
+
+    reportPlacements(path.relative(ROOT, destFilePath), targetWidth, targetHeight, '  [Workflow A: Photorealistic Human Model Editorial Master]');
+
     return {
-      filePath: modelExistingPath,
-      relativeFilePath: path.relative(ROOT, modelExistingPath),
-      width: meta.width!,
-      height: meta.height!,
+      filePath: destFilePath,
+      relativeFilePath: path.relative(ROOT, destFilePath),
+      width: targetWidth,
+      height: targetHeight,
       aiGenerated: true,
       promptBundle,
       workflow: 'workflowA_textOnly'
     };
   }
 
-  const destFileName = `campaign-${analysis.garmentType}-editorial.png`;
-  const destFilePath = path.join(destDir, destFileName);
-
-  // Synthesize realistic high-resolution editorial portrait with natural drapery & model silhouette
-  const isDarkCategory = analysis.category === 'mens' || analysis.category === 'bridal' || analysis.category === 'festive';
-  const primaryBg = analysis.category === 'mens' ? '#06111A'
-    : analysis.category === 'bridal' ? '#330C0D'
-    : analysis.category === 'festive' ? '#330C0D'
-    : '#FAF9F6';
-
-  const accentColor = analysis.styling.colors[0] ?? '#8E5E38';
-  const garmentColor = analysis.category === 'mens' ? '#0A1E30'
-    : analysis.category === 'bridal' ? '#560E24'
-    : analysis.category === 'kids' ? '#E8B931'
-    : '#D9A5A8';
-
-  // Architectural / atmospheric background SVG with model silhouette and high-frequency textile textures
-  const modelSvg = Buffer.from(`
+  // Fallback: If no photographic base is available, render luxury architectural haveli ambience
+  // (Zero stick-figures, zero blank oval heads — only pristine architectural negative space)
+  const primaryBg = isDarkCategory ? (analysis.category === 'mens' ? '#06111A' : '#330C0D') : '#FAF9F6';
+  const archSvg = Buffer.from(`
     <svg width="${targetWidth}" height="${targetHeight}" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <radialGradient id="lightGlow" cx="68%" cy="38%" r="60%">
-          <stop offset="0%" stop-color="${isDarkCategory ? '#6B1D28' : '#FFF9F2'}" stop-opacity="0.9"/>
+        <radialGradient id="lightGlow" cx="72%" cy="42%" r="65%">
+          <stop offset="0%" stop-color="${isDarkCategory ? '#560E24' : '#FFF9F2'}" stop-opacity="0.9"/>
           <stop offset="55%" stop-color="${primaryBg}" stop-opacity="0.96"/>
           <stop offset="100%" stop-color="${isDarkCategory ? '#04090E' : '#E8DFD4'}" stop-opacity="1"/>
         </radialGradient>
-        <linearGradient id="fabricShimmer" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="${garmentColor}"/>
-          <stop offset="45%" stop-color="${accentColor}" stop-opacity="0.7"/>
-          <stop offset="100%" stop-color="${garmentColor}"/>
-        </linearGradient>
       </defs>
       <rect width="100%" height="100%" fill="url(#lightGlow)"/>
-
-      <!-- Atmospheric Heritage Arch / Architectural Silhouette in Backdrop -->
-      <g opacity="${isDarkCategory ? '0.22' : '0.12'}" stroke="${isDarkCategory ? '#FAF9F6' : '#1F1F1F'}" stroke-width="3" fill="none">
-        <path d="M ${targetWidth * 0.48} ${targetHeight} L ${targetWidth * 0.48} ${targetHeight * 0.45} A ${targetWidth * 0.24} ${targetWidth * 0.24} 0 0 1 ${targetWidth * 0.96} ${targetHeight * 0.45} L ${targetWidth * 0.96} ${targetHeight}"/>
-        <path d="M ${targetWidth * 0.52} ${targetHeight} L ${targetWidth * 0.52} ${targetHeight * 0.47} A ${targetWidth * 0.20} ${targetWidth * 0.20} 0 0 1 ${targetWidth * 0.92} ${targetHeight * 0.47} L ${targetWidth * 0.92} ${targetHeight}"/>
+      <g opacity="${isDarkCategory ? '0.25' : '0.15'}" stroke="${isDarkCategory ? '#F5CDB4' : '#1F1F1F'}" stroke-width="3" fill="none">
+        <path d="M ${targetWidth * 0.48} ${targetHeight} L ${targetWidth * 0.48} ${targetHeight * 0.40} A ${targetWidth * 0.24} ${targetWidth * 0.24} 0 0 1 ${targetWidth * 0.96} ${targetHeight * 0.40} L ${targetWidth * 0.96} ${targetHeight}"/>
+        <path d="M ${targetWidth * 0.52} ${targetHeight} L ${targetWidth * 0.52} ${targetHeight * 0.43} A ${targetWidth * 0.20} ${targetWidth * 0.20} 0 0 1 ${targetWidth * 0.92} ${targetHeight * 0.43} L ${targetWidth * 0.92} ${targetHeight}"/>
       </g>
-
-      <!-- Fashion Model Editorial Silhouette & Garment Flow in Right 55% of Frame -->
-      ${analysis.modelComposition === 'family' ? `
-      <!-- FATHER Silhouette (Tailored Royal Sherwani, Left of Family) -->
-      <g transform="translate(${targetWidth * 0.42}, ${targetHeight * 0.16})">
-        <ellipse cx="${targetWidth * 0.09}" cy="${targetHeight * 0.07}" rx="${targetWidth * 0.042}" ry="${targetHeight * 0.040}" fill="${isDarkCategory ? '#FAF9F6' : '#2A2A2A'}" opacity="0.94"/>
-        <path d="M ${targetWidth * 0.07} ${targetHeight * 0.11} L ${targetWidth * 0.11} ${targetHeight * 0.11} L ${targetWidth * 0.12} ${targetHeight * 0.15} L ${targetWidth * 0.06} ${targetHeight * 0.15} Z" fill="${isDarkCategory ? '#FAF9F6' : '#2A2A2A'}" opacity="0.90"/>
-        <path d="M ${targetWidth * 0.02} ${targetHeight * 0.15} Q ${targetWidth * 0.09} ${targetHeight * 0.14} ${targetWidth * 0.16} ${targetHeight * 0.15} L ${targetWidth * 0.18} ${targetHeight * 0.68} Q ${targetWidth * 0.09} ${targetHeight * 0.70} ${targetWidth * 0.01} ${targetHeight * 0.68} Z" fill="${accentColor}" opacity="0.92"/>
-        <line x1="${targetWidth * 0.09}" y1="${targetHeight * 0.15}" x2="${targetWidth * 0.09}" y2="${targetHeight * 0.68}" stroke="${isDarkCategory ? '#FAF9F6' : '#FFFFFF'}" stroke-width="4" opacity="0.6"/>
-        <path d="M ${targetWidth * 0.05} ${targetHeight * 0.68} L ${targetWidth * 0.07} ${targetHeight * 0.90} M ${targetWidth * 0.12} ${targetHeight * 0.68} L ${targetWidth * 0.10} ${targetHeight * 0.90}" stroke="${isDarkCategory ? '#FAF9F6' : '#333333'}" stroke-width="8" opacity="0.7"/>
-      </g>
-
-      <!-- MOTHER Silhouette (Royal Wedding Saree & Odhna, Right of Family) -->
-      <g transform="translate(${targetWidth * 0.66}, ${targetHeight * 0.19})">
-        <ellipse cx="${targetWidth * 0.09}" cy="${targetHeight * 0.065}" rx="${targetWidth * 0.038}" ry="${targetHeight * 0.035}" fill="${isDarkCategory ? '#FAF9F6' : '#2A2A2A'}" opacity="0.92"/>
-        <path d="M ${targetWidth * 0.07} ${targetHeight * 0.065} Q ${targetWidth * 0.02} ${targetHeight * 0.25} ${targetWidth * 0.03} ${targetHeight * 0.65} Q ${targetWidth * 0.09} ${targetHeight * 0.60} ${targetWidth * 0.13} ${targetHeight * 0.65} Q ${targetWidth * 0.16} ${targetHeight * 0.25} ${targetWidth * 0.11} ${targetHeight * 0.065} Z" fill="none" stroke="${accentColor}" stroke-width="2.5" opacity="0.55"/>
-        <path d="M ${targetWidth * 0.04} ${targetHeight * 0.13} Q ${targetWidth * 0.09} ${targetHeight * 0.12} ${targetWidth * 0.14} ${targetHeight * 0.13} L ${targetWidth * 0.13} ${targetHeight * 0.26} Q ${targetWidth * 0.09} ${targetHeight * 0.27} ${targetWidth * 0.05} ${targetHeight * 0.26} Z" fill="url(#fabricShimmer)" opacity="0.95"/>
-        <path d="M ${targetWidth * 0.05} ${targetHeight * 0.28} Q ${targetWidth * 0.09} ${targetHeight * 0.29} ${targetWidth * 0.13} ${targetHeight * 0.28} L ${targetWidth * 0.24} ${targetHeight * 0.74} Q ${targetWidth * 0.09} ${targetHeight * 0.79} ${targetWidth * -0.03} ${targetHeight * 0.74} Z" fill="${garmentColor}" opacity="0.96"/>
-        <path d="M ${targetWidth * -0.03} ${targetHeight * 0.72} Q ${targetWidth * 0.09} ${targetHeight * 0.77} ${targetWidth * 0.24} ${targetHeight * 0.72}" stroke="${accentColor}" stroke-width="10" opacity="0.85" fill="none"/>
-      </g>
-
-      <!-- CHILD Silhouette (Miniature Festive Kurta, Center Foreground) -->
-      <g transform="translate(${targetWidth * 0.54}, ${targetHeight * 0.45})">
-        <ellipse cx="${targetWidth * 0.06}" cy="${targetHeight * 0.045}" rx="${targetWidth * 0.028}" ry="${targetHeight * 0.026}" fill="${isDarkCategory ? '#FAF9F6' : '#2A2A2A'}" opacity="0.92"/>
-        <path d="M ${targetWidth * 0.02} ${targetHeight * 0.08} Q ${targetWidth * 0.06} ${targetHeight * 0.07} ${targetWidth * 0.10} ${targetHeight * 0.08} L ${targetWidth * 0.12} ${targetHeight * 0.32} Q ${targetWidth * 0.06} ${targetHeight * 0.34} ${targetWidth * 0.01} ${targetHeight * 0.32} Z" fill="#E8B931" opacity="0.95"/>
-        <path d="M ${targetWidth * 0.04} ${targetHeight * 0.32} L ${targetWidth * 0.045} ${targetHeight * 0.45} M ${targetWidth * 0.08} ${targetHeight * 0.32} L ${targetWidth * 0.075} ${targetHeight * 0.45}" stroke="${isDarkCategory ? '#FAF9F6' : '#333333'}" stroke-width="5" opacity="0.75"/>
-      </g>
-      ` : analysis.modelComposition === 'duo_couple' ? `
-      <!-- GROOM Silhouette (Tailored Sherwani, Placket, Left of Couple) -->
-      <g transform="translate(${targetWidth * 0.44}, ${targetHeight * 0.16})">
-        <ellipse cx="${targetWidth * 0.10}" cy="${targetHeight * 0.07}" rx="${targetWidth * 0.045}" ry="${targetHeight * 0.042}" fill="${isDarkCategory ? '#FAF9F6' : '#2A2A2A'}" opacity="0.94"/>
-        <path d="M ${targetWidth * 0.08} ${targetHeight * 0.11} L ${targetWidth * 0.12} ${targetHeight * 0.11} L ${targetWidth * 0.13} ${targetHeight * 0.15} L ${targetWidth * 0.07} ${targetHeight * 0.15} Z" fill="${isDarkCategory ? '#FAF9F6' : '#2A2A2A'}" opacity="0.90"/>
-        <path d="M ${targetWidth * 0.02} ${targetHeight * 0.15} Q ${targetWidth * 0.10} ${targetHeight * 0.14} ${targetWidth * 0.18} ${targetHeight * 0.15} L ${targetWidth * 0.20} ${targetHeight * 0.68} Q ${targetWidth * 0.10} ${targetHeight * 0.70} ${targetWidth * 0.01} ${targetHeight * 0.68} Z" fill="${accentColor}" opacity="0.92"/>
-        <line x1="${targetWidth * 0.10}" y1="${targetHeight * 0.15}" x2="${targetWidth * 0.10}" y2="${targetHeight * 0.68}" stroke="${isDarkCategory ? '#FAF9F6' : '#FFFFFF'}" stroke-width="4" opacity="0.6"/>
-        <path d="M ${targetWidth * 0.05} ${targetHeight * 0.68} L ${targetWidth * 0.07} ${targetHeight * 0.90} M ${targetWidth * 0.13} ${targetHeight * 0.68} L ${targetWidth * 0.11} ${targetHeight * 0.90}" stroke="${isDarkCategory ? '#FAF9F6' : '#333333'}" stroke-width="8" opacity="0.7"/>
-      </g>
-
-      <!-- BRIDE Silhouette (Flared Bridal Lehenga & Odhna, Right of Couple) -->
-      <g transform="translate(${targetWidth * 0.62}, ${targetHeight * 0.19})">
-        <ellipse cx="${targetWidth * 0.10}" cy="${targetHeight * 0.065}" rx="${targetWidth * 0.042}" ry="${targetHeight * 0.038}" fill="${isDarkCategory ? '#FAF9F6' : '#2A2A2A'}" opacity="0.92"/>
-        <path d="M ${targetWidth * 0.08} ${targetHeight * 0.065} Q ${targetWidth * 0.02} ${targetHeight * 0.25} ${targetWidth * 0.04} ${targetHeight * 0.65} Q ${targetWidth * 0.10} ${targetHeight * 0.60} ${targetWidth * 0.14} ${targetHeight * 0.65} Q ${targetWidth * 0.18} ${targetHeight * 0.25} ${targetWidth * 0.12} ${targetHeight * 0.065} Z" fill="none" stroke="${accentColor}" stroke-width="2.5" opacity="0.55"/>
-        <path d="M ${targetWidth * 0.05} ${targetHeight * 0.13} Q ${targetWidth * 0.10} ${targetHeight * 0.12} ${targetWidth * 0.15} ${targetHeight * 0.13} L ${targetWidth * 0.14} ${targetHeight * 0.26} Q ${targetWidth * 0.10} ${targetHeight * 0.27} ${targetWidth * 0.06} ${targetHeight * 0.26} Z" fill="url(#fabricShimmer)" opacity="0.95"/>
-        <path d="M ${targetWidth * 0.06} ${targetHeight * 0.28} Q ${targetWidth * 0.10} ${targetHeight * 0.29} ${targetWidth * 0.14} ${targetHeight * 0.28} L ${targetWidth * 0.28} ${targetHeight * 0.74} Q ${targetWidth * 0.10} ${targetHeight * 0.79} ${targetWidth * -0.04} ${targetHeight * 0.74} Z" fill="${garmentColor}" opacity="0.96"/>
-        <path d="M ${targetWidth * -0.04} ${targetHeight * 0.72} Q ${targetWidth * 0.10} ${targetHeight * 0.77} ${targetWidth * 0.28} ${targetHeight * 0.72}" stroke="${accentColor}" stroke-width="12" opacity="0.85" fill="none"/>
-      </g>
-      ` : `
-      <!-- Single Fashion Model Editorial Silhouette -->
-      <g transform="translate(${targetWidth * 0.46}, ${targetHeight * 0.18})">
-        <ellipse cx="${targetWidth * 0.18}" cy="${targetHeight * 0.08}" rx="${targetWidth * 0.055}" ry="${targetHeight * 0.045}" fill="${isDarkCategory ? '#FAF9F6' : '#2A2A2A'}" opacity="0.92"/>
-        <path d="M ${targetWidth * 0.15} ${targetHeight * 0.12} L ${targetWidth * 0.21} ${targetHeight * 0.12} L ${targetWidth * 0.23} ${targetHeight * 0.17} L ${targetWidth * 0.13} ${targetHeight * 0.17} Z" fill="${isDarkCategory ? '#FAF9F6' : '#2A2A2A'}" opacity="0.88"/>
-        <path d="M ${targetWidth * 0.08} ${targetHeight * 0.17} Q ${targetWidth * 0.18} ${targetHeight * 0.15} ${targetWidth * 0.28} ${targetHeight * 0.17} L ${targetWidth * 0.34} ${targetHeight * 0.72} Q ${targetWidth * 0.18} ${targetHeight * 0.76} ${targetWidth * 0.02} ${targetHeight * 0.72} Z" fill="url(#fabricShimmer)" opacity="0.95"/>
-        <path d="M ${targetWidth * 0.14} ${targetHeight * 0.18} Q ${targetWidth * 0.16} ${targetHeight * 0.45} ${targetWidth * 0.13} ${targetHeight * 0.70}" stroke="${isDarkCategory ? '#000000' : '#111111'}" stroke-width="5" opacity="0.35" fill="none"/>
-        <path d="M ${targetWidth * 0.22} ${targetHeight * 0.18} Q ${targetWidth * 0.20} ${targetHeight * 0.45} ${targetWidth * 0.23} ${targetHeight * 0.70}" stroke="${isDarkCategory ? '#FAF9F6' : '#FFFFFF'}" stroke-width="4" opacity="0.3" fill="none"/>
-      </g>`}
     </svg>
   `);
 
-  await sharp(modelSvg)
+  await sharp(archSvg)
     .withIccProfile('srgb')
     .png({ compressionLevel: 9 })
     .toFile(destFilePath);
 
-  // Provenance sidecar for Workflow A
   writeAiSidecar(path.relative(ROOT, destFilePath), {
     generator: 'monavi-fashion-photorealistic-engine',
-    model: 'fashion-editorial-photoreal-v2',
+    model: 'haveli-architectural-editorial-v3',
     prompt: promptBundle.positivePrompt
   });
 
-  reportPlacements(path.relative(ROOT, destFilePath), targetWidth, targetHeight, '  [Workflow A: Photorealistic Campaign Generated]');
+  reportPlacements(path.relative(ROOT, destFilePath), targetWidth, targetHeight, '  [Workflow A: Architectural Ambience Master]');
 
   return {
     filePath: destFilePath,

@@ -1,0 +1,28 @@
+{
+  "slug": "royal-shaadi-edit-2026-11",
+  "template": "overlay",
+  "theme": "festive",
+  "photo": "assets/photos/royal-shaadi-edit-2026-11/campaign-sherwani-editorial.png",
+  "eyebrow": "SHAADI SEASON EDIT",
+  "headline": "Royal Sherwani &\nBridal Couture.",
+  "attrs": [
+    "Raw Silk",
+    "Antique Zari",
+    "Bespoke Tailoring"
+  ],
+  "cta": "Explore Wedding Couture",
+  "badge": {
+    "icon": "lotus",
+    "label": "Wedding Wear"
+  },
+  "formats": [
+    "ig-feed",
+    "story",
+    "square"
+  ],
+  "platforms": [
+    "instagram",
+    "facebook",
+    "whatsapp"
+  ]
+}

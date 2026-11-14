@@ -4,7 +4,7 @@
 
 import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
-import { ROOT } from './brand.ts';
+import { BRAND, ROOT } from './brand.ts';
 
 export type FashionCategory = 'mens' | 'ladies' | 'kids' | 'bridal' | 'festive' | 'everyday';
 export type TargetAudience = 'men' | 'women' | 'bride' | 'groom' | 'couple' | 'kids' | 'kids_boys' | 'kids_girls' | 'family';
@@ -259,7 +259,7 @@ export function analyzeFashionRequest(query: string, options?: { hasProductImage
     badge: category === 'mens' ? "Men's Wear" : category === 'kids' ? "Kids Wear" : category === 'bridal' ? "Bridal" : "Ladies Wear",
     template: (category === 'mens' && !isFestive) ? 'split' : category === 'kids' ? 'arch' : 'overlay',
     referenceBlueprint: category === 'mens' ? 'mens-everyday' : category === 'bridal' ? 'bridal' : category === 'kids' ? 'kids-wear' : isFestive ? 'festive-ladies' : 'ladies-contemporary',
-    attrs: category === 'mens' ? ['Classic', 'Modern', 'Versatile'] : category === 'kids' ? ['Comfortable', 'Playful', 'Everyday'] : category === 'bridal' ? ['Timeless', 'Handcrafted look', 'Celebration-ready'] : ['Elegant', 'Comfortable', 'Timeless'],
+    attrs: category === 'mens' ? ['Raw Silk', 'Antique Zari', 'Tailored Fit'] : category === 'kids' ? ['Soft Cotton', 'Zari Border', 'Comfort Fit'] : category === 'bridal' ? ['Velvet Silk', 'Antique Zari', 'Flared Ghera'] : ['Banarasi Silk', 'Zari Border', 'Heritage Weave'],
     fabrics: ['Cotton Silk', 'Fine Chanderi', 'Breathable Linen', 'Georgette'],
     colors: ['Ivory', 'Maroon', 'Navy', 'Rose Pink', 'Sage Green'],
     occasions: [occasion],
@@ -322,16 +322,19 @@ export function analyzeFashionRequest(query: string, options?: { hasProductImage
     negativeSpace = 'left';
   }
 
-  // Determine Headline, Subline & Copy
+  // Determine Headline, Subline & Copy with 100% Clothes-to-Copy Alignment
+  const brandProducts = (BRAND.products ?? {}) as Record<string, { name?: string; attrs?: string[]; hashtags?: string[] }>;
+  const brandProduct = detectedGarmentKey ? brandProducts[detectedGarmentKey] : undefined;
+
   let eyebrow = category === 'mens' ? "MEN'S COLLECTION"
     : category === 'bridal' ? 'BRIDAL COUTURE'
     : category === 'festive' ? 'FESTIVE COLLECTION'
     : category === 'kids' ? 'LITTLE ONES'
     : 'NEW ARRIVALS';
 
-  let headline = 'Style That Feels\nLike You.';
   let cta = 'Explore Collection';
-  let attrs = garmentInfo.attrs || ['Classic', 'Comfortable', 'Timeless'];
+  let attrs = brandProduct?.attrs ?? garmentInfo.attrs ?? ['Raw Silk', 'Antique Zari', 'Tailored Fit'];
+  let headline = `${garmentDisplayName}.\nCollection.`;
 
   if (modelComposition === 'family') {
     eyebrow = (isBridal || occasion === 'wedding' || q.includes('shaad')) ? 'SHAADI SEASON 2026' : 'FESTIVE COLLECTION';
@@ -340,33 +343,119 @@ export function analyzeFashionRequest(query: string, options?: { hasProductImage
     cta = 'Explore Family Edit';
     garmentDisplayName = 'Royal Family Shaadi Collection';
   } else if (modelComposition === 'duo_couple') {
-    eyebrow = (isBridal || occasion === 'wedding') ? 'SHAADI SEASON 2026' : 'FESTIVE COLLECTION';
-    headline = (isBridal || occasion === 'wedding') ? 'Royal Wedding\nCollection.' : 'The Festive\nDuo.';
-    attrs = (isBridal || occasion === 'wedding')
-      ? ['Bridal & Groom', 'Royal Heritage', 'Bespoke Fit']
-      : ['Lehengas | Kurtas | Festive Edit'];
+    eyebrow = (isBridal || occasion === 'wedding' || q.includes('shaad')) ? 'SHAADI SEASON 2026' : 'FESTIVE COLLECTION';
+    headline = (isBridal || occasion === 'wedding' || q.includes('shaad')) ? 'Royal Sherwani &\nBridal Couture.' : 'Festive Kurta &\nSilk Lehenga.';
+    attrs = (isBridal || occasion === 'wedding' || q.includes('shaad'))
+      ? ['Raw Silk', 'Antique Zari', 'Bespoke Tailoring']
+      : ['Chanderi Silk', 'Zari Detailing', 'Festive Fit'];
     cta = 'Explore The Edit';
   } else if (category === 'mens') {
-    if (occasion === 'wedding' || detectedGarmentKey === 'sherwani') {
-      headline = 'Traditional Roots,\nModern Grace.';
-      attrs = ['Regal', 'Tailored', 'Wedding-ready'];
+    if (detectedGarmentKey === 'sherwani') {
+      headline = 'Royal\nSherwani.';
+      attrs = brandProduct?.attrs ?? ['Bespoke Cut', 'Antique Zari', 'Pure Silk'];
+      cta = 'Explore Collection';
+    } else if (detectedGarmentKey === 'kurta-pajama') {
+      headline = 'Silk Kurta\nPajama.';
+      attrs = brandProduct?.attrs ?? ['Raw Silk', 'Antique Zari', 'Tailored Fit'];
+      cta = 'Explore Collection';
+    } else if (detectedGarmentKey === 'nehru-jacket') {
+      headline = 'Silk Nehru\nJacket.';
+      attrs = brandProduct?.attrs ?? ['Raw Silk', 'Mandarin Collar', 'Tailored Cut'];
+      cta = 'Explore Collection';
+    } else if (detectedGarmentKey === 'mens-blazer') {
+      headline = 'Tailored\nBlazer.';
+      attrs = brandProduct?.attrs ?? ['Structured Wool', 'Satin Lapel', 'Sharp Silhouette'];
+      cta = 'Explore Collection';
+    } else if (detectedGarmentKey === 'mens-shirt') {
+      headline = 'Crisp Cotton\nShirt.';
+      attrs = brandProduct?.attrs ?? ['Crisp Cotton', 'Modern Cut', 'Tailored Fit'];
+      cta = 'Explore Collection';
+    } else if (detectedGarmentKey === 'mens-trouser') {
+      headline = 'Tailored\nTrousers.';
+      attrs = brandProduct?.attrs ?? ['Tailored Chino', 'Comfort Stretch', 'Sharp Taper'];
+      cta = 'Explore Collection';
+    } else if (detectedGarmentKey === 'mens-tshirt') {
+      headline = 'Pima Cotton\nT-Shirt.';
+      attrs = brandProduct?.attrs ?? ['Combed Pima Cotton', 'Bio-Washed', 'Breathable Fit'];
+      cta = 'Explore Collection';
+    } else if (detectedGarmentKey === 'mens-jeans') {
+      headline = 'Ring-Spun\nDenim Jeans.';
+      attrs = brandProduct?.attrs ?? ['Ring-Spun Denim', 'Comfort Stretch', 'Classic Straight'];
       cta = 'Explore Collection';
     } else {
-      headline = 'Everyday Style.\nLasting Confidence.';
-      attrs = ['Classic', 'Modern', 'Versatile'];
+      headline = `${garmentDisplayName}.\nRefined Cut.`;
+      attrs = brandProduct?.attrs ?? ['Raw Silk', 'Antique Zari', 'Tailored Fit'];
       cta = 'Explore Collection';
     }
   } else if (category === 'bridal') {
-    headline = 'Timeless Elegance\nfor Your Special Day.';
-    attrs = ['Lehengas', 'Sarees', 'Gowns', 'Custom Fits'];
+    if (detectedGarmentKey === 'sherwani') {
+      headline = 'Royal\nSherwani.';
+      attrs = brandProduct?.attrs ?? ['Bespoke Cut', 'Antique Zari', 'Pure Silk'];
+    } else if (detectedGarmentKey === 'kurta-pajama') {
+      headline = 'Silk Kurta\nPajama.';
+      attrs = brandProduct?.attrs ?? ['Raw Silk', 'Antique Zari', 'Tailored Fit'];
+    } else if (detectedGarmentKey === 'lehenga') {
+      headline = 'Bridal Silk\nLehenga.';
+      attrs = brandProduct?.attrs ?? ['Velvet Silk', 'Antique Zari', 'Flared Ghera'];
+    } else if (detectedGarmentKey === 'saree') {
+      headline = 'Banarasi Silk\nSaree.';
+      attrs = brandProduct?.attrs ?? ['Banarasi Silk', 'Zari Border', 'Heritage Weave'];
+    } else if (detectedGarmentKey === 'gown') {
+      headline = 'Georgette Silk\nGown.';
+      attrs = brandProduct?.attrs ?? ['Georgette Silk', 'Intricate Embroidery', 'Evening Flair'];
+    } else {
+      headline = `Royal ${garmentDisplayName}.\nBridal Edit.`;
+      attrs = brandProduct?.attrs ?? ['Pure Silk', 'Antique Zari', 'Flared Ghera'];
+    }
     cta = 'Book a Styling Session';
   } else if (category === 'kids') {
-    headline = 'Little Styles,\nBig Smiles.';
-    attrs = ['Comfortable', 'Playful', 'Everyday'];
+    if (detectedGarmentKey === 'kids-kurta-pajama') {
+      headline = 'Festive Kurta\nPajama.';
+      attrs = brandProduct?.attrs ?? ['Breathable Mulmul', 'Festive Embroidery', 'Easy Fit'];
+    } else if (detectedGarmentKey === 'kids-floral-dress' || detectedGarmentKey === 'kids-frock') {
+      headline = 'Floral Twirl\nDress.';
+      attrs = brandProduct?.attrs ?? ['Pure Cotton', 'Floral Print', 'Twirl Silhouette'];
+    } else {
+      headline = `Festive ${garmentDisplayName}.\nLittle Styles.`;
+      attrs = brandProduct?.attrs ?? ['Soft Cotton', 'Zari Border', 'Comfort Fit'];
+    }
     cta = 'Explore Collection';
   } else if (category === 'festive') {
-    headline = 'Festive\nCollection';
+    if (detectedGarmentKey === 'saree') {
+      headline = 'Heritage Silk\nSaree.';
+      attrs = brandProduct?.attrs ?? ['Banarasi Silk', 'Zari Border', 'Heritage Weave'];
+    } else if (detectedGarmentKey === 'anarkali') {
+      headline = 'Chanderi\nAnarkali.';
+      attrs = brandProduct?.attrs ?? ['Chanderi Silk', 'Gota Patti', 'Flared Silhouette'];
+    } else if (detectedGarmentKey === 'sharara') {
+      headline = 'Georgette\nSharara Set.';
+      attrs = brandProduct?.attrs ?? ['Georgette Silk', 'Zari Embroidery', 'Flared Flare'];
+    } else if (detectedGarmentKey === 'gharara') {
+      headline = 'Royal Brocade\nGharara.';
+      attrs = brandProduct?.attrs ?? ['Heritage Brocade', 'Zardozi Work', 'Royal Nawabi Cut'];
+    } else {
+      headline = `Festive ${garmentDisplayName}.\nHeritage Weave.`;
+      attrs = brandProduct?.attrs ?? ['Pure Silk', 'Zari Border', 'Festive Cut'];
+    }
     cta = 'Explore Now';
+  } else {
+    // ladies
+    if (detectedGarmentKey === 'kurti') {
+      headline = 'Chikankari\nKurti.';
+      attrs = brandProduct?.attrs ?? ['Pure Cotton', 'Chikankari', 'Comfort Fit'];
+    } else if (detectedGarmentKey === 'co-ord-set') {
+      headline = 'Pure Linen\nCo-ord Set.';
+      attrs = brandProduct?.attrs ?? ['Pure Linen', 'Modern Silhouette', 'Effortless Fit'];
+    } else if (detectedGarmentKey === 'palazzo') {
+      headline = 'Mulmul Palazzo\nSet.';
+      attrs = brandProduct?.attrs ?? ['Mulmul Cotton', 'Breezy Flare', 'Relaxed Fit'];
+    } else if (detectedGarmentKey === 'salwar-suit') {
+      headline = 'Chanderi\nSalwar Suit.';
+      attrs = brandProduct?.attrs ?? ['Chanderi Silk', 'Zari Detailing', 'Traditional Cut'];
+    } else {
+      headline = `${garmentDisplayName}.\nGraceful Cut.`;
+      attrs = brandProduct?.attrs ?? ['Fine Cotton', 'Clean Stitch', 'Comfort Fit'];
+    }
   }
 
   // Social & Platforms

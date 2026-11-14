@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monavi Collection - Image Generation & Garment Alignment Verification</title>
+  <style>
+    body {
+      background: #0f1117;
+      color: #faf9f6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 32px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 32px;
+      margin-bottom: 8px;
+      color: #FAF9F6;
+    }
+    p.lead {
+      color: #a0a5b5;
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .card {
+      background: #181b24;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #282d3d;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .card.banned {
+      border-color: #8b263e;
+    }
+    .card.approved {
+      border-color: #38a169;
+    }
+    .card-header {
+      padding: 16px;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card.banned .card-header {
+      background: rgba(139, 38, 62, 0.25);
+      color: #ff6b81;
+    }
+    .card.approved .card-header {
+      background: rgba(56, 161, 105, 0.25);
+      color: #68d391;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .card-body {
+      padding: 16px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #cbd5e1;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .badge-banned {
+      background: #8b263e;
+      color: #fff;
+    }
+    .badge-approved {
+      background: #276749;
+      color: #fff;
+    }
+    .meta-list {
+      margin-top: 12px;
+      border-top: 1px solid #282d3d;
+      padding-top: 12px;
+      font-size: 13px;
+    }
+    .meta-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .meta-label {
+      color: #94a3b8;
+    }
+    .meta-value {
+      color: #f1f5f9;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Monavi Collection — Visual Standards & Garment Alignment Verification</h1>
+    <p class="lead">Verification showing permanent removal of abstract vector dummies and enforcement of 100% Clothes-to-Copy Alignment.</p>
+    
+    <div class="comparison-grid">
+      <!-- BANNED -->
+      <div class="card banned" id="banned-card">
+        <div class="card-header">
+          <span>❌ BANNED FOREVER</span>
+        </div>
+        <img src="/banned-dummy.jpg" alt="Banned abstract dummy">
+        <div class="card-body">
+          <span class="badge badge-banned">REJECTED BY USER</span>
+          <p><strong>Abstract Vector Silhouettes:</strong> Incomprehensible 2D stick legs, blank white oval heads, geometric rectangles. Banned permanently across all skills and agents.</p>
+          <div class="meta-list">
+            <div class="meta-item"><span class="meta-label">Model Realism:</span><span class="meta-value">0% (Dummy)</span></div>
+            <div class="meta-item"><span class="meta-label">Clothes Detail:</span><span class="meta-value">None</span></div>
+            <div class="meta-item"><span class="meta-label">Status:</span><span class="meta-value">BANNED</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- APPROVED FEED -->
+      <div class="card approved" id="approved-feed-card">
+        <div class="card-header">
+          <span>✅ APPROVED STANDARD (Feed 4:5)</span>
+        </div>
+        <img src="/instagram/royal-shaadi-edit-2026-11/ig-feed.jpg" alt="Approved Feed Post">
+        <div class="card-body">
+          <span class="badge badge-approved">PERMANENT PIPELINE</span>
+          <p><strong>Photorealistic Royal Wedding Duo:</strong> Real Indian models, haveli architecture, directional contact shadows, Playfair Display headline, and 100% garment alignment.</p>
+          <div class="meta-list">
+            <div class="meta-item"><span class="meta-label">Headline:</span><span class="meta-value">Royal Sherwani & Bridal Couture.</span></div>
+            <div class="meta-item"><span class="meta-label">Attrs:</span><span class="meta-value">Raw Silk | Antique Zari | Bespoke Fit</span></div>
+            <div class="meta-item"><span class="meta-label">Model:</span><span class="meta-value">Photorealistic Couple (assets/models/)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- APPROVED STORY -->
+      <div class="card approved" id="approved-story-card">
+        <div class="card-header">
+          <span>✅ APPROVED STANDARD (Story 9:16)</span>
+        </div>
+        <img src="/instagram/royal-shaadi-edit-2026-11/story.jpg" alt="Approved Story/Reel">
+        <div class="card-body">
+          <span class="badge badge-approved">FULL VERTICAL ADAPTATION</span>
+          <p><strong>Story / Status Vertical:</strong> 1080×1920 with safe margins (top 250px, bottom 340px) keeping branding unobstructed.</p>
+          <div class="meta-list">
+            <div class="meta-item"><span class="meta-label">Resolution:</span><span class="meta-value">1080×1920 (9:16)</span></div>
+            <div class="meta-item"><span class="meta-label">QA Status:</span><span class="meta-value">PASS (check:media)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

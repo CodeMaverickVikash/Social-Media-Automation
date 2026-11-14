@@ -27,6 +27,12 @@ Crafts evocative, platform-optimized promotional copy, hooks, and hashtags for M
    - Avoid generic e-commerce clichés, spammy sales hooks, or discount shouts.
    - Keep prose elegant, rhythmic, and sensorially evocative.
 
+4. **100% Clothes-to-Copy Alignment Mandate ("mujhe baar baar bolna na pade" Rule)**:
+   - Headlines, canvas attribute triplets (`attrs`), badges, and captions must strictly describe and correspond to the exact clothes depicted in the creative.
+   - Headlines must prominently name the exact featured garment (e.g. `"Silk Kurta\nPajama."`, `"Royal\nSherwani."`, `"Banarasi Silk\nSaree."`, `"Kids Festive\nKurta Set."`).
+   - Attribute triplets (`attrs`) must specify the garment's authentic `[Fabric, Embellishment/Detail, Silhouette/Cut]` (e.g. `Raw Silk | Antique Zari | Tailored Fit`). Generic placeholders like `Classic | Modern | Versatile` or `Everyday Style` are strictly banned.
+   - Platform captions must highlight the real fabric textures, colors, and cuts visible in the image.
+
 ---
 
 ## Platform Standards

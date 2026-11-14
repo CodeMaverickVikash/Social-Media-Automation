@@ -29,10 +29,10 @@ A slug (for example `kurta-pajama-festive-2026-11`). Review everything that belo
 
 1. **Quality gate (blocking).** Run `npm run check:media -- output/instagram/<slug> output/facebook/<slug> output/whatsapp/<slug>`
    (only the folders that exist). It must pass. Any manifest with `draftOnly: true` (from `--draft` or `--allow-lowres`) is blocking.
-2. **Visuals.** Open every image with Read, and for reels the cover or poster frame if one exists. Go through
+2. **Visuals (blocking).** Open every image with Read, and for reels the cover or poster frame if one exists. Go through
    the `monavi-brand-rules` visual checklist: logo lockup and clear space, Playfair + Montserrat only, palette or
    approved campaign colour with one accent, readable contrast, story/reel safe zones, banners keep text and logo inside the centre 1280 px of `fb-cover`, no pixelation or banding,
-   and the layout DNA (logo → headline → attrs → CTA → badge).
+   and the layout DNA (logo → headline → attrs → CTA → badge). **Zero Abstract Silhouettes Check (Blocking)**: Strictly reject any 2D vector stick figures, white circle/oval heads, or abstract geometric placeholders ("kuch samajh nhi aata hai" mandate). All campaign imagery must feature authentic photorealistic Indian models or genuine product preservation in luxury architectural environments.
 3. **Facts (blocking).** Every price, offer, discount, date, address, phone number and store hour on an image or in a
    caption must come from `brand.json → contact` or the brief, which records what the user said. If a `contact` field is empty, it must not appear.
    No fabric or craft claims ("pure silk", "handmade", "zari") unless the brief states them.
@@ -45,8 +45,7 @@ A slug (for example `kurta-pajama-festive-2026-11`). Review everything that belo
    - Facebook: warmer, 1–3 short paragraphs, 2–4 hashtags
    - WhatsApp: 1–3 lines, personal, clear action, **no hashtags**
    - ≤ 2 emoji per caption and never stacked. No shouting, no "!!!", no vague hype, no competitor or celebrity names
-6. **Consistency.** Headline wording matches across post, story and reel. Captions describe what the creative actually
-   shows. The slug and folders line up.
+6. **Consistency & 100% Clothes-to-Copy Alignment (blocking).** Headline wording matches across post, story and reel. Canvas headline, eyebrow, attribute triplet (`attrs`), and badge must directly describe and match the exact clothes shown in the image ("mujhe baar baar bolna na pade" mandate). Reject generic placeholders like `['Classic', 'Modern', 'Versatile']` or `['Everyday Style']` when specific garments are depicted. Captions describe what the creative actually shows. The slug and folders line up.
 7. **CTA.** One clear, gracious CTA per creative and caption (from the `voice.md` CTA list or close to it).
 
 ## Output

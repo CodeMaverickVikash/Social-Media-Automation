@@ -17,9 +17,11 @@ subagent: true
    - Powered by Sharp + SVG Vector Canvas Architecture running 100% locally on CPU in milliseconds.
    - Outputs 2× supersampled master renders (2160×2700 for 4:5, 2160×3840 for 9:16, 2160×2160 for 1:1) ensuring zero pixelation.
 2. **Workflow A (Text-to-Campaign Editorial):**
+   - Strictly bans 2D vector stick figures, geometric dummies, and blank white oval heads ("kuch samajh nhi aata hai" mandate).
+   - Positions authentic photorealistic human models, couples, or families (from `assets/models/` or optical AI) in the right 55-60% of frame with natural anatomy and skin texture.
    - Synthesizes luxury haveli, palace verandah, and architectural studio environments.
    - Generates calibrated negative space (left 40-45%) reserved for high-contrast Playfair typography.
-   - Positions human-ready models, couples, or families in right 55-60% of frame.
+   - Enforces 100% Clothes-to-Copy Alignment: visuals match the exact product headline and attribute triplet (`attrs`).
 3. **Workflow B (Garment Preservation + Editorial Compositing):**
    - Enforces **PRODUCT ACCURACY > CREATIVE FREEDOM**.
    - Preserves 100% of authentic garment pixels, colors, embroidery, stitching, and textures.

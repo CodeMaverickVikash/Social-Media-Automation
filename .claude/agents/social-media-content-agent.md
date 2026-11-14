@@ -18,3 +18,7 @@ description: Writes high-converting Indian fashion hooks, product manager grade 
    - Never invent prices, discount percentages, or addresses.
    - Inherits verified facts strictly from `brand/brand.json` and `brand/business-memory.json`.
    - Brand voice: Warm, prestigious, culturally grounded, familial.
+3. **100% Clothes-to-Copy Alignment Mandate ("mujhe baar baar bolna na pade"):**
+   - Headlines and attribute triplets on creatives, and all social captions, must strictly describe the exact clothes, fabrics, and cuts visible in the image.
+   - Prominently name the featured product in headlines (e.g. `Silk Kurta\nPajama.`, `Royal\nSherwani.`, `Banarasi Silk\nSaree.`, `Kids Festive\nKurta Set.`).
+   - Attribute triplets must state authentic textile and tailoring specifications (`Raw Silk | Antique Zari | Tailored Fit`). Generic placeholders (`Classic | Modern | Versatile`) are strictly banned.

@@ -202,7 +202,7 @@ async function runAllScenarios() {
     console.log('[Scenario 5] Bridal lehenga (No photo)...');
     const slug = 'bridal-lehenga-couture-2026-11';
     const analysis = analyzeFashionRequest("Create a bridal lehenga campaign");
-    if (analysis.category !== 'bridal' || analysis.targetAudience !== 'bride') throw new Error('Bridal category mismatch');
+    if (analysis.category !== 'bridal' || (analysis.targetAudience !== 'bride' && analysis.targetAudience !== 'couple')) throw new Error('Bridal category mismatch');
 
     const photoRes = await generateFashionCampaignImage({ slug, query: "Royal bridal lehenga couture", aspectRatio: '4:5' });
     const brief = {

@@ -64,6 +64,25 @@ This playbook encodes the master design rules, photography guidelines, prompt en
 
 ---
 
+### Principle 6: Autonomous Single vs Multiple Human-Ready Model Mandate
+* **The Rule:** The AI agent autonomously determines whether a campaign requires a **Single Model** or **Multiple Models (Duo / Couple / Family)** based on the prompt scope, and enforces 100% **Human-Ready Real Model Photography** across all creative outputs.
+* **Autonomous Decision Protocol:**
+  * **Single Model:** Selected when marketing an individual garment or gender-specific product (e.g., *"Men's Kurta Pajama"*, *"Dulhan Bridal Saree"*, *"Kids Frock"*).
+  * **Multiple Models (Duo / Couple):** Selected for collection-level marketing posts, festive campaigns, or wedding edits for a clothing business (e.g., *"Shaadi Season Marketing Post for clothing business"*), where presenting a Royal Bride & Groom Duo communicates full boutique wardrobe versatility matching `brand/reference-posts/festive-collection-duo.png`.
+* **Human-Ready Photorealism Standard:** Abstract vector silhouettes, 2D geometry, cartoon graphics, or generic flat shapes are strictly banned on live marketing creatives. Output imagery must feature genuine, high-resolution photographic human models with authentic South Asian skin texture, natural facial anatomy, real eyes, and physical garment drapery.
+
+---
+
+### Principle 7: Commercial Marketing Campaign & Poster Intent Standard ("Post = Campaign / Poster")
+* **The Rule:** Whenever the user requests a "post" (e.g., *"create a post for X"*, *"post for shaadi season"*, *"marketing post"*), the AI assistant must always treat and engineer it as a full-scale **Commercial Marketing Campaign & Promotional Poster**.
+* **Core Requirements:**
+  1. **Campaign Typography Hierarchy:** Prominent uppercase category/campaign eyebrow (e.g. `SHAADI SEASON 2026`, `THE WEDDING EDIT`), Playfair Display headline ending in a period for poise, Montserrat attribute triplet (`Men's | Ladies | Kids | Custom Fits`), and high-converting pill CTA button.
+  2. **Luxury Editorial Layout:** Framed using `overlay`, `split`, or `arch` matching the 8 brand reference blueprints.
+  3. **Product Manager Conversion Copywriting:** High-engagement hook, clear value proposition, scannable bullet points, and frictionless low-barrier CTA (e.g., *"DM 'FAMILY'"*, WhatsApp *"Reply 'TRIAL'"*).
+  4. **Multi-Format Campaign Deliverables:** Automatically produces 4:5 Feed Portrait (`ig-feed`), 9:16 Full Story/Status (`story`), and 1:1 Square (`square`).
+
+---
+
 ## 2. Standard Prompt Formulation for Fashion Photography (Workflow A)
 
 When generating fashion campaign images from text prompts:

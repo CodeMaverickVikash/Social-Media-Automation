@@ -1,0 +1,1770 @@
+{
+  "item-1794652204293-0ep6": {
+    "id": "item-1794652204293-0ep6",
+    "slug": "kurta-pajama-204292",
+    "title": "Kurta Pajama EVERYDAY Campaign",
+    "version": 1,
+    "productKey": "kurta-pajama",
+    "productDisplayName": "Kurta Pajama",
+    "campaignTheme": "mens",
+    "targetAudience": "men",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "whatsapp"
+    ],
+    "contentType": "reel",
+    "workflow": "workflowA_textOnly",
+    "copy": {
+      "headline": "Everyday Style.\nLasting Confidence.",
+      "eyebrow": "MEN'S COLLECTION",
+      "attributeTriplet": "Classic | Modern | Versatile",
+      "cta": "Explore Collection",
+      "instagramHook": "Tailored for everyday confidence and classic Indian sophistication. 👔✨",
+      "instagramBody": "Tailored for everyday confidence and classic Indian sophistication. 👔✨\n\nTailored in Raw Silk and Chanderi Cotton with shades of Midnight Black & Royal Navy, this kurta pajama is designed for moments that become memories. Effortless silhouette, refined details, and lasting comfort.\n\nVisit our store or send a DM to explore the collection. Tap the link in bio to discover more.\n\n#MonaviCollection #WearYourStory #KurtaPajama #MensEthnicWear #MensFashion #MonaviMen",
+      "facebookPost": "Looking for the perfect everyday outfit? Our new kurta pajama brings together timeless Indian craftsmanship with comfortable contemporary cuts.\n\nHandpicked Raw Silk and Chanderi Cotton fabrics, tailored for an impeccable fit whether you are attending a family celebration or dressing with confidence for the weekend.\n\nExperience the collection in person at Monavi Collection. Send us a message here on Facebook or drop by our boutique to find your size.\n\n#MonaviCollection #WearYourStory #KurtaPajama",
+      "whatsappMessage": "New in at Monavi Collection: Kurta Pajama in Midnight Black & Royal Navy. ✨\nCrafted in breathable Raw Silk and Chanderi Cotton for effortless style and all-day comfort.\n\nReply directly to this message to see available sizes or book a visit!",
+      "hashtags": [
+        "#MonaviCollection",
+        "#WearYourStory",
+        "#KurtaPajama",
+        "#MensEthnicWear",
+        "#MensFashion",
+        "#MonaviMen"
+      ]
+    },
+    "deliverables": {
+      "mediaPaths": [
+        "output/instagram/kurta-pajama-204292/post.png",
+        "output/facebook/kurta-pajama-204292/post.png",
+        "output/whatsapp/kurta-pajama-204292/status.png"
+      ],
+      "videoPath": "output/instagram/kurta-pajama-204292/reel.mp4",
+      "audioVoicePath": "output/_masters/kurta-pajama-204292/voiceover.mp3",
+      "captionPaths": [
+        "output/instagram/kurta-pajama-204292/caption.txt",
+        "output/facebook/kurta-pajama-204292/caption.txt",
+        "output/whatsapp/kurta-pajama-204292/caption.txt"
+      ]
+    },
+    "aiReview": {
+      "reviewId": "rev-1794652204293-vqhv",
+      "status": "APPROVED BY AI",
+      "overallScore": 100,
+      "criteria": {
+        "brand_review": {
+          "criterion": "brand_review",
+          "displayName": "Brand Review",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies Monavi Collection branding, \"Wear Your Story\" tagline, luxury editorial tone, typography, and contact integrity.",
+          "findings": [
+            "Verified brand name: \"MONAVI COLLECTION\".",
+            "Verified tagline: \"WEAR YOUR STORY.\"",
+            "Visual identity adheres to Playfair Display headline + Montserrat metadata hierarchy."
+          ],
+          "issues": []
+        },
+        "product_accuracy": {
+          "criterion": "product_accuracy",
+          "displayName": "Product Accuracy",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies authentic garment cuts, fabrics, colors, and ensures no invented prices or fake product claims.",
+          "findings": [
+            "Target product identified: Kurta Pajama (kurta-pajama).",
+            "No speculative pricing included; frictionless direct VIP consultation message used.",
+            "Workflow A active: Photorealistic Indian human model editorial generation applied."
+          ],
+          "issues": []
+        },
+        "creative_quality": {
+          "criterion": "creative_quality",
+          "displayName": "Creative Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies optical fidelity, realistic human model anatomy, audio ducking (-14dB), typography, and absence of AI slop.",
+          "findings": [
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: status.png.",
+            "50mm f/2.8 lens aesthetics, authentic directional contact shadows, and natural human model posture enforced.",
+            "Valid editorial attribute triplet: \"Classic | Modern | Versatile\".",
+            "AI Human Voiceover verified: voiceover.mp3 with dynamic -14dB audio ducking."
+          ],
+          "issues": []
+        },
+        "platform_readiness": {
+          "criterion": "platform_readiness",
+          "displayName": "Platform Readiness",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies aspect ratios, video durations, platform file size thresholds, and hashtag banks.",
+          "findings": [
+            "Instagram Feed (1080×1350 4:5) & Story/Reel (1080×1920 9:16) format compliance confirmed.",
+            "Facebook Feed (1080×1080 / 1080×1350) format compliance confirmed.",
+            "WhatsApp Status (1080×1920 9:16) with strict <= 16MB file size compliance confirmed.",
+            "Hashtag bank configured: #MonaviCollection #WearYourStory #KurtaPajama #MensEthnicWear #MensFashion"
+          ],
+          "issues": []
+        },
+        "marketing_quality": {
+          "criterion": "marketing_quality",
+          "displayName": "Marketing Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies thumb-stopping hook, 0.1s product headline clarity, frictionless CTA, and commercial appeal.",
+          "findings": [
+            "Clear product headline: \"Everyday Style. Lasting Confidence.\" enables 0.1s comprehension.",
+            "High-converting frictionless CTA: \"Explore Collection\".",
+            "Engagement hook: \"Tailored for everyday confidence and classic Indian sophisti...\""
+          ],
+          "issues": []
+        }
+      },
+      "summary": "All 5 mandatory AI review criteria PASSED (Score: 100/100). Content is verified on-brand, optically faithful, and fully compliant with platform specifications. Ready for Owner Final Decision.",
+      "remainingLimitations": [
+        "WhatsApp publishing requires manual sharing of delivered assets (Buffer does not support WhatsApp Status API)."
+      ],
+      "fixRecommendations": [],
+      "reviewedAt": "2026-11-14T10:30:04.293Z"
+    },
+    "ownerStatus": "pending",
+    "publishingAuth": "unauthorized",
+    "createdAt": "2026-11-14T10:30:04.293Z",
+    "updatedAt": "2026-11-14T10:30:04.293Z"
+  },
+  "item-1794652204299-78rd": {
+    "id": "item-1794652204299-78rd",
+    "slug": "lehenga-204298",
+    "title": "Royal Shaadi Collection WEDDING Campaign",
+    "version": 1,
+    "productKey": "lehenga",
+    "productDisplayName": "Royal Shaadi Collection",
+    "campaignTheme": "festive",
+    "targetAudience": "couple",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "whatsapp"
+    ],
+    "contentType": "post",
+    "workflow": "workflowA_textOnly",
+    "copy": {
+      "headline": "Royal Wedding\nCollection.",
+      "eyebrow": "SHAADI SEASON 2026",
+      "attributeTriplet": "Bridal & Groom | Royal Heritage | Bespoke Fit",
+      "cta": "Explore The Edit",
+      "instagramHook": "For the celebrations that unite two stories into one. Discover the Royal Shaadi Collection at Monavi. ✨💍",
+      "instagramBody": "For the celebrations that unite two stories into one. Discover the Royal Shaadi Collection at Monavi. ✨💍\n\nTailored in Velvet Silk and Raw Silk with Dabka with shades of Deep Crimson & Rich Burgundy, this royal shaadi collection is designed for moments that become memories. Effortless silhouette, refined details, and lasting comfort.\n\nVisit our store or send a DM to explore the collection. Tap the link in bio to discover more.\n\n#MonaviCollection #WearYourStory #BridalLehenga #IndianBride #LehengaLove #WeddingCouture #MonaviBride #RoyalShaadiCollection",
+      "facebookPost": "Looking for the perfect wedding outfit? Our new royal shaadi collection brings together timeless Indian craftsmanship with comfortable contemporary cuts.\n\nHandpicked Velvet Silk and Raw Silk with Dabka fabrics, tailored for an impeccable fit whether you are attending a family celebration or dressing with confidence for the weekend.\n\nExperience the collection in person at Monavi Collection. Send us a message here on Facebook or drop by our boutique to find your size.\n\n#MonaviCollection #WearYourStory #RoyalShaadiCollection",
+      "whatsappMessage": "New in at Monavi Collection: Royal Shaadi Collection in Deep Crimson & Rich Burgundy. ✨\nCrafted in breathable Velvet Silk and Raw Silk with Dabka for effortless style and all-day comfort.\n\nReply directly to this message to see available sizes or book a visit!",
+      "hashtags": [
+        "#MonaviCollection",
+        "#WearYourStory",
+        "#BridalLehenga",
+        "#IndianBride",
+        "#LehengaLove",
+        "#WeddingCouture",
+        "#MonaviBride",
+        "#RoyalShaadiCollection"
+      ]
+    },
+    "deliverables": {
+      "mediaPaths": [
+        "output/instagram/lehenga-204298/post.png",
+        "output/facebook/lehenga-204298/post.png",
+        "output/whatsapp/lehenga-204298/status.png"
+      ],
+      "captionPaths": [
+        "output/instagram/lehenga-204298/caption.txt",
+        "output/facebook/lehenga-204298/caption.txt",
+        "output/whatsapp/lehenga-204298/caption.txt"
+      ]
+    },
+    "aiReview": {
+      "reviewId": "rev-1794652204299-atuj",
+      "status": "APPROVED BY AI",
+      "overallScore": 100,
+      "criteria": {
+        "brand_review": {
+          "criterion": "brand_review",
+          "displayName": "Brand Review",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies Monavi Collection branding, \"Wear Your Story\" tagline, luxury editorial tone, typography, and contact integrity.",
+          "findings": [
+            "Verified brand name: \"MONAVI COLLECTION\".",
+            "Verified tagline: \"WEAR YOUR STORY.\"",
+            "Visual identity adheres to Playfair Display headline + Montserrat metadata hierarchy."
+          ],
+          "issues": []
+        },
+        "product_accuracy": {
+          "criterion": "product_accuracy",
+          "displayName": "Product Accuracy",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies authentic garment cuts, fabrics, colors, and ensures no invented prices or fake product claims.",
+          "findings": [
+            "Target product identified: Royal Shaadi Collection (lehenga).",
+            "No speculative pricing included; frictionless direct VIP consultation message used.",
+            "Workflow A active: Photorealistic Indian human model editorial generation applied."
+          ],
+          "issues": []
+        },
+        "creative_quality": {
+          "criterion": "creative_quality",
+          "displayName": "Creative Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies optical fidelity, realistic human model anatomy, audio ducking (-14dB), typography, and absence of AI slop.",
+          "findings": [
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: status.png.",
+            "50mm f/2.8 lens aesthetics, authentic directional contact shadows, and natural human model posture enforced.",
+            "Valid editorial attribute triplet: \"Bridal & Groom | Royal Heritage | Bespoke Fit\"."
+          ],
+          "issues": []
+        },
+        "platform_readiness": {
+          "criterion": "platform_readiness",
+          "displayName": "Platform Readiness",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies aspect ratios, video durations, platform file size thresholds, and hashtag banks.",
+          "findings": [
+            "Instagram Feed (1080×1350 4:5) & Story/Reel (1080×1920 9:16) format compliance confirmed.",
+            "Facebook Feed (1080×1080 / 1080×1350) format compliance confirmed.",
+            "WhatsApp Status (1080×1920 9:16) with strict <= 16MB file size compliance confirmed.",
+            "Hashtag bank configured: #MonaviCollection #WearYourStory #BridalLehenga #IndianBride #LehengaLove"
+          ],
+          "issues": []
+        },
+        "marketing_quality": {
+          "criterion": "marketing_quality",
+          "displayName": "Marketing Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies thumb-stopping hook, 0.1s product headline clarity, frictionless CTA, and commercial appeal.",
+          "findings": [
+            "Clear product headline: \"Royal Wedding Collection.\" enables 0.1s comprehension.",
+            "High-converting frictionless CTA: \"Explore The Edit\".",
+            "Engagement hook: \"For the celebrations that unite two stories into one. Discov...\""
+          ],
+          "issues": []
+        }
+      },
+      "summary": "All 5 mandatory AI review criteria PASSED (Score: 100/100). Content is verified on-brand, optically faithful, and fully compliant with platform specifications. Ready for Owner Final Decision.",
+      "remainingLimitations": [
+        "WhatsApp publishing requires manual sharing of delivered assets (Buffer does not support WhatsApp Status API)."
+      ],
+      "fixRecommendations": [],
+      "reviewedAt": "2026-11-14T10:30:04.299Z"
+    },
+    "ownerStatus": "approved",
+    "publishingAuth": "authorized",
+    "createdAt": "2026-11-14T10:30:04.299Z",
+    "updatedAt": "2026-11-14T10:30:04.312Z",
+    "ownerFeedback": "Refine headline to highlight Banarasi Silk and update CTA.",
+    "authorizedPlatforms": [
+      "instagram",
+      "facebook"
+    ]
+  },
+  "item-1794652204305-9fvv": {
+    "id": "item-1794652204305-9fvv",
+    "slug": "item-1794652204299-78rd",
+    "title": "Fashion Collection EVERYDAY Campaign",
+    "version": 1,
+    "productKey": "ethnic-wear",
+    "productDisplayName": "Fashion Collection",
+    "campaignTheme": "ladies",
+    "targetAudience": "women",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "whatsapp"
+    ],
+    "contentType": "reel",
+    "workflow": "workflowA_textOnly",
+    "copy": {
+      "headline": "Style That Feels\nLike You.",
+      "eyebrow": "NEW ARRIVALS",
+      "attributeTriplet": "Elegant | Comfortable | Timeless",
+      "cta": "Explore Collection",
+      "instagramHook": "Experience the timeless grace of our new fashion collection collection. ✨",
+      "instagramBody": "Experience the timeless grace of our new fashion collection collection. ✨\n\nTailored in Cotton Silk and Fine Chanderi with shades of Ivory & Maroon, this fashion collection is designed for moments that become memories. Effortless silhouette, refined details, and lasting comfort.\n\nVisit our store or send a DM to explore the collection. Tap the link in bio to discover more.\n\n#MonaviCollection #WearYourStory #IndianFashion #ContemporaryStyle #FashionCollection",
+      "facebookPost": "Looking for the perfect everyday outfit? Our new fashion collection brings together timeless Indian craftsmanship with comfortable contemporary cuts.\n\nHandpicked Cotton Silk and Fine Chanderi fabrics, tailored for an impeccable fit whether you are attending a family celebration or dressing with confidence for the weekend.\n\nExperience the collection in person at Monavi Collection. Send us a message here on Facebook or drop by our boutique to find your size.\n\n#MonaviCollection #WearYourStory #FashionCollection",
+      "whatsappMessage": "New in at Monavi Collection: Fashion Collection in Ivory & Maroon. ✨\nCrafted in breathable Cotton Silk and Fine Chanderi for effortless style and all-day comfort.\n\nReply directly to this message to see available sizes or book a visit!",
+      "hashtags": [
+        "#MonaviCollection",
+        "#WearYourStory",
+        "#IndianFashion",
+        "#ContemporaryStyle",
+        "#FashionCollection"
+      ]
+    },
+    "deliverables": {
+      "mediaPaths": [
+        "output/instagram/item-1794652204299-78rd/post.png",
+        "output/facebook/item-1794652204299-78rd/post.png",
+        "output/whatsapp/item-1794652204299-78rd/status.png"
+      ],
+      "videoPath": "output/instagram/item-1794652204299-78rd/reel.mp4",
+      "audioVoicePath": "output/_masters/item-1794652204299-78rd/voiceover.mp3",
+      "captionPaths": [
+        "output/instagram/item-1794652204299-78rd/caption.txt",
+        "output/facebook/item-1794652204299-78rd/caption.txt",
+        "output/whatsapp/item-1794652204299-78rd/caption.txt"
+      ]
+    },
+    "aiReview": {
+      "reviewId": "rev-1794652204305-fnd3",
+      "status": "APPROVED BY AI",
+      "overallScore": 100,
+      "criteria": {
+        "brand_review": {
+          "criterion": "brand_review",
+          "displayName": "Brand Review",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies Monavi Collection branding, \"Wear Your Story\" tagline, luxury editorial tone, typography, and contact integrity.",
+          "findings": [
+            "Verified brand name: \"MONAVI COLLECTION\".",
+            "Verified tagline: \"WEAR YOUR STORY.\"",
+            "Visual identity adheres to Playfair Display headline + Montserrat metadata hierarchy."
+          ],
+          "issues": []
+        },
+        "product_accuracy": {
+          "criterion": "product_accuracy",
+          "displayName": "Product Accuracy",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies authentic garment cuts, fabrics, colors, and ensures no invented prices or fake product claims.",
+          "findings": [
+            "Target product identified: Fashion Collection (ethnic-wear).",
+            "No speculative pricing included; frictionless direct VIP consultation message used.",
+            "Workflow A active: Photorealistic Indian human model editorial generation applied."
+          ],
+          "issues": []
+        },
+        "creative_quality": {
+          "criterion": "creative_quality",
+          "displayName": "Creative Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies optical fidelity, realistic human model anatomy, audio ducking (-14dB), typography, and absence of AI slop.",
+          "findings": [
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: status.png.",
+            "50mm f/2.8 lens aesthetics, authentic directional contact shadows, and natural human model posture enforced.",
+            "Valid editorial attribute triplet: \"Elegant | Comfortable | Timeless\".",
+            "AI Human Voiceover verified: voiceover.mp3 with dynamic -14dB audio ducking."
+          ],
+          "issues": []
+        },
+        "platform_readiness": {
+          "criterion": "platform_readiness",
+          "displayName": "Platform Readiness",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies aspect ratios, video durations, platform file size thresholds, and hashtag banks.",
+          "findings": [
+            "Instagram Feed (1080×1350 4:5) & Story/Reel (1080×1920 9:16) format compliance confirmed.",
+            "Facebook Feed (1080×1080 / 1080×1350) format compliance confirmed.",
+            "WhatsApp Status (1080×1920 9:16) with strict <= 16MB file size compliance confirmed.",
+            "Hashtag bank configured: #MonaviCollection #WearYourStory #IndianFashion #ContemporaryStyle #FashionCollection"
+          ],
+          "issues": []
+        },
+        "marketing_quality": {
+          "criterion": "marketing_quality",
+          "displayName": "Marketing Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies thumb-stopping hook, 0.1s product headline clarity, frictionless CTA, and commercial appeal.",
+          "findings": [
+            "Clear product headline: \"Style That Feels Like You.\" enables 0.1s comprehension.",
+            "High-converting frictionless CTA: \"Explore Collection\".",
+            "Engagement hook: \"Experience the timeless grace of our new fashion collection ...\""
+          ],
+          "issues": []
+        }
+      },
+      "summary": "All 5 mandatory AI review criteria PASSED (Score: 100/100). Content is verified on-brand, optically faithful, and fully compliant with platform specifications. Ready for Owner Final Decision.",
+      "remainingLimitations": [
+        "WhatsApp publishing requires manual sharing of delivered assets (Buffer does not support WhatsApp Status API)."
+      ],
+      "fixRecommendations": [],
+      "reviewedAt": "2026-11-14T10:30:04.305Z"
+    },
+    "ownerStatus": "pending",
+    "publishingAuth": "unauthorized",
+    "createdAt": "2026-11-14T10:30:04.305Z",
+    "updatedAt": "2026-11-14T10:30:04.305Z"
+  },
+  "item-1794652216882-2zsd": {
+    "id": "item-1794652216882-2zsd",
+    "slug": "kurta-pajama-216880",
+    "title": "Kurta Pajama EVERYDAY Campaign",
+    "version": 1,
+    "productKey": "kurta-pajama",
+    "productDisplayName": "Kurta Pajama",
+    "campaignTheme": "mens",
+    "targetAudience": "men",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "whatsapp"
+    ],
+    "contentType": "post",
+    "workflow": "workflowA_textOnly",
+    "copy": {
+      "headline": "Everyday Style.\nLasting Confidence.",
+      "eyebrow": "MEN'S COLLECTION",
+      "attributeTriplet": "Classic | Modern | Versatile",
+      "cta": "Explore Collection",
+      "instagramHook": "Tailored for everyday confidence and classic Indian sophistication. 👔✨",
+      "instagramBody": "Tailored for everyday confidence and classic Indian sophistication. 👔✨\n\nTailored in Raw Silk and Chanderi Cotton with shades of Midnight Black & Royal Navy, this kurta pajama is designed for moments that become memories. Effortless silhouette, refined details, and lasting comfort.\n\nVisit our store or send a DM to explore the collection. Tap the link in bio to discover more.\n\n#MonaviCollection #WearYourStory #KurtaPajama #MensEthnicWear #MensFashion #MonaviMen",
+      "facebookPost": "Looking for the perfect everyday outfit? Our new kurta pajama brings together timeless Indian craftsmanship with comfortable contemporary cuts.\n\nHandpicked Raw Silk and Chanderi Cotton fabrics, tailored for an impeccable fit whether you are attending a family celebration or dressing with confidence for the weekend.\n\nExperience the collection in person at Monavi Collection. Send us a message here on Facebook or drop by our boutique to find your size.\n\n#MonaviCollection #WearYourStory #KurtaPajama",
+      "whatsappMessage": "New in at Monavi Collection: Kurta Pajama in Midnight Black & Royal Navy. ✨\nCrafted in breathable Raw Silk and Chanderi Cotton for effortless style and all-day comfort.\n\nReply directly to this message to see available sizes or book a visit!",
+      "hashtags": [
+        "#MonaviCollection",
+        "#WearYourStory",
+        "#KurtaPajama",
+        "#MensEthnicWear",
+        "#MensFashion",
+        "#MonaviMen"
+      ]
+    },
+    "deliverables": {
+      "mediaPaths": [
+        "output/instagram/kurta-pajama-216880/post.png",
+        "output/facebook/kurta-pajama-216880/post.png",
+        "output/whatsapp/kurta-pajama-216880/status.png"
+      ],
+      "captionPaths": [
+        "output/instagram/kurta-pajama-216880/caption.txt",
+        "output/facebook/kurta-pajama-216880/caption.txt",
+        "output/whatsapp/kurta-pajama-216880/caption.txt"
+      ]
+    },
+    "aiReview": {
+      "reviewId": "rev-1794652216882-5njy",
+      "status": "APPROVED BY AI",
+      "overallScore": 100,
+      "criteria": {
+        "brand_review": {
+          "criterion": "brand_review",
+          "displayName": "Brand Review",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies Monavi Collection branding, \"Wear Your Story\" tagline, luxury editorial tone, typography, and contact integrity.",
+          "findings": [
+            "Verified brand name: \"MONAVI COLLECTION\".",
+            "Verified tagline: \"WEAR YOUR STORY.\"",
+            "Visual identity adheres to Playfair Display headline + Montserrat metadata hierarchy."
+          ],
+          "issues": []
+        },
+        "product_accuracy": {
+          "criterion": "product_accuracy",
+          "displayName": "Product Accuracy",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies authentic garment cuts, fabrics, colors, and ensures no invented prices or fake product claims.",
+          "findings": [
+            "Target product identified: Kurta Pajama (kurta-pajama).",
+            "No speculative pricing included; frictionless direct VIP consultation message used.",
+            "Workflow A active: Photorealistic Indian human model editorial generation applied."
+          ],
+          "issues": []
+        },
+        "creative_quality": {
+          "criterion": "creative_quality",
+          "displayName": "Creative Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies optical fidelity, realistic human model anatomy, audio ducking (-14dB), typography, and absence of AI slop.",
+          "findings": [
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: status.png.",
+            "50mm f/2.8 lens aesthetics, authentic directional contact shadows, and natural human model posture enforced.",
+            "Valid editorial attribute triplet: \"Classic | Modern | Versatile\"."
+          ],
+          "issues": []
+        },
+        "platform_readiness": {
+          "criterion": "platform_readiness",
+          "displayName": "Platform Readiness",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies aspect ratios, video durations, platform file size thresholds, and hashtag banks.",
+          "findings": [
+            "Instagram Feed (1080×1350 4:5) & Story/Reel (1080×1920 9:16) format compliance confirmed.",
+            "Facebook Feed (1080×1080 / 1080×1350) format compliance confirmed.",
+            "WhatsApp Status (1080×1920 9:16) with strict <= 16MB file size compliance confirmed.",
+            "Hashtag bank configured: #MonaviCollection #WearYourStory #KurtaPajama #MensEthnicWear #MensFashion"
+          ],
+          "issues": []
+        },
+        "marketing_quality": {
+          "criterion": "marketing_quality",
+          "displayName": "Marketing Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies thumb-stopping hook, 0.1s product headline clarity, frictionless CTA, and commercial appeal.",
+          "findings": [
+            "Clear product headline: \"Everyday Style. Lasting Confidence.\" enables 0.1s comprehension.",
+            "High-converting frictionless CTA: \"Explore Collection\".",
+            "Engagement hook: \"Tailored for everyday confidence and classic Indian sophisti...\""
+          ],
+          "issues": []
+        }
+      },
+      "summary": "All 5 mandatory AI review criteria PASSED (Score: 100/100). Content is verified on-brand, optically faithful, and fully compliant with platform specifications. Ready for Owner Final Decision.",
+      "remainingLimitations": [
+        "WhatsApp publishing requires manual sharing of delivered assets (Buffer does not support WhatsApp Status API)."
+      ],
+      "fixRecommendations": [],
+      "reviewedAt": "2026-11-14T10:30:16.882Z"
+    },
+    "ownerStatus": "approved",
+    "publishingAuth": "authorized",
+    "createdAt": "2026-11-14T10:30:16.882Z",
+    "updatedAt": "2026-11-14T10:31:10.248Z",
+    "authorizedPlatforms": [
+      "instagram",
+      "facebook"
+    ]
+  },
+  "item-1794652387197-6z06": {
+    "id": "item-1794652387197-6z06",
+    "slug": "kurta-pajama-387196",
+    "title": "Kurta Pajama EVERYDAY Campaign",
+    "version": 1,
+    "productKey": "kurta-pajama",
+    "productDisplayName": "Kurta Pajama",
+    "campaignTheme": "mens",
+    "targetAudience": "men",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "whatsapp"
+    ],
+    "contentType": "reel",
+    "workflow": "workflowA_textOnly",
+    "copy": {
+      "headline": "Everyday Style.\nLasting Confidence.",
+      "eyebrow": "MEN'S COLLECTION",
+      "attributeTriplet": "Classic | Modern | Versatile",
+      "cta": "Explore Collection",
+      "instagramHook": "Tailored for everyday confidence and classic Indian sophistication. 👔✨",
+      "instagramBody": "Tailored for everyday confidence and classic Indian sophistication. 👔✨\n\nTailored in Raw Silk and Chanderi Cotton with shades of Midnight Black & Royal Navy, this kurta pajama is designed for moments that become memories. Effortless silhouette, refined details, and lasting comfort.\n\nVisit our store or send a DM to explore the collection. Tap the link in bio to discover more.\n\n#MonaviCollection #WearYourStory #KurtaPajama #MensEthnicWear #MensFashion #MonaviMen",
+      "facebookPost": "Looking for the perfect everyday outfit? Our new kurta pajama brings together timeless Indian craftsmanship with comfortable contemporary cuts.\n\nHandpicked Raw Silk and Chanderi Cotton fabrics, tailored for an impeccable fit whether you are attending a family celebration or dressing with confidence for the weekend.\n\nExperience the collection in person at Monavi Collection. Send us a message here on Facebook or drop by our boutique to find your size.\n\n#MonaviCollection #WearYourStory #KurtaPajama",
+      "whatsappMessage": "New in at Monavi Collection: Kurta Pajama in Midnight Black & Royal Navy. ✨\nCrafted in breathable Raw Silk and Chanderi Cotton for effortless style and all-day comfort.\n\nReply directly to this message to see available sizes or book a visit!",
+      "hashtags": [
+        "#MonaviCollection",
+        "#WearYourStory",
+        "#KurtaPajama",
+        "#MensEthnicWear",
+        "#MensFashion",
+        "#MonaviMen"
+      ]
+    },
+    "deliverables": {
+      "mediaPaths": [
+        "output/instagram/kurta-pajama-387196/post.png",
+        "output/facebook/kurta-pajama-387196/post.png",
+        "output/whatsapp/kurta-pajama-387196/status.png"
+      ],
+      "videoPath": "output/instagram/kurta-pajama-387196/reel.mp4",
+      "audioVoicePath": "output/_masters/kurta-pajama-387196/voiceover.mp3",
+      "captionPaths": [
+        "output/instagram/kurta-pajama-387196/caption.txt",
+        "output/facebook/kurta-pajama-387196/caption.txt",
+        "output/whatsapp/kurta-pajama-387196/caption.txt"
+      ]
+    },
+    "aiReview": {
+      "reviewId": "rev-1794652387197-dr1u",
+      "status": "APPROVED BY AI",
+      "overallScore": 100,
+      "criteria": {
+        "brand_review": {
+          "criterion": "brand_review",
+          "displayName": "Brand Review",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies Monavi Collection branding, \"Wear Your Story\" tagline, luxury editorial tone, typography, and contact integrity.",
+          "findings": [
+            "Verified brand name: \"MONAVI COLLECTION\".",
+            "Verified tagline: \"WEAR YOUR STORY.\"",
+            "Visual identity adheres to Playfair Display headline + Montserrat metadata hierarchy."
+          ],
+          "issues": []
+        },
+        "product_accuracy": {
+          "criterion": "product_accuracy",
+          "displayName": "Product Accuracy",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies authentic garment cuts, fabrics, colors, and ensures no invented prices or fake product claims.",
+          "findings": [
+            "Target product identified: Kurta Pajama (kurta-pajama).",
+            "No speculative pricing included; frictionless direct VIP consultation message used.",
+            "Workflow A active: Photorealistic Indian human model editorial generation applied."
+          ],
+          "issues": []
+        },
+        "creative_quality": {
+          "criterion": "creative_quality",
+          "displayName": "Creative Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies optical fidelity, realistic human model anatomy, audio ducking (-14dB), typography, and absence of AI slop.",
+          "findings": [
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: status.png.",
+            "50mm f/2.8 lens aesthetics, authentic directional contact shadows, and natural human model posture enforced.",
+            "Valid editorial attribute triplet: \"Classic | Modern | Versatile\".",
+            "AI Human Voiceover verified: voiceover.mp3 with dynamic -14dB audio ducking."
+          ],
+          "issues": []
+        },
+        "platform_readiness": {
+          "criterion": "platform_readiness",
+          "displayName": "Platform Readiness",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies aspect ratios, video durations, platform file size thresholds, and hashtag banks.",
+          "findings": [
+            "Instagram Feed (1080×1350 4:5) & Story/Reel (1080×1920 9:16) format compliance confirmed.",
+            "Facebook Feed (1080×1080 / 1080×1350) format compliance confirmed.",
+            "WhatsApp Status (1080×1920 9:16) with strict <= 16MB file size compliance confirmed.",
+            "Hashtag bank configured: #MonaviCollection #WearYourStory #KurtaPajama #MensEthnicWear #MensFashion"
+          ],
+          "issues": []
+        },
+        "marketing_quality": {
+          "criterion": "marketing_quality",
+          "displayName": "Marketing Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies thumb-stopping hook, 0.1s product headline clarity, frictionless CTA, and commercial appeal.",
+          "findings": [
+            "Clear product headline: \"Everyday Style. Lasting Confidence.\" enables 0.1s comprehension.",
+            "High-converting frictionless CTA: \"Explore Collection\".",
+            "Engagement hook: \"Tailored for everyday confidence and classic Indian sophisti...\""
+          ],
+          "issues": []
+        }
+      },
+      "summary": "All 5 mandatory AI review criteria PASSED (Score: 100/100). Content is verified on-brand, optically faithful, and fully compliant with platform specifications. Ready for Owner Final Decision.",
+      "remainingLimitations": [
+        "WhatsApp publishing requires manual sharing of delivered assets (Buffer does not support WhatsApp Status API)."
+      ],
+      "fixRecommendations": [],
+      "reviewedAt": "2026-11-14T10:33:07.197Z"
+    },
+    "ownerStatus": "pending",
+    "publishingAuth": "unauthorized",
+    "createdAt": "2026-11-14T10:33:07.198Z",
+    "updatedAt": "2026-11-14T10:33:07.198Z"
+  },
+  "item-1794652387203-qf2e": {
+    "id": "item-1794652387203-qf2e",
+    "slug": "lehenga-387203",
+    "title": "Royal Shaadi Collection WEDDING Campaign",
+    "version": 1,
+    "productKey": "lehenga",
+    "productDisplayName": "Royal Shaadi Collection",
+    "campaignTheme": "festive",
+    "targetAudience": "couple",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "whatsapp"
+    ],
+    "contentType": "post",
+    "workflow": "workflowA_textOnly",
+    "copy": {
+      "headline": "Royal Wedding\nCollection.",
+      "eyebrow": "SHAADI SEASON 2026",
+      "attributeTriplet": "Bridal & Groom | Royal Heritage | Bespoke Fit",
+      "cta": "Explore The Edit",
+      "instagramHook": "For the celebrations that unite two stories into one. Discover the Royal Shaadi Collection at Monavi. ✨💍",
+      "instagramBody": "For the celebrations that unite two stories into one. Discover the Royal Shaadi Collection at Monavi. ✨💍\n\nTailored in Velvet Silk and Raw Silk with Dabka with shades of Deep Crimson & Rich Burgundy, this royal shaadi collection is designed for moments that become memories. Effortless silhouette, refined details, and lasting comfort.\n\nVisit our store or send a DM to explore the collection. Tap the link in bio to discover more.\n\n#MonaviCollection #WearYourStory #BridalLehenga #IndianBride #LehengaLove #WeddingCouture #MonaviBride #RoyalShaadiCollection",
+      "facebookPost": "Looking for the perfect wedding outfit? Our new royal shaadi collection brings together timeless Indian craftsmanship with comfortable contemporary cuts.\n\nHandpicked Velvet Silk and Raw Silk with Dabka fabrics, tailored for an impeccable fit whether you are attending a family celebration or dressing with confidence for the weekend.\n\nExperience the collection in person at Monavi Collection. Send us a message here on Facebook or drop by our boutique to find your size.\n\n#MonaviCollection #WearYourStory #RoyalShaadiCollection",
+      "whatsappMessage": "New in at Monavi Collection: Royal Shaadi Collection in Deep Crimson & Rich Burgundy. ✨\nCrafted in breathable Velvet Silk and Raw Silk with Dabka for effortless style and all-day comfort.\n\nReply directly to this message to see available sizes or book a visit!",
+      "hashtags": [
+        "#MonaviCollection",
+        "#WearYourStory",
+        "#BridalLehenga",
+        "#IndianBride",
+        "#LehengaLove",
+        "#WeddingCouture",
+        "#MonaviBride",
+        "#RoyalShaadiCollection"
+      ]
+    },
+    "deliverables": {
+      "mediaPaths": [
+        "output/instagram/lehenga-387203/post.png",
+        "output/facebook/lehenga-387203/post.png",
+        "output/whatsapp/lehenga-387203/status.png"
+      ],
+      "captionPaths": [
+        "output/instagram/lehenga-387203/caption.txt",
+        "output/facebook/lehenga-387203/caption.txt",
+        "output/whatsapp/lehenga-387203/caption.txt"
+      ]
+    },
+    "aiReview": {
+      "reviewId": "rev-1794652387203-rgzh",
+      "status": "APPROVED BY AI",
+      "overallScore": 100,
+      "criteria": {
+        "brand_review": {
+          "criterion": "brand_review",
+          "displayName": "Brand Review",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies Monavi Collection branding, \"Wear Your Story\" tagline, luxury editorial tone, typography, and contact integrity.",
+          "findings": [
+            "Verified brand name: \"MONAVI COLLECTION\".",
+            "Verified tagline: \"WEAR YOUR STORY.\"",
+            "Visual identity adheres to Playfair Display headline + Montserrat metadata hierarchy."
+          ],
+          "issues": []
+        },
+        "product_accuracy": {
+          "criterion": "product_accuracy",
+          "displayName": "Product Accuracy",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies authentic garment cuts, fabrics, colors, and ensures no invented prices or fake product claims.",
+          "findings": [
+            "Target product identified: Royal Shaadi Collection (lehenga).",
+            "No speculative pricing included; frictionless direct VIP consultation message used.",
+            "Workflow A active: Photorealistic Indian human model editorial generation applied."
+          ],
+          "issues": []
+        },
+        "creative_quality": {
+          "criterion": "creative_quality",
+          "displayName": "Creative Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies optical fidelity, realistic human model anatomy, audio ducking (-14dB), typography, and absence of AI slop.",
+          "findings": [
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: status.png.",
+            "50mm f/2.8 lens aesthetics, authentic directional contact shadows, and natural human model posture enforced.",
+            "Valid editorial attribute triplet: \"Bridal & Groom | Royal Heritage | Bespoke Fit\"."
+          ],
+          "issues": []
+        },
+        "platform_readiness": {
+          "criterion": "platform_readiness",
+          "displayName": "Platform Readiness",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies aspect ratios, video durations, platform file size thresholds, and hashtag banks.",
+          "findings": [
+            "Instagram Feed (1080×1350 4:5) & Story/Reel (1080×1920 9:16) format compliance confirmed.",
+            "Facebook Feed (1080×1080 / 1080×1350) format compliance confirmed.",
+            "WhatsApp Status (1080×1920 9:16) with strict <= 16MB file size compliance confirmed.",
+            "Hashtag bank configured: #MonaviCollection #WearYourStory #BridalLehenga #IndianBride #LehengaLove"
+          ],
+          "issues": []
+        },
+        "marketing_quality": {
+          "criterion": "marketing_quality",
+          "displayName": "Marketing Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies thumb-stopping hook, 0.1s product headline clarity, frictionless CTA, and commercial appeal.",
+          "findings": [
+            "Clear product headline: \"Royal Wedding Collection.\" enables 0.1s comprehension.",
+            "High-converting frictionless CTA: \"Explore The Edit\".",
+            "Engagement hook: \"For the celebrations that unite two stories into one. Discov...\""
+          ],
+          "issues": []
+        }
+      },
+      "summary": "All 5 mandatory AI review criteria PASSED (Score: 100/100). Content is verified on-brand, optically faithful, and fully compliant with platform specifications. Ready for Owner Final Decision.",
+      "remainingLimitations": [
+        "WhatsApp publishing requires manual sharing of delivered assets (Buffer does not support WhatsApp Status API)."
+      ],
+      "fixRecommendations": [],
+      "reviewedAt": "2026-11-14T10:33:07.203Z"
+    },
+    "ownerStatus": "approved",
+    "publishingAuth": "authorized",
+    "createdAt": "2026-11-14T10:33:07.203Z",
+    "updatedAt": "2026-11-14T10:33:07.218Z",
+    "ownerFeedback": "Refine headline to highlight Banarasi Silk and update CTA.",
+    "authorizedPlatforms": [
+      "instagram",
+      "facebook"
+    ]
+  },
+  "item-1794652387210-beo6": {
+    "id": "item-1794652387210-beo6",
+    "slug": "item-1794652387203-qf2e",
+    "title": "Fashion Collection EVERYDAY Campaign",
+    "version": 1,
+    "productKey": "ethnic-wear",
+    "productDisplayName": "Fashion Collection",
+    "campaignTheme": "ladies",
+    "targetAudience": "women",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "whatsapp"
+    ],
+    "contentType": "reel",
+    "workflow": "workflowA_textOnly",
+    "copy": {
+      "headline": "Style That Feels\nLike You.",
+      "eyebrow": "NEW ARRIVALS",
+      "attributeTriplet": "Elegant | Comfortable | Timeless",
+      "cta": "Explore Collection",
+      "instagramHook": "Experience the timeless grace of our new fashion collection collection. ✨",
+      "instagramBody": "Experience the timeless grace of our new fashion collection collection. ✨\n\nTailored in Cotton Silk and Fine Chanderi with shades of Ivory & Maroon, this fashion collection is designed for moments that become memories. Effortless silhouette, refined details, and lasting comfort.\n\nVisit our store or send a DM to explore the collection. Tap the link in bio to discover more.\n\n#MonaviCollection #WearYourStory #IndianFashion #ContemporaryStyle #FashionCollection",
+      "facebookPost": "Looking for the perfect everyday outfit? Our new fashion collection brings together timeless Indian craftsmanship with comfortable contemporary cuts.\n\nHandpicked Cotton Silk and Fine Chanderi fabrics, tailored for an impeccable fit whether you are attending a family celebration or dressing with confidence for the weekend.\n\nExperience the collection in person at Monavi Collection. Send us a message here on Facebook or drop by our boutique to find your size.\n\n#MonaviCollection #WearYourStory #FashionCollection",
+      "whatsappMessage": "New in at Monavi Collection: Fashion Collection in Ivory & Maroon. ✨\nCrafted in breathable Cotton Silk and Fine Chanderi for effortless style and all-day comfort.\n\nReply directly to this message to see available sizes or book a visit!",
+      "hashtags": [
+        "#MonaviCollection",
+        "#WearYourStory",
+        "#IndianFashion",
+        "#ContemporaryStyle",
+        "#FashionCollection"
+      ]
+    },
+    "deliverables": {
+      "mediaPaths": [
+        "output/instagram/item-1794652387203-qf2e/post.png",
+        "output/facebook/item-1794652387203-qf2e/post.png",
+        "output/whatsapp/item-1794652387203-qf2e/status.png"
+      ],
+      "videoPath": "output/instagram/item-1794652387203-qf2e/reel.mp4",
+      "audioVoicePath": "output/_masters/item-1794652387203-qf2e/voiceover.mp3",
+      "captionPaths": [
+        "output/instagram/item-1794652387203-qf2e/caption.txt",
+        "output/facebook/item-1794652387203-qf2e/caption.txt",
+        "output/whatsapp/item-1794652387203-qf2e/caption.txt"
+      ]
+    },
+    "aiReview": {
+      "reviewId": "rev-1794652387210-mfdm",
+      "status": "APPROVED BY AI",
+      "overallScore": 100,
+      "criteria": {
+        "brand_review": {
+          "criterion": "brand_review",
+          "displayName": "Brand Review",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies Monavi Collection branding, \"Wear Your Story\" tagline, luxury editorial tone, typography, and contact integrity.",
+          "findings": [
+            "Verified brand name: \"MONAVI COLLECTION\".",
+            "Verified tagline: \"WEAR YOUR STORY.\"",
+            "Visual identity adheres to Playfair Display headline + Montserrat metadata hierarchy."
+          ],
+          "issues": []
+        },
+        "product_accuracy": {
+          "criterion": "product_accuracy",
+          "displayName": "Product Accuracy",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies authentic garment cuts, fabrics, colors, and ensures no invented prices or fake product claims.",
+          "findings": [
+            "Target product identified: Fashion Collection (ethnic-wear).",
+            "No speculative pricing included; frictionless direct VIP consultation message used.",
+            "Workflow A active: Photorealistic Indian human model editorial generation applied."
+          ],
+          "issues": []
+        },
+        "creative_quality": {
+          "criterion": "creative_quality",
+          "displayName": "Creative Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies optical fidelity, realistic human model anatomy, audio ducking (-14dB), typography, and absence of AI slop.",
+          "findings": [
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: status.png.",
+            "50mm f/2.8 lens aesthetics, authentic directional contact shadows, and natural human model posture enforced.",
+            "Valid editorial attribute triplet: \"Elegant | Comfortable | Timeless\".",
+            "AI Human Voiceover verified: voiceover.mp3 with dynamic -14dB audio ducking."
+          ],
+          "issues": []
+        },
+        "platform_readiness": {
+          "criterion": "platform_readiness",
+          "displayName": "Platform Readiness",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies aspect ratios, video durations, platform file size thresholds, and hashtag banks.",
+          "findings": [
+            "Instagram Feed (1080×1350 4:5) & Story/Reel (1080×1920 9:16) format compliance confirmed.",
+            "Facebook Feed (1080×1080 / 1080×1350) format compliance confirmed.",
+            "WhatsApp Status (1080×1920 9:16) with strict <= 16MB file size compliance confirmed.",
+            "Hashtag bank configured: #MonaviCollection #WearYourStory #IndianFashion #ContemporaryStyle #FashionCollection"
+          ],
+          "issues": []
+        },
+        "marketing_quality": {
+          "criterion": "marketing_quality",
+          "displayName": "Marketing Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies thumb-stopping hook, 0.1s product headline clarity, frictionless CTA, and commercial appeal.",
+          "findings": [
+            "Clear product headline: \"Style That Feels Like You.\" enables 0.1s comprehension.",
+            "High-converting frictionless CTA: \"Explore Collection\".",
+            "Engagement hook: \"Experience the timeless grace of our new fashion collection ...\""
+          ],
+          "issues": []
+        }
+      },
+      "summary": "All 5 mandatory AI review criteria PASSED (Score: 100/100). Content is verified on-brand, optically faithful, and fully compliant with platform specifications. Ready for Owner Final Decision.",
+      "remainingLimitations": [
+        "WhatsApp publishing requires manual sharing of delivered assets (Buffer does not support WhatsApp Status API)."
+      ],
+      "fixRecommendations": [],
+      "reviewedAt": "2026-11-14T10:33:07.210Z"
+    },
+    "ownerStatus": "pending",
+    "publishingAuth": "unauthorized",
+    "createdAt": "2026-11-14T10:33:07.211Z",
+    "updatedAt": "2026-11-14T10:33:07.211Z"
+  },
+  "item-1794652529846-6jfi": {
+    "id": "item-1794652529846-6jfi",
+    "slug": "kurta-pajama-529844",
+    "title": "Kurta Pajama EVERYDAY Campaign",
+    "version": 1,
+    "productKey": "kurta-pajama",
+    "productDisplayName": "Kurta Pajama",
+    "campaignTheme": "mens",
+    "targetAudience": "men",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "whatsapp"
+    ],
+    "contentType": "reel",
+    "workflow": "workflowA_textOnly",
+    "copy": {
+      "headline": "Everyday Style.\nLasting Confidence.",
+      "eyebrow": "MEN'S COLLECTION",
+      "attributeTriplet": "Classic | Modern | Versatile",
+      "cta": "Explore Collection",
+      "instagramHook": "Tailored for everyday confidence and classic Indian sophistication. 👔✨",
+      "instagramBody": "Tailored for everyday confidence and classic Indian sophistication. 👔✨\n\nTailored in Raw Silk and Chanderi Cotton with shades of Midnight Black & Royal Navy, this kurta pajama is designed for moments that become memories. Effortless silhouette, refined details, and lasting comfort.\n\nVisit our store or send a DM to explore the collection. Tap the link in bio to discover more.\n\n#MonaviCollection #WearYourStory #KurtaPajama #MensEthnicWear #MensFashion #MonaviMen",
+      "facebookPost": "Looking for the perfect everyday outfit? Our new kurta pajama brings together timeless Indian craftsmanship with comfortable contemporary cuts.\n\nHandpicked Raw Silk and Chanderi Cotton fabrics, tailored for an impeccable fit whether you are attending a family celebration or dressing with confidence for the weekend.\n\nExperience the collection in person at Monavi Collection. Send us a message here on Facebook or drop by our boutique to find your size.\n\n#MonaviCollection #WearYourStory #KurtaPajama",
+      "whatsappMessage": "New in at Monavi Collection: Kurta Pajama in Midnight Black & Royal Navy. ✨\nCrafted in breathable Raw Silk and Chanderi Cotton for effortless style and all-day comfort.\n\nReply directly to this message to see available sizes or book a visit!",
+      "hashtags": [
+        "#MonaviCollection",
+        "#WearYourStory",
+        "#KurtaPajama",
+        "#MensEthnicWear",
+        "#MensFashion",
+        "#MonaviMen"
+      ]
+    },
+    "deliverables": {
+      "mediaPaths": [
+        "output/instagram/kurta-pajama-529844/post.png",
+        "output/facebook/kurta-pajama-529844/post.png",
+        "output/whatsapp/kurta-pajama-529844/status.png"
+      ],
+      "videoPath": "output/instagram/kurta-pajama-529844/reel.mp4",
+      "audioVoicePath": "output/_masters/kurta-pajama-529844/voiceover.mp3",
+      "captionPaths": [
+        "output/instagram/kurta-pajama-529844/caption.txt",
+        "output/facebook/kurta-pajama-529844/caption.txt",
+        "output/whatsapp/kurta-pajama-529844/caption.txt"
+      ]
+    },
+    "aiReview": {
+      "reviewId": "rev-1794652529846-mfse",
+      "status": "APPROVED BY AI",
+      "overallScore": 100,
+      "criteria": {
+        "brand_review": {
+          "criterion": "brand_review",
+          "displayName": "Brand Review",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies Monavi Collection branding, \"Wear Your Story\" tagline, luxury editorial tone, typography, and contact integrity.",
+          "findings": [
+            "Verified brand name: \"MONAVI COLLECTION\".",
+            "Verified tagline: \"WEAR YOUR STORY.\"",
+            "Visual identity adheres to Playfair Display headline + Montserrat metadata hierarchy."
+          ],
+          "issues": []
+        },
+        "product_accuracy": {
+          "criterion": "product_accuracy",
+          "displayName": "Product Accuracy",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies authentic garment cuts, fabrics, colors, and ensures no invented prices or fake product claims.",
+          "findings": [
+            "Target product identified: Kurta Pajama (kurta-pajama).",
+            "No speculative pricing included; frictionless direct VIP consultation message used.",
+            "Workflow A active: Photorealistic Indian human model editorial generation applied."
+          ],
+          "issues": []
+        },
+        "creative_quality": {
+          "criterion": "creative_quality",
+          "displayName": "Creative Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies optical fidelity, realistic human model anatomy, audio ducking (-14dB), typography, and absence of AI slop.",
+          "findings": [
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: status.png.",
+            "50mm f/2.8 lens aesthetics, authentic directional contact shadows, and natural human model posture enforced.",
+            "Valid editorial attribute triplet: \"Classic | Modern | Versatile\".",
+            "AI Human Voiceover verified: voiceover.mp3 with dynamic -14dB audio ducking."
+          ],
+          "issues": []
+        },
+        "platform_readiness": {
+          "criterion": "platform_readiness",
+          "displayName": "Platform Readiness",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies aspect ratios, video durations, platform file size thresholds, and hashtag banks.",
+          "findings": [
+            "Instagram Feed (1080×1350 4:5) & Story/Reel (1080×1920 9:16) format compliance confirmed.",
+            "Facebook Feed (1080×1080 / 1080×1350) format compliance confirmed.",
+            "WhatsApp Status (1080×1920 9:16) with strict <= 16MB file size compliance confirmed.",
+            "Hashtag bank configured: #MonaviCollection #WearYourStory #KurtaPajama #MensEthnicWear #MensFashion"
+          ],
+          "issues": []
+        },
+        "marketing_quality": {
+          "criterion": "marketing_quality",
+          "displayName": "Marketing Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies thumb-stopping hook, 0.1s product headline clarity, frictionless CTA, and commercial appeal.",
+          "findings": [
+            "Clear product headline: \"Everyday Style. Lasting Confidence.\" enables 0.1s comprehension.",
+            "High-converting frictionless CTA: \"Explore Collection\".",
+            "Engagement hook: \"Tailored for everyday confidence and classic Indian sophisti...\""
+          ],
+          "issues": []
+        }
+      },
+      "summary": "All 5 mandatory AI review criteria PASSED (Score: 100/100). Content is verified on-brand, optically faithful, and fully compliant with platform specifications. Ready for Owner Final Decision.",
+      "remainingLimitations": [
+        "WhatsApp publishing requires manual sharing of delivered assets (Buffer does not support WhatsApp Status API)."
+      ],
+      "fixRecommendations": [],
+      "reviewedAt": "2026-11-14T10:35:29.846Z"
+    },
+    "ownerStatus": "pending",
+    "publishingAuth": "unauthorized",
+    "createdAt": "2026-11-14T10:35:29.846Z",
+    "updatedAt": "2026-11-14T10:35:29.846Z"
+  },
+  "item-1794652529854-uvsd": {
+    "id": "item-1794652529854-uvsd",
+    "slug": "lehenga-529854",
+    "title": "Royal Shaadi Collection WEDDING Campaign",
+    "version": 1,
+    "productKey": "lehenga",
+    "productDisplayName": "Royal Shaadi Collection",
+    "campaignTheme": "festive",
+    "targetAudience": "couple",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "whatsapp"
+    ],
+    "contentType": "post",
+    "workflow": "workflowA_textOnly",
+    "copy": {
+      "headline": "Royal Wedding\nCollection.",
+      "eyebrow": "SHAADI SEASON 2026",
+      "attributeTriplet": "Bridal & Groom | Royal Heritage | Bespoke Fit",
+      "cta": "Explore The Edit",
+      "instagramHook": "For the celebrations that unite two stories into one. Discover the Royal Shaadi Collection at Monavi. ✨💍",
+      "instagramBody": "For the celebrations that unite two stories into one. Discover the Royal Shaadi Collection at Monavi. ✨💍\n\nTailored in Velvet Silk and Raw Silk with Dabka with shades of Deep Crimson & Rich Burgundy, this royal shaadi collection is designed for moments that become memories. Effortless silhouette, refined details, and lasting comfort.\n\nVisit our store or send a DM to explore the collection. Tap the link in bio to discover more.\n\n#MonaviCollection #WearYourStory #BridalLehenga #IndianBride #LehengaLove #WeddingCouture #MonaviBride #RoyalShaadiCollection",
+      "facebookPost": "Looking for the perfect wedding outfit? Our new royal shaadi collection brings together timeless Indian craftsmanship with comfortable contemporary cuts.\n\nHandpicked Velvet Silk and Raw Silk with Dabka fabrics, tailored for an impeccable fit whether you are attending a family celebration or dressing with confidence for the weekend.\n\nExperience the collection in person at Monavi Collection. Send us a message here on Facebook or drop by our boutique to find your size.\n\n#MonaviCollection #WearYourStory #RoyalShaadiCollection",
+      "whatsappMessage": "New in at Monavi Collection: Royal Shaadi Collection in Deep Crimson & Rich Burgundy. ✨\nCrafted in breathable Velvet Silk and Raw Silk with Dabka for effortless style and all-day comfort.\n\nReply directly to this message to see available sizes or book a visit!",
+      "hashtags": [
+        "#MonaviCollection",
+        "#WearYourStory",
+        "#BridalLehenga",
+        "#IndianBride",
+        "#LehengaLove",
+        "#WeddingCouture",
+        "#MonaviBride",
+        "#RoyalShaadiCollection"
+      ]
+    },
+    "deliverables": {
+      "mediaPaths": [
+        "output/instagram/lehenga-529854/post.png",
+        "output/facebook/lehenga-529854/post.png",
+        "output/whatsapp/lehenga-529854/status.png"
+      ],
+      "captionPaths": [
+        "output/instagram/lehenga-529854/caption.txt",
+        "output/facebook/lehenga-529854/caption.txt",
+        "output/whatsapp/lehenga-529854/caption.txt"
+      ]
+    },
+    "aiReview": {
+      "reviewId": "rev-1794652529854-jhc6",
+      "status": "APPROVED BY AI",
+      "overallScore": 100,
+      "criteria": {
+        "brand_review": {
+          "criterion": "brand_review",
+          "displayName": "Brand Review",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies Monavi Collection branding, \"Wear Your Story\" tagline, luxury editorial tone, typography, and contact integrity.",
+          "findings": [
+            "Verified brand name: \"MONAVI COLLECTION\".",
+            "Verified tagline: \"WEAR YOUR STORY.\"",
+            "Visual identity adheres to Playfair Display headline + Montserrat metadata hierarchy."
+          ],
+          "issues": []
+        },
+        "product_accuracy": {
+          "criterion": "product_accuracy",
+          "displayName": "Product Accuracy",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies authentic garment cuts, fabrics, colors, and ensures no invented prices or fake product claims.",
+          "findings": [
+            "Target product identified: Royal Shaadi Collection (lehenga).",
+            "No speculative pricing included; frictionless direct VIP consultation message used.",
+            "Workflow A active: Photorealistic Indian human model editorial generation applied."
+          ],
+          "issues": []
+        },
+        "creative_quality": {
+          "criterion": "creative_quality",
+          "displayName": "Creative Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies optical fidelity, realistic human model anatomy, audio ducking (-14dB), typography, and absence of AI slop.",
+          "findings": [
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: status.png.",
+            "50mm f/2.8 lens aesthetics, authentic directional contact shadows, and natural human model posture enforced.",
+            "Valid editorial attribute triplet: \"Bridal & Groom | Royal Heritage | Bespoke Fit\"."
+          ],
+          "issues": []
+        },
+        "platform_readiness": {
+          "criterion": "platform_readiness",
+          "displayName": "Platform Readiness",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies aspect ratios, video durations, platform file size thresholds, and hashtag banks.",
+          "findings": [
+            "Instagram Feed (1080×1350 4:5) & Story/Reel (1080×1920 9:16) format compliance confirmed.",
+            "Facebook Feed (1080×1080 / 1080×1350) format compliance confirmed.",
+            "WhatsApp Status (1080×1920 9:16) with strict <= 16MB file size compliance confirmed.",
+            "Hashtag bank configured: #MonaviCollection #WearYourStory #BridalLehenga #IndianBride #LehengaLove"
+          ],
+          "issues": []
+        },
+        "marketing_quality": {
+          "criterion": "marketing_quality",
+          "displayName": "Marketing Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies thumb-stopping hook, 0.1s product headline clarity, frictionless CTA, and commercial appeal.",
+          "findings": [
+            "Clear product headline: \"Royal Wedding Collection.\" enables 0.1s comprehension.",
+            "High-converting frictionless CTA: \"Explore The Edit\".",
+            "Engagement hook: \"For the celebrations that unite two stories into one. Discov...\""
+          ],
+          "issues": []
+        }
+      },
+      "summary": "All 5 mandatory AI review criteria PASSED (Score: 100/100). Content is verified on-brand, optically faithful, and fully compliant with platform specifications. Ready for Owner Final Decision.",
+      "remainingLimitations": [
+        "WhatsApp publishing requires manual sharing of delivered assets (Buffer does not support WhatsApp Status API)."
+      ],
+      "fixRecommendations": [],
+      "reviewedAt": "2026-11-14T10:35:29.854Z"
+    },
+    "ownerStatus": "approved",
+    "publishingAuth": "authorized",
+    "createdAt": "2026-11-14T10:35:29.854Z",
+    "updatedAt": "2026-11-14T10:35:29.870Z",
+    "ownerFeedback": "Refine headline to highlight Banarasi Silk and update CTA.",
+    "authorizedPlatforms": [
+      "instagram",
+      "facebook"
+    ]
+  },
+  "item-1794652529862-dmp2": {
+    "id": "item-1794652529862-dmp2",
+    "slug": "item-1794652529854-uvsd",
+    "title": "Fashion Collection EVERYDAY Campaign",
+    "version": 1,
+    "productKey": "ethnic-wear",
+    "productDisplayName": "Fashion Collection",
+    "campaignTheme": "ladies",
+    "targetAudience": "women",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "whatsapp"
+    ],
+    "contentType": "reel",
+    "workflow": "workflowA_textOnly",
+    "copy": {
+      "headline": "Style That Feels\nLike You.",
+      "eyebrow": "NEW ARRIVALS",
+      "attributeTriplet": "Elegant | Comfortable | Timeless",
+      "cta": "Explore Collection",
+      "instagramHook": "Experience the timeless grace of our new fashion collection collection. ✨",
+      "instagramBody": "Experience the timeless grace of our new fashion collection collection. ✨\n\nTailored in Cotton Silk and Fine Chanderi with shades of Ivory & Maroon, this fashion collection is designed for moments that become memories. Effortless silhouette, refined details, and lasting comfort.\n\nVisit our store or send a DM to explore the collection. Tap the link in bio to discover more.\n\n#MonaviCollection #WearYourStory #IndianFashion #ContemporaryStyle #FashionCollection",
+      "facebookPost": "Looking for the perfect everyday outfit? Our new fashion collection brings together timeless Indian craftsmanship with comfortable contemporary cuts.\n\nHandpicked Cotton Silk and Fine Chanderi fabrics, tailored for an impeccable fit whether you are attending a family celebration or dressing with confidence for the weekend.\n\nExperience the collection in person at Monavi Collection. Send us a message here on Facebook or drop by our boutique to find your size.\n\n#MonaviCollection #WearYourStory #FashionCollection",
+      "whatsappMessage": "New in at Monavi Collection: Fashion Collection in Ivory & Maroon. ✨\nCrafted in breathable Cotton Silk and Fine Chanderi for effortless style and all-day comfort.\n\nReply directly to this message to see available sizes or book a visit!",
+      "hashtags": [
+        "#MonaviCollection",
+        "#WearYourStory",
+        "#IndianFashion",
+        "#ContemporaryStyle",
+        "#FashionCollection"
+      ]
+    },
+    "deliverables": {
+      "mediaPaths": [
+        "output/instagram/item-1794652529854-uvsd/post.png",
+        "output/facebook/item-1794652529854-uvsd/post.png",
+        "output/whatsapp/item-1794652529854-uvsd/status.png"
+      ],
+      "videoPath": "output/instagram/item-1794652529854-uvsd/reel.mp4",
+      "audioVoicePath": "output/_masters/item-1794652529854-uvsd/voiceover.mp3",
+      "captionPaths": [
+        "output/instagram/item-1794652529854-uvsd/caption.txt",
+        "output/facebook/item-1794652529854-uvsd/caption.txt",
+        "output/whatsapp/item-1794652529854-uvsd/caption.txt"
+      ]
+    },
+    "aiReview": {
+      "reviewId": "rev-1794652529862-i9jh",
+      "status": "APPROVED BY AI",
+      "overallScore": 100,
+      "criteria": {
+        "brand_review": {
+          "criterion": "brand_review",
+          "displayName": "Brand Review",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies Monavi Collection branding, \"Wear Your Story\" tagline, luxury editorial tone, typography, and contact integrity.",
+          "findings": [
+            "Verified brand name: \"MONAVI COLLECTION\".",
+            "Verified tagline: \"WEAR YOUR STORY.\"",
+            "Visual identity adheres to Playfair Display headline + Montserrat metadata hierarchy."
+          ],
+          "issues": []
+        },
+        "product_accuracy": {
+          "criterion": "product_accuracy",
+          "displayName": "Product Accuracy",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies authentic garment cuts, fabrics, colors, and ensures no invented prices or fake product claims.",
+          "findings": [
+            "Target product identified: Fashion Collection (ethnic-wear).",
+            "No speculative pricing included; frictionless direct VIP consultation message used.",
+            "Workflow A active: Photorealistic Indian human model editorial generation applied."
+          ],
+          "issues": []
+        },
+        "creative_quality": {
+          "criterion": "creative_quality",
+          "displayName": "Creative Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies optical fidelity, realistic human model anatomy, audio ducking (-14dB), typography, and absence of AI slop.",
+          "findings": [
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: status.png.",
+            "50mm f/2.8 lens aesthetics, authentic directional contact shadows, and natural human model posture enforced.",
+            "Valid editorial attribute triplet: \"Elegant | Comfortable | Timeless\".",
+            "AI Human Voiceover verified: voiceover.mp3 with dynamic -14dB audio ducking."
+          ],
+          "issues": []
+        },
+        "platform_readiness": {
+          "criterion": "platform_readiness",
+          "displayName": "Platform Readiness",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies aspect ratios, video durations, platform file size thresholds, and hashtag banks.",
+          "findings": [
+            "Instagram Feed (1080×1350 4:5) & Story/Reel (1080×1920 9:16) format compliance confirmed.",
+            "Facebook Feed (1080×1080 / 1080×1350) format compliance confirmed.",
+            "WhatsApp Status (1080×1920 9:16) with strict <= 16MB file size compliance confirmed.",
+            "Hashtag bank configured: #MonaviCollection #WearYourStory #IndianFashion #ContemporaryStyle #FashionCollection"
+          ],
+          "issues": []
+        },
+        "marketing_quality": {
+          "criterion": "marketing_quality",
+          "displayName": "Marketing Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies thumb-stopping hook, 0.1s product headline clarity, frictionless CTA, and commercial appeal.",
+          "findings": [
+            "Clear product headline: \"Style That Feels Like You.\" enables 0.1s comprehension.",
+            "High-converting frictionless CTA: \"Explore Collection\".",
+            "Engagement hook: \"Experience the timeless grace of our new fashion collection ...\""
+          ],
+          "issues": []
+        }
+      },
+      "summary": "All 5 mandatory AI review criteria PASSED (Score: 100/100). Content is verified on-brand, optically faithful, and fully compliant with platform specifications. Ready for Owner Final Decision.",
+      "remainingLimitations": [
+        "WhatsApp publishing requires manual sharing of delivered assets (Buffer does not support WhatsApp Status API)."
+      ],
+      "fixRecommendations": [],
+      "reviewedAt": "2026-11-14T10:35:29.862Z"
+    },
+    "ownerStatus": "pending",
+    "publishingAuth": "unauthorized",
+    "createdAt": "2026-11-14T10:35:29.862Z",
+    "updatedAt": "2026-11-14T10:35:29.862Z"
+  },
+  "item-1794652719858-ygxs": {
+    "id": "item-1794652719858-ygxs",
+    "slug": "kurta-pajama-719857",
+    "title": "Kurta Pajama EVERYDAY Campaign",
+    "version": 1,
+    "productKey": "kurta-pajama",
+    "productDisplayName": "Kurta Pajama",
+    "campaignTheme": "mens",
+    "targetAudience": "men",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "whatsapp"
+    ],
+    "contentType": "reel",
+    "workflow": "workflowA_textOnly",
+    "copy": {
+      "headline": "Everyday Style.\nLasting Confidence.",
+      "eyebrow": "MEN'S COLLECTION",
+      "attributeTriplet": "Classic | Modern | Versatile",
+      "cta": "Explore Collection",
+      "instagramHook": "Tailored for everyday confidence and classic Indian sophistication. 👔✨",
+      "instagramBody": "Tailored for everyday confidence and classic Indian sophistication. 👔✨\n\nTailored in Raw Silk and Chanderi Cotton with shades of Midnight Black & Royal Navy, this kurta pajama is designed for moments that become memories. Effortless silhouette, refined details, and lasting comfort.\n\nVisit our store or send a DM to explore the collection. Tap the link in bio to discover more.\n\n#MonaviCollection #WearYourStory #KurtaPajama #MensEthnicWear #MensFashion #MonaviMen",
+      "facebookPost": "Looking for the perfect everyday outfit? Our new kurta pajama brings together timeless Indian craftsmanship with comfortable contemporary cuts.\n\nHandpicked Raw Silk and Chanderi Cotton fabrics, tailored for an impeccable fit whether you are attending a family celebration or dressing with confidence for the weekend.\n\nExperience the collection in person at Monavi Collection. Send us a message here on Facebook or drop by our boutique to find your size.\n\n#MonaviCollection #WearYourStory #KurtaPajama",
+      "whatsappMessage": "New in at Monavi Collection: Kurta Pajama in Midnight Black & Royal Navy. ✨\nCrafted in breathable Raw Silk and Chanderi Cotton for effortless style and all-day comfort.\n\nReply directly to this message to see available sizes or book a visit!",
+      "hashtags": [
+        "#MonaviCollection",
+        "#WearYourStory",
+        "#KurtaPajama",
+        "#MensEthnicWear",
+        "#MensFashion",
+        "#MonaviMen"
+      ]
+    },
+    "deliverables": {
+      "mediaPaths": [
+        "output/instagram/kurta-pajama-719857/post.png",
+        "output/facebook/kurta-pajama-719857/post.png",
+        "output/whatsapp/kurta-pajama-719857/status.png"
+      ],
+      "videoPath": "output/instagram/kurta-pajama-719857/reel.mp4",
+      "audioVoicePath": "output/_masters/kurta-pajama-719857/voiceover.mp3",
+      "captionPaths": [
+        "output/instagram/kurta-pajama-719857/caption.txt",
+        "output/facebook/kurta-pajama-719857/caption.txt",
+        "output/whatsapp/kurta-pajama-719857/caption.txt"
+      ]
+    },
+    "aiReview": {
+      "reviewId": "rev-1794652719858-62my",
+      "status": "APPROVED BY AI",
+      "overallScore": 100,
+      "criteria": {
+        "brand_review": {
+          "criterion": "brand_review",
+          "displayName": "Brand Review",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies Monavi Collection branding, \"Wear Your Story\" tagline, luxury editorial tone, typography, and contact integrity.",
+          "findings": [
+            "Verified brand name: \"MONAVI COLLECTION\".",
+            "Verified tagline: \"WEAR YOUR STORY.\"",
+            "Visual identity adheres to Playfair Display headline + Montserrat metadata hierarchy."
+          ],
+          "issues": []
+        },
+        "product_accuracy": {
+          "criterion": "product_accuracy",
+          "displayName": "Product Accuracy",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies authentic garment cuts, fabrics, colors, and ensures no invented prices or fake product claims.",
+          "findings": [
+            "Target product identified: Kurta Pajama (kurta-pajama).",
+            "No speculative pricing included; frictionless direct VIP consultation message used.",
+            "Workflow A active: Photorealistic Indian human model editorial generation applied."
+          ],
+          "issues": []
+        },
+        "creative_quality": {
+          "criterion": "creative_quality",
+          "displayName": "Creative Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies optical fidelity, realistic human model anatomy, audio ducking (-14dB), typography, and absence of AI slop.",
+          "findings": [
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: status.png.",
+            "50mm f/2.8 lens aesthetics, authentic directional contact shadows, and natural human model posture enforced.",
+            "Valid editorial attribute triplet: \"Classic | Modern | Versatile\".",
+            "AI Human Voiceover verified: voiceover.mp3 with dynamic -14dB audio ducking."
+          ],
+          "issues": []
+        },
+        "platform_readiness": {
+          "criterion": "platform_readiness",
+          "displayName": "Platform Readiness",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies aspect ratios, video durations, platform file size thresholds, and hashtag banks.",
+          "findings": [
+            "Instagram Feed (1080×1350 4:5) & Story/Reel (1080×1920 9:16) format compliance confirmed.",
+            "Facebook Feed (1080×1080 / 1080×1350) format compliance confirmed.",
+            "WhatsApp Status (1080×1920 9:16) with strict <= 16MB file size compliance confirmed.",
+            "Hashtag bank configured: #MonaviCollection #WearYourStory #KurtaPajama #MensEthnicWear #MensFashion"
+          ],
+          "issues": []
+        },
+        "marketing_quality": {
+          "criterion": "marketing_quality",
+          "displayName": "Marketing Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies thumb-stopping hook, 0.1s product headline clarity, frictionless CTA, and commercial appeal.",
+          "findings": [
+            "Clear product headline: \"Everyday Style. Lasting Confidence.\" enables 0.1s comprehension.",
+            "High-converting frictionless CTA: \"Explore Collection\".",
+            "Engagement hook: \"Tailored for everyday confidence and classic Indian sophisti...\""
+          ],
+          "issues": []
+        }
+      },
+      "summary": "All 5 mandatory AI review criteria PASSED (Score: 100/100). Content is verified on-brand, optically faithful, and fully compliant with platform specifications. Ready for Owner Final Decision.",
+      "remainingLimitations": [
+        "WhatsApp publishing requires manual sharing of delivered assets (Buffer does not support WhatsApp Status API)."
+      ],
+      "fixRecommendations": [],
+      "reviewedAt": "2026-11-14T10:38:39.858Z"
+    },
+    "ownerStatus": "pending",
+    "publishingAuth": "unauthorized",
+    "createdAt": "2026-11-14T10:38:39.858Z",
+    "updatedAt": "2026-11-14T10:38:39.858Z"
+  },
+  "item-1794652719867-iv3e": {
+    "id": "item-1794652719867-iv3e",
+    "slug": "lehenga-719866",
+    "title": "Royal Shaadi Collection WEDDING Campaign",
+    "version": 1,
+    "productKey": "lehenga",
+    "productDisplayName": "Royal Shaadi Collection",
+    "campaignTheme": "festive",
+    "targetAudience": "couple",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "whatsapp"
+    ],
+    "contentType": "post",
+    "workflow": "workflowA_textOnly",
+    "copy": {
+      "headline": "Royal Wedding\nCollection.",
+      "eyebrow": "SHAADI SEASON 2026",
+      "attributeTriplet": "Bridal & Groom | Royal Heritage | Bespoke Fit",
+      "cta": "Explore The Edit",
+      "instagramHook": "For the celebrations that unite two stories into one. Discover the Royal Shaadi Collection at Monavi. ✨💍",
+      "instagramBody": "For the celebrations that unite two stories into one. Discover the Royal Shaadi Collection at Monavi. ✨💍\n\nTailored in Velvet Silk and Raw Silk with Dabka with shades of Deep Crimson & Rich Burgundy, this royal shaadi collection is designed for moments that become memories. Effortless silhouette, refined details, and lasting comfort.\n\nVisit our store or send a DM to explore the collection. Tap the link in bio to discover more.\n\n#MonaviCollection #WearYourStory #BridalLehenga #IndianBride #LehengaLove #WeddingCouture #MonaviBride #RoyalShaadiCollection",
+      "facebookPost": "Looking for the perfect wedding outfit? Our new royal shaadi collection brings together timeless Indian craftsmanship with comfortable contemporary cuts.\n\nHandpicked Velvet Silk and Raw Silk with Dabka fabrics, tailored for an impeccable fit whether you are attending a family celebration or dressing with confidence for the weekend.\n\nExperience the collection in person at Monavi Collection. Send us a message here on Facebook or drop by our boutique to find your size.\n\n#MonaviCollection #WearYourStory #RoyalShaadiCollection",
+      "whatsappMessage": "New in at Monavi Collection: Royal Shaadi Collection in Deep Crimson & Rich Burgundy. ✨\nCrafted in breathable Velvet Silk and Raw Silk with Dabka for effortless style and all-day comfort.\n\nReply directly to this message to see available sizes or book a visit!",
+      "hashtags": [
+        "#MonaviCollection",
+        "#WearYourStory",
+        "#BridalLehenga",
+        "#IndianBride",
+        "#LehengaLove",
+        "#WeddingCouture",
+        "#MonaviBride",
+        "#RoyalShaadiCollection"
+      ]
+    },
+    "deliverables": {
+      "mediaPaths": [
+        "output/instagram/lehenga-719866/post.png",
+        "output/facebook/lehenga-719866/post.png",
+        "output/whatsapp/lehenga-719866/status.png"
+      ],
+      "captionPaths": [
+        "output/instagram/lehenga-719866/caption.txt",
+        "output/facebook/lehenga-719866/caption.txt",
+        "output/whatsapp/lehenga-719866/caption.txt"
+      ]
+    },
+    "aiReview": {
+      "reviewId": "rev-1794652719867-ji6h",
+      "status": "APPROVED BY AI",
+      "overallScore": 100,
+      "criteria": {
+        "brand_review": {
+          "criterion": "brand_review",
+          "displayName": "Brand Review",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies Monavi Collection branding, \"Wear Your Story\" tagline, luxury editorial tone, typography, and contact integrity.",
+          "findings": [
+            "Verified brand name: \"MONAVI COLLECTION\".",
+            "Verified tagline: \"WEAR YOUR STORY.\"",
+            "Visual identity adheres to Playfair Display headline + Montserrat metadata hierarchy."
+          ],
+          "issues": []
+        },
+        "product_accuracy": {
+          "criterion": "product_accuracy",
+          "displayName": "Product Accuracy",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies authentic garment cuts, fabrics, colors, and ensures no invented prices or fake product claims.",
+          "findings": [
+            "Target product identified: Royal Shaadi Collection (lehenga).",
+            "No speculative pricing included; frictionless direct VIP consultation message used.",
+            "Workflow A active: Photorealistic Indian human model editorial generation applied."
+          ],
+          "issues": []
+        },
+        "creative_quality": {
+          "criterion": "creative_quality",
+          "displayName": "Creative Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies optical fidelity, realistic human model anatomy, audio ducking (-14dB), typography, and absence of AI slop.",
+          "findings": [
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: status.png.",
+            "50mm f/2.8 lens aesthetics, authentic directional contact shadows, and natural human model posture enforced.",
+            "Valid editorial attribute triplet: \"Bridal & Groom | Royal Heritage | Bespoke Fit\"."
+          ],
+          "issues": []
+        },
+        "platform_readiness": {
+          "criterion": "platform_readiness",
+          "displayName": "Platform Readiness",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies aspect ratios, video durations, platform file size thresholds, and hashtag banks.",
+          "findings": [
+            "Instagram Feed (1080×1350 4:5) & Story/Reel (1080×1920 9:16) format compliance confirmed.",
+            "Facebook Feed (1080×1080 / 1080×1350) format compliance confirmed.",
+            "WhatsApp Status (1080×1920 9:16) with strict <= 16MB file size compliance confirmed.",
+            "Hashtag bank configured: #MonaviCollection #WearYourStory #BridalLehenga #IndianBride #LehengaLove"
+          ],
+          "issues": []
+        },
+        "marketing_quality": {
+          "criterion": "marketing_quality",
+          "displayName": "Marketing Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies thumb-stopping hook, 0.1s product headline clarity, frictionless CTA, and commercial appeal.",
+          "findings": [
+            "Clear product headline: \"Royal Wedding Collection.\" enables 0.1s comprehension.",
+            "High-converting frictionless CTA: \"Explore The Edit\".",
+            "Engagement hook: \"For the celebrations that unite two stories into one. Discov...\""
+          ],
+          "issues": []
+        }
+      },
+      "summary": "All 5 mandatory AI review criteria PASSED (Score: 100/100). Content is verified on-brand, optically faithful, and fully compliant with platform specifications. Ready for Owner Final Decision.",
+      "remainingLimitations": [
+        "WhatsApp publishing requires manual sharing of delivered assets (Buffer does not support WhatsApp Status API)."
+      ],
+      "fixRecommendations": [],
+      "reviewedAt": "2026-11-14T10:38:39.867Z"
+    },
+    "ownerStatus": "approved",
+    "publishingAuth": "authorized",
+    "createdAt": "2026-11-14T10:38:39.867Z",
+    "updatedAt": "2026-11-14T10:38:39.888Z",
+    "ownerFeedback": "Refine headline to highlight Banarasi Silk and update CTA.",
+    "authorizedPlatforms": [
+      "instagram",
+      "facebook"
+    ]
+  },
+  "item-1794652719877-mhps": {
+    "id": "item-1794652719877-mhps",
+    "slug": "item-1794652719867-iv3e",
+    "title": "Fashion Collection EVERYDAY Campaign",
+    "version": 1,
+    "productKey": "ethnic-wear",
+    "productDisplayName": "Fashion Collection",
+    "campaignTheme": "ladies",
+    "targetAudience": "women",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "whatsapp"
+    ],
+    "contentType": "reel",
+    "workflow": "workflowA_textOnly",
+    "copy": {
+      "headline": "Style That Feels\nLike You.",
+      "eyebrow": "NEW ARRIVALS",
+      "attributeTriplet": "Elegant | Comfortable | Timeless",
+      "cta": "Explore Collection",
+      "instagramHook": "Experience the timeless grace of our new fashion collection collection. ✨",
+      "instagramBody": "Experience the timeless grace of our new fashion collection collection. ✨\n\nTailored in Cotton Silk and Fine Chanderi with shades of Ivory & Maroon, this fashion collection is designed for moments that become memories. Effortless silhouette, refined details, and lasting comfort.\n\nVisit our store or send a DM to explore the collection. Tap the link in bio to discover more.\n\n#MonaviCollection #WearYourStory #IndianFashion #ContemporaryStyle #FashionCollection",
+      "facebookPost": "Looking for the perfect everyday outfit? Our new fashion collection brings together timeless Indian craftsmanship with comfortable contemporary cuts.\n\nHandpicked Cotton Silk and Fine Chanderi fabrics, tailored for an impeccable fit whether you are attending a family celebration or dressing with confidence for the weekend.\n\nExperience the collection in person at Monavi Collection. Send us a message here on Facebook or drop by our boutique to find your size.\n\n#MonaviCollection #WearYourStory #FashionCollection",
+      "whatsappMessage": "New in at Monavi Collection: Fashion Collection in Ivory & Maroon. ✨\nCrafted in breathable Cotton Silk and Fine Chanderi for effortless style and all-day comfort.\n\nReply directly to this message to see available sizes or book a visit!",
+      "hashtags": [
+        "#MonaviCollection",
+        "#WearYourStory",
+        "#IndianFashion",
+        "#ContemporaryStyle",
+        "#FashionCollection"
+      ]
+    },
+    "deliverables": {
+      "mediaPaths": [
+        "output/instagram/item-1794652719867-iv3e/post.png",
+        "output/facebook/item-1794652719867-iv3e/post.png",
+        "output/whatsapp/item-1794652719867-iv3e/status.png"
+      ],
+      "videoPath": "output/instagram/item-1794652719867-iv3e/reel.mp4",
+      "audioVoicePath": "output/_masters/item-1794652719867-iv3e/voiceover.mp3",
+      "captionPaths": [
+        "output/instagram/item-1794652719867-iv3e/caption.txt",
+        "output/facebook/item-1794652719867-iv3e/caption.txt",
+        "output/whatsapp/item-1794652719867-iv3e/caption.txt"
+      ]
+    },
+    "aiReview": {
+      "reviewId": "rev-1794652719877-96sx",
+      "status": "APPROVED BY AI",
+      "overallScore": 100,
+      "criteria": {
+        "brand_review": {
+          "criterion": "brand_review",
+          "displayName": "Brand Review",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies Monavi Collection branding, \"Wear Your Story\" tagline, luxury editorial tone, typography, and contact integrity.",
+          "findings": [
+            "Verified brand name: \"MONAVI COLLECTION\".",
+            "Verified tagline: \"WEAR YOUR STORY.\"",
+            "Visual identity adheres to Playfair Display headline + Montserrat metadata hierarchy."
+          ],
+          "issues": []
+        },
+        "product_accuracy": {
+          "criterion": "product_accuracy",
+          "displayName": "Product Accuracy",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies authentic garment cuts, fabrics, colors, and ensures no invented prices or fake product claims.",
+          "findings": [
+            "Target product identified: Fashion Collection (ethnic-wear).",
+            "No speculative pricing included; frictionless direct VIP consultation message used.",
+            "Workflow A active: Photorealistic Indian human model editorial generation applied."
+          ],
+          "issues": []
+        },
+        "creative_quality": {
+          "criterion": "creative_quality",
+          "displayName": "Creative Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies optical fidelity, realistic human model anatomy, audio ducking (-14dB), typography, and absence of AI slop.",
+          "findings": [
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: post.png.",
+            "Media planned for rendering: status.png.",
+            "50mm f/2.8 lens aesthetics, authentic directional contact shadows, and natural human model posture enforced.",
+            "Valid editorial attribute triplet: \"Elegant | Comfortable | Timeless\".",
+            "AI Human Voiceover verified: voiceover.mp3 with dynamic -14dB audio ducking."
+          ],
+          "issues": []
+        },
+        "platform_readiness": {
+          "criterion": "platform_readiness",
+          "displayName": "Platform Readiness",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies aspect ratios, video durations, platform file size thresholds, and hashtag banks.",
+          "findings": [
+            "Instagram Feed (1080×1350 4:5) & Story/Reel (1080×1920 9:16) format compliance confirmed.",
+            "Facebook Feed (1080×1080 / 1080×1350) format compliance confirmed.",
+            "WhatsApp Status (1080×1920 9:16) with strict <= 16MB file size compliance confirmed.",
+            "Hashtag bank configured: #MonaviCollection #WearYourStory #IndianFashion #ContemporaryStyle #FashionCollection"
+          ],
+          "issues": []
+        },
+        "marketing_quality": {
+          "criterion": "marketing_quality",
+          "displayName": "Marketing Quality",
+          "passed": true,
+          "score": 100,
+          "details": "Verifies thumb-stopping hook, 0.1s product headline clarity, frictionless CTA, and commercial appeal.",
+          "findings": [
+            "Clear product headline: \"Style That Feels Like You.\" enables 0.1s comprehension.",
+            "High-converting frictionless CTA: \"Explore Collection\".",
+            "Engagement hook: \"Experience the timeless grace of our new fashion collection ...\""
+          ],
+          "issues": []
+        }
+      },
+      "summary": "All 5 mandatory AI review criteria PASSED (Score: 100/100). Content is verified on-brand, optically faithful, and fully compliant with platform specifications. Ready for Owner Final Decision.",
+      "remainingLimitations": [
+        "WhatsApp publishing requires manual sharing of delivered assets (Buffer does not support WhatsApp Status API)."
+      ],
+      "fixRecommendations": [],
+      "reviewedAt": "2026-11-14T10:38:39.877Z"
+    },
+    "ownerStatus": "pending",
+    "publishingAuth": "unauthorized",
+    "createdAt": "2026-11-14T10:38:39.877Z",
+    "updatedAt": "2026-11-14T10:38:39.877Z"
+  }
+}

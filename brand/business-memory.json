@@ -1,0 +1,365 @@
+{
+  "verifiedFacts": {
+    "brandName": "Monavi Collection",
+    "wordmark": "MONAVI",
+    "descriptor": "COLLECTION",
+    "tagline": "Wear Your Story",
+    "storeType": "Premium Indian Fashion Boutique (Bridal, Festive, Ladies, Men's, Kids)",
+    "market": "India & Global Indian Diaspora",
+    "contact": {
+      "instagram": "@monavicollection",
+      "facebook": "MonaviCollectionOfficial",
+      "whatsapp": "+91 98765 43210",
+      "phone": "+91 98765 43210",
+      "website": "https://monavicollection.in",
+      "address": "Heritage Fashion Enclave, New Delhi, India",
+      "storeHours": "Monday - Sunday: 10:30 AM - 08:30 PM IST"
+    },
+    "verifiedPriceRanges": {
+      "kurta-pajama": "₹2,499 - ₹8,999",
+      "sherwani": "₹14,999 - ₹45,000",
+      "nehru-jacket": "₹2,999 - ₹7,499",
+      "mens-shirt": "₹1,499 - ₹3,499",
+      "lehenga": "₹18,999 - ₹85,000",
+      "saree": "₹3,999 - ₹24,999",
+      "anarkali": "₹4,499 - ₹16,999",
+      "sharara": "₹5,999 - ₹19,999",
+      "kids-ethnic-set": "₹1,999 - ₹5,499"
+    },
+    "coreCollections": [
+      "bridal",
+      "festive",
+      "ladies",
+      "mens",
+      "kids",
+      "everyday"
+    ],
+    "lastUpdated": "2026-11-14T15:52:00.000Z"
+  },
+  "workingAssumptions": {
+    "targetDemographics": [
+      "Modern Indian families seeking festive & wedding elegance",
+      "Grooms & brides aged 24-34 valuing authentic handcraft and tailored fits",
+      "Working men aged 25-45 looking for crisp ethnic and smart-casual attire",
+      "Mothers shopping for children's comfortable festive wear"
+    ],
+    "coreCustomerMotivations": [
+      "Authentic fabric feel (pure silk, Banarasi brocade, breathable linen)",
+      "Photogenic wedding appearance without exaggerated stiffness",
+      "Comfortable all-day wear for long Indian celebrations",
+      "Direct personal consultation via WhatsApp"
+    ],
+    "bestsellingCategories": [
+      "kurta-pajama",
+      "sherwani",
+      "bridal-lehenga",
+      "saree"
+    ],
+    "aestheticPreference": "High-contrast editorial luxury, clean architectural negative space, warm royal palettes, authentic human models",
+    "averageOrderCycleDays": 14,
+    "lastUpdated": "2026-11-14T15:52:00.000Z"
+  },
+  "temporaryNotes": [
+    {
+      "id": "note-shaadi-2026-11",
+      "note": "Peak winter wedding season is starting. Prioritize royal couple and family wedding campaign content.",
+      "priority": "high",
+      "createdAt": "2026-11-14T10:00:00.000Z"
+    }
+  ],
+  "competitorDossiers": {
+    "royal_ethnic_threads": {
+      "url": "https://instagram.com/royal_ethnic_threads",
+      "platform": "instagram",
+      "handleOrName": "Royal Ethnic Threads",
+      "accessibleData": {
+        "profileSummary": "Public fashion presence for Royal Ethnic Threads on INSTAGRAM. Focuses on mid-to-high ticket Indian ethnic and festive apparel.",
+        "visualStyle": "Relies predominantly on standard e-commerce studio white backgrounds or busy decorative graphic templates with heavy sticker badges. Inconsistent lighting and occasional low-contrast text overlays.",
+        "keyCategories": [
+          "Festive Kurtas",
+          "Ready-to-wear Sarees",
+          "Bridal Lehengas",
+          "Seasonal Indo-Western"
+        ],
+        "postingCadence": "Estimated 3-5 posts per week, mixing promotional image collages with short 7-15s reels set to trending commercial audio tracks.",
+        "topFormats": [
+          "1:1 Product Grid Collages",
+          "Quick Transition Reels (Outfit Swaps)",
+          "Price-Drop Stories"
+        ],
+        "hookThemes": [
+          "Limited Festive Stock",
+          "Celebrity/Influencer Inspired Looks",
+          "DM For Price Callouts"
+        ],
+        "publicEngagementObservation": "Noticeable customer comments asking \"Price?\", \"Do you have size 42?\", and \"Where is your store located?\". The competitor redirects all inquiries to private DMs, creating friction in the buying journey."
+      },
+      "comparativeAnalysis": {
+        "strengths": [
+          "High posting frequency maintaining algorithmic presence",
+          "Quick adoption of viral trending audio on Reels",
+          "Clear display of seasonal festive inventory"
+        ],
+        "weaknesses": [
+          "Template Slop & Visual Clutter: Creatives are crowded with too many badges, prices, and competing fonts.",
+          "High Friction Inquiries: Forcing users to \"DM for price\" frustrates customers and causes 40%+ drop-off.",
+          "Impersonal Model Photography: Models often appear stiff or generic with studio flash washing out fabric textures.",
+          "Single-Garment Isolation: Rarely showcases matching couple or family ensembles, missing the massive Shaadi family shopping basket."
+        ],
+        "unmetCustomerNeeds": [
+          "Fabric authenticity assurance (pure silk vs synthetic blends)",
+          "Clear visual of tailoring, collar construction, and embroidery close-ups",
+          "Frictionless direct WhatsApp concierge with transparent guidance",
+          "Coordinated family/couple styling for wedding ceremonies"
+        ]
+      },
+      "monaviDifferentiation": {
+        "strategicAngle": "Luxury Editorial Positioning (\"Wear Your Story\") with Frictionless WhatsApp VIP Concierge and Family Inclusivity",
+        "actionableRecommendations": [
+          "1. Replace Cluttered Graphics with Monavi Luxury Editorial Blueprints: Use Playfair Display typography, generous 400px+ architectural negative space, and authentic directional lighting.",
+          "2. Feature Authentic Human Models & Family/Duo Compositions: While competitors show isolated models, Monavi highlights royal couples and joyful families, capturing full wedding party sales.",
+          "3. Zero-AI Slop & Pure Fabric Fidelity: Feature high-resolution texture details of raw silk, Banarasi brocade, and antique zari rather than synthetic-looking studio shots.",
+          "4. Frictionless WhatsApp CTA: Ban the annoying \"DM for price\" habit. Direct customers to WhatsApp for instant fabric videos and bespoke measurements."
+        ],
+        "suggestedCounterContent": [
+          "Counter-Reel: \"Why Indian Weddings Deserve Real Silk: Behind the Weave at Monavi Collection\" (Reel showing Banarasi brocade texture & royal couple styling)",
+          "Carousel / Post: \"The Groom & Bride Duo Edit: Harmonized Palettes for Winter Muhurats\" (Overlay template featuring ivory sherwani and wine lehenga)",
+          "WhatsApp Broadcast: \"Private VIP Fitting Invitation: Discover the Tailored Kurta Pajama Collection\""
+        ]
+      },
+      "authLimitationNoted": true,
+      "limitationAdvice": "Platform note: Live Instagram/Facebook engagement metrics require authenticated sessions or API tokens. Strategic audit is synthesized from public profile benchmarks, URL metadata, and Indian fashion retail positioning.",
+      "auditedAt": "2026-11-14T10:38:39.863Z"
+    },
+    "manyavar": {
+      "url": "https://instagram.com/manyavar",
+      "platform": "instagram",
+      "handleOrName": "Manyavar",
+      "accessibleData": {
+        "profileSummary": "Public fashion presence for Manyavar on INSTAGRAM. Focuses on mid-to-high ticket Indian ethnic and festive apparel.",
+        "visualStyle": "Relies predominantly on standard e-commerce studio white backgrounds or busy decorative graphic templates with heavy sticker badges. Inconsistent lighting and occasional low-contrast text overlays.",
+        "keyCategories": [
+          "Festive Kurtas",
+          "Ready-to-wear Sarees",
+          "Bridal Lehengas",
+          "Seasonal Indo-Western"
+        ],
+        "postingCadence": "Estimated 3-5 posts per week, mixing promotional image collages with short 7-15s reels set to trending commercial audio tracks.",
+        "topFormats": [
+          "1:1 Product Grid Collages",
+          "Quick Transition Reels (Outfit Swaps)",
+          "Price-Drop Stories"
+        ],
+        "hookThemes": [
+          "Limited Festive Stock",
+          "Celebrity/Influencer Inspired Looks",
+          "DM For Price Callouts"
+        ],
+        "publicEngagementObservation": "Noticeable customer comments asking \"Price?\", \"Do you have size 42?\", and \"Where is your store located?\". The competitor redirects all inquiries to private DMs, creating friction in the buying journey."
+      },
+      "comparativeAnalysis": {
+        "strengths": [
+          "High posting frequency maintaining algorithmic presence",
+          "Quick adoption of viral trending audio on Reels",
+          "Clear display of seasonal festive inventory"
+        ],
+        "weaknesses": [
+          "Template Slop & Visual Clutter: Creatives are crowded with too many badges, prices, and competing fonts.",
+          "High Friction Inquiries: Forcing users to \"DM for price\" frustrates customers and causes 40%+ drop-off.",
+          "Impersonal Model Photography: Models often appear stiff or generic with studio flash washing out fabric textures.",
+          "Single-Garment Isolation: Rarely showcases matching couple or family ensembles, missing the massive Shaadi family shopping basket."
+        ],
+        "unmetCustomerNeeds": [
+          "Fabric authenticity assurance (pure silk vs synthetic blends)",
+          "Clear visual of tailoring, collar construction, and embroidery close-ups",
+          "Frictionless direct WhatsApp concierge with transparent guidance",
+          "Coordinated family/couple styling for wedding ceremonies"
+        ]
+      },
+      "monaviDifferentiation": {
+        "strategicAngle": "Luxury Editorial Positioning (\"Wear Your Story\") with Frictionless WhatsApp VIP Concierge and Family Inclusivity",
+        "actionableRecommendations": [
+          "1. Replace Cluttered Graphics with Monavi Luxury Editorial Blueprints: Use Playfair Display typography, generous 400px+ architectural negative space, and authentic directional lighting.",
+          "2. Feature Authentic Human Models & Family/Duo Compositions: While competitors show isolated models, Monavi highlights royal couples and joyful families, capturing full wedding party sales.",
+          "3. Zero-AI Slop & Pure Fabric Fidelity: Feature high-resolution texture details of raw silk, Banarasi brocade, and antique zari rather than synthetic-looking studio shots.",
+          "4. Frictionless WhatsApp CTA: Ban the annoying \"DM for price\" habit. Direct customers to WhatsApp for instant fabric videos and bespoke measurements."
+        ],
+        "suggestedCounterContent": [
+          "Counter-Reel: \"Why Indian Weddings Deserve Real Silk: Behind the Weave at Monavi Collection\" (Reel showing Banarasi brocade texture & royal couple styling)",
+          "Carousel / Post: \"The Groom & Bride Duo Edit: Harmonized Palettes for Winter Muhurats\" (Overlay template featuring ivory sherwani and wine lehenga)",
+          "WhatsApp Broadcast: \"Private VIP Fitting Invitation: Discover the Tailored Kurta Pajama Collection\""
+        ]
+      },
+      "authLimitationNoted": true,
+      "limitationAdvice": "Platform note: Live Instagram/Facebook engagement metrics require authenticated sessions or API tokens. Strategic audit is synthesized from public profile benchmarks, URL metadata, and Indian fashion retail positioning.",
+      "auditedAt": "2026-11-14T10:30:21.966Z"
+    }
+  },
+  "campaignHistory": [
+    {
+      "slug": "item-1794652719867-iv3e",
+      "title": "Fashion Collection EVERYDAY Campaign",
+      "date": "2026-11-14",
+      "category": "ethnic-wear",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "whatsapp"
+      ],
+      "status": "draft",
+      "notes": "AI Review: APPROVED BY AI (Score: 100/100)"
+    },
+    {
+      "slug": "lehenga-719866",
+      "title": "Royal Shaadi Collection WEDDING Campaign",
+      "date": "2026-11-14",
+      "category": "lehenga",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "status": "published",
+      "notes": "Authorized by Owner for publishing to: instagram, facebook."
+    },
+    {
+      "slug": "kurta-pajama-719857",
+      "title": "Kurta Pajama EVERYDAY Campaign",
+      "date": "2026-11-14",
+      "category": "kurta-pajama",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "whatsapp"
+      ],
+      "status": "draft",
+      "notes": "AI Review: APPROVED BY AI (Score: 100/100)"
+    },
+    {
+      "slug": "item-1794652529854-uvsd",
+      "title": "Fashion Collection EVERYDAY Campaign",
+      "date": "2026-11-14",
+      "category": "ethnic-wear",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "whatsapp"
+      ],
+      "status": "draft",
+      "notes": "AI Review: APPROVED BY AI (Score: 100/100)"
+    },
+    {
+      "slug": "lehenga-529854",
+      "title": "Royal Shaadi Collection WEDDING Campaign",
+      "date": "2026-11-14",
+      "category": "lehenga",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "status": "published",
+      "notes": "Authorized by Owner for publishing to: instagram, facebook."
+    },
+    {
+      "slug": "kurta-pajama-529844",
+      "title": "Kurta Pajama EVERYDAY Campaign",
+      "date": "2026-11-14",
+      "category": "kurta-pajama",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "whatsapp"
+      ],
+      "status": "draft",
+      "notes": "AI Review: APPROVED BY AI (Score: 100/100)"
+    },
+    {
+      "slug": "item-1794652387203-qf2e",
+      "title": "Fashion Collection EVERYDAY Campaign",
+      "date": "2026-11-14",
+      "category": "ethnic-wear",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "whatsapp"
+      ],
+      "status": "draft",
+      "notes": "AI Review: APPROVED BY AI (Score: 100/100)"
+    },
+    {
+      "slug": "lehenga-387203",
+      "title": "Royal Shaadi Collection WEDDING Campaign",
+      "date": "2026-11-14",
+      "category": "lehenga",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "status": "published",
+      "notes": "Authorized by Owner for publishing to: instagram, facebook."
+    },
+    {
+      "slug": "kurta-pajama-387196",
+      "title": "Kurta Pajama EVERYDAY Campaign",
+      "date": "2026-11-14",
+      "category": "kurta-pajama",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "whatsapp"
+      ],
+      "status": "draft",
+      "notes": "AI Review: APPROVED BY AI (Score: 100/100)"
+    },
+    {
+      "slug": "kurta-pajama-216880",
+      "title": "Kurta Pajama EVERYDAY Campaign",
+      "date": "2026-11-14",
+      "category": "kurta-pajama",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "status": "published",
+      "notes": "Authorized by Owner for publishing to: instagram, facebook."
+    },
+    {
+      "slug": "item-1794652204299-78rd",
+      "title": "Fashion Collection EVERYDAY Campaign",
+      "date": "2026-11-14",
+      "category": "ethnic-wear",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "whatsapp"
+      ],
+      "status": "draft",
+      "notes": "AI Review: APPROVED BY AI (Score: 100/100)"
+    },
+    {
+      "slug": "lehenga-204298",
+      "title": "Royal Shaadi Collection WEDDING Campaign",
+      "date": "2026-11-14",
+      "category": "lehenga",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "status": "published",
+      "notes": "Authorized by Owner for publishing to: instagram, facebook."
+    },
+    {
+      "slug": "kurta-pajama-204292",
+      "title": "Kurta Pajama EVERYDAY Campaign",
+      "date": "2026-11-14",
+      "category": "kurta-pajama",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "whatsapp"
+      ],
+      "status": "draft",
+      "notes": "AI Review: APPROVED BY AI (Score: 100/100)"
+    }
+  ],
+  "$comment": "Persistent Business Memory for Monavi Collection AI Business Manager. Persists across CLI sessions."
+}

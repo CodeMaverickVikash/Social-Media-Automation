@@ -1,7 +1,0 @@
-{
-  "aiGenerated": true,
-  "generator": "claude-illustration",
-  "prompt": "{\"product\":\"kurta-pajama\",\"occasion\":\"festive\",\"stage\":\"wide\",\"palette\":{\"backdrop\":[\"#F1E9DC\",\"#D9C6AE\"],\"line\":\"#8E5E38\",\"garment\":\"#223152\",\"accent\":\"#E8DFCB\",\"bottoms\":\"#F5F2EA\",\"shoes\":\"#8E5E38\",\"mannequin\":\"#E4DDD2\"}}",
-  "createdAt": "2026-11-10T08:05:38.947Z",
-  "usage": "mood/campaign only"
-}

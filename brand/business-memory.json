@@ -197,6 +197,19 @@
   },
   "campaignHistory": [
     {
+      "slug": "kids-winter-jacket-084085",
+      "title": "Kids Winter Jacket WINTER Campaign",
+      "date": "2026-11-14",
+      "category": "kids-winter-jacket",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "whatsapp"
+      ],
+      "status": "draft",
+      "notes": "AI Review: APPROVED BY AI (Score: 100/100)"
+    },
+    {
       "slug": "item-1794655105015-kndg",
       "title": "Fashion Collection EVERYDAY Campaign",
       "date": "2026-11-14",

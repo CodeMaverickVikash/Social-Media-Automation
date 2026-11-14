@@ -404,6 +404,22 @@
       "colors": ["Marigold Yellow", "Peacock Green", "Coral Red", "Ivory"],
       "occasions": ["festivals", "birthdays", "celebrations"],
       "hashtags": ["#KidsWear", "#LittleSmiles", "#ComfortForKids", "#MonaviKids"]
+    },
+    "kids-winter-jacket": {
+      "category": "kids",
+      "audience": "kids",
+      "collection": "kids",
+      "theme": "kids",
+      "icon": "kids",
+      "badge": "Kids Wear",
+      "template": "overlay",
+      "alternativeTemplate": "arch",
+      "referenceBlueprint": "kids-wear",
+      "attrs": ["Wool Blend", "Cozy Fleece Lining", "Snug Warm Fit"],
+      "fabrics": ["Fine Wool Blend", "Thermal Fleece", "Soft Quilted Shell"],
+      "colors": ["Warm Beige", "Soft Sage", "Navy Blue", "Crimson Red"],
+      "occasions": ["winter", "festive", "everyday", "outing"],
+      "hashtags": ["#KidsWinterWear", "#KidsJacket", "#KidsSweater", "#LittleStyles", "#MonaviKids"]
     }
   },
 

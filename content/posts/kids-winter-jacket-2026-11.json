@@ -1,0 +1,28 @@
+{
+  "slug": "kids-winter-jacket-2026-11",
+  "template": "overlay",
+  "theme": "kids",
+  "photo": "assets/photos/kids-winter-jacket-2026-11/campaign-kids-winter-jacket-editorial.png",
+  "eyebrow": "WINTER SPECIAL 2026",
+  "headline": "Kids Winter\nJacket.",
+  "attrs": [
+    "Wool Blend",
+    "Cozy Fleece Lining",
+    "Snug Warm Fit"
+  ],
+  "cta": "Explore Collection",
+  "badge": {
+    "icon": "kids",
+    "label": "Kids Wear"
+  },
+  "formats": [
+    "ig-feed",
+    "story",
+    "square"
+  ],
+  "platforms": [
+    "instagram",
+    "facebook",
+    "whatsapp"
+  ]
+}

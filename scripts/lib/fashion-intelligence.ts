@@ -10,7 +10,7 @@ export type FashionCategory = 'mens' | 'ladies' | 'kids' | 'bridal' | 'festive' 
 export type TargetAudience = 'men' | 'women' | 'bride' | 'groom' | 'couple' | 'kids' | 'kids_boys' | 'kids_girls' | 'family';
 export type ModelComposition = 'single' | 'duo_couple' | 'family';
 export type AgeGroup = 'adult' | 'young_adult' | 'child' | 'toddler';
-export type Occasion = 'wedding' | 'bridal' | 'festive' | 'everyday' | 'smart_casual' | 'cocktail' | 'summer' | 'party';
+export type Occasion = 'wedding' | 'bridal' | 'festive' | 'everyday' | 'smart_casual' | 'cocktail' | 'summer' | 'party' | 'winter';
 
 export interface FashionAnalysis {
   category: FashionCategory;
@@ -177,6 +177,8 @@ export function analyzeFashionRequest(query: string, options?: { hasProductImage
       detectedGarmentKey = 'kids-floral-dress';
     } else if (isKid && q.includes('kurta')) {
       detectedGarmentKey = 'kids-kurta-pajama';
+    } else if (isKid && (q.includes('jacket') || q.includes('sweater') || q.includes('switter') || q.includes('winter') || q.includes('coat') || q.includes('cardigan'))) {
+      detectedGarmentKey = 'kids-winter-jacket';
     } else if (isKid) {
       detectedGarmentKey = 'kids-ethnic-set';
     }
@@ -239,6 +241,8 @@ export function analyzeFashionRequest(query: string, options?: { hasProductImage
     occasion = 'wedding';
   } else if (isFestive || q.includes('diwali') || q.includes('eid') || q.includes('puja') || q.includes('sangeet')) {
     occasion = 'festive';
+  } else if (q.includes('winter') || q.includes('sweater') || q.includes('switter') || q.includes('jacket') || q.includes('cold')) {
+    occasion = 'winter';
   } else if (q.includes('cocktail') || q.includes('evening') || q.includes('party')) {
     occasion = 'cocktail';
   } else if (q.includes('summer') || q.includes('breeze') || q.includes('floral')) {
@@ -329,7 +333,7 @@ export function analyzeFashionRequest(query: string, options?: { hasProductImage
   let eyebrow = category === 'mens' ? "MEN'S COLLECTION"
     : category === 'bridal' ? 'BRIDAL COLLECTION'
     : category === 'festive' ? 'FESTIVE COLLECTION'
-    : category === 'kids' ? 'KIDS COLLECTION'
+    : category === 'kids' ? (occasion === 'winter' || detectedGarmentKey === 'kids-winter-jacket' ? 'WINTER SPECIAL 2026' : 'KIDS COLLECTION')
     : 'NEW ARRIVALS';
 
   let cta = 'Explore Collection';
@@ -415,6 +419,9 @@ export function analyzeFashionRequest(query: string, options?: { hasProductImage
     } else if (detectedGarmentKey === 'kids-floral-dress' || detectedGarmentKey === 'kids-frock') {
       headline = 'Floral Twirl\nDress.';
       attrs = brandProduct?.attrs ?? ['Pure Cotton', 'Floral Print', 'Twirl Fit'];
+    } else if (detectedGarmentKey === 'kids-winter-jacket') {
+      headline = 'Kids Winter\nJacket.';
+      attrs = brandProduct?.attrs ?? ['Wool Blend', 'Cozy Fleece Lining', 'Snug Warm Fit'];
     } else {
       headline = `Festive ${garmentDisplayName}.\nComfort Fit.`;
       attrs = brandProduct?.attrs ?? ['Soft Cotton', 'Zari Border', 'Comfort Fit'];

@@ -23,7 +23,7 @@
     { "id": "festive", "name": "Festive Collection", "items": ["Lehengas", "Sarees", "Anarkalis", "Shararas", "Ghararas", "Kurtas"], "mood": "warm, celebratory, rich" },
     { "id": "ladies",  "name": "Ladies Wear", "items": ["Kurtis", "Anarkalis", "Suits", "Palazzos", "Co-ord Sets", "Dresses"], "mood": "elegant, comfortable, timeless" },
     { "id": "mens",    "name": "Men's Wear", "items": ["Kurtas", "Shirts", "Trousers", "T-shirts", "Blazers", "Nehru Jackets", "Ethnic Sets"], "mood": "classic, modern, versatile" },
-    { "id": "kids",    "name": "Kids Wear", "items": ["Floral Dresses", "Frocks", "Kurtas", "Ethnic Sets", "Shirts"], "mood": "playful, comfortable, everyday" },
+    { "id": "kids",    "name": "Kids Wear", "items": ["Floral Dresses", "Frocks", "Kurtas", "Ethnic Sets", "Shirts", "Winter Jackets", "Sweaters"], "mood": "playful, comfortable, everyday" },
     { "id": "everyday","name": "Everyday Wear", "items": ["Kurtis", "Shirts", "Trousers", "T-shirts", "Casual Suits"], "mood": "understated luxury, all-day ease" }
   ],
 
@@ -43,6 +43,7 @@
     "kids-kurta-pajama":{ "name": "Kids Kurta Pajama", "for": "kids", "collection": "kids", "theme": "kids",    "icon": "kids",  "template": "arch", "attrs": ["Breathable Mulmul", "Festive Embroidery", "Easy Fit"], "hashtags": ["#KidsKurta", "#KidsWear", "#LittleStyles"] },
     "kids-frock":     { "name": "Frock",           "for": "kids",  "collection": "kids",    "theme": "kids",    "icon": "kids",  "template": "arch", "attrs": ["Pure Cotton", "Floral Print", "Twirl Silhouette"], "hashtags": ["#KidsFrock", "#KidsWear", "#LittleStyles"] },
     "kids-floral-dress":{ "name": "Floral Dress",  "for": "kids",  "collection": "kids",    "theme": "kids",    "icon": "kids",  "template": "arch", "attrs": ["Breathable Cotton", "Floral Print", "Playful Flare"], "hashtags": ["#KidsDress", "#LittleStyles", "#GirlsFashion"] },
+    "kids-winter-jacket":{ "name": "Kids Winter Jacket", "for": "kids", "collection": "kids", "theme": "kids", "icon": "kids", "template": "overlay", "attrs": ["Wool Blend", "Cozy Fleece Lining", "Snug Warm Fit"], "hashtags": ["#KidsWinterWear", "#KidsJacket", "#KidsSweater", "#LittleStyles", "#MonaviKids"] },
     "sharara":        { "name": "Sharara",         "for": "women", "collection": "festive", "theme": "festive", "icon": "dress", "template": "overlay", "attrs": ["Georgette Silk", "Zari Embroidery", "Flared Flare"], "hashtags": ["#ShararaSuit", "#ShararaLove", "#FestiveVibes"] },
     "gharara":        { "name": "Gharara",         "for": "women", "collection": "festive", "theme": "festive", "icon": "dress", "template": "overlay", "attrs": ["Heritage Brocade", "Zardozi Work", "Royal Nawabi Cut"], "hashtags": ["#GhararaSuit", "#HeritageCouture", "#NawabiGrace"] },
     "co-ord-set":     { "name": "Co-ord Set",      "for": "women", "collection": "ladies",  "theme": "ladies",  "icon": "dress", "template": "overlay", "attrs": ["Pure Linen", "Modern Silhouette", "Effortless Fit"], "hashtags": ["#CoordSet", "#ModernEthnic", "#ContemporaryIndian"] },

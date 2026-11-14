@@ -1,0 +1,93 @@
+{
+  "brief": "content/posts/kids-winter-jacket-2026-11.json",
+  "renderedAt": "2026-11-14T12:07:18.247Z",
+  "draftOnly": false,
+  "aiGenerated": true,
+  "aiPhotos": [
+    "assets/photos/kids-winter-jacket-2026-11/campaign-kids-winter-jacket-editorial.png"
+  ],
+  "outputs": [
+    {
+      "format": "ig-feed",
+      "size": "1080x1350",
+      "master": "output/_masters/kids-winter-jacket-2026-11/ig-feed@2x.png",
+      "files": [
+        "output/instagram/kids-winter-jacket-2026-11/ig-feed.jpg",
+        "output/facebook/kids-winter-jacket-2026-11/ig-feed.jpg"
+      ],
+      "photos": [
+        {
+          "src": "campaign-kids-winter-jacket-editorial.png",
+          "natural": [
+            2160,
+            2700
+          ],
+          "box": [
+            1080,
+            1350
+          ],
+          "scale": 0.5,
+          "sourcePxPerOutputPx": 2
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "format": "story",
+      "size": "1080x1920",
+      "master": "output/_masters/kids-winter-jacket-2026-11/story@2x.png",
+      "files": [
+        "output/instagram/kids-winter-jacket-2026-11/story.jpg",
+        "output/facebook/kids-winter-jacket-2026-11/story.jpg",
+        "output/whatsapp/kids-winter-jacket-2026-11/story.jpg"
+      ],
+      "photos": [
+        {
+          "src": "campaign-kids-winter-jacket-editorial.png",
+          "natural": [
+            2160,
+            2700
+          ],
+          "box": [
+            1080,
+            1920
+          ],
+          "scale": 0.7111111111111111,
+          "sourcePxPerOutputPx": 1.41
+        }
+      ],
+      "warnings": [
+        {
+          "level": "warn",
+          "msg": "campaign-kids-winter-jacket-editorial.png is sharp at delivery size but below 2× supersampling (1.41 source px per output px). A larger original will look crisper."
+        }
+      ]
+    },
+    {
+      "format": "square",
+      "size": "1080x1080",
+      "master": "output/_masters/kids-winter-jacket-2026-11/square@2x.png",
+      "files": [
+        "output/instagram/kids-winter-jacket-2026-11/square.jpg",
+        "output/facebook/kids-winter-jacket-2026-11/square.jpg",
+        "output/whatsapp/kids-winter-jacket-2026-11/square.jpg"
+      ],
+      "photos": [
+        {
+          "src": "campaign-kids-winter-jacket-editorial.png",
+          "natural": [
+            2160,
+            2700
+          ],
+          "box": [
+            1080,
+            1080
+          ],
+          "scale": 0.5,
+          "sourcePxPerOutputPx": 2
+        }
+      ],
+      "warnings": []
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+{
+  "$comment": "Centralized Fashion Brand Knowledge Base for Monavi Collection. Used by AI agents, skills, and renderers.",
+  "brand": {
+    "name": "Monavi Collection",
+    "wordmark": "MONAVI",
+    "descriptor": "COLLECTION",
+    "tagline": "Wear Your Story",
+    "positioning": "Premium family fashion boutique blending traditional Indian roots with contemporary styling and editorial elegance.",
+    "market": "India & Global Indian Diaspora",
+    "categories": [
+      "Men's Wear",
+      "Women's Wear",
+      "Kids' Wear",
+      "Bridal Wear",
+      "Festive Wear",
+      "Ethnic Wear",
+      "Everyday Wear"
+    ],
+    "visualPersonality": [
+      "Premium",
+      "Elegant",
+      "Modern Indian Fashion",
+      "Traditional Roots",
+      "Contemporary Styling",
+      "Luxury Editorial Photography"
+    ]
+  },
+
+  "paletteRules": {
+    "bridal": {
+      "primary": "#560E24",
+      "secondary": "#8E5E38",
+      "background": "#330C0D",
+      "accent": "#F5CDB4",
+      "text": "#FAF9F6",
+      "mood": "Regal, opulent, emotional, timeless deep wine and antique gold"
+    },
+    "festive": {
+      "primary": "#560E24",
+      "secondary": "#8E5E38",
+      "background": "#330C0D",
+      "accent": "#F5CDB4",
+      "text": "#FBEBDD",
+      "mood": "Warm celebratory amber, rich maroon, radiant gold accents"
+    },
+    "ladies": {
+      "primary": "#D9A5A8",
+      "secondary": "#560E24",
+      "background": "#FAF9F6",
+      "accent": "#DCC8B1",
+      "text": "#1F1F1F",
+      "mood": "Breezy elegance, soft blush, peach, warm ivory, timeless comfort"
+    },
+    "mens": {
+      "primary": "#06111A",
+      "secondary": "#0B1B2B",
+      "background": "#06111A",
+      "accent": "#DCC8B1",
+      "text": "#FAF9F6",
+      "mood": "Tailored confidence, midnight slate, navy blue, clean ivory, modern structured lines"
+    },
+    "kids": {
+      "primary": "#8A987A",
+      "secondary": "#E8B931",
+      "background": "#FAF9F6",
+      "accent": "#7FA04B",
+      "text": "#1F1F1F",
+      "mood": "Joyful, cheerful daylight, botanical sage, playful sunny yellow, soft ivory"
+    },
+    "everyday": {
+      "primary": "#8A987A",
+      "secondary": "#DCC8B1",
+      "background": "#FAF9F6",
+      "accent": "#1F1F1F",
+      "text": "#1F1F1F",
+      "mood": "Understated luxury, sage green, warm beige, crisp charcoal typography"
+    }
+  },
+
+  "typographyGuidelines": {
+    "headings": {
+      "primary": "Playfair Display",
+      "alternatives": ["Cormorant Garamond", "Didot"],
+      "weights": [400, 500, 600, 700],
+      "style": "High-contrast editorial serif, refined proportions, graceful serifs"
+    },
+    "supporting": {
+      "primary": "Montserrat",
+      "alternatives": ["Poppins", "Lato"],
+      "weights": [400, 500, 600],
+      "style": "Clean geometric sans-serif, wide tracking on labels, uppercase category badges"
+    },
+    "rules": [
+      "Large editorial headlines with strong negative space",
+      "All-caps brand name with wide character tracking (0.15em - 0.35em)",
+      "Attribute triplets separated by vertical bar ' | '",
+      "Readable CTA button with right arrow icon",
+      "Strict hierarchy: Logo -> Eyebrow -> Headline -> Subline/Attributes -> CTA -> Category Badge"
+    ]
+  },
+
+  "garmentTaxonomy": {
+    "kurta-pajama": {
+      "category": "mens",
+      "audience": "men",
+      "collection": "mens",
+      "theme": "mens",
+      "festiveTheme": "festive",
+      "icon": "shirt",
+      "badge": "Men's Wear",
+      "template": "split",
+      "alternativeTemplate": "overlay",
+      "referenceBlueprint": "mens-everyday",
+      "attrs": ["Classic", "Comfortable", "Festive-ready"],
+      "fabrics": ["Raw Silk", "Chanderi Cotton", "Linen Silk", "Jacquard"],
+      "colors": ["Midnight Black", "Royal Navy", "Ivory Cream", "Wine Maroon", "Emerald Green"],
+      "occasions": ["festive", "wedding-guest", "everyday-ethnic", "diwali", "eid"],
+      "hashtags": ["#KurtaPajama", "#MensEthnicWear", "#MensFashion", "#MonaviMen"]
+    },
+    "sherwani": {
+      "category": "mens",
+      "audience": "groom",
+      "collection": "bridal",
+      "theme": "festive",
+      "icon": "shirt",
+      "badge": "Men's Wear",
+      "template": "overlay",
+      "alternativeTemplate": "split",
+      "referenceBlueprint": "festive-duo",
+      "attrs": ["Regal", "Tailored", "Wedding-ready"],
+      "fabrics": ["Banarasi Brocade", "Raw Silk with Zardozi", "Velvet Embroidered"],
+      "colors": ["Antique Ivory", "Champagne Gold", "Royal Maroon", "Deep Navy"],
+      "occasions": ["wedding", "reception", "royal-event"],
+      "hashtags": ["#Sherwani", "#GroomWear", "#WeddingSeason", "#RoyalSherwani", "#IndianGroom"]
+    },
+    "mens-shirt": {
+      "category": "mens",
+      "audience": "men",
+      "collection": "mens",
+      "theme": "mens",
+      "icon": "shirt",
+      "badge": "Men's Wear",
+      "template": "split",
+      "alternativeTemplate": "overlay",
+      "referenceBlueprint": "mens-everyday",
+      "attrs": ["Classic", "Modern", "Versatile"],
+      "fabrics": ["Egyptian Cotton", "Crisp Linen", "Oxford Weave"],
+      "colors": ["Sky Blue", "Crisp White", "Midnight Navy", "Sage Green", "Charcoal"],
+      "occasions": ["everyday", "smart-casual", "office-wear", "evening"],
+      "hashtags": ["#MensShirt", "#SmartCasual", "#MensStyle", "#EverydayConfidence"]
+    },
+    "mens-tshirt": {
+      "category": "mens",
+      "audience": "men",
+      "collection": "mens",
+      "theme": "mens",
+      "icon": "shirt",
+      "badge": "Men's Wear",
+      "template": "split",
+      "alternativeTemplate": "overlay",
+      "referenceBlueprint": "mens-everyday",
+      "attrs": ["Essential", "Breathable", "Everyday"],
+      "fabrics": ["Combed Pima Cotton", "Bio-washed Cotton", "Linen Blend"],
+      "colors": ["Obsidian Black", "Optic White", "Heather Grey", "Olive Sage", "Navy"],
+      "occasions": ["casual", "weekend", "everyday", "travel"],
+      "hashtags": ["#MensTshirt", "#CasualWear", "#EverydayStyle", "#MonaviBasics"]
+    },
+    "mens-trouser": {
+      "category": "mens",
+      "audience": "men",
+      "collection": "mens",
+      "theme": "mens",
+      "icon": "shirt",
+      "badge": "Men's Wear",
+      "template": "split",
+      "alternativeTemplate": "overlay",
+      "referenceBlueprint": "mens-everyday",
+      "attrs": ["Tailored", "Comfortable", "Sharp"],
+      "fabrics": ["Stretch Cotton Chino", "Wool Blend", "Tailored Linen"],
+      "colors": ["Khaki Beige", "Charcoal Grey", "Navy Blue", "Olive"],
+      "occasions": ["formal", "smart-casual", "office", "everyday"],
+      "hashtags": ["#MensTrousers", "#TailoredPants", "#SmartWear", "#MensFashion"]
+    },
+    "mens-blazer": {
+      "category": "mens",
+      "audience": "men",
+      "collection": "mens",
+      "theme": "mens",
+      "icon": "shirt",
+      "badge": "Men's Wear",
+      "template": "split",
+      "alternativeTemplate": "overlay",
+      "referenceBlueprint": "mens-everyday",
+      "attrs": ["Structured", "Sophisticated", "Contemporary"],
+      "fabrics": ["Italian Wool Blend", "Linen Silk", "Structured Velvet"],
+      "colors": ["Midnight Blue", "Classic Black", "Camel Brown", "Forest Green"],
+      "occasions": ["cocktail", "reception", "formal", "business-luxe"],
+      "hashtags": ["#MensBlazer", "#Suiting", "#LuxuryMenswear", "#CocktailAttire"]
+    },
+    "nehru-jacket": {
+      "category": "mens",
+      "audience": "men",
+      "collection": "mens",
+      "theme": "mens",
+      "icon": "shirt",
+      "badge": "Men's Wear",
+      "template": "split",
+      "alternativeTemplate": "arch",
+      "referenceBlueprint": "mens-everyday",
+      "attrs": ["Classic", "Sharp", "Versatile"],
+      "fabrics": ["Raw Silk", "Jute Silk Blend", "Tweed", "Jacquard"],
+      "colors": ["Rust Gold", "Sage Green", "Burgundy", "Slate Navy"],
+      "occasions": ["festive", "wedding-guest", "family-gathering"],
+      "hashtags": ["#NehruJacket", "#Bandi", "#MensEthnicWear", "#FestiveLook"]
+    },
+    "saree": {
+      "category": "ladies",
+      "audience": "women",
+      "collection": "festive",
+      "theme": "festive",
+      "icon": "dress",
+      "badge": "Ladies Wear",
+      "template": "overlay",
+      "alternativeTemplate": "arch",
+      "referenceBlueprint": "festive-ladies",
+      "attrs": ["Graceful", "Timeless", "Handcrafted look"],
+      "fabrics": ["Kanjeevaram Silk", "Banarasi Brocade", "Organza with Zari", "Chanderi"],
+      "colors": ["Ruby Crimson", "Emerald Green", "Royal Purple", "Champagne Gold", "Blush Pink"],
+      "occasions": ["festive", "wedding", "puja", "cocktail"],
+      "hashtags": ["#Saree", "#SareeLove", "#IndianEthnicWear", "#HeritageSaree", "#FestiveDrape"]
+    },
+    "lehenga": {
+      "category": "bridal",
+      "audience": "bride",
+      "collection": "bridal",
+      "theme": "festive",
+      "icon": "lotus",
+      "badge": "Bridal",
+      "template": "overlay",
+      "alternativeTemplate": "split",
+      "referenceBlueprint": "bridal",
+      "attrs": ["Timeless", "Handcrafted look", "Celebration-ready"],
+      "fabrics": ["Velvet Silk", "Raw Silk with Dabka", "Georgette with Mukaish", "Tulle"],
+      "colors": ["Deep Crimson", "Rich Burgundy", "Rose Gold", "Sage Emerald", "Ivory Gold"],
+      "occasions": ["bridal", "wedding", "sangeet", "reception"],
+      "hashtags": ["#BridalLehenga", "#IndianBride", "#LehengaLove", "#WeddingCouture", "#MonaviBride"]
+    },
+    "anarkali": {
+      "category": "ladies",
+      "audience": "women",
+      "collection": "festive",
+      "theme": "festive",
+      "icon": "dress",
+      "badge": "Ladies Wear",
+      "template": "overlay",
+      "alternativeTemplate": "arch",
+      "referenceBlueprint": "festive-ladies",
+      "attrs": ["Flowing", "Regal", "Festive"],
+      "fabrics": ["Georgette", "Chanderi Silk", "Mulmul with Gota Patti"],
+      "colors": ["Deep Maroon", "Mustard Ochre", "Teal Blue", "Peach Blush"],
+      "occasions": ["festive", "sangeet", "mehendi", "celebration"],
+      "hashtags": ["#Anarkali", "#AnarkaliSuit", "#FestiveDresses", "#FlowingSilhouette"]
+    },
+    "sharara": {
+      "category": "ladies",
+      "audience": "women",
+      "collection": "festive",
+      "theme": "festive",
+      "icon": "dress",
+      "badge": "Ladies Wear",
+      "template": "overlay",
+      "alternativeTemplate": "split",
+      "referenceBlueprint": "festive-ladies",
+      "attrs": ["Flared", "Dramatic", "Celebration-ready"],
+      "fabrics": ["Crepe Georgette", "Raw Silk Kurti with Flared Pants", "Tissue Silk"],
+      "colors": ["Emerald Green", "Rust Amber", "Rani Pink", "Champagne Gold"],
+      "occasions": ["mehendi", "sangeet", "eid", "festive-soiree"],
+      "hashtags": ["#ShararaSuit", "#ShararaLove", "#FestiveVibes", "#EthnicGlamour"]
+    },
+    "gharara": {
+      "category": "ladies",
+      "audience": "women",
+      "collection": "festive",
+      "theme": "festive",
+      "icon": "dress",
+      "badge": "Ladies Wear",
+      "template": "overlay",
+      "alternativeTemplate": "arch",
+      "referenceBlueprint": "festive-ladies",
+      "attrs": ["Heritage Cut", "Intricate", "Regal"],
+      "fabrics": ["Brocade", "Georgette with Zari Borders", "Velvet"],
+      "colors": ["Deep Wine", "Antique Olive", "Rose Gold", "Royal Plum"],
+      "occasions": ["wedding-festivities", "eid", "heritage-celebration"],
+      "hashtags": ["#GhararaSuit", "#HeritageCouture", "#NawabiGrace", "#IndianTradition"]
+    },
+    "kurti": {
+      "category": "ladies",
+      "audience": "women",
+      "collection": "ladies",
+      "theme": "ladies",
+      "icon": "dress",
+      "badge": "Ladies Wear",
+      "template": "overlay",
+      "alternativeTemplate": "split",
+      "referenceBlueprint": "ladies-contemporary",
+      "attrs": ["Elegant", "Comfortable", "Timeless"],
+      "fabrics": ["Handloom Cotton", "Chikankari Mulmul", "Linen Silk", "Rayon Blend"],
+      "colors": ["Soft Sage", "Blush Pink", "Warm Peach", "Ivory White", "Sky Blue"],
+      "occasions": ["everyday", "workwear", "casual-outings", "brunch"],
+      "hashtags": ["#Kurti", "#ChikankariKurti", "#ComfortFashion", "#EverydayEthnic"]
+    },
+    "salwar-suit": {
+      "category": "ladies",
+      "audience": "women",
+      "collection": "ladies",
+      "theme": "ladies",
+      "icon": "dress",
+      "badge": "Ladies Wear",
+      "template": "overlay",
+      "alternativeTemplate": "split",
+      "referenceBlueprint": "ladies-contemporary",
+      "attrs": ["Classic", "Graceful", "All-day comfort"],
+      "fabrics": ["Chanderi Cotton", "Jamdani Weave", "Modal Silk", "Lawn Cotton"],
+      "colors": ["Dusty Rose", "Pistachio Green", "Warm Ivory", "Mustard Yellow"],
+      "occasions": ["everyday-grace", "festive-morning", "puja", "family-gathering"],
+      "hashtags": ["#SalwarSuit", "#PunjabiSuit", "#AuthenticEthnic", "#IndianAttire"]
+    },
+    "co-ord-set": {
+      "category": "ladies",
+      "audience": "women",
+      "collection": "ladies",
+      "theme": "ladies",
+      "icon": "dress",
+      "badge": "Ladies Wear",
+      "template": "overlay",
+      "alternativeTemplate": "split",
+      "referenceBlueprint": "ladies-contemporary",
+      "attrs": ["Chic", "Modern", "Effortless"],
+      "fabrics": ["Printed Silk Blend", "Linen Slub", "Modal Satin"],
+      "colors": ["Earthy Terracotta", "Botanical Green", "Oatmeal Beige", "Indigo"],
+      "occasions": ["smart-casual", "vacation-luxe", "weekend", "contemporary-festive"],
+      "hashtags": ["#CoordSet", "#ModernEthnic", "#ChicSilhouette", "#ContemporaryIndian"]
+    },
+    "gown": {
+      "category": "ladies",
+      "audience": "women",
+      "collection": "bridal",
+      "theme": "festive",
+      "icon": "dress",
+      "badge": "Bridal",
+      "template": "overlay",
+      "alternativeTemplate": "split",
+      "referenceBlueprint": "bridal",
+      "attrs": ["Dramatic", "Floor-sweeping", "Evening-ready"],
+      "fabrics": ["Duchess Satin", "Embroidered Tulle", "Organza with Crystals"],
+      "colors": ["Champagne Gold", "Midnight Sapphire", "Burgundy Wine", "Emerald Green"],
+      "occasions": ["reception", "cocktail-night", "red-carpet-event"],
+      "hashtags": ["#EveningGown", "#IndoWesternGown", "#CocktailDresses", "#ReceptionLook"]
+    },
+    "kids-floral-dress": {
+      "category": "kids",
+      "audience": "kids_girls",
+      "collection": "kids",
+      "theme": "kids",
+      "icon": "kids",
+      "badge": "Kids Wear",
+      "template": "arch",
+      "alternativeTemplate": "overlay",
+      "referenceBlueprint": "kids-wear",
+      "attrs": ["Cheerful", "Breathable", "Playful"],
+      "fabrics": ["Organic Cotton Mulmul", "Linen Cotton", "Soft Tulle"],
+      "colors": ["Sunshine Yellow", "Floral Peach", "Garden Mint", "Pastel Pink"],
+      "occasions": ["daytime-party", "summer-holiday", "playtime", "family-lunch"],
+      "hashtags": ["#KidsDress", "#LittleStyles", "#GirlsFashion", "#SunshineOutfit"]
+    },
+    "kids-kurta-pajama": {
+      "category": "kids",
+      "audience": "kids_boys",
+      "collection": "kids",
+      "theme": "kids",
+      "icon": "kids",
+      "badge": "Kids Wear",
+      "template": "arch",
+      "alternativeTemplate": "overlay",
+      "referenceBlueprint": "kids-wear",
+      "attrs": ["Smart", "Comfortable", "Festive"],
+      "fabrics": ["Soft Cotton Silk", "Linen", "Mulmul lining"],
+      "colors": ["Turquoise Blue", "Bright Yellow", "Pistachio Green", "Royal White"],
+      "occasions": ["festivals", "family-weddings", "puja", "cultural-day"],
+      "hashtags": ["#KidsKurta", "#BoysEthnic", "#LittlePrince", "#FestiveKids"]
+    },
+    "kids-ethnic-set": {
+      "category": "kids",
+      "audience": "kids",
+      "collection": "kids",
+      "theme": "kids",
+      "icon": "kids",
+      "badge": "Kids Wear",
+      "template": "arch",
+      "alternativeTemplate": "overlay",
+      "referenceBlueprint": "kids-wear",
+      "attrs": ["Comfortable", "Playful", "Everyday"],
+      "fabrics": ["Bio-washed Cotton", "Gentle Silk Blend"],
+      "colors": ["Marigold Yellow", "Peacock Green", "Coral Red", "Ivory"],
+      "occasions": ["festivals", "birthdays", "celebrations"],
+      "hashtags": ["#KidsWear", "#LittleSmiles", "#ComfortForKids", "#MonaviKids"]
+    }
+  },
+
+  "photographyPromptTemplates": {
+    "workflowA_textToPhotorealism": {
+      "camera": "Shot on Hasselblad H6D-100c, 85mm f/1.4 lens, shutter speed 1/250s, ISO 64",
+      "lighting": "Commercial editorial fashion lighting with massive softbox octabank and gentle bounce fill, natural micro-shadows, soft rim light highlighting fabric texture",
+      "modelPreservation": "Professional Indian fashion model with elegant poised posture, natural skin pores, realistic human anatomy, hands and fingers perfectly formed, graceful expression",
+      "fabricRendering": "True-to-life textile weave, tangible drape, metallic embroidery catchlights without blown-out highlights",
+      "composition": "Cinematic framing leaving generous negative space in the left 40% or lower 30% for editorial typography and brand logo lockup"
+    },
+    "workflowB_garmentPreservation": {
+      "integrityRules": [
+        "Maintain identical garment silhouette, seam lines, collar cut, and hemline length",
+        "Preserve exact fabric texture (slub, sheen, opacity, fall)",
+        "Lock motif placement, zari embroidery scale, and button details without inventing new decorations",
+        "Retain garment color balance while calibrating environmental color temperature to match the scene background"
+      ]
+    }
+  },
+
+  "reelStoryboardFramework": {
+    "structure": [
+      {
+        "scene": 1,
+        "name": "Visual Hook",
+        "focus": "Atmosphere & Setting",
+        "duration": 2.2,
+        "motion": "zoom-in",
+        "directive": "Establishing wide or medium shot of the model in an authentic architectural setting (heritage haveli archway, sunlight streaming through jali screen, or high-end minimalist boutique). Dynamic subtle motion."
+      },
+      {
+        "scene": 2,
+        "name": "Garment Silhouette Reveal",
+        "focus": "Full Outfit Flow",
+        "duration": 2.8,
+        "motion": "pan-right",
+        "directive": "Medium-full shot revealing the outfit in motion. Confident, graceful walk or slight turn highlighting the fall of the fabric and flattering tailoring."
+      },
+      {
+        "scene": 3,
+        "name": "Craftsmanship & Macro Details",
+        "focus": "Texture & Embroidery",
+        "duration": 2.2,
+        "motion": "zoom-in",
+        "directive": "Macro close-up capturing tactile craftsmanship: shimmering zari threadwork, delicate hand-pleats, woven borders, or premium horn buttons."
+      },
+      {
+        "scene": 4,
+        "name": "Hero Editorial Moment",
+        "focus": "Pose & Lifestyle Confidence",
+        "duration": 2.6,
+        "motion": "zoom-out",
+        "directive": "Iconic full-portrait shot showcasing the model expressing the collection's emotional feeling ('Everyday Style. Lasting Confidence' or 'Timeless Elegance')."
+      },
+      {
+        "scene": 5,
+        "name": "Brand Identity & Action",
+        "focus": "Signature End Card",
+        "duration": 2.4,
+        "motion": "none",
+        "directive": "Clean brand end card featuring the Monavi Collection star mark, Playfair wordmark, 'WEAR YOUR STORY' tagline, and prominent CTA."
+      }
+    ]
+  }
+}

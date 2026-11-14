@@ -16,6 +16,8 @@
     "typecheck": "tsc --noEmit",
     "import:photo": "node scripts/import-photo.ts",
     "draw:product": "node scripts/draw-product.ts",
+    "fashion:image": "node scripts/fashion-image.ts",
+    "test:fashion": "node scripts/test-fashion-automation.ts",
     "plan": "node scripts/publish-plan.ts",
     "clean:output": "node scripts/clean-output.ts",
     "clean:branches": "node scripts/clean-branches.ts",

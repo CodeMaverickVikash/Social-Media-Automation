@@ -1,0 +1,26 @@
+{
+  "slug": "boys-festive-kurta-2026-11",
+  "template": "arch",
+  "theme": "kids",
+  "photo": "assets/photos/boys-festive-kurta-2026-11/campaign-kurta-pajama-editorial.png",
+  "eyebrow": "LITTLE ONES",
+  "headline": "Little Styles,\nBig Smiles.",
+  "attrs": [
+    "Smart",
+    "Comfortable",
+    "Festive"
+  ],
+  "cta": "Explore Collection",
+  "badge": {
+    "icon": "kids",
+    "label": "Kids Wear"
+  },
+  "formats": [
+    "ig-feed",
+    "story"
+  ],
+  "platforms": [
+    "instagram",
+    "whatsapp"
+  ]
+}

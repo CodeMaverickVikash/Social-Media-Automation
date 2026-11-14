@@ -130,13 +130,17 @@ export interface Theme {
 }
 
 export const THEMES: Record<string, Theme> = {
-  light:   { text: '#1F1F1F', logo: '#1F1F1F', scrim: '250,249,246', ctaBg: '#1F1F1F', ctaFg: '#FAF9F6', panel: '#FAF9F6', accent: '#D9A5A8' },
-  ladies:  { text: '#1F1F1F', logo: '#1F1F1F', scrim: '250,240,232', ctaBg: '#560E24', ctaFg: '#FAF9F6', panel: '#FAF9F6', accent: '#D9A5A8' },
-  dark:    { text: '#FAF9F6', logo: '#FAF9F6', scrim: '31,31,31',    ctaBg: '#FAF9F6', ctaFg: '#1F1F1F', panel: '#1F1F1F', accent: '#DCC8B1' },
-  festive: { text: '#FBEBDD', logo: '#F5CDB4', scrim: '51,12,13',    ctaBg: '#FAF9F6', ctaFg: '#1F1F1F', panel: '#330C0D', accent: '#F5CDB4' },
-  mens:    { text: '#FAF9F6', logo: '#FAF9F6', scrim: '6,17,26',     ctaBg: 'transparent', ctaFg: '#FAF9F6', ctaBorder: '#DCC8B1', panel: '#06111A', accent: '#DCC8B1' },
-  kids:    { text: '#1F1F1F', logo: '#1F1F1F', scrim: '250,249,246', ctaBg: '#1F1F1F', ctaFg: '#F5CDB4', panel: '#FAF9F6', accent: '#8A987A' },
-  sage:    { text: '#1F1F1F', logo: '#1F1F1F', scrim: '250,249,246', ctaBg: '#8A987A', ctaFg: '#FAF9F6', panel: '#FAF9F6', accent: '#8A987A' },
+  light:      { text: '#1F1F1F', logo: '#1F1F1F', scrim: '250,249,246', ctaBg: '#1F1F1F', ctaFg: '#FAF9F6', panel: '#FAF9F6', accent: '#D9A5A8' },
+  ladies:     { text: '#1F1F1F', logo: '#1F1F1F', scrim: '250,240,232', ctaBg: '#560E24', ctaFg: '#FAF9F6', panel: '#FAF9F6', accent: '#D9A5A8' },
+  dark:       { text: '#FAF9F6', logo: '#FAF9F6', scrim: '31,31,31',    ctaBg: '#FAF9F6', ctaFg: '#1F1F1F', panel: '#1F1F1F', accent: '#DCC8B1' },
+  festive:    { text: '#FBEBDD', logo: '#F5CDB4', scrim: '51,12,13',    ctaBg: '#FAF9F6', ctaFg: '#1F1F1F', panel: '#330C0D', accent: '#F5CDB4' },
+  bridal:     { text: '#F5CDB4', logo: '#F5CDB4', scrim: '51,12,13',    ctaBg: '#8E5E38', ctaFg: '#FAF9F6', panel: '#330C0D', accent: '#8E5E38' },
+  mens:       { text: '#FAF9F6', logo: '#FAF9F6', scrim: '6,17,26',     ctaBg: 'transparent', ctaFg: '#FAF9F6', ctaBorder: '#DCC8B1', panel: '#06111A', accent: '#DCC8B1' },
+  navy:       { text: '#FAF9F6', logo: '#FAF9F6', scrim: '11,27,43',    ctaBg: 'transparent', ctaFg: '#FAF9F6', ctaBorder: '#FAF9F6', panel: '#0B1B2B', accent: '#DCC8B1' },
+  kids:       { text: '#1F1F1F', logo: '#1F1F1F', scrim: '250,249,246', ctaBg: '#1F1F1F', ctaFg: '#F5CDB4', panel: '#FAF9F6', accent: '#8A987A' },
+  kidsYellow: { text: '#1F1F1F', logo: '#1F1F1F', scrim: '250,249,246', ctaBg: '#E8B931', ctaFg: '#1F1F1F', panel: '#FAF9F6', accent: '#7FA04B' },
+  sage:       { text: '#1F1F1F', logo: '#1F1F1F', scrim: '250,249,246', ctaBg: '#8A987A', ctaFg: '#FAF9F6', panel: '#FAF9F6', accent: '#8A987A' },
+  peach:      { text: '#1F1F1F', logo: '#1F1F1F', scrim: '250,212,192', ctaBg: '#560E24', ctaFg: '#FAF9F6', panel: '#FFFDF9', accent: '#FAD4C0' },
 };
 
 export function theme(name = 'light'): Theme {

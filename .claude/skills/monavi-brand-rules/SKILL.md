@@ -21,10 +21,10 @@ Never hard-code a colour, font or size that isn't in `brand.json`/`tokens.css`. 
 
 ## Non-negotiables
 
-1. **Palette:** Ivory `#FAF9F6`, Charcoal `#1F1F1F`, Rose `#D9A5A8`, Sage `#8A987A`, Beige `#DCC8B1`. Campaign colours (Maroon, Deep Wine, Champagne, Antique Gold, Midnight) only on photo-led creatives. One accent per creative.
-2. **Type:** Playfair Display (headlines, weight 400–500) + Montserrat (everything else). No third font.
+1. **Palette:** Ivory `#FAF9F6`, Charcoal `#1F1F1F`, Rose `#D9A5A8`, Sage `#8A987A`, Beige `#DCC8B1`. Campaign colours: Burgundy/Maroon (`#560E24`, `#4A0E17`), Deep Wine (`#330C0D`), Antique Gold (`#8E5E38`), Champagne (`#F5CDB4`), Midnight/Navy (`#06111A`, `#0B1B2B`), Peach (`#FAD4C0`), Kids Yellow (`#E8B931`) and Garden Green (`#7FA04B`). Use colors calibrated to the product category and campaign mood (see `brand/fashion-knowledge.json`).
+2. **Type:** Playfair Display (headlines, weight 400–700; fallbacks: Cormorant Garamond, Didot) + Montserrat (subheads, attrs, CTAs, labels, weight 400–600; fallbacks: Poppins, Lato). High-contrast serif headlines, uppercase brand name, wide letter spacing on labels.
 3. **Logo:** Use the inline vector lockup from `scripts/lib/brand.ts → logoSvg()`. Never use the PNGs over photos, because they have a baked ivory background. No stretching, recolouring, shadows or re-typing. Keep the clear space equal to the star's height.
-4. **Layout DNA:** logo top-left → Playfair headline → Montserrat attrs with ` | ` → CTA pill with arrow → category badge bottom-left.
+4. **Layout DNA:** Follow the 8 reference blueprints (`brand/reference-blueprints.json`): prominent logo top-left → editorial Playfair headline → Montserrat attrs separated with ` | ` → rounded-full CTA pill with arrow → category badge with thin line icon bottom-left. Model visually dominant with calibrated negative space for copy.
 5. **Quality:** no pixelation, ever. Source photos must cover their box at ≥1× (the renderer refuses below 1×, and 2× is ideal). Never upscale a small photo. Never ship anything smaller than the platform size. `--allow-lowres` is for internal drafts only and must never be published.
 6. **Facts:** never invent prices, discounts, addresses, phone numbers, store hours, fabric claims or stock. Use `brand.json → contact` or ask the user. If a contact field is empty, leave it out and tell the user.
 

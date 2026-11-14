@@ -38,16 +38,23 @@
   --sage: #8a987a;
   --beige: #dcc8b1;
 
-  /* Campaign palette — photo-led festive/bridal/men's creatives only */
+  /* Campaign palette — photo-led festive/bridal/men's/kids creatives */
   --maroon: #560e24;
+  --burgundy: #4a0e17;
   --deep-wine: #330c0d;
   --champagne: #f5cdb4;
   --antique-gold: #8e5e38;
   --midnight: #06111a;
+  --navy: #0b1b2b;
+  --peach: #fad4c0;
+  --rose-pink: #d9a5a8;
+  --sage-green: #8a987a;
+  --kids-yellow: #e8b931;
+  --kids-green: #7fa04b;
 
   /* Type */
-  --font-heading: "Playfair Display", Georgia, serif;
-  --font-body: "Montserrat", Arial, sans-serif;
+  --font-heading: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-body: "Montserrat", "Poppins", "Lato", Arial, sans-serif;
 
   /* Scale at 1080px width */
   --fs-display: 112px;

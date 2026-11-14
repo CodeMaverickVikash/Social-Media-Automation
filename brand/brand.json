@@ -19,11 +19,12 @@
   },
 
   "collections": [
-    { "id": "bridal",  "name": "Bridal Collection", "items": ["Lehengas", "Sarees", "Gowns", "Custom Fits"], "mood": "timeless, regal, emotional" },
-    { "id": "festive", "name": "Festive Collection", "items": ["Lehengas", "Sarees", "Anarkalis", "Suits"], "mood": "warm, celebratory, rich" },
-    { "id": "ladies",  "name": "Ladies Wear", "items": ["Kurtis", "Anarkalis", "Suits", "Dresses"], "mood": "elegant, comfortable, timeless" },
-    { "id": "mens",    "name": "Men's Wear", "items": ["Shirts", "Kurtas", "Trousers", "Ethnic Sets"], "mood": "classic, modern, versatile" },
-    { "id": "kids",    "name": "Kids Wear", "items": ["Dresses", "Polos", "Shorts", "Ethnic Sets"], "mood": "playful, comfortable, everyday" }
+    { "id": "bridal",  "name": "Bridal Collection", "items": ["Lehengas", "Sarees", "Gowns", "Sherwanis", "Custom Fits"], "mood": "timeless, regal, emotional" },
+    { "id": "festive", "name": "Festive Collection", "items": ["Lehengas", "Sarees", "Anarkalis", "Shararas", "Ghararas", "Kurtas"], "mood": "warm, celebratory, rich" },
+    { "id": "ladies",  "name": "Ladies Wear", "items": ["Kurtis", "Anarkalis", "Suits", "Palazzos", "Co-ord Sets", "Dresses"], "mood": "elegant, comfortable, timeless" },
+    { "id": "mens",    "name": "Men's Wear", "items": ["Kurtas", "Shirts", "Trousers", "T-shirts", "Blazers", "Nehru Jackets", "Ethnic Sets"], "mood": "classic, modern, versatile" },
+    { "id": "kids",    "name": "Kids Wear", "items": ["Floral Dresses", "Frocks", "Kurtas", "Ethnic Sets", "Shirts"], "mood": "playful, comfortable, everyday" },
+    { "id": "everyday","name": "Everyday Wear", "items": ["Kurtis", "Shirts", "Trousers", "T-shirts", "Casual Suits"], "mood": "understated luxury, all-day ease" }
   ],
 
   "products": {
@@ -40,7 +41,16 @@
     "gown":           { "name": "Gown",            "for": "women", "collection": "bridal",  "theme": "ladies",  "icon": "dress", "template": "arch", "attrs": ["Graceful", "Statement", "Evening-ready"], "hashtags": ["#Gown", "#PartyWear", "#EveningWear"] },
     "kids-ethnic-set":{ "name": "Kids Ethnic Set", "for": "kids",  "collection": "kids",    "theme": "kids",    "icon": "kids",  "template": "arch", "attrs": ["Comfortable", "Festive", "Adorable"], "hashtags": ["#KidsWear", "#KidsEthnicWear", "#LittleStyles"] },
     "kids-kurta-pajama":{ "name": "Kids Kurta Pajama", "for": "kids", "collection": "kids", "theme": "kids",    "icon": "kids",  "template": "arch", "attrs": ["Comfortable", "Festive", "Smart"], "hashtags": ["#KidsKurta", "#KidsWear", "#LittleStyles"] },
-    "kids-frock":     { "name": "Frock",           "for": "kids",  "collection": "kids",    "theme": "kids",    "icon": "kids",  "template": "arch", "attrs": ["Playful", "Comfortable", "Everyday"], "hashtags": ["#KidsFrock", "#KidsWear", "#LittleStyles"] }
+    "kids-frock":     { "name": "Frock",           "for": "kids",  "collection": "kids",    "theme": "kids",    "icon": "kids",  "template": "arch", "attrs": ["Playful", "Comfortable", "Everyday"], "hashtags": ["#KidsFrock", "#KidsWear", "#LittleStyles"] },
+    "kids-floral-dress":{ "name": "Floral Dress",  "for": "kids",  "collection": "kids",    "theme": "kids",    "icon": "kids",  "template": "arch", "attrs": ["Cheerful", "Breathable", "Playful"], "hashtags": ["#KidsDress", "#LittleStyles", "#GirlsFashion"] },
+    "sharara":        { "name": "Sharara",         "for": "women", "collection": "festive", "theme": "festive", "icon": "dress", "template": "overlay", "attrs": ["Flared", "Dramatic", "Celebration-ready"], "hashtags": ["#ShararaSuit", "#ShararaLove", "#FestiveVibes"] },
+    "gharara":        { "name": "Gharara",         "for": "women", "collection": "festive", "theme": "festive", "icon": "dress", "template": "overlay", "attrs": ["Heritage Cut", "Intricate", "Regal"], "hashtags": ["#GhararaSuit", "#HeritageCouture", "#NawabiGrace"] },
+    "co-ord-set":     { "name": "Co-ord Set",      "for": "women", "collection": "ladies",  "theme": "ladies",  "icon": "dress", "template": "overlay", "attrs": ["Chic", "Modern", "Effortless"], "hashtags": ["#CoordSet", "#ModernEthnic", "#ContemporaryIndian"] },
+    "palazzo":        { "name": "Palazzo Set",     "for": "women", "collection": "ladies",  "theme": "ladies",  "icon": "dress", "template": "overlay", "attrs": ["Breezy", "Modern", "Versatile"], "hashtags": ["#PalazzoSet", "#KurtaPalazzo", "#LadiesWear"] },
+    "mens-tshirt":    { "name": "T-Shirt",         "for": "men",   "collection": "mens",    "theme": "mens",    "icon": "shirt", "template": "split", "attrs": ["Essential", "Breathable", "Everyday"], "hashtags": ["#MensTshirt", "#CasualWear", "#EverydayStyle"] },
+    "mens-trouser":   { "name": "Trousers",        "for": "men",   "collection": "mens",    "theme": "mens",    "icon": "shirt", "template": "split", "attrs": ["Tailored", "Comfortable", "Sharp"], "hashtags": ["#MensTrousers", "#TailoredPants", "#SmartWear"] },
+    "mens-blazer":    { "name": "Blazer",          "for": "men",   "collection": "mens",    "theme": "mens",    "icon": "shirt", "template": "split", "attrs": ["Structured", "Sophisticated", "Sharp"], "hashtags": ["#MensBlazer", "#Suiting", "#LuxuryMenswear"] },
+    "mens-jeans":     { "name": "Jeans",           "for": "men",   "collection": "mens",    "theme": "mens",    "icon": "shirt", "template": "split", "attrs": ["Classic", "Durable", "Comfort-fit"], "hashtags": ["#MensJeans", "#DenimStyle", "#CasualLook"] }
   },
 
   "colors": {
@@ -54,10 +64,17 @@
     "campaign": {
       "$comment": "Seen in approved campaign posters. Use only on photo-led festive/bridal creatives, never as the main UI colour.",
       "maroon":     { "hex": "#560E24", "role": "Festive/bridal CTA pill on light imagery" },
+      "burgundy":   { "hex": "#4A0E17", "role": "Rich burgundy for bridal and evening wear" },
       "deepWine":   { "hex": "#330C0D", "role": "Festive gradient shadow behind text" },
       "champagne":  { "hex": "#F5CDB4", "role": "Logo and headline on festive maroon imagery" },
       "antiqueGold":{ "hex": "#8E5E38", "role": "Logo/ornament on warm light imagery" },
-      "midnight":   { "hex": "#06111A", "role": "Men's wear text panel" }
+      "midnight":   { "hex": "#06111A", "role": "Men's wear text panel" },
+      "navy":       { "hex": "#0B1B2B", "role": "Men's tailored collection panel and scrim" },
+      "peach":      { "hex": "#FAD4C0", "role": "Soft lifestyle and women's contemporary tone" },
+      "rosePink":   { "hex": "#D9A5A8", "role": "Women's collection accent and soft backgrounds" },
+      "sageGreen":  { "hex": "#8A987A", "role": "Everyday elegant collections and botanical accents" },
+      "kidsYellow": { "hex": "#E8B931", "role": "Kids wear playful daylight and festive accents" },
+      "kidsGreen":  { "hex": "#7FA04B", "role": "Kids botanical and garden palette" }
     },
     "notes": "The palette board PNG prints Sage as #8A9B7A; the official vector (brand/logo/svg/11_brand_color_palette_4K.svg) uses #8A987A. The vector is treated as authoritative."
   },
@@ -123,7 +140,9 @@
     "square":      { "w": 1080, "h": 1080, "ratio": "1:1",  "platforms": ["instagram", "facebook", "whatsapp"], "use": "Carousels, WhatsApp catalogue/broadcast" },
     "story":       { "w": 1080, "h": 1920, "ratio": "9:16", "platforms": ["instagram", "facebook", "whatsapp"], "use": "Stories, WhatsApp Status, reel covers", "safe": { "top": 250, "bottom": 340, "side": 72 } },
     "fb-landscape":{ "w": 1200, "h": 630,  "ratio": "1.91:1", "platforms": ["facebook"], "use": "Link-style posts, events" },
-    "fb-cover":    { "w": 1640, "h": 624,  "ratio": "2.63:1", "platforms": ["facebook"], "use": "Facebook Page cover banner. Not scheduled by Buffer: set it in the Page settings. Keep text inside the centre 1280px (mobile crops the sides)", "safe": { "top": 56, "bottom": 56, "side": 180 } }
+    "fb-cover":    { "w": 1640, "h": 624,  "ratio": "2.63:1", "platforms": ["facebook"], "use": "Facebook Page cover banner. Not scheduled by Buffer: set it in the Page settings. Keep text inside the centre 1280px (mobile crops the sides)", "safe": { "top": 56, "bottom": 56, "side": 180 } },
+    "pin":         { "w": 1000, "h": 1500, "ratio": "2:3",  "platforms": ["pinterest"], "use": "Pinterest standard 2:3 vertical pin", "safe": { "top": 90, "bottom": 90, "side": 64 } },
+    "pin-long":    { "w": 1080, "h": 1920, "ratio": "9:16", "platforms": ["pinterest"], "use": "Pinterest Idea Pin / vertical video", "safe": { "top": 200, "bottom": 240, "side": 72 } }
   },
 
   "video": {

@@ -207,7 +207,7 @@ function card(b: PostBrief, f: Format): string {
 // heritage arch window on a calm panel, copy centred underneath.
 function arch(b: PostBrief, f: Format): string {
   const t = theme(b.theme ?? 'light');
-  const light = ['light', 'ladies', 'kids', 'sage'].includes(b.theme ?? 'light');
+  const light = ['light', 'ladies', 'kids', 'sage', 'peach', 'kidsYellow'].includes(b.theme ?? 'light');
   const bg = light ? '#FAF9F6' : t.panel;
   const archW = f.h <= 1080 ? 560 : f.h >= 1920 ? 820 : 680;
   const css = `
@@ -254,7 +254,7 @@ function banner(b: PostBrief, f: Format): string {
     throw new Error(`The banner template is for wide formats (fb-cover, fb-landscape), not ${f.key} (${f.w}×${f.h}). Use overlay, split, card or arch for this format.`);
   }
   const t = theme(b.theme ?? 'light');
-  const light = ['light', 'ladies', 'kids', 'sage'].includes(b.theme ?? 'light');
+  const light = ['light', 'ladies', 'kids', 'sage', 'peach', 'kidsYellow'].includes(b.theme ?? 'light');
   const bg = light ? '#FAF9F6' : t.panel;
   const k = f.h / 624;
   const px = (n: number) => Math.round(n * k);

@@ -38,11 +38,11 @@ Collect & set:
 
 | Input | How |
 |---|---|
-| **Product photo(s)** | A file path the user gives, or an image they attach. Import every photo: `npm run import:photo -- "<path>" [more…] --slug <slug>`. **No photo:** Claude draws an illustration locally with `npm run draw:product` or pairs with an approved reference post mood visual. |
-| **Product** | Match to `brand/brand.json → products`. If not listed, add it with appropriate attributes and hashtags. |
+| **Product photo(s)** | **Workflow A (No photo supplied):** Run `npm run fashion:image -- --slug <slug> --query "<prompt>"` to synthesize photorealistic Indian fashion campaign photography with calibrated negative space.<br>**Workflow B (Photo supplied):** Run `npm run fashion:image -- --slug <slug> --query "<description>" --input-photo "<path>"` to preserve 100% of authentic garment pixels while generating an editorial setting, or import directly with `npm run import:photo`. |
+| **Product** | Match to `brand/brand.json → products` and `brand/fashion-knowledge.json`. Automatically identifies garment type, textiles, cuts, and embellishments. |
 | **For whom** | Autonomously deduced using the matrix above (Men, Women, Kids/Boys/Girls, Bridal). Decides badge, icons, and tone. |
-| **Occasion** | Autonomously deduced from context: wedding, festive, everyday, or celebration. |
-| **Photo type** | **Model photo** → `overlay` template. **Product only** (hanger/mannequin/flat lay) → `arch` template. **Clean product/editorial** → `split`. Always mirror the finish of the matched reference archetype. |
+| **Occasion** | Autonomously deduced from context: wedding, festive, everyday, smart casual, or celebration. |
+| **Photo type** | **Model photo** → `overlay` template. **Men's smart casual/structured** → `split` template. **Product only** (hanger/mannequin/flat lay) → `arch` template. Always mirror the finish of the matched reference archetype. |
 | **Facts** | Prices, dates, address. Only take from `brand.json → contact` or user input. Never invent. |
 
 Slug: `<product>-<occasion|topic>-<yyyy-mm>`, e.g. `kurta-pajama-festive-2026-11`.
@@ -60,6 +60,7 @@ Default matrix. Trim it to the requested platforms. Print the plan as one short 
 | **Instagram** | `ig-feed` 4:5 | `story` 9:16 | `reel.mp4` 7–15s + cover | hook + details + CTA + 5–10 hashtags |
 | **Facebook** | `ig-feed` 4:5 (`fb-landscape` for events) | `story` 9:16 | same `reel.mp4` | warmer, more informative, 2–4 hashtags |
 | **WhatsApp** | `square` 1:1 (broadcast / catalogue) | `story` 9:16 (Status) | `reel.mp4` ≤ 60s | personal, 1–3 lines, no hashtags |
+| **Pinterest** | `pin` 2:3 (1000×1500) | `pin-long` 9:16 (Idea Pin) | same `reel.mp4` | search title + rich keyword description + board |
 
 - **One photo:** post + story + square (no reel; a reel needs ≥ 2 strong photos to feel alive).
 - **2–4 photos:** post + story + square + reel.

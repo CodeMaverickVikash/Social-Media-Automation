@@ -1,0 +1,41 @@
+---
+name: fashion-copywriting
+description: Write tailored, high-converting fashion captions, hooks, and hashtags for Instagram, Facebook, WhatsApp, and Pinterest matching Monavi Collection's brand voice.
+user-invocable: true
+argument-hint: "<slug> <garment or collection description>"
+---
+
+# Fashion Copywriting Skill — Monavi Collection
+
+## Purpose
+Crafts evocative, platform-optimized promotional copy, hooks, and hashtags for Monavi Collection across Instagram, Facebook, WhatsApp, and Pinterest.
+
+## Platform Standards
+
+| Platform | Primary Structure | Tone & Voice | Hashtag Rules | Key Constraints |
+|---|---|---|---|---|
+| **Instagram** | Hook (<= 125 chars) -> Craft/Drape specifics -> Gracious CTA | Poised, editorial, sensual appreciation of fabric | 5–10 targeted tags; includes `#MonaviCollection #WearYourStory` | Headline ends with full stop; 1–2 tasteful emojis |
+| **Facebook** | 1–3 short paragraphs with welcoming community storytelling | Warm, inviting, customer-focused | 2–4 hashtags | Can include boutique visit / consultation info |
+| **WhatsApp** | 1–3 conversational lines for Status or Broadcast | Stylist-to-client, personal, direct | **Strictly ZERO hashtags** | Max 2 emojis; clear reply action ("Reply to order") |
+| **Pinterest** | Pin Title (<= 100 chars) -> Search Description (<= 500 chars) -> Board | Informative, search-intent optimized | 3–5 high-volume search tags | Include fabric, color, silhouette, and occasion keywords |
+
+## Step-by-Step Workflow
+
+1. **Brand Voice Check**:
+   - Reference `brand/voice.md` for signature phrases:
+     - *"Wear Your Story"*
+     - *"Timeless Elegance for Your Special Day."*
+     - *"Traditional Roots, Modern Grace"*
+     - *"Everyday Style. Lasting Confidence."*
+     - *"Little Styles, Big Smiles."*
+
+2. **Generate Multi-Platform Copy**:
+   - Run the copy generator or formulate directly:
+     ```typescript
+     import { generateMultiPlatformContent, writeAllPlatformCaptions } from './lib/social-content.ts';
+     ```
+
+3. **Verify Constraints**:
+   - Zero invented facts: All prices, store hours, and addresses must originate strictly from `brand/brand.json -> contact`.
+   - Never claim "pure silk", "handmade zari", or "imported" unless explicitly noted in the creative brief.
+   - Deliver `caption.txt` into `output/<platform>/<slug>/caption.txt` for all active platforms.

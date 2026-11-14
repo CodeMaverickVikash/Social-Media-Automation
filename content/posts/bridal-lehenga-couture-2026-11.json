@@ -1,0 +1,27 @@
+{
+  "slug": "bridal-lehenga-couture-2026-11",
+  "template": "overlay",
+  "theme": "bridal",
+  "photo": "assets/photos/bridal-lehenga-couture-2026-11/campaign-lehenga-editorial.png",
+  "eyebrow": "BRIDAL COUTURE",
+  "headline": "Timeless Elegance\nfor Your Special Day.",
+  "attrs": [
+    "Lehengas",
+    "Sarees",
+    "Gowns",
+    "Custom Fits"
+  ],
+  "cta": "Book a Styling Session",
+  "badge": {
+    "icon": "lotus",
+    "label": "Bridal"
+  },
+  "formats": [
+    "ig-feed",
+    "story"
+  ],
+  "platforms": [
+    "instagram",
+    "facebook"
+  ]
+}

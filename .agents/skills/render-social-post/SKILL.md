@@ -36,7 +36,7 @@ Every new post should directly match the visual standards, typography hierarchy,
 - **Product + who it's for:** e.g. "kurta pajama for men". Look it up in `brand/brand.json → products` for theme, icon, attrs and hashtags. Add a new entry if it's missing.
 - **Goal / occasion:** new arrivals, festive, bridal, offer, store info, greeting
 - **Photo:** the user's product photo, imported with `npm run import:photo -- "<path>" --slug <slug>` (it lands in `assets/photos/<slug>/` and the import reports which layouts it can fill). Never use a remote URL, and never take a low-res screenshot of Instagram.
-- **No photo? Claude draws it locally (mood / campaign posts only).** `npm run draw:product -- --slug <slug> --product <sherwani|kurta-pajama> [--occasion wedding|festive|everyday] [--garment "#hex"] [--accent "#hex"]`. This renders a vector fashion illustration (`scripts/templates/illustration.ts`) on a wide 3:2 stage for the `arch` template. There's no external service or API key; everything is made and edited locally. It is an illustration, not a photo: say so to the user and recommend a real photo for the photo-led reference look (`overlay`/`split`). AI garments are **not real stock**: keep the copy collection-level, with no claims about a specific piece, fabric, colour or price. Images the user made in another AI tool: `npm run import:photo -- "<path>" --slug <slug> --ai-generated`. The `.ai.json` sidecar marks the render as AI. Never delete it.
+- **No photo? Generate photorealistic campaign photography:** `npm run fashion:image -- --slug <slug> --query "<prompt>" --aspect 4:5`. Synthesizes high-res Indian fashion campaign photography with calibrated negative space and realistic model styling, or `npm run draw:product` for vector illustration. The `.ai.json` sidecar marks the render as AI.
 - **Facts:** prices, dates, offer terms, address. Only use facts the user gives you or that appear in `brand.json → contact`.
 
 ## 2. Pick a template and theme
@@ -49,8 +49,8 @@ Every new post should directly match the visual standards, typography hierarchy,
 | `card` | No photo: announcements, store hours, greetings, offers, quotes (**posters**) | `light` |
 | `banner` | **Wide formats only** (`fb-cover`, `fb-landscape`): text left, photo right (or sprigs with no photo) | `light` |
 
-Themes: `light`, `ladies` (maroon CTA), `dark`, `festive` (champagne on deep wine), `mens` (midnight panel, outline CTA), `kids`, `sage`.
-For festive/bridal photos with dark backgrounds use `festive`. For light, airy photos use `ladies`, `light` or `kids`.
+Themes: `light`, `ladies`, `dark`, `festive`, `bridal`, `mens`, `navy`, `kids`, `kidsYellow`, `sage`, `peach`.
+For festive/bridal photos use `festive` or `bridal`. For men's tailored collections use `mens` or `navy`. For light, airy photos use `ladies`, `peach`, `kids`, `kidsYellow` or `sage`.
 
 ## 3. Check photo resolution before writing the brief
 
@@ -64,6 +64,7 @@ Minimum source size so nothing is upscaled (the 2× column gives the crispest re
 | overlay, `ig-feed` 1080×1350 | covers 1080×1350 | 2160×2700 |
 | overlay, `story` 1080×1920 | covers 1080×1920 | 2160×3840 |
 | overlay, `square` | covers 1080×1080 | 2160×2160 |
+| overlay, `pin` 1000×1500 | covers 1000×1500 | 2000×3000 |
 | split photo box (605 wide) | covers 605×1350 | 1210×2700 |
 | arch window, `ig-feed` | covers ~680×760 | ~1360×1520 |
 | arch window, `story` | covers ~820×1150 | ~1640×2300 |

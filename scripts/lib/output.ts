@@ -11,7 +11,7 @@ import path from 'node:path';
 import { ROOT } from './brand.ts';
 
 export const OUTPUT = path.join(ROOT, 'output');
-export const PLATFORMS = ['instagram', 'facebook', 'whatsapp'] as const;
+export const PLATFORMS = ['instagram', 'facebook', 'whatsapp', 'pinterest'] as const;
 export type Platform = (typeof PLATFORMS)[number];
 
 export function assertSlug(slug: unknown): string {

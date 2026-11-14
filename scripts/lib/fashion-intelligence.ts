@@ -7,12 +7,14 @@ import path from 'node:path';
 import { ROOT } from './brand.ts';
 
 export type FashionCategory = 'mens' | 'ladies' | 'kids' | 'bridal' | 'festive' | 'everyday';
-export type TargetAudience = 'men' | 'women' | 'bride' | 'groom' | 'kids' | 'kids_boys' | 'kids_girls' | 'family';
+export type TargetAudience = 'men' | 'women' | 'bride' | 'groom' | 'couple' | 'kids' | 'kids_boys' | 'kids_girls' | 'family';
+export type ModelComposition = 'single' | 'duo_couple' | 'family';
 export type AgeGroup = 'adult' | 'young_adult' | 'child' | 'toddler';
 export type Occasion = 'wedding' | 'bridal' | 'festive' | 'everyday' | 'smart_casual' | 'cocktail' | 'summer' | 'party';
 
 export interface FashionAnalysis {
   category: FashionCategory;
+  modelComposition: ModelComposition;
   garmentType: string;
   garmentDisplayName: string;
   targetAudience: TargetAudience;
@@ -106,8 +108,24 @@ export function analyzeFashionRequest(query: string, options?: { hasProductImage
   // Check specific high-priority keywords
   const isKid = /\b(kid|kids|child|children|boy|boys|girl|girls|toddler|baby|little|frock)\b/i.test(q);
   const isMen = /\b(man|men|mens|men's|boy|groom|sherwani|kurta pajama|kurta pyjama|nehru jacket|bandhgala|blazer|shirt|trousers|pant|t-shirt|tee|jeans|pathani)\b/i.test(q);
-  const isBridal = /\b(bride|bridal|groom|wedding|trousseau|shaadi|dulhan|dulha|varmala)\b/i.test(q);
-  const isFestive = /\b(festive|festival|diwali|eid|navratri|durga|karwa|puja|celebration|mehendi|sangeet)\b/i.test(q);
+  const isBridal = /\b(bride|bridal|groom|wedding|trousseau|shaadi|shaad|dulhan|dulha|varmala)\b/i.test(q);
+  const isFestive = /\b(festive|festival|diwali|eid|navratri|durga|karwa|puja|celebration|mehendi|sangeet|seasion|season)\b/i.test(q);
+
+  // Autonomous Single vs Multiple Model Composition Detection:
+  // - Single Model: when the user explicitly requests a specific single garment or single gender (e.g. "for men", "for bride", "kids frock").
+  // - Multiple Models (Duo / Couple): when the prompt is a broad campaign/marketing post for a clothing business for wedding/festive without restricting to one gender, or explicitly requests couple/duo/jodi.
+  // - Multiple Models (Family): when family celebrations, whole family, or parents and kids are mentioned.
+  const isCoupleExplicit = /\b(couple|duo|pair|both|bride and groom|groom and bride|husband and wife|jodi)\b/i.test(q);
+  const isFamily = /\b(family|familly|puri\s*familly|puri\s*family|whole\s*family|parents\s*and\s*kids|family\s*wedding|family\s*collection)\b/i.test(q);
+  const hasSpecificSingleGender = /\b(for men|for man|for groom|for women|for woman|for bride|for girl|for boy|for kid|only bride|only groom|him|her)\b/i.test(q);
+  const isBroadCampaignOrStore = /\b(marketing post|campaign|clothing business|clothing store|clothing brand|boutique|wedding edit|shaadi edit|shaadi session|shaadi season|wedding season)\b/i.test(q);
+
+  let modelComposition: ModelComposition = 'single';
+  if (isFamily) {
+    modelComposition = 'family';
+  } else if (isCoupleExplicit || (isBroadCampaignOrStore && !hasSpecificSingleGender && (isBridal || isFestive))) {
+    modelComposition = 'duo_couple';
+  }
 
   // Match against known garment taxonomy in fashion-knowledge.json
   for (const [key, item] of Object.entries(k.garmentTaxonomy)) {
@@ -165,7 +183,21 @@ export function analyzeFashionRequest(query: string, options?: { hasProductImage
   }
 
   // Determine Audience & Category
-  if (isKid) {
+  if (modelComposition === 'family') {
+    category = (isBridal || q.includes('shaad') || q.includes('wedding')) ? 'bridal' : 'festive';
+    audience = 'family';
+    gender = 'unisex';
+    age = 'adult';
+    detectedGarmentKey = (isBridal || q.includes('shaad') || q.includes('wedding'))
+      ? 'shaadi-family-collection'
+      : 'festive-family-collection';
+  } else if (modelComposition === 'duo_couple') {
+    category = isBridal ? 'bridal' : 'festive';
+    audience = 'couple';
+    gender = 'unisex';
+    age = 'adult';
+    detectedGarmentKey = detectedGarmentKey || (isBridal ? 'shaadi-couple-collection' : 'festive-couple-duo');
+  } else if (isKid) {
     category = 'kids';
     age = 'child';
     if (/\b(girl|girls|daughter|frock|dress)\b/i.test(q)) {
@@ -235,9 +267,15 @@ export function analyzeFashionRequest(query: string, options?: { hasProductImage
   };
 
   // Determine Display Name
-  const garmentDisplayName = detectedGarmentKey
+  let garmentDisplayName = detectedGarmentKey
     ? detectedGarmentKey.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
     : 'Fashion Collection';
+
+  if (modelComposition === 'duo_couple') {
+    garmentDisplayName = (isBridal || occasion === 'wedding') ? 'Royal Shaadi Collection' : 'Festive Couple Collection';
+  } else if (modelComposition === 'family') {
+    garmentDisplayName = 'Festive Family Collection';
+  }
 
   // Determine Photography & Setting Direction
   let environment = 'Minimal luxury studio with soft architectural shadows and warm limestone textures';
@@ -245,7 +283,17 @@ export function analyzeFashionRequest(query: string, options?: { hasProductImage
   let modelPose = 'Poised and confident posture, natural eye contact, elegant stance';
   let negativeSpace: 'left' | 'bottom' | 'center' = 'left';
 
-  if (category === 'bridal') {
+  if (modelComposition === 'family') {
+    environment = 'Regal Indian heritage haveli courtyard with carved sandstone pillars and warm festive lantern glow';
+    lighting = 'Cinematic warm amber golden hour lighting, rich specular highlights on silks and zari';
+    modelPose = 'Joyful royal Indian family (Father, Mother, Children) standing poised together in celebratory elegance with warm authentic smiles';
+    negativeSpace = 'left';
+  } else if (modelComposition === 'duo_couple') {
+    environment = 'Regal Indian heritage palace courtyard, subtle jharokha arches, warm ambient lantern glow';
+    lighting = 'Cinematic warm amber lighting, golden hour highlights catching metallic zari embroidery';
+    modelPose = 'Royal Indian wedding couple (Duo) standing poised together: groom in tailored sherwani, bride in flared bridal lehenga with serene grace';
+    negativeSpace = 'left';
+  } else if (category === 'bridal') {
     environment = 'Regal Indian heritage palace courtyard, subtle jharokha arches, warm ambient lantern glow';
     lighting = 'Cinematic warm amber lighting, golden hour highlights catching metallic zari embroidery';
     modelPose = 'Graceful and regal royal bridal posture, head slightly tilted, serene celebratory confidence';
@@ -285,7 +333,20 @@ export function analyzeFashionRequest(query: string, options?: { hasProductImage
   let cta = 'Explore Collection';
   let attrs = garmentInfo.attrs || ['Classic', 'Comfortable', 'Timeless'];
 
-  if (category === 'mens') {
+  if (modelComposition === 'family') {
+    eyebrow = (isBridal || occasion === 'wedding' || q.includes('shaad')) ? 'SHAADI SEASON 2026' : 'FESTIVE COLLECTION';
+    headline = 'Family Wedding\nCollection.';
+    attrs = ['Men\'s | Ladies | Kids | Custom Fits'];
+    cta = 'Explore Family Edit';
+    garmentDisplayName = 'Royal Family Shaadi Collection';
+  } else if (modelComposition === 'duo_couple') {
+    eyebrow = (isBridal || occasion === 'wedding') ? 'SHAADI SEASON 2026' : 'FESTIVE COLLECTION';
+    headline = (isBridal || occasion === 'wedding') ? 'Royal Wedding\nCollection.' : 'The Festive\nDuo.';
+    attrs = (isBridal || occasion === 'wedding')
+      ? ['Bridal & Groom', 'Royal Heritage', 'Bespoke Fit']
+      : ['Lehengas | Kurtas | Festive Edit'];
+    cta = 'Explore The Edit';
+  } else if (category === 'mens') {
     if (occasion === 'wedding' || detectedGarmentKey === 'sherwani') {
       headline = 'Traditional Roots,\nModern Grace.';
       attrs = ['Regal', 'Tailored', 'Wedding-ready'];
@@ -317,7 +378,11 @@ export function analyzeFashionRequest(query: string, options?: { hasProductImage
 
   // Suggested Hook
   let suggestedHook = `Experience the timeless grace of our new ${garmentDisplayName.toLowerCase()} collection. ✨`;
-  if (category === 'bridal') {
+  if (modelComposition === 'family') {
+    suggestedHook = `Celebrate shaadi season together in harmonized style. Discover complete wedding collections for the entire family. ✨👨‍👩‍👧‍👦`;
+  } else if (modelComposition === 'duo_couple') {
+    suggestedHook = `For the celebrations that unite two stories into one. Discover the Royal Shaadi Collection at Monavi. ✨💍`;
+  } else if (category === 'bridal') {
     suggestedHook = `Crafted for moments you'll cherish forever. Discover the regal Monavi Bridal Collection. 💍✨`;
   } else if (category === 'mens') {
     suggestedHook = `Tailored for everyday confidence and classic Indian sophistication. 👔✨`;
@@ -329,6 +394,7 @@ export function analyzeFashionRequest(query: string, options?: { hasProductImage
 
   return {
     category,
+    modelComposition,
     garmentType: detectedGarmentKey || 'ethnic-wear',
     garmentDisplayName,
     targetAudience: audience,

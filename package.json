@@ -7,6 +7,8 @@
     "node": ">=22.18"
   },
   "scripts": {
+    "manager": "node scripts/business-manager-cli.ts",
+    "test:manager": "node scripts/test-business-manager.ts",
     "doctor": "node scripts/doctor.ts",
     "sync:antigravity": "node scripts/sync-antigravity.ts",
     "render:post": "node scripts/render-post.ts",

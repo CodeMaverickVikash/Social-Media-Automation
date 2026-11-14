@@ -5,28 +5,46 @@
   "scenes": [
     {
       "photo": "assets/photos/dulhan-bridal-saree-2026-11/model-bridal-saree.png",
-      "duration": 2.8,
+      "duration": 3.2,
       "motion": "zoom-in",
       "eyebrow": "BRIDAL COUTURE",
       "headline": "Dulhan\nBridal Saree.",
-      "focus": "center 40%"
+      "subline": "Crafted for Your Royal Day",
+      "focus": "center 35%"
     },
     {
       "photo": "assets/photos/dulhan-bridal-saree-2026-11/model-bridal-saree-detail.png",
-      "duration": 3.0,
+      "duration": 3.2,
       "motion": "pan-right",
       "eyebrow": "HERITAGE WEAVES",
-      "headline": "Timeless\nGrace.",
+      "headline": "Intricate\nArtistry.",
       "attrs": [
         "Bridal Sarees",
         "Heritage Weaves",
         "Custom Fits"
       ],
+      "focus": "center 30%"
+    },
+    {
+      "photo": "assets/photos/dulhan-bridal-saree-2026-11/model-bridal-saree.png",
+      "duration": 3.4,
+      "motion": "pan-left",
+      "eyebrow": "TIMELESS GRACE",
+      "headline": "Bespoke\nElegance.",
+      "subline": "Woven with Royal Splendour",
+      "focus": "center 40%"
+    },
+    {
+      "photo": "assets/photos/dulhan-bridal-saree-2026-11/model-bridal-saree-detail.png",
+      "duration": 3.2,
+      "motion": "zoom-out",
+      "eyebrow": "MONAVI BRIDAL EDIT",
+      "headline": "Made for\nForever.",
       "focus": "center 35%"
     }
   ],
   "endCard": {
-    "duration": 2.5,
+    "duration": 2.6,
     "headline": "MONAVI COLLECTION",
     "line": "WEAR YOUR STORY",
     "cta": "Explore Bridal Edit",

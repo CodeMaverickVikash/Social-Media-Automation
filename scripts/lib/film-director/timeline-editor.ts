@@ -316,7 +316,7 @@ export async function createPlatformSpecificVersions(options: {
       const altReelPath = path.join(destDir, 'reel.mp4');
       if (!existsSync(altReelPath)) {
         await new Promise<void>((resolve, reject) => {
-          const args = ['-y', '-hide_banner', '-loglevel', 'error', '-i', destVideo, '-c', 'copy', altReelPath];
+          const args = ['-y', '-hide_banner', '-loglevel', 'error', '-i', destVideo, '-c', 'copy', '-movflags', '+faststart', altReelPath];
           const proc = spawn(ffmpegPath, args);
           proc.on('close', () => resolve());
         });

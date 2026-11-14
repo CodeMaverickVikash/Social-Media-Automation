@@ -12,6 +12,19 @@ Pipeline: **brief JSON → `npm run render:post` → visual review → QA → ca
 
 Read `brand/brand.json` and `brand/voice.md`, and follow the `monavi-brand-rules` skill rules. Look at the reference poster closest to the category in `brand/reference-posts/`.
 
+### Reference-Post Blueprint Library (`brand/reference-posts/`)
+
+Every new post should directly match the visual standards, typography hierarchy, and composition of the approved reference posts:
+
+| Category | Reference Post | Layout | Theme | Headline Style | Attribute Triplet | CTA & Badge |
+|---|---|---|---|---|---|---|
+| **Bridal** | `bridal-collection.png` | `overlay` | `festive` (Deep wine/champagne) | *"Timeless Elegance for Your Special Day."* or *"Bridal Collection"* | `Lehengas \| Sarees \| Gowns \| Custom Fits` | `Explore Collection →` / `Book a Styling Session →` · `lotus` icon ("Bridal") |
+| **Festive (Duo / Couple / Men's + Women's)** | `festive-collection-duo.png` | `overlay` | `festive` | *"Traditional roots,\nmodern grace."* | `Classic \| Comfortable \| Festive-ready` | `Explore Collection →` · `shirt` or `dress` icon |
+| **Festive (Single / Ladies)** | `festive-collection-single.png` | `overlay` | `festive` | *"Festive\nCollection"* | Subline: *"New Styles \| New Stories"* | `Explore Now →` · `dress` icon ("Ladies Wear") |
+| **Ladies Wear** | `ladies-wear-style-that-feels-like-you.png` | `overlay` | `ladies` | *"Style That Feels\nLike You."* | `Elegant \| Comfortable \| Timeless` | `Explore Collection →` · `dress` icon ("Ladies Wear") |
+| **Men's Wear / Kurta / Smart Casual** | `mens-everyday-style.png` | `split` (square) or `overlay` | `mens` (Midnight/dark) | *"Everyday\nStyle.\nLasting\nConfidence."* | `Classic \| Modern \| Versatile` | `Explore Collection →` · `shirt` icon ("Men's Wear") |
+| **Kids Wear** | `kids-wear-little-styles.jpeg` | `arch` or `overlay` | `kids` / `sage` | *"Little Styles,\nBig Smiles."* | `Comfortable \| Playful \| Everyday` | `Explore Collection →` · `kids` icon ("Kids Wear") |
+
 ## 1. Gather inputs (ask only for what's missing)
 
 - **Product + who it's for:** e.g. "kurta pajama for men". Look it up in `brand/brand.json → products` for theme, icon, attrs and hashtags. Add a new entry if it's missing.

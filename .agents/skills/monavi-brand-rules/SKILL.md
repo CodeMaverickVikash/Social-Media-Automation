@@ -38,6 +38,7 @@ Open the image (Read tool) and check each item:
 - [ ] Story/reel: no text in the top 250px, bottom 340px (story) / 400px (reel), or the 72px side margins
 - [ ] No pixelation, banding or blur on the product. Embroidery detail stays crisp
 - [ ] Copy matches `voice.md` (no shouting, no invented facts, ≤2 emoji in captions)
+- [ ] Visual finish matches the reference post standard in `brand/reference-posts/` (proportional logo clear space, Playfair headline line-breaks, Montserrat ` | ` attribute triplet, rounded-full CTA pill with right arrow, bottom category badge)
 - [ ] Output files sit in `output/<platform>/<slug>/` and pass `npm run check:media -- output/<platform>/<slug>`
 
 Report failures as a short list with the fix for each.

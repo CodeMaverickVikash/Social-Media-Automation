@@ -22,16 +22,28 @@ Run `npm run doctor` before importing or rendering anything.
 
 ## 1. Intake: photo + product + who it's for
 
-The typical request is: *"[photo] kurta pajama for men, festive"*. Collect:
+The user may simply provide a product name or text (e.g. *"kurta pajama"*, *"festive lehenga"*, *"kids frock"*). **Autonomously decide the audience, collection, reference archetype, and badge** from the garment type without pausing or asking questions.
+
+### Autonomous Audience & Archetype Decision Matrix
+
+| Garment Keyword in Prompt | Inferred Audience (`for`) | Badge & Icon | Reference Archetype (`brand/reference-posts/`) | Layout & Theme Default |
+|---|---|---|---|---|
+| **Kurta Pajama, Kurta, Sherwani, Nehru Jacket, Men's Shirt, Pathani** | `men` (or `kids` if "boy/child" mentioned) | `Men's Wear` (`shirt`) or `Kids Wear` (`kids`) | `mens-everyday-style.png` (everyday/smart) or `festive-collection-duo.png` (festive) | `split` (dark/midnight) or `overlay` (`festive`) |
+| **Lehenga, Bridal Gown, Heavy Saree, Trousseau** | `bride` / `women` | `Bridal` (`lotus`) | `bridal-collection.png` | `overlay` (`festive` deep wine/maroon) |
+| **Saree, Anarkali, Salwar Suit, Festive Saree** | `women` | `Ladies Wear` (`dress`) | `festive-collection-single.png` | `overlay` (`festive`) |
+| **Kurti, Everyday Dress, Cotton Suit** | `women` | `Ladies Wear` (`dress`) | `ladies-wear-style-that-feels-like-you.png` | `overlay` (`ladies`) or `split` |
+| **Frock, Kids Ethnic Set, Kids Kurta, Little Ghagra** | `kids` (boys or girls) | `Kids Wear` (`kids`) | `kids-wear-little-styles.jpeg` | `arch` or `overlay` (`kids` / `sage`) |
+
+Collect & set:
 
 | Input | How |
 |---|---|
-| **Product photo(s)** | A file path the user gives, or an image they attach. Import every photo (this copies it without re-compressing and reports which layouts it is big enough for): `npm run import:photo -- "<path>" [more…] --slug <slug>`. **No photo:** Claude draws an illustration locally with `npm run draw:product` (see `render-social-post` §1). This is for mood/campaign posts only, with collection-level copy |
-| **Product** | Match it to a key in `brand/brand.json → products` (kurta-pajama, sherwani, nehru-jacket, mens-shirt, lehenga, saree, anarkali, kurti, salwar-suit, gown, kids-ethnic-set, kids-kurta-pajama, kids-frock). That gives `collection`, `theme`, `icon`, default `template`, `attrs`, `hashtags`. If the product isn't listed, add an entry to `brand.json → products` in the same style, then continue |
-| **For whom** | men / women / bride / groom / kids, from the user's words or the product entry. It decides the badge label (Men's Wear / Ladies Wear / Kids Wear / Bridal) and the copy angle |
-| **Occasion** (optional) | festive / wedding / everyday / offer. Festive or wedding switches the theme to `festive` (use `festiveTheme` where present) |
-| **Photo type** | Look at the photo (Read it). **Model wearing it** → `overlay` template. **Product only** (hanger, mannequin, flat lay, plain background) → `arch` template. Clean product on a strong background with room for text → `split` |
-| **Facts** | prices, offer dates, address. Only take them from the user or `brand.json → contact`. Never invent them |
+| **Product photo(s)** | A file path the user gives, or an image they attach. Import every photo: `npm run import:photo -- "<path>" [more…] --slug <slug>`. **No photo:** Claude draws an illustration locally with `npm run draw:product` or pairs with an approved reference post mood visual. |
+| **Product** | Match to `brand/brand.json → products`. If not listed, add it with appropriate attributes and hashtags. |
+| **For whom** | Autonomously deduced using the matrix above (Men, Women, Kids/Boys/Girls, Bridal). Decides badge, icons, and tone. |
+| **Occasion** | Autonomously deduced from context: wedding, festive, everyday, or celebration. |
+| **Photo type** | **Model photo** → `overlay` template. **Product only** (hanger/mannequin/flat lay) → `arch` template. **Clean product/editorial** → `split`. Always mirror the finish of the matched reference archetype. |
+| **Facts** | Prices, dates, address. Only take from `brand.json → contact` or user input. Never invent. |
 
 Slug: `<product>-<occasion|topic>-<yyyy-mm>`, e.g. `kurta-pajama-festive-2026-11`.
 

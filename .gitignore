@@ -9,3 +9,6 @@ Thumbs.db
 output/_build/
 output/_masters/**/*.png
 output/_masters/**/publish-log.jsonl
+
+
+.playwright-mcp
